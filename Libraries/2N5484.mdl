@@ -1,0 +1,6 @@
+*2N5484 MCE 7-10-95
+*Ref: Motorola Small-Signal Databook, Q4/94
+*25V  30mA  175 ohm Dep-Mode pkg:TO-92B 3,1,2
+.MODEL 2N5484 NJF(VTO=-1.8 BETA=0.004 LAMBDA=0.01 RD=24.5 RS=22 
++ CGS=2.5E-12 CGD=4E-12 IS=9.48E-15 )
+* Origin: Mcejfets.lib

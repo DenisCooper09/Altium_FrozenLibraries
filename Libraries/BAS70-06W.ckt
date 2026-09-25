@@ -1,0 +1,10 @@
+*****************************************************************
+.SUBCKT BAS70-06W 1 2 3
+D1 3 1 BAS70
+D2 3 2 BAS70
+.MODEL BAS70 D(IS=3N N=1.06 RS=29 XTI=1.8 EG=.68 
++ CJO=1.55P M=.29 VJ=.36 FC=.5 BV=70 IBV=100n TT=25P)
+.ENDS
+
+* ISR=2.5n NR=1k IKF=5m
+* for 27C reverse current simulation use: GMIN=.5e-9

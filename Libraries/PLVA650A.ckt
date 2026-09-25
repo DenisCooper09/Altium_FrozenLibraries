@@ -1,0 +1,66 @@
+*
+* Diode Sim Model Produced by Altium Ltd
+* Date:  21-Mar-2003
+*
+* Manufacturer: Philips
+* Component Name: PLVA650A
+*
+* This macromodel models the effect of carrier recombination-generation
+* and high-level injection on the diode.
+*
+*Note: This macromodel derived from data sheets and pspice models obtained from Philips Semiconductor.
+
+.SUBCKT PLVA650A 10 30
+
+*These components model forward-biased conditions
+D1 10 20 DIDEAL
+D2 10 20 DRECOMB
+D3 20 30 DHIGH
+
+*These components model reversed-biased conditions
+D4 30 60 DPARASITIC
+RZ 50 60 0.295
+Vbrk 50 10 5
+
+* Subcircuit models
+* +  BV =  5.1893
+* +  IBV =  2.12E-01
+.MODEL DIDEAL D
++(
++  IS =  5.3574E-16
++  N =  1.0029
++  TT =  1.3215E-07
++  CJO =  1.1942E-10
++  VJ =  0.62169
++  M =  0.32565
++)
+
+.MODEL DHIGH D
++(
++  IS =  13.56610489
++  N =  1.0029
++  RS =  0.29276
++)
+
+.MODEL DRECOMB D
++(
++  IS =  2.59678E-07
++  N =  5.919766159
++)
+
+.MODEL DPARASITIC D
++(
++	N = 0.001
++	RS = 0.001
++	CJO = 0.001P
++)
+
+.ENDS PLVA650A
+
+
+
+
+
+
+
+

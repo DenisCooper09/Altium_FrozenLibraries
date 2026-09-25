@@ -1,0 +1,24 @@
+*   ZETEX  BAR99    Spice Model        Last revision 21/8/92
+*
+.MODEL BAR99 D IS=4.858E-9 N=2.038 RS=1.898 XTI=3 
++      EG=1.11 BV=164.1 IBV=12.94E-3 TT=4.184E-9
+*
+*      FOR LATER VERSIONS OF SPICE:-  SET RS=1.238 AND ADD
+*    + ISR=7.937E-9 NR=2.113 IKF=22.89E-3
+*
+*   NOTES: FOR RF OPERATION ADD PACKAGE INDUCTANCE 0F 2.5E-9H AND 
+*   PARALLEL CAPACITANCE OF 0.51E-12F.
+*
+*                          (C)  1992 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agents.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

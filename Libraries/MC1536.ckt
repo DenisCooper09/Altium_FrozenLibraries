@@ -1,0 +1,45 @@
+*MC1536 OPERATIONAL AMPLIFIER "MACROMODEL" SUBCIRCUIT
+*
+* Connections:
+*                Non-Inverting Input
+*                | Inverting Input
+*                | | Positive Power Supply
+*                | | | Negative Power Supply
+*                | | | | Output
+*                | | | | |
+.SUBCKT MC1536   1 2 3 4 5
+  C1   11 12 18.00E-12
+  C2    6  7 28.50E-12
+  DC    5 53 DX
+  DE   54  5 DX
+  DLP  90 91 DX
+  DLN  92 90 DX
+  DP    4  3 DX
+*EGND 99  0 POLY(2) (3,0) (4,0) 0 .5 .5
+  BEGND 99  0 V=.5*v(3,0)+.5*v(4,0)
+*FB    7 99 POLY(5) VB VC VE VLP VLN 0 2.653E6 -3E6 3E6 3E6 -3E6
+  BFB    7 99 I=2.653E6*I(VB)-3E6*I(VC)+3E6*I(VE)+3E6*I(VLP)-3E6*I(VLN)
+  GA    6  0 11 12 377.0E-6
+  GCM   0  6 10 99 1.192E-9
+  IEE  10  4 DC 60.02E-6
+  HLIM 90  0 VLIM 1K
+  Q1   11  2 13 QX
+  Q2   12  1 14 QX
+  R2    6  9 100.0E3
+  RC1   3 11 2.653E3
+  RC2   3 12 2.653E3
+  RE1  13 10 1.790E3
+  RE2  14 10 1.790E3
+  REE  10 99 3.332E6
+  RO1   8  5 500
+  RO2   7 99 500
+  RP    3  4 26.17E3
+  VB    9  0 DC 0
+  VC    3 53 DC 5.740
+  VE   54  4 DC 5.740
+  VLIM  7  8 DC 0
+  VLP  91  0 DC 17
+  VLN   0 92 DC 17
+.MODEL DX D(IS=800.0E-18)
+.MODEL QX NPN(IS=800.0E-18 BF=3.750E3)
+.ENDS MC1536

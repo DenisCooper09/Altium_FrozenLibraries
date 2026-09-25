@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4094: 8-Stage Shift/Store Register
+.MODEL HCC4094 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4094 {mntymx})

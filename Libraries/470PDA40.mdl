@@ -1,0 +1,7 @@
+*470PDA40 3/10/98
+*Ref: IR Power Semiconductors Product Digest '94
+*400V 470A 3us Si pkg:DIODE0.7 1,2
+.MODEL 470PDA40 D (IS=668N RS=89.4U N=1.7 BV=400 IBV=10U
++ CJO=19.3N VJ=0.75 M=0.333 TT=4.32U IBV=0.011)
+
+

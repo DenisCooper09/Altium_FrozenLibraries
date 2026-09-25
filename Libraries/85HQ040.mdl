@@ -1,0 +1,7 @@
+*85HQ040 MCE 3/27/98
+*Ref: IR Power Semiconductors Product Digest '94
+*MCE 40V 85A 3us pkg:Diode0.7 1,2
+.MODEL 85HQ040 D (IS=121N RS=494U N=1.7 BV=40 IBV=45M
++ CJO=3.5N VJ=0.75 M=0.333 TT=4.32U EG=.69 XTI=2)
+
+

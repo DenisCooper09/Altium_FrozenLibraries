@@ -1,0 +1,42 @@
+*
+* Diode Sim Model Produced by Altium Ltd
+* Date:  19-Mar-2003
+*
+* Manufacturer: Philips
+* Component Name: BAS32L
+*
+* This macromodel models the effect of high-level injection on the diode.
+*
+*Note: This macromodel derived from data sheets and pspice models obtained from Philips Semiconductor.
+
+.SUBCKT BAS32L 10 30
+D1 10 20 DIDEAL
+D2 20 30 DHIGH
+
+* Subcircuit models
+.MODEL DIDEAL D
++(
++ IS =  2.227E-08
++ RS =  0.001
++ N =  2.203
++ TT =  4.328E-09
++ CJO =  1.035E-12
++ VJ =  0.75
++ M =  0.1
++ BV =  124.1
++ IBV =  0.007607
++)
+
+.MODEL DHIGH D
++(
++ IS =  0.017653922
++ N =  2.203
++)
+
+.ENDS BAS32L
+
+
+
+
+
+

@@ -1,0 +1,69 @@
+* FILE PBR941.PRM
+* PBR941 SPICE MODEL         PHILIPS SEMICONDUCTORS
+* Date : April 1997
+*
+* PACKAGE : SOT23 DIE MODEL : XB510
+* 1: PACKED COLLECTOR; 2: PACKED BASE; 3: PACKED EMITTER;
+.SUBCKT PBR941 1 2 3
+Q1 6 5 7 7 XB510
+* SOT23 parasitic model including bondpads
+               Lb  4 5 .4n
+               Le  7 8 .83n
+               L1  2 4 .35n
+               L2  1 6 .17n
+               L3  3 8 .35n
+              Ccb  4 6 80f
+              Cbe  4 8  7f
+              Cce  6 8 80f
+              Cbpb 5 6 83f
+              Cbpe 6 7 84f
+*
+* PHILIPS SEMICONDUCTORS                                     Version:   1.0
+* Filename:    XB510.PRM                                     Date: Feb 29 1996
+* extracted batch 49917-4
+.MODEL  XB510   NPN
++(
++              IS = 4.66E-16
++              BF = 150.4
++              NF = 1
++             VAF = 53.06
++             IKF = 0.18
++             ISE = 5.73E-14
++              NE = 2
++              BR = 27.68
++              NR = 1
++             VAR = 1.976
++             IKR = 0.009943
++             ISC = 1.42E-18
++              NC = 1
++              RB = 12.14
++             IRB = 0
++             RBM = 4.957
++              RE = 0.5974
++              RC = 1.988
++             CJE = 5.681E-13
++             VJE = 0.6
++             MJE = 0.4122
++             CJC = 2.058E-13
++             VJC = 0.2962
++             MJC = 0.118
++             CJS = 0
++             VJS = 0.7
++             MJS = 0
++            XCJC = 0.1042
++              TR = 0
++              TF = 2.037E-12
++             XTF = 30.9
++             VTF = 3.148
++             ITF = 0.1318
++             PTF = 0
++              FC = 0.9431
++              EG = 1.11
++             XTI = 3
++              AF = 1
++              KF = 4.00E-16
++)
+* Parameters with default value:
+* XTB, EG, XTI, CJS, VJE, VJS and MJS.
+* BONDPAD CAPACITORS Cbpb=83E-15 Cbpe=84E-15 not included in this model !
+.ENDS

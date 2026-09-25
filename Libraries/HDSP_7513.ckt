@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-7513  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 common-cathode
+*                 |  anode-f
+*                 |  |  anode-g
+*                 |  |  |  anode-e
+*                 |  |  |  |  anode-d
+*                 |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_7513 1  2  3  4  5  6  7  8  9  10
+
+DA1  10  1 dHDSP_7513
+DB1   9  1 dHDSP_7513
+DC1   8  1 dHDSP_7513
+DD1   5  1 dHDSP_7513
+DE1   4  1 dHDSP_7513
+DF1   2  1 dHDSP_7513
+DG1   3  1 dHDSP_7513
+DDP1  7  1 dHDSP_7513
+
+DA2  10  6 dHDSP_7513
+DB2   9  6 dHDSP_7513
+DC2   8  6 dHDSP_7513
+DD2   5  6 dHDSP_7513
+DE2   4  6 dHDSP_7513
+DF2   2  6 dHDSP_7513
+DG2   3  6 dHDSP_7513
+DDP2  7  6 dHDSP_7513
+
+.MODEL dHDSP_7513 D
++ (  
++     IS = 7.07436607E-24 
++      N = 1.24380258 
++     RS = 22.12166762 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_7513

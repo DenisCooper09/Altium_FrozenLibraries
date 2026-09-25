@@ -1,0 +1,6 @@
+*MPF3821 3/9/98
+*Ref: Motorola Small-Signal Databook, Rev. 5 DL126/D
+*50V 0.01A 50ohm TO-92B 3,1,2
+.MODEL MPF3821 NJF (VTO=-4 BETA=3M LAMBDA=2M RD=7
++ RS=6.3 IS=1.58F PB=1 FC=.5 CGS=4.82P CGD=10.8P)
+* Origin: Mcejfets.lib

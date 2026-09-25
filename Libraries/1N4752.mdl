@@ -1,0 +1,6 @@
+*1N4752
+*Ref: Motorola
+*33V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4752 D(IS=2.67E-9 RS=26.5 TT=5.01E-8 CJO=4.38E-11 M=0.33 
++ BV=32.81 IBV=0.0075 )
+* Origin: Mcediode.lib

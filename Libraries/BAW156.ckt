@@ -1,0 +1,8 @@
+******************************************************
+.SUBCKT BAW156 1 2 3
+D1 3 1 DBAW156
+D2 3 2 DBAW156
+.MODEL DBAW156 D (IS=473P RS=42M N=1.75 BV=70 IBV=1.3U
++ CJO=2.65P VJ=.75 M=.333 TT=4.32U)
+*  70 Volt  .2 Amp  3 us  Si Diode  02-27-1996
+.ENDS BAW156

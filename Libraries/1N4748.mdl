@@ -1,0 +1,6 @@
+*1N4748
+*Ref: Motorola
+*22V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4748 D(IS=3.11E-12 RS=11.7 TT=5.01E-8 CJO=5.82E-11 M=0.33 
++ BV=21.87 IBV=0.0115 )
+* Origin: Mcediode.lib

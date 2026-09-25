@@ -1,0 +1,24 @@
+*   ZETEX  ZC835A  Spice Model        Last revision 7/3/92
+*
+.MODEL ZC835A D IS=18.16E-15 N=1.0550 RS=0.0771 XTI=3
++ EG=1.11 CJO=130.5E-12 M=0.9632 VJ=2.017 FC=0.5
++ BV=45.1 IBV=51.74E-3 TT=261.1E-9
+* + ISR=2.130E-12 NR=2.166 (LATER SPICE VERSIONS ONLY)
+*
+*NOTES: FOR RF OPERATION ADD PACKAGE INDUCTANCE 0F 2.5E-9H AND SET
+*  RS=0.32 FOR 2V, 0.26 FOR 5V, 0.20 FOR 10V OR 0.18 FOR 20V BIAS.
+*
+*                          (C)  1992 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

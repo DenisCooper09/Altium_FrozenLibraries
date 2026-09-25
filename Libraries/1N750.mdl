@@ -1,0 +1,6 @@
+*1N750
+*Ref: Motorola
+*4.7V 500mW Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N750 D(IS=1E-11 RS=9.066 N=1.27 TT=5E-8 CJO=4.351E-10 VJ=0.75 
++ M=0.33 BV=4.519 IBV=0.01 )
+* Origin: Mcediode.lib

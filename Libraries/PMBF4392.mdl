@@ -1,0 +1,17 @@
+*PHILIPS SEMICONDUCTORS        Version: 1.0
+*Filename: PMBF4392.prm      Date: Oct 1992
+*
+.MODEL  PMBF4392   NJF
++(
++             VTO = -2.2088E+000
++            BETA = 4.22567E-003
++          LAMBDA = 6.40354E-002
++              RD = 1.14866E+000
++              RS = 1.14866E+000
++              IS = 4.90805E-016
++            CGS  = 7.75000E-012
++            CGD  = 7.75000E-012
++              PB = 7.55484E-001
++              FC = 5.00000E-001
++)
+*Parameter with default value: FC

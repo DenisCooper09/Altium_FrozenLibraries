@@ -1,0 +1,5 @@
+*duplicate files: 3inNand.mod, 3inputna.mod, 4023.mod
+*CMOS 3-input NAND - type:digital pkg:DIP14 [DVDD=14;DGND=7;](A:3,4,5,6)(B:1,2,8,9)(C:11,12,13,10)
+.MODEL FSC_4023 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4023 {mntymx})
+
+* Origin: 3innand.mod

@@ -1,0 +1,92 @@
+*EL2090 Macromodel 
+* Revision A, October 1992
+.param vclamp = {-0.002*(TEMP-25)}
+*
+* Connections:      Vidin+
+*                   |   Vidin-
+*                   |   |   +Vsupply
+*                   |   |   |   -Vsupply
+*                   |   |   |   |   Vid Out
+*                   |   |   |   |   |   S/H In+
+*                   |   |   |   |   |   |   S/H In- 
+*                   |   |   |   |   |   |   |   S/H Out
+*                   |   |   |   |   |   |   |   |   Hold Control
+*                   |   |   |   |   |   |   |   |   |   Chold
+*                   |   |   |   |   |   |   |   |   |   |
+.subckt EL2090      3   1   14  12  13  5   6   11  7   9
+*
+******** Video Amplifier *******************
+*
+e1  20 0 3 0 1.0
+vis 20 34 0V
+h2  34 38 vxx 1.0
+r10  1 36 25
+l1 36 38 20nH
+iinp 3 0 10uA   
+iinm 1 0  5uA
+h1 21  0 vis 600
+r2 21 22 1K
+d1 22  0  dclamp
+d2  0 22  dclamp 
+e2 23 0 22 0 0.00166666666
+l5 23 24 0.7uH
+c5 24 0 0.5pF
+r5 24 0 600
+g1 0 25 24 0 1.0
+rol 25 0 400K
+cdp 25 0 7.7pF  
+q1 12 25 26 qp 
+q2 14 25 27 qn 
+q3 14 26 28 qn 
+q4 12 27 29 qp 
+r7 28 13 4
+r8 29 13 4
+ios1 14 26 2.5mA
+ios2 27 12 2.5mA
+ips 14 12 7.2mA
+ivos 0 33 5mA
+vxx 33 0 0V
+r11 33 0 1K 
+*
+************ Sample & Hold *************************  
+*
+g40  49 0 5 6 1e-3
+vcur 49 42 0v
+r43    6 0 100Meg
+r44    5 0 100Meg
+r40   42 0 4K
+d41 50 42 diode
+d42 42 51 diode 
+
+*v41 50 0 {vclamp}
+*v42 0 51 {vclamp} 
+
+v41 50 0 DC 0
+v42 0 51 DC 0
+g41  44 0 42 0 200e-6
+r42  44 0 31Meg
+d43  44 14 diode
+d44  12 44 diode
+d45   9 14 diode
+d46  12  9 diode  
+s1   44 9 48 0 swa 
+e40  46 0  9 0 0.95
+i40   0 9 10nA
+r45  46 47 70
+l40  47 11 70nH
+c40   7  9 0.32pF
+r47   7 48 10K
+c41   48 0 3pF  
+*
+* Models
+*
+.model qn npn(is=5e-15 bf=500 tf=0.1nS)
+.model qp pnp(is=5e-15 bf=500 tf=0.1nS)
+.model dclamp d(is=1e-30 ibv=0.02 bv=2.75 n=4)
+.model diode d
+
+*.model swa vswitch(von=1.2v voff=1.6v roff=1e12 ron=100)
+*jg, 10/7/2000: model syntax corrected
+
+.model swa sw(roff=1e12 ron=100 vt=1.2v vh=1.6v)
+.ends

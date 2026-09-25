@@ -1,0 +1,7 @@
+*40HF20 MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*200V 40000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 40HF20 D (IS=56.8N RS=1.05M N=1.7 BV=200 IBV=440U
++ CJO=1.65N VJ=0.75 M=0.333 TT=4.32U)
+
+

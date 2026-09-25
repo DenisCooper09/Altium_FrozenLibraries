@@ -1,0 +1,7 @@
+*200HF80PV 3/9/98
+*Ref: IR Power Semiconductors Product Digest '94
+*800V 200A 3us Si pkg:DIODE0.7 1,2
+.MODEL 200HF80 D (IS=284N RS=210U N=1.7 BV=800 IBV=10U
++ CJO=8.22N VJ=0.75 M=0.333 TT=4.32U IBV=0.009)
+
+

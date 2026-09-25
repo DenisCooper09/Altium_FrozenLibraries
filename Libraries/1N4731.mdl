@@ -1,0 +1,6 @@
+*1N4731
+*Ref: Motorola
+*4.3V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4731 D(IS=6.42E-16 RS=0.753 TT=5.01E-8 CJO=2.44E-10 VJ=0.75 
++ M=0.33 BV=4.258 IBV=0.058 )
+* Origin: Mcediode.lib

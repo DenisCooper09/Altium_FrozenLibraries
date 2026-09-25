@@ -1,0 +1,24 @@
+*   ZETEX  FMMV109  Spice Model        Last revision 18/8/92
+*
+.MODEL FMMV109 D IS=7.312E-15 N=1.055 RS=.1524 XTI=3 
++      EG=1.11 CJO=61.3E-12 M=1.016 VJ=2.659 FC=.5 BV=45.13 
++      IBV=.1294 TT=196.2E-9
+*
+*    + ISR=2.266E-12 NR=1.994 IKF=10.18 (LATER SPICE VERSIONS ONLY)
+*
+*NOTES: FOR RF OPERATION ADD PACKAGE INDUCTANCE OF 2.5E-9H AND SET
+*  RS=0.47 FOR 2V, 0.39 FOR 5V, 0.32 FOR 10V OR 0.28 FOR 20V BIAS.
+*
+*                          (C)  1992 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agents.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

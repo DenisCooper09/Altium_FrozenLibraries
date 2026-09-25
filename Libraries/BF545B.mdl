@@ -1,0 +1,17 @@
+*PHILIPS SEMICONDUCTORS        Version: 1.0
+*Filename: BF545B.PRM        Date: Oct 1992
+*
+.MODEL  BF545B   NJF
++(
++             VTO = -2.3085E+000
++            BETA = 1.09045E-003
++          LAMBDA = 2.31754E-002
++              RD = 7.77648E+000
++              RS = 7.77648E+000
++              IS = 2.59121E-016
++            CGS  = 2.00000E-012
++            CGD  = 2.20000E-012
++              PB = 9.91494E-001
++              FC = 5.00000E-001
++)
+*Parameter with default value: FC

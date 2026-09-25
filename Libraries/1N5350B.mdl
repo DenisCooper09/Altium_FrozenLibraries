@@ -1,0 +1,5 @@
+*1N5350B
+*Ref: Diodes Incorporated Catalog, 1994
+*13V 5W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N5350B D(IS=1.5E-15 RS=2.23 TT=5.01E-8 CJO=3.8E-10 M=0.33 
++ BV=12.79 IBV=0.0962 )

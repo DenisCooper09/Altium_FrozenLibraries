@@ -1,0 +1,10 @@
+* jjt 9/8/2000: measured Vz was 0.0433% (1.5 mV) too high for +5% tolerance; 
+*               original BV = 3.027
+*		    changed to BV = 3.025 to fall within +%5 tolerance 
+*               (the measured Vz is now 0.0173% beneath the +5% mark)
+*1N746
+*Ref: Motorola
+*3.3V 500mW Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N746 D(IS=1E-11 RS=13.65 N=1.27 TT=5E-8 CJO=5.826E-10 VJ=0.75 
++ M=0.33 BV=3.025 IBV=0.01 )
+* Origin: Mcediode.lib

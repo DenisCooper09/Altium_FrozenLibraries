@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-3603  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 common-cathode
+*                 |  anode-f
+*                 |  |  anode-g
+*                 |  |  |  anode-e
+*                 |  |  |  |  anode-d
+*                 |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_3603 2  3  4  5  6  9  10 11 12 13
+
+DA1  13 2 dHDSP_3603
+DB1  12 2 dHDSP_3603
+DC1  11 2 dHDSP_3603
+DD1   6 2 dHDSP_3603
+DE1   5 2 dHDSP_3603
+DF1   3 2 dHDSP_3603
+DG1   4 2 dHDSP_3603
+DDP1 10 2 dHDSP_3603
+
+DA2  13 9 dHDSP_3603
+DB2  12 9 dHDSP_3603
+DC2  11 9 dHDSP_3603
+DD2   6 9 dHDSP_3603
+DE2   5 9 dHDSP_3603
+DF2   3 9 dHDSP_3603
+DG2   4 9 dHDSP_3603
+DDP2 10 9 dHDSP_3603
+
+.MODEL dHDSP_3603 D
++ (  
++     IS = 1.61114016E-27 
++      N = 1.30291189 
++     RS = 12.83456794 
++     BV = 50 
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_3603

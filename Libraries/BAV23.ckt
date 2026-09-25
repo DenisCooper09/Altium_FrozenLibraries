@@ -1,0 +1,52 @@
+*
+* Diode Sim Model Produced by Altium Ltd
+* Date:  24-Mar-2003
+*
+* Manufacturer: Philips
+* Component Name: BAV23
+*
+* This macromodel models the effect of carrier recombination-generation
+* and high-level injection on the diode.
+*
+*Note: This macromodel derived from data sheets and pspice models obtained from Philips Semiconductor.
+
+.SUBCKT BAV23 10 30
+D1 10 20 DIDEAL
+D2 10 20 DRECOMB
+D3 20 30 DHIGH
+
+* Subcircuit models
+.MODEL DIDEAL D
++(
++  IS =  3.7106E-09
++  N =  1.9403
++  TT =  3.751E-08
++  CJO =  7.9474E-13
++  VJ =  0.3905
++  M =  0.10536
++  BV =  319.86
++  IBV =  5.17E-06
++)
+
+.MODEL DHIGH D
++(
++  IS =  4.640134335
++  N =  1.9403
++  RS =  0.41967
++)
+
+.MODEL DRECOMB D
++(
++  IS =  9.61006E-09
++  N =  1.995636079
++)
+
+.ENDS BAV23
+
+
+
+
+
+
+
+

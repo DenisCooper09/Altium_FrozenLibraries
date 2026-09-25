@@ -1,0 +1,52 @@
+*
+* Diode Sim Model Produced by Altium Ltd
+* Date:  21-Mar-2003
+*
+* Manufacturer: Philips
+* Component Name: PMBD6050
+*
+* This macromodel models the effect of carrier recombination-generation
+* and high-level injection on the diode.
+*
+*Note: This macromodel derived from data sheets and pspice models obtained from Philips Semiconductor.
+
+.SUBCKT PMBD6050 10 30
+D1 10 20 DIDEAL
+D2 10 20 DRECOMB
+D3 20 30 DHIGH
+
+* Subcircuit models
+.MODEL DIDEAL D
++(
++  IS =  6.0289E-09
++  N =  2.1283
++  TT =  4.5E-09
++  CJO =  5.9363E-13
++  VJ =  0.68774
++  M =  0.1
++  BV =  139.42
++  IBV =  3.45E-02
++)
+
+.MODEL DHIGH D
++(
++  IS =  0.0375
++  N =  2.1283
++  RS =  0.001
++)
+
+.MODEL DRECOMB D
++(
++  IS =  5E-10
++  N =  2.133547047
++)
+
+.ENDS PMBD6050
+
+
+
+
+
+
+
+

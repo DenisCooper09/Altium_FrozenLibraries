@@ -1,0 +1,48 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-511Y  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 cathode-e 
+*                 |  cathode-d 
+*                 |  |  common-anode 
+*                 |  |  |  cathode-c 
+*                 |  |  |  |  cathode-DP 
+*                 |  |  |  |  |  cathode-b 
+*                 |  |  |  |  |  |  cathode-a 
+*                 |  |  |  |  |  |  |  common-anode 
+*                 |  |  |  |  |  |  |  |  cathode-f 
+*                 |  |  |  |  |  |  |  |  |  cathode-g
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_511Y 1  2  3  4  5  6  7  8  9  10
+
+DA1 3  7 dHDSP_511Y
+DB1 3  6 dHDSP_511Y
+DC1 3  4 dHDSP_511Y
+DD1 3  2 dHDSP_511Y
+DE1 3  1 dHDSP_511Y
+DF1 3  9 dHDSP_511Y
+DG1 3 10 dHDSP_511Y
+
+DA2 8  7 dHDSP_511Y
+DB2 8  6 dHDSP_511Y
+DC2 8  4 dHDSP_511Y
+DD2 8  2 dHDSP_511Y
+DE2 8  1 dHDSP_511Y
+DF2 8  9 dHDSP_511Y
+DG2 8 10 dHDSP_511Y
+
+.MODEL dHDSP_511Y D
++ (  
++     IS = 1.56127529E-27 
++      N = 1.25814710 
++     RS = 11.53505957 
++     BV = 4.8 
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_511Y

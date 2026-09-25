@@ -1,0 +1,5 @@
+*duplicate files: 4inAnd.mod, 4inputAn.mod 4082.mod
+*4-input AND - type:digital pkg:DIP14 [DVDD=14;DGND=7;](A:2,3,4,5,1)(B:9,10,11,12,13)
+.MODEL FSC_4082 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4082 {mntymx})
+
+* Origin: 4082.mod

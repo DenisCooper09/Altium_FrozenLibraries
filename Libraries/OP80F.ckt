@@ -1,0 +1,90 @@
+* OP80F SPICE Macro-model              9/93, Rev. A
+*                                       ARG / PMI
+*
+* This version of the OP-80 model simulates the worst-case 
+* parameters of the 'F' grade.  The worst-case parameters
+* used correspond to those in the data sheet.
+*
+* Copyright 1993 by Analog Devices
+*
+* Refer to "README.DOC" file for License Statement.  Use of
+* this model indicates your acceptance of the terms and pro-
+* visions in the License Statement.
+*
+* Node assignments
+*                non-inverting input
+*                |   inverting input
+*                |   |   positive supply
+*                |   |   |   negative supply
+*                |   |   |   |   output
+*                |   |   |   |   |
+.SUBCKT OP80F    1   2   99  50  45
+*
+* INPUT STAGE AND POLE AT 500KHZ
+*
+I1   99   4    50E-6
+M1   5    2    4    99 PNOM L=15U W=1500U
+M2   6    3    4    99 PNOM L=15U W=1500U
+EOS  3    1    POLY(1) (13,39) 1.5E-3 3.162E3
+R1   5    50   1.563E3
+R2   6    50   1.563E3
+IB1  1    50   1.04E-12
+IB2  2    50   .96E-12
+CIN  1    2    2E-12
+C1   5    6    101.845E-12
+*
+* GAIN STAGE AND DOMINANT POLE AT 4.074HZ
+*
+EREF 98   0    39 0 1
+C2   9    98   250E-12
+R7   9    98   156.272E6
+G1   98   9    5 6 639.911E-6
+D1   9    10   DX
+D2   11   9    DX
+V1   99   10   2.08
+V2   11   50   0
+*
+* COMMON MODE STAGE WITH ZERO AT 100KHZ
+*
+ECM  12   98   POLY(2) (1,39) (2,39) 0 0.5 0.5
+R9   12   13   1E6
+R10  13   98   1
+C3   12   13   1.592E-12
+*
+* POLE AT 100KHZ
+*
+G2   98   14   9 39 1E-6
+R11  14   98   1E6
+C4   14   98   1.592E-12
+*
+* ZERO AT 185KHZ
+*
+E1   15   98   14 39 1E6
+R12  15   16   1E6
+R13  16   98   1
+C5   15   16   .860E-12
+*
+* OUTPUT STAGE
+*
+G3   98   40   16 39 1E-6
+R14  40   98   1E6
+RS1  99   39   56.818E3
+RS2  39   50   56.818E3
+R15  99   45   50
+R16  45   50   50
+G7   45   99   99 40 20E-3
+G8   50   45   40 50 20E-3
+G9   98   60   45 40 20E-3
+D7   60   61   DX
+D8   62   60   DX
+V7   61   98   DC 0
+V8   98   62   DC 0
+FSY  99   50   POLY(2) V7 V8 187E-6 1 1
+D9   41   45   DX
+D10  45   42   DX
+V5   40   41   .125
+V6   42   40   -.125
+.MODEL DX D()
+.MODEL PNOM PMOS(VTO=-0.9 KP=81.897U)
+.ENDS
+*jg, 22/5/2000: corrected syntax model

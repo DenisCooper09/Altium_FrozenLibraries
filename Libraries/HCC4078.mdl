@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4078: 8-input NOR
+.MODEL HCC4078 xsimcode(file="{MODEL_PATH}ST MICROELECTRONICS\HCC4078.TXT" func=hcc4078 {mntymx})

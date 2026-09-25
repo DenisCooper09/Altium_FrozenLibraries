@@ -1,0 +1,121 @@
+* EL4095 Macromodel
+* Revision A, July 1993
+*
+* This macromodel is offered to allow simulation of general EL4095
+* behavior. We have included these characteristics:
+* 
+*  Small Signal Frequency Response  
+*  Output Loading Effects
+*  Input Impedance
+*  Off Channel Feedthrough
+*  Output Impedance over Frequency
+*  Signal Path DC Distortion 
+*  VGAIN IV Characteristics
+*  VGAIN overdrive Recovery Delay
+*  100% Gain Error
+*  -Vin characteristics & sensitivity to parasistic capacitance
+*  /FORCE operation
+*
+* The Macromodel does not behave identically as the circuit in 
+* these areas: Temperature effects, Signal overload effects,
+* Signal and /VG operating range, current limit, supply voltage
+* effects, slew rate limitations, noise, power supply inter-
+* action, video and high frequency distortion, glitch and 
+* delay from /FORCE inputs, and manufacturing tolerances. 
+*
+* The Macromodel's netlist is based on PSPICE simulator, copy
+* written by Microsim Corporation. Other simulators may not 
+* support the POLY function which is used to implement multi-
+* plication as well as square law nonlinearities.
+*
+* Connections:   +vinb 
+*                |   -vinb_______
+*                |   |    Force A______
+*                |   |    |      ForceB
+*                |   |    |      |    vout _____
+*                |   |    |      |    |    vgain
+*                |   |    |      |    |    |    vgain    
+*                |   |    |      |    |    |    |    -vina
+*                |   |    |      |    |    |    |    |    +vina
+*                |   |    |      |    |    |    |    |    |
+.subckt EL4095   1   2    4      5    7    10   11   13   14
+*
+rol    810 0 290K                     
+ccomp  810 0 4.3pF 
+g1     110 0 810 0 -10
+rout   110 0 0.1
+lout   110 7 350nH
+rlout  110 7 80
+*  
+rina+   14  0 5e6
+rinb+    1  0 5e6
+rvg     11  0 2e6
+rvgg    10  0 2e6
+rforcea  4  0 1e9
+rforceb  5  0 1e9
+*
+* Input Channel A
+*
+rina    22 313  79
+ra     111   0  1K
+rfeeda  13 313 1.0
+cfeeda  23  13 2500pF
+ccompa 111   0 2pF
+e1a     23  313 302 25 -1.0
+e2a     22    0 14 0 0.9999 
+rspice3 23  313 1e12
+g1a  111 0 poly(1) (22,313) 0.0 0.125 -150e-6
+g2a  810 0 poly(2) (111,0) (113,0) 0.0 0.0 0.0 0.0 0.001
+*
+* Input Channel B 
+*
+rinb   25 302  79
+rb    120   0  1K
+rfeedb  2 302  1.0  
+cfeedb 24   2  2500pF
+
+*ccomp 120   0   2pF 
+*jg, 10/7/2000: error corrected
+
+ccompb 120   0   2pF
+e1b    24  302 22 313 -1
+e2b    25    0  1   0 0.9999 
+rspice4 24 302 1e12
+g1b  120 0 poly(1) (25,302) 0.0 0.125 -150e-6
+g2b  810 0 poly(2) (120,0) (119,0) 0.0 0.0 0.0 0.0 0.001
+*   
+* Gain Control
+rspice1 113 0 1e12
+rspice2 119 0 1e12
+r10     114 0 1e7
+r11 204 206 2.5e6
+r12 205 206 2.5e6
+c10 201   0 9.5e-16
+d1  114 115 dclamp
+d2  116 114 dclamp
+d3  204   4 dclamp
+d4  205   5 dclamp 
+.model dclamp d(tt=200nS)
+vtt1 206 0 2.4
+v1  115   0 4999.3
+v2    0 116 4999.3
+v3  113 117  0.5
+v4  119 118  0.5
+v5  203 115  0.7
+v6  116 202  0.7
+g10 114  0  11 10 -0.001
+g11  11 10 114 0  -2e-8
+e10 117  0 201 0  1e-4 
+e11 118  0 201 0 -1e-4
+s1 114 200 5 0 nopen
+s2 200 201 4 0 nopen
+s3 203 201 4 0 nclosed
+s4 202 201 5 0 nclosed
+
+*.model nopen   vswitch(ron=100 roff=1e12 von=1.6 voff=1.2)
+*.model nclosed vswitch(ron=100 roff=1e12 von=1.2 voff=1.6)
+*jg, 10/7/2000: model syntax corrected
+
+.model nopen   sw(ron=100 roff=1e12 vt=1.6 vh=1.2)
+.model nclosed sw(ron=100 roff=1e12 vt=1.2 vh=1.6)
+.ends

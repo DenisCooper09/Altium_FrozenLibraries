@@ -1,0 +1,54 @@
+* BFG590W_X SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT343X DIE MODEL : BFR590
+* 1: COLLECTOR; 2: BASE; 3: EMITTER
+.SUBCKT BFG590W_X 1 2 3
+Q1 6 5 7 7 BFR590
+* SOT343X parasitic model
+               Lb  4 5 .4n
+               Le  7 8 .4n
+               L1  2 4 .34n
+               L2  1 6 .1n
+               L3  3 8 .25n
+              Ccb  4 6 50f
+              Cbe  4 8 70f
+*
+* PHILIPS SEMICONDUCTORS                                       Version:    3.0
+* Filename:   BFR590.PRM                                       Date:March 1993
+*
+.MODEL  BFR590   NPN
++(
++              IS = 1.34192E-015
++              BF = 1.23514E+002
++              NF = 9.88056E-001
++             VAF = 7.58515E+001
++             IKF = 9.65644E+000
++             ISE = 2.32200E-013
++              NE = 2.13410E+000
++              BR = 1.02277E+001
++              NR = 1.01686E+000
++             VAR = 1.99263E+000
++             IKR = 2.94173E-001
++             ISC = 2.11091E-016
++              NC = 9.97200E-001
++              RB = 5.00000E+000
++             IRB = 1.00000E-006
++             RBM = 5.00000E+000
++              RE = 1.27556E+000
++              RC = 9.20600E-001
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 3.82176E-012
++             VJE = 6.00000E-001
++             MJE = 3.48584E-001
++              TF = 1.36097E-011
++             XTF = 7.17371E+001
++             VTF = 1.02892E+001
++             ITF = 1.92945E+000
++             CJC = 1.40937E-012
++             VJC = 2.19424E-001
++             MJC = 1.66508E-001
++)
+.ENDS

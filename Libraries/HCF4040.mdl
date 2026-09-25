@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCF4040: 12-bit Binary Counter
+.MODEL HCF4040 xsimcode(file="{MODEL_PATH}ST MICROELECTRONICS\HCF4040.TXT" func=hcf4040 {mntymx})

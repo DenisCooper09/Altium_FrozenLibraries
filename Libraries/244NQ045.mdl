@@ -1,0 +1,6 @@
+*244NQ045 MCE 3/30/98
+*Ref: IR Power Semiconductors Product Digest '94
+*MCE 45V 240A 3us pkg:Diode0.7 1,2
+.MODEL 244NQ045 D (IS=341N RS=175U N=1.7 BV=45 IBV=2.4
++ CJO=9.87N VJ=0.75 M=0.333 TT=4.32U EG=.69 XTI=2)
+

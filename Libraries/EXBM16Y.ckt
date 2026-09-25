@@ -1,0 +1,35 @@
+*
+* Line Terminator
+*Res1 = R, Res2 = 2R
+*ResPack_28
+*
+.SUBCKT EXBM16Y 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 PARAMS: Res1=160 Res2=240
+R1 1 16 {Res1}
+R2 1 8 {Res2}
+R3 2 16 {Res1}
+R4 2 8 {Res2}
+R5 3 16 {Res1}
+R6 3 8 {Res2}
+R7 4 16 {Res1}
+R8 4 8 {Res2}
+R9 5 16 {Res1}
+R10 5 8 {Res2}
+R11 6 16 {Res1}
+R12 6 8 {Res2}
+R13 7 16 {Res1}
+R14 7 8 {Res2}
+R15 9 16 {Res1}
+R16 9 8 {Res2}
+R17 10 16 {Res1}
+R18 10 8 {Res2}
+R19 11 16 {Res1}
+R20 11 8 {Res2}
+R21 12 16 {Res1}
+R22 12 8 {Res2}
+R23 13 16 {Res1}
+R24 13 8 {Res2}
+R25 14 16 {Res1}
+R26 14 8 {Res2}
+R27 15 16 {Res1}
+R28 15 8 {Res2}
+.ENDS EXBM16Y

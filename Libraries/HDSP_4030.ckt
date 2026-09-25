@@ -1,0 +1,51 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-4030  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 a
+*                 |  f
+*                 |  |  common-anode 
+*                 |  |  |  DP
+*                 |  |  |  |  e
+*                 |  |  |  |  |  d
+*                 |  |  |  |  |  |  c
+*                 |  |  |  |  |  |  |  g
+*                 |  |  |  |  |  |  |  |  b
+*                 |  |  |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_4030 1  2  3  6  7  8  10 11 13 14
+
+DA1   3  1 dHDSP_4030
+DB1   3 13 dHDSP_4030
+DC1   3 10 dHDSP_4030
+DD1   3  8 dHDSP_4030
+DE1   3  7 dHDSP_4030
+DF1   3  2 dHDSP_4030
+DG1   3 11 dHDSP_4030
+DDP1  3  6 dHDSP_4030
+
+DA2  14  1 dHDSP_4030
+DB2  14 13 dHDSP_4030
+DC2  14 10 dHDSP_4030
+DD2  14  8 dHDSP_4030
+DE2  14  7 dHDSP_4030
+DF2  14  2 dHDSP_4030
+DG2  14 11 dHDSP_4030
+DDP2 14  6 dHDSP_4030
+ 
+
+.MODEL dHDSP_4030 D
++ (  
++     IS = 8.07922028E-13 
++      N = 3.08151986 
++     RS = 5.65168121 
++     BV = 2.25
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_4030

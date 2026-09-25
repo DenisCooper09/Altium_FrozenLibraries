@@ -1,0 +1,52 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-E151  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-a
+*                 |  cathode-f
+*                 |  |  common-anode
+*                 |  |  |  cathode-e
+*                 |  |  |  |  cathode-d
+*                 |  |  |  |  |  cathode-DP
+*                 |  |  |  |  |  |  cathode-c
+*                 |  |  |  |  |  |  |  cathode-g
+*                 |  |  |  |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  |  |
+*                 |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_E151 1  2  3  7  8  9  10 11 13 14
+
+DA1   3  1 dHDSP_E151
+DB1   3 13 dHDSP_E151
+DC1   3 10 dHDSP_E151
+DD1   3  8 dHDSP_E151
+DE1   3  7 dHDSP_E151
+DF1   3  2 dHDSP_E151
+DG1   3 11 dHDSP_E151
+DDP1  3  9 dHDSP_E151
+
+DA2  14  1 dHDSP_E151
+DB2  14 13 dHDSP_E151
+DC2  14 10 dHDSP_E151
+DD2  14  8 dHDSP_E151
+DE2  14  7 dHDSP_E151
+DF2  14  2 dHDSP_E151
+DG2  14 11 dHDSP_E151
+DDP2 14  9 dHDSP_E151
+
+
+.MODEL dHDSP_E151 D
++ (  
++    IS = 3.25509599E-15 
++     N = 2.27697656 
++    RS = 1.58416732
++    BV = 14.25
++   IBV = 100u
++ )  
+
+.ENDS HDSP_E151

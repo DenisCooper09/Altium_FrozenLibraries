@@ -1,0 +1,7 @@
+*85HF60 MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*600V 85000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 85HF60 D (IS=121N RS=494U N=1.7 BV=600 IBV=2807U
++ CJO=3.5N VJ=0.75 M=0.333 TT=4.32U)
+
+

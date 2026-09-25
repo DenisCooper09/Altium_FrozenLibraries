@@ -1,0 +1,11 @@
+.MODEL BF720 NPN(
++       AF= 1.00E+00    BF= 1.23E+02    BR= 5.61E+00   CJC= 5.49E-12
++      CJE= 4.19E-11   CJS= 0.00E+00    EG= 1.11E+00    FC= 5.00E-01
++      IKF= 4.09E-02   IKR= 1.00E+00   IRB= 2.42E-02    IS= 6.46E-16
++      ISC= 2.89E-14   ISE= 2.80E-17   ITF= 2.65E+00    KF= 0.00E+00
++      MJC= 5.21E-01   MJE= 3.90E-01   MJS= 3.30E-01    NC= 1.03E+00
++       NE= 1.00E+00    NF= 9.11E-01    NR= 1.86E+00   PTF= 0.00E+00
++       RB= 4.64E+01   RBM= 2.17E+01    RC= 4.08E-01    RE= 4.41E-01
++       TF= 1.13E-09    TR= 0.00E+00   VAF= 4.15E+02   VAR= 4.30E+02
++      VJC= 3.00E-01   VJE= 3.00E-01   VJS= 7.50E-01   VTF= 8.76E+05
++     XCJC= 1.00E+00   XTB= 0.00E+00   XTF= 6.01E+02   XTI= 3.00E+00)

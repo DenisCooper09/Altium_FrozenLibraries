@@ -1,0 +1,52 @@
+*
+.SUBCKT BDL32 1 2 3
+* housing parasitics
+LBlead 2 22 1.63E-09
+LE 3 333 4.1E-09
+LC 1 11 4.1E-10
+LBbond 22 222 2.5E-09
+CBCG 222 11 1.76E-13
+CBEG 222 333 8.6E-14
+CCEG 11 333 1.76E-13
+Q1 11 222 333 BDL32
+.MODEL BDL32 PNP(
++ IS = 1.234E-12
++ NF = 1.006
++ ISE = 5.054E-14
++ NE = 1.336
++ BF = 408.8
++ IKF = 2.02
++ VAF = 19.82
++ NR = 1.009
++ ISC = 7.617E-13
++ NC = 1.4
++ BR = 84.9
++ IKR = 0.2
++ VAR = 15
++ RB = 91.32
++ IRB = 6.471E-06
++ RBM = 0.1
++ RE = 0.1609
++ RC = 0.001
++ XTB = 0
++ EG = 1.11
++ XTI = 3
++ CJE = 3.429E-10
++ VJE = 1
++ MJE = 0.5228
++ TF = 7E-10
++ XTF = 24
++ VTF = 3
++ ITF = 5
++ PTF = 0
++ CJC = 2.693E-10
++ VJC = 0.9239
++ MJC = 0.4635
++ XCJC = 1
++ TR = 1.2E-08
++ CJS = 0
++ VJS = 0.75
++ MJS = 0.333
++ FC = 0.78)
+.ENDS
+*

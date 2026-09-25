@@ -1,0 +1,81 @@
+*EL4089 Macromodel
+* Revision A, July 24 1994
+*
+* Connections:    Vin-
+*                 |   Vin+
+*                 |   |   Ref
+*                 |   |   |   Hold  
+*                 |   |   |   |   -Vsupply
+*                 |   |   |   |   |   Vout
+*                 |   |   |   |   |   |   +Vsupply
+*                 |   |   |   |   |   |   |
+.subckt EL4089    1   2   3   4   6   7   8
+********Restore section
+g10 2 0 xx 0 430u
+e10 yy 0 ww 3 4.66
+Rfl 7 ww 8K
+Cfl ww 0 20p
+Rd yy ss 100 
+d10 xx 0 dd
+d20 0 xx dd
+s1 xx ss 4 0 swno
+s2 0 xx 4 0 swnc
+rcl 3 0 999K
+Rhh 4 0 100K
+
+*.model swno vswitch (von=2.4 voff=0.8)
+*.model swnc vswitch (von=0.8 voff=2.4)
+
+.model swno sw(ron=1 roff=1000g vt=2.4 vh=0.8)
+.model swnc sw(ron=1 roff=1000g vt=0.8 vh=2.4)
+
+********************** 
+* Input Stage 
+e1 10 0 2 0 1.0
+vis 10 9 0V
+h2 9 12 Vxx 1.0
+r1 1 11 20
+l1 11 12 20nH
+iinp 2 0 1u
+iinn 1 0 18u
+r12 2 0 2MEG
+* Slew Rate Limiting
+h1 13 0 vis 600
+r2 13 14 1k
+d1 14 0 dd
+d2 0 14 dd
+* High Frequency Pole
+e2 30 0 14 0 0.00166666666
+l3 30 17 1.47u
+c5 17 0 0.47p
+r5 17 0 700
+* Transimpedance Stage
+g1 0 18 17 0 1.0
+rol 18 0 800k
+cdp 18 0 11p
+* Output Stage
+q1 6 18 19 qp
+q2 8 18 20 qn
+q3 8 19 21 qn
+q4 6 20 22 qp
+r7 21 7 3
+r8 22 7 3
+ios1 8 19 2mA
+iso2 20 6 2mA
+* Supply Current
+ips 8 6 6.5mA
+* Error Term
+iovs 0 23 12m
+Vxx 23 0 0V
+e4 24 0 2 0 1.0
+e5 25 0 8 0 1.0
+e6 26 0 6 0 1.0
+r9 23 24 560
+r10 25 23 1k
+r11 26 23 1k
+* Models
+.model qn npn (is=5e-15, bf=100, tf=0.1ns)
+.model qp pnp (is=5e-15, bf=100, tf=0.1ns)
+.model dclamp d(is=1e-20, ibv=0.266, bv=2.24, n=4) 
+.model dd d rs=2  
+.ends

@@ -1,0 +1,52 @@
+*ZETEX  ZVN4424G Mosfet Spice Subcircuit   Last revision  20/3/01
+*
+* BC 5/1/2004: converted from pspice to spice
+*
+.SUBCKT ZVN4424G 3 4 5
+*------connections-------D-G-S
+M1 6 2 8 8 N4424AM
+M2 6 2 8 8 N4424AMS
+RG 4 2 9
+RD 3 6 3.6
+RS 8 5 0.15 
+RL 3 5 240E6
+C1 2 8 137E-12
+C2 2 3  15E-12
+C3 15 14 385E-12 
+C4 16 8 220E-12
+D1 5 3 N4424AD
+S1 2 15 13 14 SMOD1
+S2 13 15 14 13 SMOD1
+S3 16 13 13 8 SMOD2
+S4 16 2 8 13 SMOD2
+Egs2 13 8 2 8 1
+Eds1 14 8 3 8 1
+.MODEL N4424AM NMOS VTO=1.3 IS=1E-15 KP=0.85
++CBD=66.2E-12 PB=1
+.MODEL N4424AMS NMOS VTO=.86 IS=1E-15 KP=0.0085
++CBD=.66E-12 PB=1
+.MODEL N4424AD D IS=5.516E-13 RS=.2084 N=1.0078
+
+* .MODEL SMOD1 VSWITCH RON=.001 ROFF=100  VON=1.5 VOFF=1
+.MODEL SMOD1 SW(RON=.001 ROFF=100 VH=0.25 VT=1.25)
+
+* .MODEL SMOD2 VSWITCH RON=.001 ROFF=100  VON=-0.5 VOFF=-2.5
+.MODEL SMOD2 SW(RON=.001 ROFF=100 VH=1 VT=-1.5)
+
+.ENDS ZVN4424G
+*
+*$
+*
+*                          (C)  2001  ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

@@ -1,0 +1,73 @@
+*//////////////////////////////////////////////////////////////////////
+* LT1206 250mA/60MHz Current Feedback Amplifier                      //
+*//////////////////////////////////////////////////////////////////////
+*
+* connections:     non-inverting input
+*                  |   inverting input
+*                  |   |   positive power supply
+*                  |   |   |   negative power supply
+*                  |   |   |   |   output
+*                  |   |   |   |   |   output compensation 
+*                  |   |   |   |   |   |   
+*                  |   |   |   |   |   |   
+*                  |   |   |   |   |   |   
+.SUBCKT LT1206     3   2   7   4   6   8
+*
+Q2A 4 3 10 QPI 
+Q3A 11 10 200 QNI
+Q4A 11 11 7 QPI
+Q5A 9 11A 7 QPI 0.55
+Q6A 13 11A 7 QPI
+RBC 11 11A 60 
+Q7A 4 9 12 QPI
+Q8A 12 12 13 QPI
+Q9A 7  13 14 QNI
+Q10A 4 9 14  QPI
+Q11A 7 15 16 QNI 24
+RSCA 16 6 1.2
+RBA 14 15 50
+IBA 7 10 DC 750U
+ROA 7 10 73K
+DIA 10 7 DCC 2
+*
+Q2B 7 3 110 QNI 
+Q3B 111 110 200 QPI
+Q4B 111 111 4 QNI
+Q5B 9 111B 4 QNI 0.55
+Q6B 113 111B 4 QNI
+RBD 111 111B 60 
+Q7B 7 9 112 QNI
+Q8B 112 112 113 QNI 
+Q9B 4 113 114 QPI 
+Q10B 7 9 114  QNI 
+Q11B 4 115 116 QPI 24
+RSCB 6 116  1.2
+RBB 114 115 50
+IBB 110 4 DC 750U
+ROB 110 4 73K
+DIB 4 110 DCC 2
+*
+CM1 7 11 70PF
+CM2 111 4 70PF
+CM3 9 0 2PF
+CM4 9 18 8PF
+*
+RIB 7 11 75K
+RC 2 200 10
+R9 9 0 250K
+R10 18 8 500
+R11 8 17 100
+D1 9 6 DCC
+D2 6 9 DCC
+D3 9 7 DCC 1.4
+D4 4 9 DCC 1.4
+*
+EC 17 0 9 0 1
+*
+.MODEL DC D
+.MODEL DCC D CJO=3PF VJ=0.62 M=0.44 
+*
+.MODEL QNI NPN BF=150 TF=400P
+.MODEL QPI PNP BF=150 TF=400P
+*
+.ENDS LT1206

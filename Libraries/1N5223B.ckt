@@ -1,0 +1,11 @@
+*1N5223B MCE 4/7/98
+*Ref: Temic Semiconductor Short Form, 1996
+*2.7V 500mW Si Zener pkg:Diode0.4 1,2
+.SUBCKT 1N5223B  1 2
+*    TERMINALS:  A K
+D1 1 2  DF
+DZ 3 1  DR
+VZ 2 3  2.148
+.MODEL DF D (IS=2.51N RS=84M N=1.7 CJO=246P VJ=0.75 M=0.33 TT=50.1N)
+.MODEL DR D (IS=291U RS=2.53 N=4.6)
+.ENDS

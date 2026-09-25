@@ -1,0 +1,10 @@
+*****************************************************************
+.SUBCKT BB804 1 2 3
+D1 1 3 DBB804
+D2 2 3 DBB804
+.MODEL DBB804 D(IS=48F N=1.13 RS=.18 XTI=3 EG=1.11 CJO=80.6P M=.47 
++ VJ=.8 FC=.5 BV=20 IBV=.1U TT=137N)
+.ENDS
+
+* T=27C 
+* BB804-typical (group 2), SIEMENS HL EH PD1 KTH 25.07.94

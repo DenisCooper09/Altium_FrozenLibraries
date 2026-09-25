@@ -1,0 +1,21 @@
+*   ZETEX   ZTX955   Spice model   Last revision 28/5/92
+*
+.MODEL ZTX955  PNP IS=1.1029E-12 NF=1.0073 BF=195 IKF=4.2 VAF=70.0
++ISE=2.7169E-13 NE=1.4601 NR=1.0045 BR=30 IKR=0.55 VAR=54 ISC=3E-12
++NC=1.4 RB=0.033 RE=0.0325 RC=0.0525 CJC=226E-12 MJC=0.5325 
++VJC=0.7572 CJE=1.1E-9 TF=0.895E-9 TR=67.8E-9
+*
+*
+*                          (C)  1992 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agents.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

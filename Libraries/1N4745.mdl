@@ -1,0 +1,6 @@
+*1N4745
+*Ref: Motorola
+*16V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4745 D(IS=1.02E-13 RS=7.33 TT=5.01E-8 CJO=7.44E-11 M=0.33 
++ BV=15.89 IBV=0.0155 )
+* Origin: Mcediode.lib

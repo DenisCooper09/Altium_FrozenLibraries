@@ -1,0 +1,41 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: 5082-7666  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                  cathode-d
+*                  |  anode-d
+*                  |  |  cathode-c
+*                  |  |  |  cathode-e
+*                  |  |  |  |  anode-e
+*                  |  |  |  |  |  anode-c
+*                  |  |  |  |  |  |  anode-DP
+*                  |  |  |  |  |  |  |  cathode-DP
+*                  |  |  |  |  |  |  |  |  cathode-b
+*                  |  |  |  |  |  |  |  |  |  cathode-a
+*                  |  |  |  |  |  |  |  |  |  |  anode-a
+*                  |  |  |  |  |  |  |  |  |  |  |  anode-b
+*                  |  |  |  |  |  |  |  |  |  |  |  | 
+.SUBCKT 5082_7666  1  2  4  5  6  7  8  9  10 11 13 14
+
+DA  13 11 d5082_7666
+DB  14 10 d5082_7666
+DC   7  4 d5082_7666
+DD   2  1 d5082_7666
+DE   6  5 d5082_7666
+DDP  8  9 d5082_7666
+
+.MODEL d5082_7666 D
++ (  
++     IS = 6.04055825E-18 
++      N = 1.90788337 
++     RS = 23.52447762 
++     BV = 40
++    IBV = 100u 
++ )  
+
+.ENDS 5082_7666

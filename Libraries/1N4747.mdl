@@ -1,0 +1,6 @@
+*1N4747
+*Ref: Motorola
+*20V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4747 D(IS=1.65E-12 RS=10.9 TT=5.01E-8 CJO=6.25E-11 M=0.33 
++ BV=19.87 IBV=0.0125 )
+* Origin: Mcediode.lib

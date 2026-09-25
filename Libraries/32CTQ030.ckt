@@ -1,0 +1,14 @@
+* .: 1 = Anode; .: 2 = Cathode; .: 3 = Anode
+.SUBCKT 32ctq030 1 2 3
+D1 1 2 32ctq030
+D2 3 2 32ctq030
+
+.MODEL 32ctq030 d
++(
++IS=2.21746e-11 RS=0.01 N=0.5 EG=0.6
++XTI=2.38672 BV=30 IBV=0.00175 CJO=2.11811e-09
++VJ=1.5 M=0.499425 FC=0.5 TT=0
++KF=0 AF=1
++)
+
+.ENDS 32ctq030

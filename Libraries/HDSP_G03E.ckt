@@ -1,0 +1,54 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-G03E  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 anode-C-1
+*                 |  anode-E-1
+*                 |  |  anode-D-1
+*                 |  |  |  common-cathode-1
+*                 |  |  |  |  common-cathode-2
+*                 |  |  |  |  |  anode-D-2
+*                 |  |  |  |  |  |  anode-E-2
+*                 |  |  |  |  |  |  |  anode-C-2
+*                 |  |  |  |  |  |  |  |  anode-G-2
+*                 |  |  |  |  |  |  |  |  |  anode-A-2
+*                 |  |  |  |  |  |  |  |  |  |  anode-F-2
+*                 |  |  |  |  |  |  |  |  |  |  |  anode-B-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  anode-B-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  anode-F-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  anode-A-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  anode-G-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_G03E 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16
+
+DA1 15  4 dHDSP_G03E
+DB1 13  4 dHDSP_G03E
+DC1  1  4 dHDSP_G03E
+DD1  3  4 dHDSP_G03E
+DE1  2  4 dHDSP_G03E
+DF1 14  4 dHDSP_G03E
+DG1 16  4 dHDSP_G03E
+
+DA2 10  5 dHDSP_G03E
+DB2 12  5 dHDSP_G03E
+DC2  8  5 dHDSP_G03E
+DD2  6  5 dHDSP_G03E
+DE2  7  5 dHDSP_G03E
+DF2 11  5 dHDSP_G03E
+DG2  9  5 dHDSP_G03E
+
+.MODEL  dHDSP_G03E D
++ (  
++     IS = 6.44208414E-14 
++      N = 2.73863792 
++     RS = 11.58628790 
++     BV = 4.5
++    IBV = 100u 
++ ) 
+
+.ENDS HDSP_G03E

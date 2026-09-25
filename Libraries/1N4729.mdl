@@ -1,0 +1,6 @@
+*1N4729
+*Ref: Motorola
+*3.6V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4729 D(IS=5.81E-16 RS=0.624 TT=5.01E-8 CJO=3.19E-10 VJ=0.75 
++ M=0.33 BV=3.558 IBV=0.069 )
+* Origin: Mcediode.lib

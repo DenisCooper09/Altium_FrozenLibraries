@@ -1,0 +1,7 @@
+* Agl_HSMSC650 LED Model
+* Created by Shaun Quin 28-05-2002
+*Typ LED: Vf=1.9V Vr=5V If=20mA 
+*LED Pinout: 1=A, 2=K
+.MODEL Agl_HSMSC650 D (IS=513.85n RS=74.63 N=1.5 BV=5 IBV=100U
++ CJO=4P VJ=.75 M=.333 TT=4.32U)
+*Temperature and Noise Effects are not Modelled

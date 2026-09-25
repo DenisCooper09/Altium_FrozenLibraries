@@ -1,0 +1,23 @@
+*ZETEX  ZTX690B Spice model  Last revision 18/11/90
+*
+.MODEL ZTX690B NPN IS =2.505E-12 NF =1.0058 BF =1360 IKF=1.3 VAF=35
++ISE=.24E-12 NE =1.38 NR =1.001 BR =125 IKR=1 VAR=8 ISC=.435E-12
++NC =1.213 RB =.2 RE =.043 RC =.04 CJC=54.3E-12 MJC=.475 VJC=.765
++CJE=247E-12 TF =.851E-9 TR =15.7E-9
+*Note: This model may be inaccurate for collector currents above 2A.
+*
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4072: Dual 4-input OR
+.MODEL HCC4072 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4072 {mntymx})

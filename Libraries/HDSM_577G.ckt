@@ -1,0 +1,51 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  5-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSM-577G  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                  cathode-G
+*                  |  cathode-DP
+*                  |  |  cathode-A
+*                  |  |  |  cathode-F
+*                  |  |  |  |  common-anode-2
+*                  |  |  |  |  |  cathode-D
+*                  |  |  |  |  |  |  cathode-E
+*                  |  |  |  |  |  |  |  cathode-C
+*                  |  |  |  |  |  |  |  |  cathode-B
+*                  |  |  |  |  |  |  |  |  |  common-anode-1
+*                  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSM_577G  1  2  3  4  5  6  7  8  9  10
+
+
+DA1  10  3 dHDSM_577G
+DB1  10  9 dHDSM_577G
+DC1  10  8 dHDSM_577G
+DD1  10  6 dHDSM_577G
+DE1  10  7 dHDSM_577G
+DF1  10  4 dHDSM_577G
+DG1  10  1 dHDSM_577G
+DDP1 10  2 dHDSM_577G
+
+DA2   5  3 dHDSM_577G
+DB2   5  9 dHDSM_577G
+DC2   5  8 dHDSM_577G
+DD2   5  6 dHDSM_577G
+DE2   5  7 dHDSM_577G
+DF2   5  4 dHDSM_577G
+DG2   5  1 dHDSM_577G
+DDP2  5  2 dHDSM_577G
+
+.MODEL dHDSM_577G D
++ (  
++     IS = 6.49372423E-16 
++      N = 2.50616209 
++     RS = 10.17361010 
++     BV = 4.8
++    IBV = 100u 
++ )  
+
+.ENDS HDSM_577G

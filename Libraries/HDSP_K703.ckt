@@ -1,0 +1,58 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-K703  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 anode-e-1
+*                 |  anode-d-1
+*                 |  |  anode-c-1
+*                 |  |  |  anode-DP-1
+*                 |  |  |  |  anode-e-2
+*                 |  |  |  |  |  anode-d-2
+*                 |  |  |  |  |  |  anode-g-2
+*                 |  |  |  |  |  |  |  anode-c-2
+*                 |  |  |  |  |  |  |  |  anode-DP-2
+*                 |  |  |  |  |  |  |  |  |  anode-b-2
+*                 |  |  |  |  |  |  |  |  |  |  anode-a-2
+*                 |  |  |  |  |  |  |  |  |  |  |  anode-f-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  common-cathode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  common-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  anode-b-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  anode-a-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  anode-g-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  anode-f-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_K703 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+
+DA1  16  14  dHDSP_K703
+DB1  15  14  dHDSP_K703
+DC1   3  14  dHDSP_K703
+DD1   2  14  dHDSP_K703
+DE1   1  14  dHDSP_K703
+DF1  18  14  dHDSP_K703
+DG1  17  14  dHDSP_K703
+DDP1  4  14  dHDSP_K703
+
+DA2  11  13  dHDSP_K703
+DB2  10  13  dHDSP_K703
+DC2   8  13  dHDSP_K703
+DD2   6  13  dHDSP_K703
+DE2   5  13  dHDSP_K703
+DF2  12  13  dHDSP_K703
+DG2   7  13  dHDSP_K703
+DDP2  9  13  dHDSP_K703
+
+.MODEL dHDSP_K703 D
++ (  
++     IS = 7.07436607E-24 
++      N = 1.24380258 
++     RS = 22.12166762 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_K703

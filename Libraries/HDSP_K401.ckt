@@ -1,0 +1,58 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  6-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-K401  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 E-cathode-1
+*                 |  D-cathode-1
+*                 |  |  C-cathode-1
+*                 |  |  |  DP-cathode-1
+*                 |  |  |  |  E-cathode-1
+*                 |  |  |  |  |  D-cathode-2
+*                 |  |  |  |  |  |  G-cathode-2
+*                 |  |  |  |  |  |  |  C-cathode-2
+*                 |  |  |  |  |  |  |  |  DP-cathode-2
+*                 |  |  |  |  |  |  |  |  |  B-cathode-2
+*                 |  |  |  |  |  |  |  |  |  |  A-cathode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  F-cathode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  common-anode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  common-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  B-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  A-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  G-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  F-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_K401 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+
+DA1  14  16  dHDSP_K401
+DB1  14  15  dHDSP_K401
+DC1  14   3  dHDSP_K401
+DD1  14   2  dHDSP_K401
+DE1  14   1  dHDSP_K401
+DF1  14  18  dHDSP_K401
+DG1  14  17  dHDSP_K401
+DDP1 14   4  dHDSP_K401
+
+DA2  13  11  dHDSP_K401
+DB2  13  10  dHDSP_K401
+DC2  13   8  dHDSP_K401
+DD2  13   6  dHDSP_K401
+DE2  13   5  dHDSP_K401
+DF2  13  12  dHDSP_K401
+DG2  13   7  dHDSP_K401
+DDP2 13   9  dHDSP_K401
+
+.MODEL dHDSP_K401 D
++ (  
++     IS = 3.78006861E-14 
++      N = 2.44553183 
++     RS = 19.51958310 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_K401

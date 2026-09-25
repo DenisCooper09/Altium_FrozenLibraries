@@ -1,0 +1,5 @@
+*****************************************************************
+* BAT68 Diode Model
+.MODEL BAT68 D(IS=8N RS=2 N=1.05 XTI=1.8 EG=.68
++ CJO=.77P M=.075 VJ=.1 FC=.5 BV=8 IBV=1U TT=25P)
+* 23.12.1993 SIEMENS PD1 KURTH

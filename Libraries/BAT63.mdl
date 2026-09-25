@@ -1,0 +1,5 @@
+*****************************************************************
+* BAT63 Diode Model
+.MODEL BAT63 D(IS=656N RS=1.1 N=1.041 XTI=2.8 EG=1.1
++ CJO=.4814P M=.10 VJ=1.249 FC=.5 BV=4 IBV=5U TT=25P)
+* 20.03.1997 SIEMENS PD1 Moschovis

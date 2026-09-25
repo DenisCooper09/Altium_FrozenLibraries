@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  3-May-2004 
+*  
+* Manufacturer: Renesas  
+* Component Name: HDSP-7503  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 common-cathode
+*                 |  anode-f
+*                 |  |  anode-g
+*                 |  |  |  anode-e
+*                 |  |  |  |  anode-d
+*                 |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_7503 1  2  3  4  5  6  7  8  9  10
+
+DA1  10  1  dHDSP_7503
+DB1   9  1  dHDSP_7503
+DC1   8  1  dHDSP_7503
+DD1   5  1  dHDSP_7503
+DE1   4  1  dHDSP_7503
+DF1   2  1  dHDSP_7503
+DG1   3  1  dHDSP_7503
+DDP1  7  1  dHDSP_7503
+
+DA2  10  6  dHDSP_7503
+DB2   9  6  dHDSP_7503
+DC2   8  6  dHDSP_7503
+DD2   5  6  dHDSP_7503
+DE2   4  6  dHDSP_7503
+DF2   2  6  dHDSP_7503
+DG2   3  6  dHDSP_7503
+DDP2  7  6  dHDSP_7503
+
+.MODEL dHDSP_7503 D
++ (  
++     IS = 1.31238168E-27 
++      N = 1.06196807 
++     RS = 24.48189481 
++     BV = 25
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_7503

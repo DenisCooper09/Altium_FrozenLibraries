@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-311A  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-A 
+*                 |  cathode-F 
+*                 |  |  common-anode 
+*                 |  |  |  cathode-E 
+*                 |  |  |  |  cathode-D 
+*                 |  |  |  |  |  cathode-DP 
+*                 |  |  |  |  |  |  cathode-C 
+*                 |  |  |  |  |  |  |  cathode-G 
+*                 |  |  |  |  |  |  |  |  cathode-B 
+*                 |  |  |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_311A 1  2  3  7  8  9  10 11 13 14
+
+DA1   3  1 dHDSP_311A
+DB1   3 13 dHDSP_311A
+DC1   3 10 dHDSP_311A
+DD1   3  8 dHDSP_311A
+DE1   3  7 dHDSP_311A
+DF1   3  2 dHDSP_311A
+DG1   3 11 dHDSP_311A
+DDP1  3  9 dHDSP_311A
+
+DA2  14  1 dHDSP_311A
+DB2  14 13 dHDSP_311A
+DC2  14 10 dHDSP_311A
+DD2  14  8 dHDSP_311A
+DE2  14  7 dHDSP_311A
+DF2  14  2 dHDSP_311A
+DG2  14 11 dHDSP_311A
+DDP2 14  9 dHDSP_311A
+
+.MODEL dHDSP_311A D
++ (  
++    IS  = 4.92088043E-22 
++     N  = 1.51994259 
++    RS  = 3.79496255
++    BV  = 4.5
++   IBV  = 100u 
++ )  
+
+.ENDS HDSP_311A

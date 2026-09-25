@@ -1,0 +1,23 @@
+*ZETEX  FZT692B Spice model    Last revision  31/10/90
+*
+.MODEL FZT692B NPN IS =1.87E-12 NF =.9983 BF =1400 IKF=0.73 VAF=29
++ISE=.21E-12 NE =1.378 NR =.997 BR =68 IKR=.55 VAR=12 ISC=.44E-12
++NC =1.14 RB =.2 RE =.05 RC =.048 CJC=42.5E-12 MJC=.475 VJC=.625
++CJE=233E-12 TF =.77E-9 TR =39E-9
+*Note: This model may be inaccurate for collector currents above 1.5A.
+*
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

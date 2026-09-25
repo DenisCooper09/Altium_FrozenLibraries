@@ -1,0 +1,22 @@
+*ZETEX   ZTX788B  Spice model   Last revision 2/1/92
+*
+.MODEL ZTX788B PNP IS=1.252E-12 NF=1.0119 BF=770 IKF=2.6 VAF=11
++ISE=1.3185E-13 NE=1.4832 NR=1.0047 BR=350 IKR=0.32 VAR=10.5
++ISC=5.2648E-14 NC=1.186 RB=0.053 RE=0.031 RC=0.044 CJC=137E-12
++MJC=0.34 VJC=0.275 CJE=280E-12 TF=0.75E-9 TR=2.3E-9
+*
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

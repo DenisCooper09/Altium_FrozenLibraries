@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-E100  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 cathode-a
+*                 |  cathode-f
+*                 |  |  common-anode
+*                 |  |  |  cathode-DP
+*                 |  |  |  |  cathode-e
+*                 |  |  |  |  |  cathode-d
+*                 |  |  |  |  |  |  cathode-c
+*                 |  |  |  |  |  |  |  cathode-g
+*                 |  |  |  |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_E100 1  2  3  6  7  8  10 11 13 14
+
+DA1   3   1 dHDSP_E100
+DB1   3  13 dHDSP_E100
+DC1   3  10 dHDSP_E100
+DD1   3   8 dHDSP_E100
+DE1   3   7 dHDSP_E100
+DF1   3   2 dHDSP_E100
+DG1   3  11 dHDSP_E100
+DDP1  3   6 dHDSP_E100
+
+DA2  14   1 dHDSP_E100
+DB2  14  13 dHDSP_E100
+DC2  14  10 dHDSP_E100
+DD2  14   8 dHDSP_E100
+DE2  14   7 dHDSP_E100
+DF2  14   2 dHDSP_E100
+DG2  14  11 dHDSP_E100
+DDP2 14   6 dHDSP_E100
+
+.MODEL dHDSP_E100 D
++ (  
++    IS  = 2.08276754E-16 
++     N  = 2.17799178 
++    RS  = 0.50892350
++    BV  = 14.25
++   IBV  = 100u
++ )
+
+.ENDS HDSP_E100

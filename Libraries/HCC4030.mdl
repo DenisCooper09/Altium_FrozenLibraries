@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4030: CMOS Qaud 2-input XOR
+.MODEL HCC4030 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4030 {mntymx})

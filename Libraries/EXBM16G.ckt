@@ -1,0 +1,20 @@
+*
+* Voltage Divider
+*
+*Res1 = R, Res2 = 2R
+*ResPack_12
+*
+.SUBCKT EXBM16G 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 PARAMS: Res1=160 Res2=240
+R1 2 16 {Res1}
+R2 2 15 {Res2}
+R3 3 16 {Res1}
+R4 3 14 {Res2}
+R5 4 16 {Res1}
+R6 4 13 {Res2}
+R7 5 16 {Res1}
+R8 5 12 {Res2}
+R9 6 16 {Res1}
+R10 6 11 {Res2}
+R11 7 16 {Res1}
+R12 7 10 {Res2}
+.ENDS EXBM16G

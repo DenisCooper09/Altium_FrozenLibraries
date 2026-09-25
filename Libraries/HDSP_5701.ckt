@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  6-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-5701  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-e
+*                 |  cathode-d
+*                 |  |  common-anode
+*                 |  |  |  cathode-c
+*                 |  |  |  |  cathode-DP
+*                 |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  cathode-f
+*                 |  |  |  |  |  |  |  |  |  cathode-g
+*                 |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_5701 1  2  3  4  5  6  7  8  9  10
+
+DA1  3  7 dHDSP_5701
+DB1  3  6 dHDSP_5701
+DC1  3  4 dHDSP_5701
+DD1  3  2 dHDSP_5701
+DE1  3  1 dHDSP_5701
+DF1  3  9 dHDSP_5701
+DG1  3 10 dHDSP_5701
+DDP1 3  5 dHDSP_5701
+
+DA2  8  7 dHDSP_5701
+DB2  8  6 dHDSP_5701
+DC2  8  4 dHDSP_5701
+DD2  8  2 dHDSP_5701
+DE2  8  1 dHDSP_5701
+DF2  8  9 dHDSP_5701
+DG2  8 10 dHDSP_5701
+DDP2 8  5 dHDSP_5701
+
+.MODEL dHDSP_5701 D
++ (  
++     IS = 1.82902372E-24 
++      N = 1.34581490 
++     RS = 23.36447097 
++     BV = 40 
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_5701

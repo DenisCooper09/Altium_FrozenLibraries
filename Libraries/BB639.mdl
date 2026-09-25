@@ -1,0 +1,9 @@
+*****************************************************************
+* BB639 Diode Model
+.MODEL BB639 D(IS=4E-15 N=1.035 RS=.12 XTI=3 EG=1.11 CJO=55.88E-12
++ M=1.286 VJ=2.922 FC=.5 BV=32 IBV=100E-9 TT=160E-9)
+* hyperabrupt Diode, M=f(VR)! C-curve approximated between VR=1..28V
+* VR range 0..6V: CJO=55.9pF VJ=2.08 M=0.94
+* VR range 0..4V: CJO=55.9pF VJ=1.71 M=0.81
+* 07.09.95 SIEMENS PD1
+* Model includes Case capacitance Cc=0.11pF

@@ -1,0 +1,5 @@
+*1N5348B
+*Ref: Diodes Incorporated Catalog, 1994
+*11V 5W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N5348B D(IS=1.91E-15 RS=2.29 TT=5.01E-8 CJO=4.47E-10 M=0.33 
++ BV=10.71 IBV=0.125 )

@@ -1,0 +1,5 @@
+*1N5359B
+*Ref: Diodes Incorporated Catalog, 1994
+*24V 5W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N5359B D(IS=5.09E-14 RS=3.14 TT=5.01E-8 CJO=2.13E-10 M=0.33 
++ BV=23.85 IBV=0.05 )

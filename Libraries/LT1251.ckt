@@ -1,0 +1,149 @@
+*dvw 30/1/2001: Replaced SPICE incompatible controlled sources and modified
+* alphanumeric node names for compatibility with XSpice.
+*//////////////////////////////////////////////////////////////////////
+* LT1251 40MHz Video Fader and DC Gain Controlled Amplifier          //
+*//////////////////////////////////////////////////////////////////////
+*
+* LT1251 VIDEO FADER 
+* 
+* CONNECTIONS: AS PER DATASHEET PINOUT
+*                  1=FIRST NON-INVERTING INPUT
+*                  |  2=FIRST INVERTING INPUT
+*                  |  |  3=CONTROL VOLTAGE INPUT
+*                  |  |  |  4=CONTROL CURRENT INPUT
+*                  |  |  |  |  5=CONTROL RESISTOR, RC
+*                  |  |  |  |  |  6=NULL INPUT
+*                  |  |  |  |  |  |  7=NEGATIVE SUPPLY
+*                  |  |  |  |  |  |  |  8=OUTPUT
+*                  |  |  |  |  |  |  |  |  9=POSITIVE SUPPLY
+*                  |  |  |  |  |  |  |  |  |  10=FULL SCALE RESISTOR, RFS
+*                  |  |  |  |  |  |  |  |  |  |  11=FULL SCALE CURRENT INPUT
+*                  |  |  |  |  |  |  |  |  |  |  |  12=FULL SCALE VOLTAGE INPUT
+*                  |  |  |  |  |  |  |  |  |  |  |  |  13=SECOND INVERTING INPUT
+*                  |  |  |  |  |  |  |  |  |  |  |  |  |  14=SECOND NON-INVERTING INPUT
+*                  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+.SUBCKT LT1251     1  2  3  4  5  6  7  8  9  10 11 12 13 14
+*
+*FIRST INPUT STAGE
+IB1    1    0   500NA
+RI1    1    0   17MEG
+C1     1    0   1.5PF
+*******
+*E1    2A    0   VALUE={LIMIT (V(1),V(8N)+0.4,V(8P)-0.4)+V(EN)/30}
+BA1a   801a   0   V= ( V(800) + 0.4 )
+BA1b   800a   0   V= ( V(801) - 0.4 )
+A1     1     800a  801a 200 E1MOD
+.MODEL E1MOD climit (in_offset=0 gain=1 upper_delta=0 lower_delta=0 limit_range=1e-6 fraction=FALSE)
+BE1    2A    0   V=( V(200) + V(1000)/30 )
+*******
+VOS1  2A   2B   2.5MV 
+R1    2B    2   27
+C2     2    0   1PF
+*
+*SECOND INPUT STAGE
+IB2   14    0   450NA
+RI2   14    0   17MEG
+C14   14    0   1.5PF
+******
+*E2   13A    0   VALUE={LIMIT (V(14),V(8N)+0.4,V(801)-0.4)+V(EN)/30}
+A2 1 800a 801a 1300 E1MOD
+.MODEL E1MOD climit (in_offset=0 gain=1 upper_delta=0 lower_delta=0 limit_range=1e-6 fraction=FALSE)
+BE2    13A   0   V=( V(1300) + V(1000)/30 )
+******
+VOS2 13A  13B   1.5MV
+R2   13B   13   27
+C13   13    0   1PF
+*
+*CONTROL AMP
+IBC    3    0   -300NA
+RIC    3    0   100MEG
+C3     3    0   1PF
+R3     3   3A   1600
+CBWC  3A    0   10PF
+EC    3B    0   3A   0   1.0
+VOSC  3B    4   5MV
+C4     4    0   1PF
+RC     4    5   5K
+C5     5    0   1PF
+*
+*FULL SCALE AMP
+IBFS  12    0   -300NA
+RIFS  12    0   100MEG
+C12   12    0   1PF
+R12   12  12A   1600
+CBWFS 12A   0   10PF
+EFS   12B   0   12A   0   1.0
+VOSFS 12B  11   -5MV
+C11   11    0   1PF
+RFS   11   10   5K
+C10   10    0   1PF
+*
+*GENERATING K
+******
+*EK K 0 TABLE {I(VOSC)/I(VOSFS)} = (-100,0)    (0.04,0)   (0.1,0.11)
+*+                                 (0.9,0.907) (0.95,1.0) (100,1.0)
+BEKin EKin 0 V=I(VOSC)/I(VOSFS)
+A3 EKin 300 EKMOD
+.MODEL EKMOD pwl( x_array=[-100 0.04 0.1  0.9   0.95 100]
++                 y_array=[ 0   0    0.11 0.907 1    1  ]
++                 input_domain=1e-6
++                 fraction=FALSE )
+******
+RDUMMY    300     0  1MEG
+RNOISE1    1000    0  200K
+RNOISE2	   1000    0  200K
+*GENERATES 40.7NV/RTHZ
+*
+*NULL CIRCUIT
+******
+*GNULL  7 6A  VALUE={I(VOSFS)}
+BGNULL 7 6A I=I(VOSFS)
+******
+RN1   6A  7  200
+VNULL 6A 6B  0.0V
+RN2   6B  6  400
+C6     6  7  1PF
+*
+*OUTPUT STAGE
+******
+*E6   8A    0
+*+VALUE={1.8MEG*(I(VOS1)*V(K)+I(VOS2)*(1-V(K))-I(VNULL)+0.10UA+0.0007*V(EN))}
+BE6 8A 0 V=(1.8e6*(I(VOS1)*V(300)+I(VOS2)*(1-V(300))-I(VNULL)+0.10e-6+0.0007*V(1000)))
+******
+RG   8A   8B   1.8MEG
+CG   8B    0   3.4PF
+E8   8C    0   8B  0  1.0
+V8   8C   8D   0.0V
+R8   8D    8   11
+*
+*OUTPUT SWING AND CURRENT LIMIT
+DP  8B 801 D1
+VDP 801 9 -1.4V
+DN  800 8B D1
+VDN 800 7  1.4V
+.MODEL D1 D
+******
+*GCL 8B 0 TABLE {I(V8)}=(-1,-1) (-0.04,0) (0.04,0) (1,1)
+BA4 8Ba 0 V=I(V8)
+A4 8Ba 8000 GCLMOD
+.MODEL GCLMOD pwl(x_array=[-1 -0.04 0.04 1]
++                 y_array=[-1  0    0    1]
++                 input_domain=1e-6
++                 fraction=FALSE )
+BGCL 8B 0 I=V(8000)
+******
+*
+*SUPPLY CURRENT
+******
+*GQ  9  7 VALUE={1MA+24*I(VOSFS)+(V(7)-V(9))/20K}
+BGQ 9 7 I=1e-6 + 24 * I(VOSFS) + (V(7) - V(9)) / 20e3
+******
+*GCC 9  0 TABLE {I(V8)}=(-1,0) (0,0) (1,1)
+BGCC 9 0 I=uramp(I(V8))
+******
+*GEE 7  0 TABLE {I(V8)}=(-1,-1) (0,0) (1,0)
+BGEE 7 0 I=-uramp(-I(V8))
+******
+*
+.ENDS LT1251
+*

@@ -1,0 +1,41 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-F408  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 common-cathode 
+*                 |  anode-PLUS 
+*                 |  |  anode-MINUS 
+*                 |  |  |  common-cathode 
+*                 |  |  |  |  anode-DP 
+*                 |  |  |  |  |  anode-c 
+*                 |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |
+.SUBCKT HDSP_F408 1  2  3  6  7  8  9
+
+DPLUS1  2 1 dHDSP_F408
+DMINUS1 3 1 dHDSP_F408
+DB1     9 1 dHDSP_F408
+DC1     8 1 dHDSP_F408
+DDP1    7 1 dHDSP_F408
+
+DPLUS2  2 6 dHDSP_F408
+DMINUS2 3 6 dHDSP_F408
+DB2     9 6 dHDSP_F408
+DC2     8 6 dHDSP_F408
+DDP2    7 6 dHDSP_F408
+
+.MODEL dHDSP_F408 D
++ (  
++     IS = 3.04174763E-24 
++      N = 1.23122391 
++     RS = 24.19303791 
++     BV = 30
++    IBV = 100u 
++ )   
+
+.ENDS HDSP_F408

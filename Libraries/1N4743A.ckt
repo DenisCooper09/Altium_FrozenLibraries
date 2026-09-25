@@ -1,0 +1,13 @@
+*1N4743A MCE 5/30/96
+*Ref: National Discrete Products Databook, 1996
+*13V 1W Si pkg:DIODE0.4 1,2
+.SUBCKT 1N4743A  1 2
+*    TERMINALS:  A K
+D1 1 2  DF
+DZ 3 1  DR
+VZ 2 3  12.44
+.MODEL DF D (IS=5.02N RS=42M N=1.7 CJO=88.1P VJ=1 M=0.33 TT=50.1N)
+.MODEL DR D (IS=443U RS=3 N=5.1)
+.ENDS 
+
+

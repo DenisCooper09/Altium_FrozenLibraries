@@ -1,0 +1,7 @@
+*16F40 MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*400V 16000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 16F40 D (IS=22.7N RS=2.62M N=1.7 BV=400 IBV=352U
++ CJO=659P VJ=0.75 M=0.333 TT=4.32U)
+
+

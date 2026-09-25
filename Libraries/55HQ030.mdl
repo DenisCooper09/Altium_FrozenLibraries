@@ -1,0 +1,7 @@
+*55HQ030 MCE 3/27/98
+*Ref: IR Power Semiconductors Product Digest '94
+*MCE 30V 60A 3us pkg:Diode0.7 1,2
+.MODEL 55HQ030 D (IS=85.3N RS=700U N=1.7 BV=30 IBV=0.28
++ CJO=2.47N VJ=0.75 M=0.333 TT=4.32U EG=.69 XTI=2)
+
+

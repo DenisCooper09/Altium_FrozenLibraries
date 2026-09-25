@@ -1,0 +1,6 @@
+*BF256B 3/9/98
+*Ref: Motorola Small-Signal Databook, Rev. 5 DL126/D
+*30V 0.1A 15.8ohm TO-92B 1,3,2
+.MODEL BF256B NJF (VTO=-4 BETA=5M LAMBDA=1M RD=2.21
++ RS=1.99 IS=26.3F PB=1 FC=.5 CGS=49.8P CGD=2.52P)
+* Origin: Mcejfets.lib

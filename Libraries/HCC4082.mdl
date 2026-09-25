@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4082: 4-input AND
+.MODEL HCC4082 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4082 {mntymx})

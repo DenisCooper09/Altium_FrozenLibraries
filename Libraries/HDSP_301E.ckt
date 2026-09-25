@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-301E  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 cathode-G
+*                 |  cathode-F
+*                 |  |  comon-anode
+*                 |  |  |  cathode-E
+*                 |  |  |  |  cathode-D
+*                 |  |  |  |  |  cathode-DP
+*                 |  |  |  |  |  |  cathode-C
+*                 |  |  |  |  |  |  |  comon-anode
+*                 |  |  |  |  |  |  |  |  cathode-B
+*                 |  |  |  |  |  |  |  |  |  cathode-A
+*                 |  |  |  |  |  |  |  |  |  |  
+.SUBCKT HDSP_301E 1  2  3  4  5  6  7  8  9  10
+
+DA1  3  10 dHDSP_301E
+DB1  3   9 dHDSP_301E
+DC1  3   7 dHDSP_301E
+DD1  3   5 dHDSP_301E
+DE1  3   4 dHDSP_301E
+DF1  3   2 dHDSP_301E
+DG1  3   1 dHDSP_301E
+DDP1 3   6 dHDSP_301E
+
+DA2  8  10 dHDSP_301E
+DB2  8   9 dHDSP_301E
+DC2  8   7 dHDSP_301E
+DD2  8   5 dHDSP_301E
+DE2  8   4 dHDSP_301E
+DF2  8   2 dHDSP_301E
+DG2  8   1 dHDSP_301E
+DDP2 8   6 dHDSP_301E
+
+.MODEL dHDSP_301E D
++ (  
++     IS = 1.37607512E-24 
++      N = 1.38335616 
++     RS = 6.06238569 
++     BV = 4.8 
++    IBV = 100u 
++ ) 
+
+.ENDS HDSP_301E

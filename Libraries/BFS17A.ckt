@@ -1,0 +1,60 @@
+* BFS17A SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : June 1995
+*
+* PACKAGE : SOT23 DIE MODEL : BFW92A
+* 1: COLLECTOR; 2: BASE; 3: EMITTER;
+.SUBCKT BFS17A 1 2 3
+Q1 6 5 7 7 BFW92A
+* SOT23 parasitic model
+             Lb  4 5 .4n
+             Le  7 8 .83n
+             L1  2 4 .35n
+             L2  1 6 .17n
+             L3  3 8 .35n
+             Ccb 4 6 71f
+             Cbe 4 8 2f
+             Cce 6 8 71f
+*
+* PHILIPS SEMICONDUCTORS                   Version:    1.0
+* Filename:   BFW92A.prm                   Date: June 1995
+*
+.MODEL  BFW92A   NPN
++(
++            IS   = 2.429E-16
++            BF   = 93.26
++            NF   = 0.9912
++            VAF  = 39.71
++            IKF  = 0.2681
++            ISE  = 2.408E-15
++            NE   = 1.463
++            BR   = 4.816
++            NR   = 0.988
++            VAR  = 7.422
++            IKR  = 10
++            ISC  = 4.039E-15
++            NC   = 1.376
++            RB   = 20.94
++            IRB  = 0
++            RBM  = 12.27
++            RE   = 0.3698
++            RC   = 1.105
++            CJE  = 1.302E-12
++            VJE  = 0.6
++            MJE  = 0.2995
++            CJC  = 8.263E-13
++            VJC  = 0.5035
++            MJC  = 0.2814
++            CJS  = 1.5E-13
++            VJS  = 0.75
++            MJS  = 0
++            XCJC = 0.0983
++            TR   = 1E-09
++            TF   = 3.117E-11
++            XTF  = 296.7
++            VTF  = 6
++            ITF  = 0.8048
++            PTF  = 0
++            FC   = 0.8067
++)
+.ENDS

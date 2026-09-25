@@ -1,0 +1,84 @@
+* EL4094 Macromodel
+* Revision A, July 1993
+*
+* This macromodel is offered to allow simulation of general EL4094
+* behavior. We have included these characteristics:
+* 
+*  Small Signal Frequency Response  
+*  Output Loading Effects
+*  Input Impedance
+*  Off Channel Feedthrough
+*  Output Impedance over Frequency
+*  Signal Path DC Distortion 
+*  VGAIN IV Characteristics
+*  VGAIN overdrive Recovery Delay
+*  100% Gain Error
+*
+* The Macromodel does not behave identically as the circuit in 
+* these areas: Temperature effects, Signal overload effects,
+* Signal and /VG operating range, current limit, supply voltage
+* effects, slew rate limitations, noise, and power supply inter-
+* action. 
+*
+* The Macromodel's netlist is based on PSPICE simulator, copy
+* written by Microsim Corporation. Other simulators may not 
+* support the POLY function which is used to implement multi-
+* plication as well as square law nonlinearities.
+*
+* Connections:         vinb 
+*                       |   vout__
+*                       |   |   vg      
+*                       |   |   |   vg    
+*                       |   |   |   |   vina 
+*                       |   |   |   |   |
+.subckt EL4094          1   4   6   7   8 
+*
+rol    810 0 290K                     
+ccomp  810 0 3.5pF 
+g1      10 0 810 0 -10
+rout    10 0 0.1
+lout    10 4 350.2nH
+rlout   10 4 80
+r1      10 910 10
+c1     910 911 300pF
+r2     911  0 90
+*  
+* Input Channel A
+*
+rina   22 10 16K
+ra     11  0  1K
+cfeeda 23  8 130pF
+rfeeda 8  22 1.0
+e1a   23  22 1 0 1.0
+rspice3 23 22 1e12
+g1a  11 0 poly(1) (22,910) 0.0 0.001 -3e-6
+g2a 810 0 poly(2) (11,0) (13,0) 0.0 0.0 0.0 0.0 0.001
+*
+* Input Channel B 
+*
+rinb   25 10 16K
+rb     20  0  1K
+cfeedb 24  1 130pF
+rfeedb  1 25 1.0
+elb    24 25 8 0 1.0
+rspice4 24 25 1e12
+g1b  20 0 poly(1) (25,910) 0.0 0.001 -3e-6
+g2b 810 0 poly(2) (20,0) (19,0) 0.0 0.0 0.0 0.0 0.001
+*   
+* Gain Control
+rspice1 13 0 1e12
+rspice2 18 0 1e12
+r10     14 0 1e7
+c10     14 0 8e-16
+d1      14 15 dclamp
+d2      16 14 dclamp
+.model dclamp d(tt=200nS)
+v1     15  0 4999.3
+v2      0 16 4999.3
+v3     13 17 0.5
+v4     19 18 0.5
+g10    14  0  7  6 -0.001
+g11     7  6 14  0 -2e-8
+e10    17  0 14  0  1e-4 
+e11    18  0 14  0 -1e-4
+.ends

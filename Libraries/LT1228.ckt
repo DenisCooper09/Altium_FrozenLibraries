@@ -1,0 +1,81 @@
+*//////////////////////////////////////////////////////////////////
+* LT1228  100MHz Current Feedback Amplifier with DC Gain Control //
+*//////////////////////////////////////////////////////////////////
+*
+* connections:     IOUT OTA/+IN CFA
+*                  |   -IN OTA
+*                  |   |   +IN OTA
+*                  |   |   |   V-
+*                  |   |   |   |   ISET CFA
+*                  |   |   |   |   |   OUTPUT CFA
+*                  |   |   |   |   |   |   V+
+*                  |   |   |   |   |   |   |   -IN CFA
+*                  |   |   |   |   |   |   |   |
+*                  |   |   |   |   |   |   |   |
+.SUBCKT LT1228     1   2   3   4   5   6   7   8
+*
+* THE OTA
+Q11 5 5 21 QN 10
+Q12 21 21 22 QN 10
+VC 22 4 DC 0
+F1 26 4 VC 0.375
+F2 27 4 VC 0.25
+F3 28 4 VC 0.375
+F4 7 23 VC 1.6
+F5 7 24 VC 1.6
+VB 7 25 DC 1.4
+CE1 23 7 11PF
+CE2 24 7 11PF
+RE13 23 32 120
+RE14 24 33 120
+Q13 29 25 32 QPI
+Q14 1 25 33 QPI
+Q15 23 3 28 QNI 9
+Q16 23 3 27 QNI
+Q17 23 3 26 QNI
+Q18 24 2 26 QNI 9
+Q19 24 2 27 QNI
+Q20 24 2 28 QNI
+VM 29 4 DC 1.4
+FM 1 4 VM 1
+DM 29 1 DC
+C1 1 7 5PF
+*
+* THE CFA
+Q2A 4 1 10 QP 0.5
+Q3A 11 10 200 QN
+Q4A 11 11 7 QP
+Q5A 9 11 7 QP
+Q6A 12 11 7 QP
+Q7A 4 9 12 QP
+Q8A 7 12 13 QN 10
+RSCA 13 6 10
+IBA 7 10 DC 300U
+*
+Q2B 7 1 110 QN 0.5
+Q3B 111 110 200 QP
+Q4B 111 111 4 QN
+*
+Q5B 9 111 4 QN
+Q6B 112 111 4 QN
+Q7B 7 9 112 QN
+Q8B 4 112 113 QP 10
+RSCB 6 113  10
+IBB 110 4 DC 300U
+*
+RC 8 200 20
+R9 9 0 201600
+D1 9 6 DC
+D2 6 9 DC
+*
+.MODEL DC D
+.MODEL QNI NPN
+.MODEL QN NPN (IS=168E-18 BF=150 ISC=40E-18 NC=1 RB=250 RE=8 RC=100
++CJE=0.37P VJE=0.65 MJE=0.33 FC=0.7 CJC=0.8P VJC=0.62 MJC=0.44
++TF=300P
+.MODEL QPI PNP
+.MODEL QP PNP (IS=230E-18 BF=150 ISC=113E-18 NC=1 RB=250 RE=8 RC=100
++CJE=0.34P VJE=0.75 MJE=0.40 FC=0.7 CJC=0.8P VJC=0.5 MJC=0.36
++TF=300P
+*
+.ENDS LT1228

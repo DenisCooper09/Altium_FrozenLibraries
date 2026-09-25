@@ -1,0 +1,3 @@
+*Texas Instruments
+*SN74F04: FAST Hex Inverter
+.MODEL SN74F04 xsimcode(file="{MODEL_PATH}FAST.SCB" func=f04 {mntymx})

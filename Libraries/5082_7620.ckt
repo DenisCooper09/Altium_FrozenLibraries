@@ -1,0 +1,52 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: 5082-7620  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-a
+*                 |  cathode-f
+*                 |  |  common-anode
+*                 |  |  |  cathode-DP
+*                 |  |  |  |  cathode-e
+*                 |  |  |  |  |  cathode-d
+*                 |  |  |  |  |  |  cathode-c
+*                 |  |  |  |  |  |  |  cathode-g
+*                 |  |  |  |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  |  |
+*                 |  |  |  |  |  |  |  |  |  | 
+.SUBCKT 5082_7620 1  2  3  6  7  8  10 11 13 14
+
+DA1   3  1 d5082_7620
+DB1   3 13 d5082_7620
+DC1   3 10 d5082_7620
+DD1   3  8 d5082_7620
+DE1   3  7 d5082_7620
+DF1   3  2 d5082_7620
+DG1   3 11 d5082_7620
+DDP1  3  6 d5082_7620
+
+DA2  14  1 d5082_7620
+DB2  14 13 d5082_7620
+DC2  14 10 d5082_7620
+DD2  14  8 d5082_7620
+DE2  14  7 d5082_7620
+DF2  14  2 d5082_7620
+DG2  14 11 d5082_7620
+DDP2 14  6 d5082_7620
+
+
+.MODEL d5082_7620 D
++ (  
++     IS = 6.04055825E-18 
++      N = 1.90788337 
++     RS = 23.52447762 
++     BV = 40
++    IBV = 100u 
++ )  
+
+.ENDS 5082_7620

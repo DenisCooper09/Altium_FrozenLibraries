@@ -1,0 +1,53 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-331Y  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 cathode-A
+*                 |  cathode-F
+*                 |  |  common anode
+*                 |  |  |  cathode-L.DP
+*                 |  |  |  |  cathode-E
+*                 |  |  |  |  |  cathode-D
+*                 |  |  |  |  |  |  cathode-R.DP
+*                 |  |  |  |  |  |  |  cathode-C
+*                 |  |  |  |  |  |  |  |  cathode-G
+*                 |  |  |  |  |  |  |  |  |  cathode-B
+*                 |  |  |  |  |  |  |  |  |  |  common anode
+*                 |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_331Y 1  2  3  6  7  8  9  10 11 13 14
+
+DA1  3  1 dHDSP_331Y
+DB1  3 13 dHDSP_331Y
+DC1  3 10 dHDSP_331Y
+DD1  3  8 dHDSP_331Y
+DE1  3  7 dHDSP_331Y
+DF1  3  2 dHDSP_331Y
+DG1  3 11 dHDSP_331Y
+DL1  3  6 dHDSP_331Y
+DR1  3  9 dHDSP_331Y
+
+DA2 14  1 dHDSP_331Y
+DB2 14 13 dHDSP_331Y
+DC2 14 10 dHDSP_331Y
+DD2 14  8 dHDSP_331Y
+DE2 14  7 dHDSP_331Y
+DF2 14  2 dHDSP_331Y
+DG2 14 11 dHDSP_331Y
+DL2 14  6 dHDSP_331Y
+DR2 14  9 dHDSP_331Y
+
+.MODEL dHDSP_331Y D
++ (  
++     IS = 1.56127529E-27 
++      N = 1.25814710 
++     RS = 11.53505957 
++     BV = 4.8 
++    IBV = 100u 
++ )   
+
+.ENDS HDSP_331Y

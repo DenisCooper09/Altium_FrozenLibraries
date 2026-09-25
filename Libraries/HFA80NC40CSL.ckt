@@ -1,0 +1,14 @@
+* .: 1 = Anode .: 2 = Cathode .: 3 = Anode
+.SUBCKT hfa80nc40csl 1 2 3
+D1 1 2 hfa80nc40csl
+D2 3 2 hfa80nc40csl
+
+.MODEL hfa80nc40csl d
++(
++IS=2.37825e-07 RS=0.01 N=2 EG=1.04775
++XTI=2.97132 BV=400 IBV=0.0001 CJO=1.50848e-09
++VJ=0.4 M=0.453789 FC=0.5 TT=1e-09
++KF=0 AF=1
++)
+
+.ENDS hfa80nc40csl

@@ -1,0 +1,54 @@
+* BFG25A_X SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT143X DIE MODEL : BFT25A
+* 1: COLLECTOR; 2: BASE; 3: EMITTER;
+.SUBCKT BFG25A_X 1 2 3
+Q1 6 5 7 7 BFT25A
+* SOT143X parasitic model
+               Lb  4 5 .95n
+               Le  7 8 .4n
+               L1  2 4 .12n
+               L2  1 6 .21n
+               L3  3 8 .06n
+              Ccb  4 6 17f
+              Cbe  4 8 84f
+*
+* PHILIPS SEMICONDUCTORS                                     Version:   1.0
+* Filename:   BFT25A.PRM                                     Date: Feb 1992
+*
+.MODEL  BFT25A   NPN
++(
++              IS = 1.37749E-017
++              BF = 8.56539E+001
++              NF = 9.79900E-001
++             VAF = 5.08049E+001
++             IKF = 1.00000E+001
++             ISE = 2.19977E-015
++              NE = 1.85715E+000
++              BR = 1.69751E+001
++              NR = 9.85511E-001
++             VAR = 2.49144E+000
++             IKR = 1.88014E-001
++             ISC = 2.05160E-016
++              NC = 1.10731E+000
++              RB = 8.00000E+001
++             IRB = 1.00000E-006
++             RBM = 8.00000E+001
++              RE = 7.91100E+000
++              RC = 5.30000E+000
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 2.23030E-013
++             VJE = 6.69700E-001
++             MJE = 5.96638E-002
++              TF = 5.11209E-012
++             XTF = 7.90917E+000
++             VTF = 1.33880E+000
++             ITF = 5.66263E-003
++             PTF = 1.53714E+001
++             CJC = 2.29018E-013
++             VJC = 3.94786E-001
++)
+.ENDS

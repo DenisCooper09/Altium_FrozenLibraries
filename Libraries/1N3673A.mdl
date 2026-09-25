@@ -1,0 +1,7 @@
+*1N3673A MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*1000V 12000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 1N3673A D (IS=17.1N RS=3.5M N=1.7 BV=1E+03 IBV=662U
++ CJO=495P VJ=0.75 M=0.333 TT=4.32U)
+
+

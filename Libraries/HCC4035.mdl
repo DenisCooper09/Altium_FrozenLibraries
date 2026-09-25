@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4035: 4-bit Parallel-In/Out Shift Register
+.MODEL HCC4035 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4035 {mntymx})

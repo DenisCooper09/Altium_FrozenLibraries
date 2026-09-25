@@ -1,0 +1,70 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-816G  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 anode-a
+*                 |  anode-f
+*                 |  |  common-cathode
+*                 |  |  |  anode-e
+*                 |  |  |  |  common-cathode
+*                 |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  anode-d
+*                 |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  |  |  |  anode-g
+*                 |  |  |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_816G 1  2  3  4  5  9  10 11 12 13 14 16
+
+DA1    1  3  dHDSP_816G
+DB1   14  3  dHDSP_816G
+DC1   12  3  dHDSP_816G
+DD1   10  3  dHDSP_816G
+DE1    4  3  dHDSP_816G
+DF1    2  3  dHDSP_816G
+DG1   13  3  dHDSP_816G
+DDP1   9  3  dHDSP_816G
+
+DA2    1  5  dHDSP_816G
+DB2   14  5  dHDSP_816G
+DC2   12  5  dHDSP_816G
+DD2   10  5  dHDSP_816G
+DE2    4  5  dHDSP_816G
+DF2    2  5  dHDSP_816G
+DG2   13  5  dHDSP_816G
+DDP2   9  5  dHDSP_816G
+
+DA3    1 11  dHDSP_816G
+DB3   14 11  dHDSP_816G
+DC3   12 11  dHDSP_816G
+DD3   10 11  dHDSP_816G
+DE3    4 11  dHDSP_816G
+DF3    2 11  dHDSP_816G
+DG3   13 11  dHDSP_816G
+DDP3   9 11  dHDSP_816G
+
+DA4    1 16  dHDSP_816G
+DB4   14 16  dHDSP_816G
+DC4   12 16  dHDSP_816G
+DD4   10 16  dHDSP_816G
+DE4    4 16  dHDSP_816G
+DF4    2 16  dHDSP_816G
+DG4   13 16  dHDSP_816G
+DDP4   9 16  dHDSP_816G
+
+.MODEL dHDSP_816G D
++ (  
++     IS = 2.68043027E-27 
++      N = 1.26683886 
++     RS = 20.03550993 
++     BV = 50
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_816G

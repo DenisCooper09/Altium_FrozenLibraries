@@ -1,0 +1,53 @@
+* BFQ149 SPICE MODEL
+* PHILIPS SEMICONDUCTORS* Date : January 2001
+*
+* PACKAGE : SOT89 DIE MODEL : BFQ32
+* 1: COLLECTOR; 2: BASE; 3: EMITTER;
+.SUBCKT BFQ149 1 2 3
+Q1 6 5 7 7 BFQ32
+* SOT89 parasitic model
+               Lb  4 5 1.2n
+               Le  7 8 1.2n
+               L1  2 4 1n
+               L2  1 6 .01n
+               L3  3 8 1n
+              Ccb  4 6 150f
+              Cbe  4 8 16f
+*
+* PHILIPS SEMICONDUCTORS                                        Version:    2.0
+* Filename: BFQ32.PRM                                           Date: June 1992
+*
+.MODEL  BFQ32   PNP
++(
++              IS = 1.04007E-014
++              BF = 1.13265E+002
++              NF = 1.01216E+000
++             VAF = 2.36312E+001
++             IKF = 5.05043E-001
++             ISE = 8.71284E-014
++              NE = 1.57330E+000
++              BR = 2.81693E+001
++              NR = 1.00389E+000
++             VAR = 1.41436E+000
++             IKR = 4.16942E-003
++             ISC = 1.04425E-011
++              NC = 1.66992E+000
++              RB = 1.00000E+000
++             IRB = 1.00000E-006
++             RBM = 1.00000E+000
++              RE = 3.00000E-001
++              RC = 2.42000E+000
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 3.95446E-012
++             VJE = 6.00000E-001
++             MJE = 4.48668E-001
++              TF = 3.00000E-012
++             XTF = 1.86871E+001
++             VTF = 8.34301E+000
++             ITF = 2.22481E-001
++             CJC = 3.39901E-012
++             VJC = 4.88139E-001
++             MJC = 2.77486E-001
++)
+.ENDS

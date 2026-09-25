@@ -1,0 +1,45 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  6-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-H157  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 cathode-c
+*                 |  anode-c, d
+*                 |  |  cathode-b
+*                 |  |  |  anode-a, b, DP
+*                 |  |  |  |  cathode-DP
+*                 |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  anode-a, b, DP
+*                 |  |  |  |  |  |  |  anode-c, d
+*                 |  |  |  |  |  |  |  |  cathode-d
+*                 |  |  |  |  |  |  |  |  |  
+.SUBCKT HDSP_H157 1  2  3  4  5  6  7  8  9
+
+DA1   4  6 dHDSP_H157
+DB1   4  3 dHDSP_H157
+DDP1  4  5 dHDSP_H157
+
+DA2   7  6 dHDSP_H157
+DB2   7  3 dHDSP_H157
+DDP2  7  5 dHDSP_H157
+
+DC1   2  1 dHDSP_H157
+DD1   2  9 dHDSP_H157
+
+DC2   8  1 dHDSP_H157
+DD2   8  9 dHDSP_H157
+
+.MODEL dHDSP_H157 D
++ (  
++    IS = 3.25509599E-15 
++     N = 2.27697656 
++    RS = 1.58416732
++    BV = 14.25
++   IBV = 100u
++ )  
+
+.ENDS HDSP_H157

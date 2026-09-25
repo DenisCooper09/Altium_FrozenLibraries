@@ -1,0 +1,42 @@
+* jjt 8/4/2002: added extra PNP transistors, node connections and changed subcircuits to transistors.
+* Connections:
+*               C1 B1 E1   C2 B2 E2   C3 B3 E3   C4 B4 E4    C5 B5 E5
+.SUBCKT HFA3096B  1  2  3    4  5  6    7  8  9    10 11 12    13 14 15
+Q1 1  2  3 NUHF
+Q2 4  5  6 NUHF
+Q3 7  8  9 NUHF
+Q4 10 11 12 PUHF
+Q5 13 14 15 PUHF
+*
+*HFA3046/3096/3127/3128 PSpice MODEL
+*REV: 12-2-93 Added updated PNP model
+*
+*      -----  BJT MODELS  -----
+*
+***** UHFN - LE=3 WE=50  *****
+*
+* Origin: Harris.lib
+*
+.model NUHF NPN 
++     ( IS= 1.840E-16    XTI= 3.000E+00     EG= 1.110E+00    VAF= 7.200E+01
++      VAR= 4.500E+00     BF= 1.036E+02    ISE= 1.686E-19     NE= 1.400E+00
++      IKF= 5.400E-02    XTB= 0.000E+00     BR= 1.000E+01    ISC= 1.605E-14
++       NC= 1.800E+00    IKR= 5.400E-02     RC= 1.140E+01    CJC= 3.980E-13
++      MJC= 2.400E-01    VJC= 9.700E-01     FC= 5.000E-01    CJE= 2.400E-13
++      MJE= 5.100E-01    VJE= 8.690E-01     TR= 4.000E-09     TF= 10.51E-12    
++      ITF= 3.500E-02    XTF= 2.300E+00    VTF= 3.500E+00    PTF= 0.000E+00
++     XCJC= 9.000E-01    CJS= 1.689E-13    VJS= 9.982E-01    MJS= 0.000E+00  
++       RE= 1.848E+00     RB= 5.007E+01    RBM= 1.974E+00     KF= 0.000E+00
++       AF= 1.000E+00  )       
+.model PUHF PNP 
++     ( IS= 1.027E-16    XTI= 3.000E+00     EG= 1.110E+00    VAF= 3.000E+01
++      VAR= 4.500E+00     BF= 5.228E+01    ISE= 9.398E-20     NE= 1.400E+00
++      IKF= 5.412E-02    XTB= 0.000E+00     BR= 7.000E+00    ISC= 1.027E-14
++       NC= 1.800E+00    IKR= 5.412E-02     RC= 3.420E+01    CJC= 4.951E-13
++      MJC= 3.000E-01    VJC= 1.230E+00     FC= 5.000E-01    CJE= 2.927E-13
++      MJE= 5.700E-01    VJE= 8.800E-01     TR= 4.000E-09     TF= 20.05E-12    
++      ITF= 2.001E-02    XTF= 1.534E+00    VTF= 1.800E+00    PTF= 0.000E+00
++     XCJC= 9.000E-01    CJS= 1.150E-13    VJS= 7.500E-01    MJS= 0.000E+00  
++       RE= 1.848E+00     RB= 3.271E+01    RBM= 9.902E-01     KF= 0.000E+00
++       AF= 1.000E+00  )       
+.ENDS HFA3096B

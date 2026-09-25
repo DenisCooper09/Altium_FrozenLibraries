@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-E153  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 anode-a
+*                 |  anode-f
+*                 |  |  common-cathode
+*                 |  |  |  anode-e
+*                 |  |  |  |  anode-d
+*                 |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  |  anode-g
+*                 |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_E153 1  2  3  7  8  9  10 11 13 14
+
+DA1   1  3 dHDSP_E153
+DB1  13  3 dHDSP_E153
+DC1  10  3 dHDSP_E153
+DD1   8  3 dHDSP_E153
+DE1   7  3 dHDSP_E153
+DF1   2  3 dHDSP_E153
+DG1  11  3 dHDSP_E153
+DDP1  9  3 dHDSP_E153
+
+DA2   1 14 dHDSP_E153
+DB2  13 14 dHDSP_E153
+DC2  10 14 dHDSP_E153
+DD2   8 14 dHDSP_E153
+DE2   7 14 dHDSP_E153
+DF2   2 14 dHDSP_E153
+DG2  11 14 dHDSP_E153
+DDP2  9 14 dHDSP_E153
+
+.MODEL dHDSP_E153 D
++ (  
++    IS = 3.25509599E-15 
++     N = 2.27697656 
++    RS = 1.58416732
++    BV = 14.25
++   IBV = 100u
++ )  
+
+.ENDS HDSP_E153

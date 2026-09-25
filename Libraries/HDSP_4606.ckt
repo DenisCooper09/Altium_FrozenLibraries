@@ -1,0 +1,41 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-4606  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                  cathode-d
+*                  |  anode-d
+*                  |  |  cathode-c
+*                  |  |  |  cathode-e
+*                  |  |  |  |  anode-e
+*                  |  |  |  |  |  anode-c
+*                  |  |  |  |  |  |  anode-DP
+*                  |  |  |  |  |  |  |  cathode-DP
+*                  |  |  |  |  |  |  |  |  cathode-b
+*                  |  |  |  |  |  |  |  |  |  cathode-a
+*                  |  |  |  |  |  |  |  |  |  |  anode-a
+*                  |  |  |  |  |  |  |  |  |  |  |  anode-b
+*                  |  |  |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_4606  1  2  4  5  6  7  8  9  10 11 13 14
+
+DA  13 11 dHDSP_4606
+DB  14 10 dHDSP_4606
+DC   7  4 dHDSP_4606
+DD   2  1 dHDSP_4606
+DE   6  5 dHDSP_4606
+DDP  8  9 dHDSP_4606
+
+.MODEL dHDSP_4606 D
++ (  
++     IS = 1.61114016E-27 
++      N = 1.30291189 
++     RS = 12.83456794 
++     BV = 50 
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_4606

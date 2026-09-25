@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-313E  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 anode-G 
+*                 |  anode-F 
+*                 |  |  common-cathode 
+*                 |  |  |  anode-E 
+*                 |  |  |  |  anode-D 
+*                 |  |  |  |  |  anode-DP 
+*                 |  |  |  |  |  |  anode-C 
+*                 |  |  |  |  |  |  |  common-cathode 
+*                 |  |  |  |  |  |  |  |  anode-B 
+*                 |  |  |  |  |  |  |  |  |  anode-A
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_313E 1  2  3  4  5  6  7  8  9  10
+
+DA1  3  10 dHDSP_313E
+DB1  3   9 dHDSP_313E
+DC1  3   7 dHDSP_313E
+DD1  3   5 dHDSP_313E
+DE1  3   4 dHDSP_313E
+DF1  3   2 dHDSP_313E
+DG1  3   1 dHDSP_313E
+DDP1 3   6 dHDSP_313E
+
+DA2  8  10 dHDSP_313E
+DB2  8   9 dHDSP_313E
+DC2  8   7 dHDSP_313E
+DD2  8   5 dHDSP_313E
+DE2  8   4 dHDSP_313E
+DF2  8   2 dHDSP_313E
+DG2  8   1 dHDSP_313E
+DDP2 8   6 dHDSP_313E
+
+.MODEL dHDSP_313E D
++ (  
++     IS = 6.44208414E-14 
++      N = 2.73863792 
++     RS = 11.58628790 
++     BV = 4.5
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_313E

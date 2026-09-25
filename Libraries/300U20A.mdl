@@ -1,0 +1,7 @@
+*300U20A 3/9/98
+*Ref: IR Power Semiconductors Product Digest '94
+*200V 300A 3us Si pkg:DIODE0.7 1,2
+.MODEL 300U20A D (IS=426N RS=140U N=1.7 BV=200 IBV=10U
++ CJO=12.3N VJ=0.75 M=0.333 TT=4.32U IBV=0.004)
+
+

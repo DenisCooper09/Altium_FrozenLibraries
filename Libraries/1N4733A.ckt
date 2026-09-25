@@ -1,0 +1,13 @@
+*1N4733A MCE 5/30/96
+*Ref: National Discrete Products Databook, 1996
+*5.1V 1W Si pkg:DIODE0.4 1,2
+.SUBCKT 1N4733A  1 2
+*    TERMINALS:  A K
+D1 1 2  DF
+DZ 3 1  DR
+VZ 2 3  4.469
+.MODEL DF D (IS=5.02N RS=42M N=1.7 CJO=189P VJ=0.75 M=0.33 TT=50.1N)
+.MODEL DR D (IS=6.11M RS=2.1 N=9.3)
+.ENDS 
+
+

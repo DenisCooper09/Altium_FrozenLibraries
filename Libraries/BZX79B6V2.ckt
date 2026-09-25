@@ -1,0 +1,58 @@
+*
+* Diode Sim Model Produced by Altium Ltd
+* Date:  24-Mar-2003
+*
+* Manufacturer: Philips
+* Component Name: BZX79B6V2
+*
+* This macromodel models the effect of carrier recombination-generation
+* and high-level injection on the diode.
+*
+*Note: This macromodel derived from data sheets and pspice models obtained from Philips Semiconductor.
+
+.SUBCKT BZX79B6V2 10 30
+
+*These components model forward-biased conditions
+D1 10 20 DIDEAL
+D2 10 20 DRECOMB
+D3 20 30 DHIGH
+
+*These components model reversed-biased conditions
+D4 30 60 DPARASITIC
+RZ 50 60 2.5e-5
+Vbrk 50 10 6.2
+
+* Subcircuit models
+*+  BV =  6.948
+*+  IBV =  8.62E-01
+.MODEL DIDEAL D
++(
++  IS =  2.471E-09
++  N =  2.088
++  TT =  0.00000014
++  CJO =  9.565E-11
++  VJ =  0.7022
++  M =  0.3487
++)
+
+.MODEL DHIGH D
++(
++  IS =  5.634896755
++  N =  2.088
++  RS =  0.001
++)
+
+.MODEL DRECOMB D
++(
++  IS =  0.5E-09
++  N =  2.083534589
++)
+
+.MODEL DPARASITIC D
++(
++	N = 0.001
++	RS = 0.001
++	CJO = 0.001P
++)
+
+.ENDS BZX79B6V2

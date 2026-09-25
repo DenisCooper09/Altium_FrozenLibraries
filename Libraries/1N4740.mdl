@@ -1,0 +1,6 @@
+*1N4740
+*Ref: Motorola
+*10V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4740 D(IS=2.91E-15 RS=2.71 TT=5.01E-8 CJO=6.89E-11 VJ=0.75 
++ M=0.33 BV=9.937 IBV=0.025 )
+* Origin: Mcediode.lib

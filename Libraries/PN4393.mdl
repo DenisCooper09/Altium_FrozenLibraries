@@ -1,0 +1,17 @@
+*PHILIPS SEMICONDUCTORS        Version: 1.0
+*Filename: PN4393.PRM        Date: Oct 1992
+*
+.MODEL  PN4393   NJF
++(
++             VTO = -1.3550E+000
++            BETA = 6.94457E-003
++          LAMBDA = 3.97876E-002
++              RD = 3.51442E+000
++              RS = 3.51442E+000
++              IS = 6.91657E-016
++            CGS  = 7.50000E-012
++            CGD  = 7.80000E-012
++              PB = 7.27722E-001
++              FC = 5.00000E-001
++)
+*Parameter with default value: FC

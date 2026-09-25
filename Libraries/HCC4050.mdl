@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4050: CMOS Hex Buffer
+.MODEL HCC4050 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4050 {mntymx})

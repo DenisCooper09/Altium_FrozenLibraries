@@ -1,0 +1,17 @@
+*PHILIPS SEMICONDUCTORS        Version: 1.0
+*Filename: J176.PRM          Date: sep 1992
+*
+.MODEL  J176   PJF
++(
++             VTO = -2.3000E+000
++            BETA = 2.89414E-003
++          LAMBDA = 2.00000E-002
++              RD = 1.02409E+000
++              RS = 1.02409E+000
++              IS = 4.51393E-016
++            CGS  = 1.00000E-011
++            CGD  = 1.05000E-011
++              PB = 7.05860E-001
++              FC = 5.00000E-001
++)
+*Parameter with default value: FC

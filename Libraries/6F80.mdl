@@ -1,0 +1,6 @@
+*6F80 MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*800V 6000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 6F80 D (IS=8.53N RS=7M N=1.7 BV=800 IBV=264U
++ CJO=248P VJ=0.75 M=0.333 TT=4.32U)
+

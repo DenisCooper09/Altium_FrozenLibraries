@@ -1,0 +1,7 @@
+*SD300C32C 3/10/98
+*Ref: IR Power Semiconductors Product Digest '94
+*3200V 540A 3us Si pkg:DIODE0.7 1,2
+.MODEL SD300C32C D (IS=767N RS=77.8U N=1.7 BV=3.2K IBV=10U
++ CJO=22.2N VJ=0.75 M=0.333 TT=4.32U IBV=0.095)
+
+

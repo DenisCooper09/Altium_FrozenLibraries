@@ -1,0 +1,17 @@
+*PHILIPS SEMICONDUCTORS        Version: 1.0
+*Filename: BSR58.PRM         Date: Oct 1992
+*
+.MODEL  BSR58   NJF
++(
++             VTO = -2.4397E+000
++            BETA = 6.09357E-003
++          LAMBDA = 5.26244E-002
++              RD = 1.26608E+000
++              RS = 1.26608E+000
++              IS = 9.89866E-016
++            CGS  = 1.05000E-011
++            CGD  = 1.10000E-011
++              PB = 6.06848E-001
++              FC = 5.00000E-001
++)
+*Parameter with default value: FC

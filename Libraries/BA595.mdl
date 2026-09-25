@@ -1,0 +1,4 @@
+*****************************************************************
+.MODEL BA595 D(IS=1.355n RS=2.6 N=2.04 BV=50 IBV=5u
++ CJO=0.35P VJ=.8 M=1.2 TT=1.6u)
+* SIEMENS 50 Volt 1.6us  Si-PIN-Switch  17-03-1997 Moschovis

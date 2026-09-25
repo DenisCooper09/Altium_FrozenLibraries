@@ -1,0 +1,7 @@
+*1N2059 3/9/98
+*Ref: IR Power Semiconductors Product Digest '94
+*300V 250A 3us Si pkg:DIODE0.7 1,2
+.MODEL 1N2059 D (IS=355N RS=168U N=1.7 BV=300 IBV=10U
++ CJO=10.3N VJ=0.75 M=0.333 TT=4.32U IBV=0.005)
+
+

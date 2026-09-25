@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCF4073: CMOS 3-input AND gate
+.MODEL HCF4073 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4073 {mntymx})

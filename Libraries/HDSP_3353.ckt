@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-3353  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 anode-a
+*                 |  anode-f
+*                 |  |  common-cathode
+*                 |  |  |  anode-e
+*                 |  |  |  |  anode-d
+*                 |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  |  anode-g
+*                 |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_3353 1  2  3  7  8  9  10 11 13 14
+
+DA1   1   3 dHDSP_3353
+DB1  13   3 dHDSP_3353
+DC1  10   3 dHDSP_3353
+DD1   8   3 dHDSP_3353
+DE1   7   3 dHDSP_3353
+DF1   2   3 dHDSP_3353
+DG1  11   3 dHDSP_3353
+DDP1  9   3 dHDSP_3353
+
+DA2   1  14 dHDSP_3353
+DB2  13  14 dHDSP_3353
+DC2  10  14 dHDSP_3353
+DD2   8  14 dHDSP_3353
+DE2   7  14 dHDSP_3353
+DF2   2  14 dHDSP_3353
+DG2  11  14 dHDSP_3353
+DDP2  9  14 dHDSP_3353
+
+.MODEL dHDSP_3353 D
++ (  
++     IS = 7.07436607E-24 
++      N = 1.24380258 
++     RS = 22.12166762 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_3353

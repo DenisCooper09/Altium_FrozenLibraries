@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-A113  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 common-anode
+*                 |  kathode-f
+*                 |  |  kathode-g
+*                 |  |  |  kathode-e
+*                 |  |  |  |  kathode-d
+*                 |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  kathode-DP
+*                 |  |  |  |  |  |  |  kathode-c
+*                 |  |  |  |  |  |  |  |  kathode-b
+*                 |  |  |  |  |  |  |  |  |  kathode-a
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_A113 1  2  3  4  5  6  7  8  9  10
+
+DA1  10  1 dHDSP_A113
+DB1   9  1 dHDSP_A113
+DC1   8  1 dHDSP_A113
+DD1   5  1 dHDSP_A113
+DE1   4  1 dHDSP_A113
+DF1   2  1 dHDSP_A113
+DG1   3  1 dHDSP_A113
+DDP1  7  1 dHDSP_A113
+
+DA2  10  6 dHDSP_A113
+DB2   9  6 dHDSP_A113
+DC2   8  6 dHDSP_A113
+DD2   5  6 dHDSP_A113
+DE2   4  6 dHDSP_A113
+DF2   2  6 dHDSP_A113
+DG2   3  6 dHDSP_A113
+DDP2  7  6 dHDSP_A113
+
+.MODEL dHDSP_A113 D
++ (  
++    IS  = 2.08276754E-16 
++     N  = 2.17799178 
++    RS  = 0.50892350
++    BV  = 14.25
++   IBV  = 100u
++ )  
+
+.ENDS HDSP_A113

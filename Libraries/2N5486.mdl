@@ -1,0 +1,6 @@
+*2N5486 MCE
+*Ref: Motorola Small-Signal Databook, Q4/94
+*25V  30mA  28.8ohm  Dep-Mode pkg:TO-92B 3,1,2
+.MODEL 2N5486 NJF(VTO=-4 BETA=0.0065 LAMBDA=0.00266 RD=4.04 RS=3.63 
++ CGS=2E-12 CGD=3.03E-12 IS=9.48E-15 )
+* Origin: Mcejfets.lib

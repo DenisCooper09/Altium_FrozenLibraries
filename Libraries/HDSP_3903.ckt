@@ -1,0 +1,71 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-3903  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 anode-a 
+*                 |  anode-f 
+*                 |  |  common-cathode
+*                 |  |  |  anode-e 
+*                 |  |  |  |  common-cathode 
+*                 |  |  |  |  |  anode-DP 
+*                 |  |  |  |  |  |  anode-d 
+*                 |  |  |  |  |  |  |  common-cathode 
+*                 |  |  |  |  |  |  |  |  anode-c 
+*                 |  |  |  |  |  |  |  |  |  anode-g 
+*                 |  |  |  |  |  |  |  |  |  |  anode-b 
+*                 |  |  |  |  |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_3903 2  3  4  5  6  10 11 12 13 14 15 17
+
+DA1    2 4 dHDSP_3903
+DB1   15 4 dHDSP_3903
+DC1   13 4 dHDSP_3903
+DD1   11 4 dHDSP_3903
+DE1    5 4 dHDSP_3903
+DF1    3 4 dHDSP_3903
+DG1   14 4 dHDSP_3903
+DDP1  10 4 dHDSP_3903
+
+DA2    2 6 dHDSP_3903
+DB2   15 6 dHDSP_3903
+DC2   13 6 dHDSP_3903
+DD2   11 6 dHDSP_3903
+DE2    5 6 dHDSP_3903
+DF2    3 6 dHDSP_3903
+DG2   14 6 dHDSP_3903
+DDP2  10 6 dHDSP_3903
+
+DA3   2 12 dHDSP_3903
+DB3  15 12 dHDSP_3903
+DC3  13 12 dHDSP_3903
+DD3  11 12 dHDSP_3903
+DE3   5 12 dHDSP_3903
+DF3   3 12 dHDSP_3903
+DG3  14 12 dHDSP_3903
+DDP3 10 12 dHDSP_3903
+
+DA4   2 17 dHDSP_3903
+DB4  15 17 dHDSP_3903
+DC4  13 17 dHDSP_3903
+DD4  11 17 dHDSP_3903
+DE4   5 17 dHDSP_3903
+DF4   3 17 dHDSP_3903
+DG4  14 17 dHDSP_3903
+DDP4 10 17 dHDSP_3903
+
+
+.MODEL dHDSP_3903 D
++ (  
++     IS = 1E-13 
++      N = 2.7
++     RS = 6.22331865 
++     BV = 2.25
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_3903

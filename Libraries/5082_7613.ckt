@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: 5082-7613  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 common-cathode
+*                 |  anode-f
+*                 |  |  anode-g
+*                 |  |  |  anode-e
+*                 |  |  |  |  anode-d
+*                 |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  |  |  |  | 
+.SUBCKT 5082_7613 2  3  4  5  6  9  10 11 12 13
+
+DA1  13 2 d5082_7613
+DB1  12 2 d5082_7613
+DC1  11 2 d5082_7613
+DD1   6 2 d5082_7613
+DE1   5 2 d5082_7613
+DF1   3 2 d5082_7613
+DG1   4 2 d5082_7613
+DDP1 10 2 d5082_7613
+
+DA2  13 9 d5082_7613
+DB2  12 9 d5082_7613
+DC2  11 9 d5082_7613
+DD2   6 9 d5082_7613
+DE2   5 9 d5082_7613
+DF2   3 9 d5082_7613
+DG2   4 9 d5082_7613
+DDP2 10 9 d5082_7613
+
+.MODEL d5082_7613 D
++ (  
++     IS = 1.95991353E-12 
++      N = 2.90687588 
++     RS = 18.38470387 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS 5082_7613

@@ -1,0 +1,45 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-4206  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-a 
+*                 |  anode-d 
+*                 |  |  cathode-d 
+*                 |  |  |  cathode-c 
+*                 |  |  |  |  cathode-e 
+*                 |  |  |  |  |  anode-e 
+*                 |  |  |  |  |  |  cathode-DP 
+*                 |  |  |  |  |  |  |  anode-DP 
+*                 |  |  |  |  |  |  |  |  cathode-DP 
+*                 |  |  |  |  |  |  |  |  |  cathode-b 
+*                 |  |  |  |  |  |  |  |  |  |  anode-b 
+*                 |  |  |  |  |  |  |  |  |  |  |  anode-c 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  anode-a 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_4206 2  3  4  5  6  7  8  10 11 12 13 14 15 17
+
+DA1  15  2 dHDSP_4206
+DA2  15 17 dHDSP_4206
+DB   13 12 dHDSP_4206
+DC   14  5 dHDSP_4206
+DD    3  4 dHDSP_4206
+DE    7  6 dHDSP_4206
+DDP1 10  8 dHDSP_4206
+DDP2 10 11 dHDSP_4206
+
+.MODEL dHDSP_4206 D
++ (  
++     IS = 8.07922028E-13 
++      N = 3.08151986 
++     RS = 5.65168121 
++     BV = 2.25
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_4206

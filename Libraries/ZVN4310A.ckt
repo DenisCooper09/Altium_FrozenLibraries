@@ -1,0 +1,26 @@
+*   ZETEX   ZVN4310A  Spice model   Last revision 3/97
+*
+.SUBCKT ZVN4310A 30 40 50
+*NODES: DRAIN GATE SOURCE
+M1 30 20 50 50 MOD1
+RG 40 20 82
+RL 30 50 1E7
+D1 50 30 DIODE1
+.MODEL MOD1 NMOS VTO=2.555 RS=0.2068 RD=0.1665 IS=1E-15 KP=5.02
++CGSO=200E-12 CGDO=13.5E-12 CBD=288E-12 PB=1 LAMBDA=0
+.MODEL DIODE1 D IS=9.759E-13 N=1.02476 RS=0.0844
+.ENDS ZVN4310A
+*
+*                          (C)  1992 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agents.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

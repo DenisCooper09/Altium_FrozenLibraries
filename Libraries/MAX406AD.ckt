@@ -1,0 +1,90 @@
+*   ////////////// MAX406Ad MACROMODEL //////////////////
+*
+*   ====>        "d" DENOTES DECOMPENSATED MODE         <====
+*   ====>   REFER TO MAX406/MAX407/MAX409 DATA SHEET  <====
+*
+* connections:        non-inverting input
+*                     |   inverting input
+*                     |   |   positive power-supply
+*                     |   |   |   negative power-supply
+*                     |   |   |   |   output
+*                     |   |   |   |   |
+* OUTPUT CONNECTS:    1   2   99  50  97
+*
+.SUBCKT MAX406Ad 1 2 99 50 97
+*Pinout: In+ In- V+ V- Out
+****************INPUT STAGE**********************
+I1 99 4 20U
+M1   5  2 4 99 MOSFET
+R3   5 50 5.2696K
+M2   6  7 4 99 MOSFET
+R4   6 50 5.2696K
+CI1  1  0 2P
+CI2  2  0 2P
+DP1  1 99 DA
+DP2 50  1 DX
+DP3  2 99 DX
+DP4 50  2 DB
+C4  5 6 .6N
+*POLE AT 25KHZ
+************ GSUP CREATES AVOL VS VSUPPLY ********
+EH 99 98 99 50 0.5
+*GSUP 0 106 POLY(1) 99 50 320 -41 1.2
+BGSUP 0 106 I=320-41*v(99,50)+1.2*v(99,50)*v(99,50)
+*THIS POLY VCCS MODELS THE OPEN LOOP GAIN AS
+*A FUNCTION OF THE POWER SUPPLY, WHICH WILL BE MULT. NODE 5,6 VOLT.
+RVSUP 0 106 1E4
+************ GAIN, 1ST POLE, SLEW STAGE************
+*G0 98 9 POLY(2) 5 6 106 0 0 0 0 0 1E-6
+BG0 98 9 I=1E-6*v(5,6)*v(106,0)
+*GO MULTIPLIES NODE 106, AVOL VS SUPPLY, AND NODES 5,6 FROM INPUT STAGE.
+VS 9 10 0V
+R0  98  9 1E6
+C3 10 98 3.9UF
+D1 9 111 DX
+D2 112 9 DX
+V11 99 111 .5V
+V12 112 50 .5V
+I2 99 50 -19U
+*EOS 7 1 POLY(1) 16 98 .25M 1
+BEOS 7 1 V=.25E-3 +1*v(16,98)
+*********COMMON-MODE ZERO STAGE********
+*G4 98 16 POLY(2) 1 98 2 98 0 1E-7 1E-7
+BG4 98 16 I=1E-7*v(1,98)+1E-7*v(2,98)
+R13 98 16 500
+******* POLE AND STAGE **********
+G3 98 15 10 98 1E-3
+R12 98 15 1E3
+C5 98 15 5.3N
+*            POLE AT 30KH
+******** POLE / ZERO STAGE ******
+G5 98 18 15 98 1E-3
+R14 98 18 1K
+C6 18 19 2.6UF
+R19 19 98 5K
+*************OUTPUT STAGE****************
+F5 99 38 VA8 1
+D9 40 38 DX
+D10 38 99 DX
+VA7 99 40 0
+G12 98 32 18 98 1E-6
+*          ^ INSERT NODE FROM LAST STAGE HERE
+R15 98 32 1E6
+D3 32 36 DX
+D4 37 32 DX
+V5 35 37 .2V
+V4 36 35 -.2V
+*V5,V4 SET ISC
+R16 34 35 1K
+E1 99 33 99 32 1
+VA8 33 34 0V
+L 35 97 0.2
+RCON 35 97 15K
+*RCON ALSO  ENHANCES CONVERGENCE FEATURES
+******************************************
+.MODEL DA D(IS=100E-14 RS=.5K)
+.MODEL DB D(IS=100E-14 RS=.5K)
+.MODEL DX D(IS=100E-14)
+.MODEL MOSFET PMOS(VTO=-1.7 KP=1.8E-3)
+*VTO ESTABLISHES INPUT VOLT. RANGE
+.ENDS

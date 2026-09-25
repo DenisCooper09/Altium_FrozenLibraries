@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4025: CMOS 3-input NOR
+.MODEL HCC4025 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4025 {mntymx})

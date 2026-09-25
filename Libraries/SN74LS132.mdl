@@ -1,0 +1,3 @@
+*Texas Instruments
+*SN74LS132: LS 2-in NAND with hysteresis
+.MODEL SN74LS132 xsimcode(file="{MODEL_PATH}LS.SCB" func=ls132 {mntymx})

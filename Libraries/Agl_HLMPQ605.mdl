@@ -1,0 +1,8 @@
+* Agl_HLMPQ605 LED Model
+* Created by Shaun Quin 30-05-2002
+* jj 9/9/2002: changed IS, RS, N values.
+*Typ LED: Vf=2.2 Vr=5V If=10mA 
+*LED Pinout: 1=A, 2=K
+.MODEL Agl_HLMPQ605 D (IS=513.86n RS=181.94 N=1.5 BV=5 IBV=100U
++ CJO=35P VJ=.75 M=.333 TT=3100n)
+*Temperature and Noise Effects are not Modelled

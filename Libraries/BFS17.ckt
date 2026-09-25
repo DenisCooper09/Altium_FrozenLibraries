@@ -1,0 +1,55 @@
+* BFS17 SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT23 DIE MODEL : BFW92
+* 1: COLLECTOR; 2: BASE; 3: EMITTER;
+.SUBCKT BFS17 1 2 3
+Q1 6 5 7 7 BFW92
+* SOT23 parasitic model
+               Lb  4 5 .4n
+               Le  7 8 .83n
+               L1  2 4 .35n
+               L2  1 6 .17n
+               L3  3 8 .35n
+              Ccb  4 6 71f
+              Cbe  4 8 2f
+              Cce  6 8 71f
+*
+* PHILIPS SEMICONDUCTORS                                        Version:    3.0
+* Filename:    BFW92.PRM                                        Date:March 1993
+*
+.MODEL  BFW92   NPN
++(
++              IS = 2.26749E-016
++              BF = 4.27829E+001
++              NF = 9.98081E-001
++             VAF = 3.09206E+001
++             IKF = 2.80682E+000
++             ISE = 1.25812E-011
++              NE = 2.69052E+000
++              BR = 1.50821E+001
++              NR = 9.89755E-001
++             VAR = 1.31800E+001
++             IKR = 3.83070E-001
++             ISC = 6.22829E-016
++              NC = 1.08818E+000
++              RB = 1.00000E+001
++             IRB = 1.00000E-006
++             RBM = 1.00000E+001
++              RE = 3.00000E-001
++              RC = 2.76000E+000
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 8.93473E-013
++             VJE = 6.00000E-001
++             MJE = 2.81933E-001
++              TF = 1.03700E-010
++             XTF = 8.59092E+001
++             VTF = 4.16619E-002
++             ITF = 9.82771E-002
++             PTF = -1.0000E+001
++             CJC = 1.08829E-012
++             VJC = 4.07523E-001
++)
+.ENDS

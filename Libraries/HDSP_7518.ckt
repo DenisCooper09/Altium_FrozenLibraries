@@ -1,0 +1,41 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-7518  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 common-cathode
+*                 |  anode-PLUS
+*                 |  |  anode-MINUS
+*                 |  |  |  common-cathode
+*                 |  |  |  |  anode-DP
+*                 |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |
+.SUBCKT HDSP_7518 1  2  3  6  7  8  9
+
+DPLUS1  2  1 dHDSP_7518
+DMINUS1 3  1 dHDSP_7518
+DB1     9  1 dHDSP_7518
+DC1     8  1 dHDSP_7518
+DDP1    7  1 dHDSP_7518
+
+DPLUS2  2  6 dHDSP_7518
+DMINUS2 3  6 dHDSP_7518
+DB2     9  6 dHDSP_7518
+DC2     8  6 dHDSP_7518
+DDP2    7  6 dHDSP_7518
+ 
+.MODEL dHDSP_7518 D
++ (  
++     IS = 7.07436607E-24 
++      N = 1.24380258 
++     RS = 22.12166762 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_7518 

@@ -1,0 +1,3 @@
+
+*8-bit Serial-in Parallel-out Shift Register - type:digital pkg:DIP14 [DVCC=14;DGND=7;](1,2,8,9,13,12,11,10,6,5,4,3)
+.MODEL 74F164 xsimcode(file="{MODEL_PATH}FAST.SCB" func=f164 {mntymx})

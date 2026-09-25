@@ -1,0 +1,70 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-N151  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 cathode-a 
+*                 |  cathode-f 
+*                 |  |  common-anode 
+*                 |  |  |  cathode-e 
+*                 |  |  |  |  common-anode 
+*                 |  |  |  |  |  cathode-DP 
+*                 |  |  |  |  |  |  cathode-d 
+*                 |  |  |  |  |  |  |  common-anode 
+*                 |  |  |  |  |  |  |  |  cathode-c 
+*                 |  |  |  |  |  |  |  |  |  cathode-g 
+*                 |  |  |  |  |  |  |  |  |  |  cathode-b 
+*                 |  |  |  |  |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  |  |  |  |       
+.SUBCKT HDSP_N151 2  3  4  5  6  10 11 12 13 14 15 17
+
+DA1   4  2 dHDSP_N151
+DB1   4 15 dHDSP_N151
+DC1   4 13 dHDSP_N151
+DD1   4 11 dHDSP_N151
+DE1   4  5 dHDSP_N151
+DF1   4  3 dHDSP_N151
+DG1   4 14 dHDSP_N151
+DDP1  4 10 dHDSP_N151
+
+DA2   6  2 dHDSP_N151
+DB2   6 15 dHDSP_N151
+DC2   6 13 dHDSP_N151
+DD2   6 11 dHDSP_N151
+DE2   6  5 dHDSP_N151
+DF2   6  3 dHDSP_N151
+DG2   6 14 dHDSP_N151
+DDP2  6 10 dHDSP_N151
+
+DA3  12  2 dHDSP_N151
+DB3  12 15 dHDSP_N151
+DC3  12 13 dHDSP_N151
+DD3  12 11 dHDSP_N151
+DE3  12  5 dHDSP_N151
+DF3  12  3 dHDSP_N151
+DG3  12 14 dHDSP_N151
+DDP3 12 10 dHDSP_N151
+
+DA4  17  2 dHDSP_N151
+DB4  17 15 dHDSP_N151
+DC4  17 13 dHDSP_N151
+DD4  17 11 dHDSP_N151
+DE4  17  5 dHDSP_N151
+DF4  17  3 dHDSP_N151
+DG4  17 14 dHDSP_N151
+DDP4 17 10 dHDSP_N151
+
+.MODEL dHDSP_N151 D
++ (  
++    IS = 1.72301609E-14 
++     N = 2.43230682 
++    RS = 1.67295284
++    BV = 14.25
++   IBV = 100u 
++ )  
+
+.ENDS HDSP_N151

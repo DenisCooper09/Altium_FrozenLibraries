@@ -1,0 +1,7 @@
+*20TQ035 MCE 3/26/98
+*Ref: IR Power Semiconductors Product Digest '94
+*MCE 35V 20A 3us pkg:TO-220 3,1
+.MODEL 20TQ035 D (IS=28.4N RS=2.1M N=1.7 BV=35 IBV=0.105
++ CJO=823P VJ=0.75 M=0.333 TT=4.32U EG=.69 XTI=2)
+
+

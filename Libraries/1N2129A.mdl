@@ -1,0 +1,7 @@
+*1N2129A MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*100V 60000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 1N2129A D (IS=85.3N RS=700U N=1.7 BV=100 IBV=330U
++ CJO=2.47N VJ=0.75 M=0.333 TT=4.32U)
+
+

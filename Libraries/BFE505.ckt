@@ -1,0 +1,64 @@
+* BFE505 SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT353B DIE MODEL : BFR505
+* 1: COLLECTOR1; 2: BASE1; 3: EMITTER; 4: COLLECTOR2; 5: BASE2
+.SUBCKT BFE505 1 2 3 4 5
+Q1 6 7 8 8 BFR505
+Q2 9 10 11 11 BFR505
+* SOT353B parasitic model
+               Lb1    2  7 .8n
+               Lb2    5 10 .8n
+               Le1    8 12 .6n
+               Le2   11 12 .6n
+               Lp1    1  6 .4n
+               Lp2    4  9 .4n
+               Lp3    3 12 .4n
+               Cc1b1  1  2 36f
+               Cc2b2  4  5 36f
+               Cc1b2  1  5 2f
+               Cc2b1  2  4 2f
+               Cc1e   1  3 35f
+               Cc2e   3  4 35f
+               Cb1b2  2  5 3.5f
+               Cc1c2  1  4 15f
+               Cb1e   2  3 35f
+*
+* PHILIPS SEMICONDUCTORS                                     Version:   1.0
+* Filename:   BFR505.PRM                                     Date: Feb 1992
+*
+.MODEL  BFR505   NPN
++(
++              IS = 1.34186E-016
++              BF = 1.80000E+002
++              NF = 9.88285E-001
++             VAF = 3.83491E+001
++             IKF = 1.50000E-001
++             ISE = 2.78188E-014
++              NE = 2.05149E+000
++              BR = 5.51997E+001
++              NR = 9.82213E-001
++             VAR = 2.45944E+000
++             IKR = 2.92072E-003
++             ISC = 1.74527E-017
++              NC = 1.06245E+000
++              RB = 2.00000E+001
++             IRB = 1.00000E-006
++             RBM = 2.00000E+001
++              RE = 1.17190E+000
++              RC = 4.35000E+000
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 2.84731E-013
++             VJE = 6.00000E-001
++             MJE = 3.03697E-001
++              TF = 7.03759E-012
++             XTF = 1.23460E+001
++             VTF = 1.70189E+000
++             ITF = 3.06496E-002
++             CJC = 2.42404E-013
++             VJC = 1.88622E-001
++             MJC = 4.14981E-002
++)
+.ENDS

@@ -1,0 +1,12 @@
+*MMSZ11T1 MCE 6/20/97
+*Ref: Motorola TVS/Zener Databook, Q2/94
+*11V 1000mW Si Zener pkg:SOD-123 1,2
+.SUBCKT MMSZ11T1 1 2
+*    TERMINALS:  A K
+D1 1 2  DF
+DZ 3 1  DR
+VZ 2 3  10.47
+.MODEL DF D (IS=1.8E-91 RS=42M N=1.7 CJO=101P VJ=1 M=0.33 TT=50.1N)
+.MODEL DR D (IS=3.95U RS=6 N=2.7)
+.ENDS 
+* Origin: Mcediode.lib

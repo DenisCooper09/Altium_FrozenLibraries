@@ -1,0 +1,6 @@
+*1N4763
+*Ref: Motorola
+*91V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4763 D(IS=2.67E-9 RS=190 TT=5.01E-8 CJO=2.54E-11 M=0.33 
++ BV=90.51 IBV=0.0028 )
+* Origin: Mcediode.lib

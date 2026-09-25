@@ -1,0 +1,21 @@
+*   ZETEX   ZTX949   Spice model   Last revision 27/5/92
+*
+.MODEL ZTX949  PNP IS=1.5111E-12 NF=1.0127 BF=208 IKF=12.4 VAF=32.7
++ISE=1.335E-13 NE=1.42 NR=1.009 BR=145 IKR=1.25 VAR=26.5 
++ISC=1.392E-13 NC=1.14 RB=0.026 RE=0.019 RC=0.0175 CJC=362E-12  
++MJC=0.338 VJC=0.4294 CJE=1.17E-9 TF=1.01E-9 TR=7.5E-9
+*
+*
+*                          (C)  1992 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agents.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

@@ -1,0 +1,70 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-815E  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 cathode-a
+*                 |  cathode-f
+*                 |  |  common-anode
+*                 |  |  |  cathode-e
+*                 |  |  |  |  common-anode
+*                 |  |  |  |  |  cathode-DP
+*                 |  |  |  |  |  |  cathode-d
+*                 |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  cathode-c
+*                 |  |  |  |  |  |  |  |  |  cathode-g
+*                 |  |  |  |  |  |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_815E 1  2  3  4  5  9  10 11 12 13 14 16
+
+DA1   3   1  dHDSP_815E
+DB1   3  14  dHDSP_815E
+DC1   3  12  dHDSP_815E
+DD1   3  10  dHDSP_815E
+DE1   3   4  dHDSP_815E
+DF1   3   2  dHDSP_815E
+DG1   3  13  dHDSP_815E
+DDP1  3   9  dHDSP_815E
+
+DA2   5   1  dHDSP_815E
+DB2   5  14  dHDSP_815E
+DC2   5  12  dHDSP_815E
+DD2   5  10  dHDSP_815E
+DE2   5   4  dHDSP_815E
+DF2   5   2  dHDSP_815E
+DG2   5  13  dHDSP_815E
+DDP2  5   9  dHDSP_815E
+
+DA3  11   1  dHDSP_815E
+DB3  11  14  dHDSP_815E
+DC3  11  12  dHDSP_815E
+DD3  11  10  dHDSP_815E
+DE3  11   4  dHDSP_815E
+DF3  11   2  dHDSP_815E
+DG3  11  13  dHDSP_815E
+DDP3 11   9  dHDSP_815E
+
+DA4  16   1  dHDSP_815E
+DB4  16  14  dHDSP_815E
+DC4  16  12  dHDSP_815E
+DD4  16  10  dHDSP_815E
+DE4  16   4  dHDSP_815E
+DF4  16   2  dHDSP_815E
+DG4  16  13  dHDSP_815E
+DDP4 16   9  dHDSP_815E
+
+.MODEL dHDSP_815E D
++ (  
++     IS = 1.16713374E-20 
++      N = 1.46891103 
++     RS = 23.91420160 
++     BV = 25
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_815E

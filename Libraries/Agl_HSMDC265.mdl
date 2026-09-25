@@ -1,0 +1,8 @@
+* Agl_HSMDC265 LED Model
+* Created by Shaun Quin 31-05-2002
+* jj 10/9/2002: changed Rs and N. 
+*Typ LED: Vf=2.2V Vr=5V If=20mA 
+*LED Pinout: 1=A, 2=K
+.MODEL Agl_HSMDC265 D (IS=513.86n RS=89.63 N=1.5 BV=5 IBV=100U
++ CJO=6P VJ=.75 M=.333 TT=4.32U)
+*Temperature and Noise Effects are not Modelled

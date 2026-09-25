@@ -1,0 +1,54 @@
+* BFT93W SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT323 DIE MODEL : BFT93
+* 1: COLLECTOR; 2: BASE; 3: EMITTER
+.SUBCKT BFT93W 1 2 3
+Q1 6 5 7 7 BFT93
+* SOT323 parasitic model
+               Lb  4 5 .6n
+               Le  7 8 .6n
+               L1  2 4 .34n
+               L2  1 6 .1n
+               L3  3 8 .34n
+              Ccb  4 6 100f
+              Cbe  4 8 2f
+
+* PHILIPS SEMICONDUCTORS                                     Version:     2.0
+* Filename:    BFT93.PRM                                     Date: March 1992
+*
+.MODEL  BFT93   PNP
++(
++              IS = 8.35127E-016
++              BF = 4.85648E+001
++              NF = 1.00043E+000
++             VAF = 1.90118E+001
++             IKF = 1.46824E-001
++             ISE = 9.09455E-014
++              NE = 1.74928E+000
++              BR = 1.21832E+001
++              NR = 9.97694E-001
++             VAR = 3.37492E+000
++             IKR = 6.74270E-003
++             ISC = 2.34297E-014
++              NC = 1.44993E+000
++              RB = 1.00000E+001
++             IRB = 1.00000E-006
++             RBM = 1.00000E+001
++              RE = 2.00000E-001
++              RC = 3.80000E+000
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 1.57034E-012
++             VJE = 6.00000E-001
++             MJE = 3.82204E-001
++              TF = 1.48531E-011
++             XTF = 2.20970E+000
++             VTF = 2.98987E+000
++             ITF = 1.43721E-002
++             CJC = 1.99525E-012
++             VJC = 5.84499E-001
++             MJC = 2.81320E-001
++)
+.ENDS

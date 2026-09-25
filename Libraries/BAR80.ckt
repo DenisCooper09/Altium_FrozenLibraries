@@ -1,0 +1,18 @@
+* BAR80
+* jjt 2/11/2000, utilising the existing BAR80 model.
+*
+*             Cathode 1
+*             |   Anode 1
+*             |   |   Cathode 2
+*             |   |   |   Anode 2
+*             |   |   |   |
+.subckt BAR80 1   2   3   4
+R1 1 3 1p
+R2 2 4 1p
+D1 2 1 D194
+.MODEL D194 D(IS=185F RS=.30 N=1.305 BV=70 IBV=.1N
++ CJO=1.17P VJ=.12 M=.096 TT=125N)
+.ends BAR80
+
+* BA582 / BA592 / BAR80 / BAT18x Series Diode Model
+* SIEMENS 40 Volt 125ns  Si-PIN-Switch  17-03-1996 Moschovis

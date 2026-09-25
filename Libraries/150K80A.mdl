@@ -1,0 +1,7 @@
+*150K80A MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*800V 150000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 150K80A D (IS=213N RS=280U N=1.7 BV=800 IBV=6589U
++ CJO=6.17N VJ=0.75 M=0.333 TT=4.32U)
+
+

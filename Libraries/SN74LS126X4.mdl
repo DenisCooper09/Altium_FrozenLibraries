@@ -1,0 +1,3 @@
+*Texas Instruments
+*SN74LS126x4: Quadruple Bus Buffer with 3-State Outputs
+.MODEL SN74LS126x4 xsimcode(file="{MODEL_PATH}LS.SCB" func=ls126x4 {mntymx})

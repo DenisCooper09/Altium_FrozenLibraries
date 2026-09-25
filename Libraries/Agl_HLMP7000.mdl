@@ -1,0 +1,10 @@
+* Agl_HLMP7000 LED Model
+* Created by Shaun Quin 30-05-2002
+* jj 22/8/2002: changed Rs, N vals.
+* jj 6/9/2002: changed Is, Rs vals.
+*
+*Typ LED: Vf=1.8V Vr=30V If=10mA
+*LED Pinout: 1=A, 2=K
+.MODEL Agl_HLMP7000 D (IS=8.56E-8 RS=135 N=1.5 BV=30 IBV=100U
++ CJO=11P VJ=.75 M=.333 TT=90n)
+*Temperature and Noise Effects are not Modelled

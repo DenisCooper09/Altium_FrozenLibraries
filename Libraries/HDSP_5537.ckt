@@ -1,0 +1,47 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-5537  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-c 
+*                 |  anode-c,d
+*                 |  |  cathode-b 
+*                 |  |  |  anode-a,b, DP 
+*                 |  |  |  |  cathode DP 
+*                 |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  anode-a,b, DP  
+*                 |  |  |  |  |  |  |  anode-c,d   
+*                 |  |  |  |  |  |  |  |  cathode-d  
+*                 |  |  |  |  |  |  |  |  |  
+*                 |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_5537 1  2  3  4  5  6  7  8  9
+
+DA1  4 6 dHDSP_5537
+DA2  7 6 dHDSP_5537
+
+DB1  4 3 dHDSP_5537
+DB2  7 3 dHDSP_5537
+
+DC1  2 1 dHDSP_5537
+DC2  8 1 dHDSP_5537
+
+DD1  2 9 dHDSP_5537
+DD2  8 9 dHDSP_5537
+
+DDP1 4 5 dHDSP_5537
+DDP2 7 5 dHDSP_5537
+
+.MODEL dHDSP_5537 D
++ (  
++     IS = 1E-13 
++      N = 2.7
++     RS = 6.22331865 
++     BV = 2.25
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_5537

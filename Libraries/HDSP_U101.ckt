@@ -1,0 +1,41 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-U101  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                  cathode-a 
+*                  |  cathode-f 
+*                  |  |  cathode-g 
+*                  |  |  |  cathode-e 
+*                  |  |  |  |  cathode-d 
+*                  |  |  |  |  |  cathode-DP 
+*                  |  |  |  |  |  |  anode-DP 
+*                  |  |  |  |  |  |  |  cathode-c 
+*                  |  |  |  |  |  |  |  |  common-anode 
+*                  |  |  |  |  |  |  |  |  |  cathode-b
+*                  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_U101 1  2  3  4  5  6  7  8  9  10
+
+D1  9  1 dHDSP_U101
+D2  9  2 dHDSP_U101
+D3  9  3 dHDSP_U101
+D4  9  4 dHDSP_U101
+D5  9  5 dHDSP_U101
+D6  7  6 dHDSP_U101
+D7  9  8 dHDSP_U101
+D8  9 10 dHDSP_U101
+
+.MODEL dHDSP_U101 D
++ (  
++    IS  = 1.31055154E-15 
++     N  = 2.20660855 
++    RS  = 1.60736539 
++    BV  = 14.25
++   IBV  = 100u
++ )  
+
+.ENDS HDSP_U101

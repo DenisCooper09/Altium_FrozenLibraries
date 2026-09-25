@@ -1,0 +1,332 @@
+*//////////////////////////////////////////////////////////////////////
+* (C) National Semiconductor, Inc.
+* Models developed and under copyright by:
+* National Semiconductor, Inc.  
+*
+*/////////////////////////////////////////////////////////////////////
+* Legal Notice: This material is intended for free software support.
+* The file may be copied, and distributed; however, reselling the 
+*  material is illegal
+*
+*////////////////////////////////////////////////////////////////////
+* For ordering or technical information on these models, contact:
+* National Semiconductor's Customer Response Center
+*                 7:00 A.M.--7:00 P.M.  U.S. Central Time
+*                                (800) 272-9959
+* For Applications support, contact the Internet address:
+*  amps-apps@galaxy.nsc.com
+*////////////////////////////////////////////////////////////////////
+* LMC6953  PCI Local Bus Power Supervisor  Macro-Model
+* Rev:  9/10/96 ABG
+*////////////////////////////////////////////////////////////////////
+*
+* Connections          Power Ground
+*		       |   Ground (Common)
+*	               |   |   3.3V Input
+*                      |   |   |   RESET #    
+*                      |   |   |   |   5V Input	
+*                      |   |   |   |   |   C_EXT			
+*                      |   |   |   |   |   |   MR#		
+*                      |   |   |   |   |   |   |   VDD
+.SUBCKT   LMC6953/NS   1   2   3   4   5   6   7   8
+* Features:
+* Compliant to PCI Spec. Rev. 2.1
+* Under and Over Voltage Detection for 3.3V and 5V
+* Power Failure Detection
+* Manual Reset Input
+* Guaranteed RESET Assetion at VDD=1.1V
+* Adjustable Rest Delay
+* Open-Drain Output
+*////////////////////////////////////////////////////////////////////
+*
+* CAUTION: Set ITL5=0  for improved convergence 
+*
+*////////////////////////////////////////////////////////////////////
+* (C) National Semiconductor, Inc.
+* Models developed and under copyright by:
+* National Semiconductor, Inc.  
+*/////////////////////////////////////////////////////////////////////
+* Legal Notice: This material is intended for free software support.
+* The file may be copied, and distributed; however, reselling the 
+*  material is illegal
+*////////////////////////////////////////////////////////////////////
+* For ordering or technical information on these models, contact:
+* National Semiconductor's Customer Response Center
+*                 7:00 A.M.--7:00 P.M.  U.S. Central Time
+*                                (800) 272-9959
+* For Applications support, contact the Internet address:
+*  amps-apps@galaxy.nsc.com
+*////////////////////////////////////////////////////////////////////
+*
+** Voltage-Sense Input Resistors  
+R_5V   5  2   35K
+R_33V   3  2  35K
+** Manual Reset Input
+R_VMR  7  2  1e9
+** Power Dissipation
+R_ICC   8    2   R_ICCMOD   1
+.MODEL  R_ICCMOD  RES  (R=6.25K  TC1=-0.0012)
+*** Ground Connections
+RG1A   1  2   1e-3
+RG1B   1  2   1e-3
+**  Connect 1C1_A  5V Window Comp.
+E_5V    a3    2    5    2   1.0 
+**  Connect 1C1_B  3.3V Window Comp.
+E_3V    b3    2    3   2   1.0 
+** Connect  M_Gate: Controls Reset Timer
+E_a4_1   m11  2  a4  2  1.0
+E_b4_1   m12  2   b4  2  1.0
+E_7_1   m13   2   7  2  1.0
+**  Connect  N_Gate:  Controls  Reset Output
+E_a4_2   n11  2   a4  2   1.0
+E_b4_2   n12  2   b4   2  1.0
+E_7_2   n13  2   7  2   0.2 
+E_p4   n14   2   p4    2  1.0 
+** Add Delay Section
+E_n4   q3   2  n4   2   1.0
+** Add  RESET Output MOS Device
+G_q5x2    2    q50    q5   2   1e-3
+R_MOS1    2    q50    5K
+F_VDD        2    q50    VA1_T    1.0
+F_START    2     q50     VA1_R    -3.0
+MN1   4   q50   2  2   MN1MOD  M=10
+.MODEL MN1MOD NMOS  LEVEL=1 (W=25u   L=1u  VTO=0.5   GAMMA=0.01)  
+** Add Timer Section
+E_m5    p50  2  m5   2   5.0
+MN2  6   p50   2  2   MN2MOD  M=100
+.MODEL MN2MOD NMOS  LEVEL=1 (W=25u   L=1u  VTO=0.5 )
+DCLMP   6    8  DMOD3
+.MODEL DMOD3  D  (RS=10)
+I_TIMER    8   6   1.25e-7
+** Timer Comparator
+E_6   p3  2   6  2  1.0
+** Add  Power Out Short  Delay Comp.
+E_5x3   s3   2    5   3    -1.0
+R_VTEST   s4   s40   1K   
+VTEST   s40   2  DC  0   
+** Add Start-Up Circuit
+E_8_1   r3   2    8    2    1.0
+** Add VDD Enable Circuit
+E_8_2  t3   2    8    2    1.0
+**  Begin Macro Block 1C1_A.FLT  **
+RX1_A 	a3 	a16 	10
+RX2_A 	a3 	2 	1E9
+CX1_A 	a16 	2 	10E-12
+IA1_A 	2 	a10 	DC 	1E-3
+CA1_A 	a10 	2 	1E-13
+DA1_A 	a10 	a11 	DMOD1_A
+DA2_A 	a10 	a15 	DMOD1_A
+DB1_A 	a10 	a12 	DMOD1_A
+VA1_A 	a11 	a13 	DC 	0
+EA2_A 	a17 	2 	a13 	2 	-1
+FY1_A 	2 	a4 	VB1_A 	100
+RY1_A 	a4 	2 	10
+CY1_A 	a4 	2 	10E-12
+VRY_A 	a19 	2 	DC 	1.0
+EY2_A 	a18 	a19 	a4 	2 	-1.0
+RY2_A 	a18 	a5 	10
+RY3_A 	a5 	2 	1E9
+.MODEL  DMOD1_A  D  (RS=1)
+***** Variables ***
+RA1_A 	a10 	2 	1E8
+EA1_A 	a13 	2 	a3 	2 	10
+VB1_A 	a12 	2 	DC 	44
+VH_A 	a15 	a17 	DC 	100
+** Begin Macro block IC1_B.FLT **
+RX1_B 	b3 	b16 	10
+RX2_B 	b3 	2 	1E9
+CX1_B 	b16 	2 	10E-12
+IA1_B 		2 	b10 	DC 	1E-3
+CA1_B 	b10 	2 	1E-13
+DA1_B 	b10 	b11 	DMOD1_B
+DA2_B 	b10 	b15 	DMOD1_B
+DB1_B 	b10 	b12 	DMOD1_B
+VA1_B 	b11 	b13 	DC 	0
+EA2_B 	b17 	2 	b13 	2 	-1
+FY1_B 	2 	b4 	VB1_B 	100
+RY1_B 	b4 	2 	10
+CY1_B 	b4 	2 	10E-12
+VRY_B 	b19 	2 	DC 	1.0
+EY2_B 	b18 	b19 	b4 	2 	-1.0
+RY2_B 	b18 	b5 	10
+RY3_B 	b5 	2 	1E9
+.MODEL  DMOD1_B  D  (RS=1)
+***** Variables ***
+RA1_B 	b10 	2 	1E8
+EA1_B 	b13 	2 	b3 	2 	10
+VB1_B 	b12 	2 	DC 	26.5
+VH_B 	b15 	b17 	DC 	66
+**  Begin Macro Block M_GATE.FLT **
+RX11A_M 	m11 	2 	1E9
+RX11B_M 	m11 	2 	1E9
+RX12A_M 	m12 	2 	1E9
+RX12B_M 	m12 	2 	1E9
+RX13A_M 	m13 	2 	1E9
+RX13B_M 	m13 	2 	1E9
+IA1_M 	2 	m30 	DC 	1E-3
+RIA1_M 	m30 	2 	1E6
+CIA1_M 	m30 	2 	1E-12
+VA1_M 	m30 	m33 	DC 	0
+DB_M 	m30 	m32 	DMOD1_M
+VB1_M 	m32 	2 	DC 	0.5
+DA1_M 	m33 	m21 	DMOD1_M
+EA1_M 	m21 	2 	m11 	2 	1.0
+DA2_M 	m33 	m22 	DMOD1_M
+EA2_M 	m22 	2 	m12 	2 	1.0
+DA3_M 	m33 	m23 	DMOD1_M
+EA3_M 	m23 	2 	m13 	2 	1.0
+FY1_M 	2 	m4 	VB1_M 	100
+RY1_M 	m4 	2 	10
+CY1_M 	m4 	2 	10E-12
+VRY_M 	m36 	2 	DC 	1.0
+EY2_M 	m38 	m36 	m4 	2 	-1.0
+RY2_M 	m38 	m5 	10
+CY3_M 	m5 	2 	1E-12
+.MODEL  DMOD1_M  D  (RS=1)
+** Begin Macro Block N_GATE **
+RX11A_N 	n11 	2 	1E9
+RX11B_N 	n11 	2 	1E9
+RX12A_N 	n12 	2 	1E9
+RX12B_N 	n12 	2 	1E9
+RX13A_N 	n13 	2 	1E9
+RX13B_N 	n13 	2 	1E9
+RX14A_N 	n14 	2 	1E9
+RX14B_N 	n14 	2 	1E9
+IA1_N 	2 	n30 	DC 	1E-3
+RIA1_N 	n30 	2 	1E6
+CIA1_N 	n30 	2 	1E-12
+VA1_N 	n30 	n33 	DC 	0
+DB_N 	n30 	n32 	DMOD1_N
+VB1_N 	n32 	2 	DC 	0.5
+DA1_N 	n33 	n21 	DMOD1_N
+EA1_N 	n21 	2 	n11 	2 	1.0
+DA2_N 	n33 	n22 	DMOD1_N
+EA2_N 	n22 	2 	n12 	2 	1.0
+DA3_N 	n33 	n23 	DMOD1_N
+EA3_N 	n23 	2 	n13 	2 	1.0
+DA4_N 	n33 	n24 	DMOD1_N
+EA4_N 	n24 	2 	n14 	2 	1.0
+FY1_N 	2 	n4 	VB1_N 	100
+RY1_N 	n4 	2 	10
+CY1_N 	n4 	2 	10E-12
+VRY_N 	n36 	2 	DC 	1.0
+EY2_N 	n38 	n36 	n4 	2 	-1.0
+RY2_N 	n38 	n5 	10
+CY3_N 	n5 	2 	1E-12
+.MODEL  DMOD1_N  D  (RS=1)
+**  Begin Macro Block 1A2_Q.FLT  **
+RX1_Q 	q3 	q16 	10
+RX2_Q 	q3 	2 	1E9
+CX1_Q 	q16 	2 	10E-12
+DD1_Q 	q35 	q36 	DMOD1_Q
+DD2_Q 	q37 	q35 	DMOD1_Q
+VP1_Q 	q36 	2 	9.4
+VN1_Q 	q37 	2 	-9.4
+CDD_Q 	q35 	2 	10E-12
+IA1_Q 	2 	q10 	DC 	1E-3
+*FIA1_Q 	2 	q10    VSTART  1.0
+RA1_Q 	q10 	2 	1E6
+CA1_Q 	q10 	2 	1E-12
+DA1_Q 	q10 	q11 	DMOD1_Q
+DB1_Q 	q10 	q12 	DMOD1_Q
+EA1_Q 	q11 	q13 	q35 	2 	1
+VA1_Q 	q13 	2 	DC 	0
+VB1_Q 	q12 	2 	DC 	0
+FY1_Q 	2 	q4 	VB1_Q 	100
+RY1_Q 	q4 	2 	10
+CY1_Q 	q4 	2 	10E-12
+VRY_Q 	q19 	2 	DC 	1.0
+EY2_Q 	q17 	q19 	q4 	2 	-1.0
+RY2_Q 	q17 	q5 	10
+RY3_Q 	q5 	2 	1E9
+.MODEL  DMOD1_Q  D  (RS=1)
+*** Variables 
+IDD_Q 	q35 	2 	DC 	6.35E-4
+GDD_Q 	2 	q35 	q16 	2 	12.7E-4
+** Short Delay Signal
+FDD_TEST     2     q35       VTEST    -7.5
+**  Begin Macro Block 1A1_P.FLT  **
+RX1_P 	p3 	p16 	10
+RX2_P 	p3 	2 	1E9
+CX1_P 	p16 	2 	10E-12
+IA1_P 	2 	p10 	DC 	1E-3
+RA1_P 	p10 	2 	10E6
+CA1_P 	p10 	2 	1E-12
+DA1_P 	p10 	p11 	DMOD1_P
+DB1_P 	p10 	p12 	DMOD1_P
+EA1_P 	p11 	p13 	p3 	2 	10
+VA1_P 	p13 	2 	DC 	0
+VB1_P 	p12 	2 	DC 	12.5
+FY1_P 	2 	p4 	VB1_P 	100
+RY1_P 	p4 	2 	10
+CY1_P 	p4 	2 	10E-12
+VRY_P 	p19 	2 	DC 	1.0
+EY2_P 	p17 	p19 	p4 	2 	-1.0
+RY2_P 	p17 	p5 	10
+RY3_P 	p5 	2 	1E9
+.MODEL  DMOD1_P  D  (RS=1)
+**  Begin Macro Block 1A1_S.FLT **
+RX1_S 	s3 	s16 	10
+RX2_S 	s3 	2 	1E9
+CX1_S 	s16 	2 	10E-12
+IA1_S 	2 	s10 	DC 	1E-3
+RA1_S 	s10 	2 	10E6
+CA1_S 	s10 	2 	1E-12
+DA1_S 	s10 	s11 	DMOD1_S
+DB1_S 	s10 	s12 	DMOD1_S
+EA1_S 	s11 	s13 	s3 	2 	10
+VA1_S 	s13 	2 	DC 	0
+VB1_S 	s12 	2 	DC 	3
+FY1_S 	2 	s4 	VB1_S 	100
+RY1_S 	s4 	2 	10
+CY1_S 	s4 	2 	10E-12
+VRY_S 	s19 	2 	DC 	1.0
+EY2_S 	s17 	s19 	s4 	2 	-1.0
+RY2_S 	s17 	s5 	10
+RY3_S 	s5 	2 	1E9
+.MODEL  DMOD1_S  D  (RS=1)
+**  Begin Macro Block 1A1_R.FLT  **
+RX1_R 	r3 	r16 	10
+RX2_R 	r3 	2 	1E9
+CX1_R 	r16 	2 	10E-12
+IA1_R 		2 	r10 	DC 	1E-3
+RA1_R 	r10 	2 	10E6
+CA1_R 	r10 	2 	1E-12
+DA1_R 	r10 	r11 	DMOD1_R
+DB1_R 	r10 	r12 	DMOD1_R
+EA1_R 	r11 	r13 	r3 	2 	10
+VA1_R 	r13 	2 	DC 	0
+VB1_R 	r12 	2 	DC 	10
+FY1_R 	2 	r4 	VB1_R 	1
+RY1_R 	r4 	r40 	1000
+VSTART     r40   2  DC  0
+CY1_R 	r4 	2 	10E-12
+VRY_R 	r19 	2 	DC 	1.0
+EY2_R 	r17 	r19 	r4 	2 	-1.0
+RY2_R 	r17 	r5 	10
+RY3_R 	r5 	2 	1E9
+.MODEL  DMOD1_R  D  (RS=100)
+**  Begin Macro Block 1A1_T.FLT **
+RX1_T 	t3 	t16 	10
+RX2_T 	t3 	2 	1E9
+CX1_T 	t16 	2 	10E-12
+IA1_T 		2 	t10 	DC 	1E-3
+RA1_T 	t10 	2 	10E6
+CA1_T 	t10 	2 	1E-12
+DA1_T 	t10 	t11 	DMOD1_T
+DB1_T 	t10 	t12 	DMOD1_T
+EA1_T 	t11 	t13 	t3 	2 	10
+VA1_T 	t13 	2 	DC 	0
+VB1_T 	t12 	2 	DC 	44
+FY1_T 	2 	t4 	VB1_T 	100
+RY1_T 	t4 	2 	10
+CY1_T 	t4 	2 	10E-12
+VRY_T 	t19 	2 	DC 	1.0
+EY2_T 	t17 	t19 	t4 	2 	-1.0
+RY2_T 	t17 	t5 	10
+RY3_T 	t5 	2 	1E9
+.MODEL  DMOD1_T  D  (RS=1)
+*****
+.ENDS  LMC6953
+*$
+

@@ -1,0 +1,70 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-N103  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 anode-a
+*                 |  anode-f
+*                 |  |  common-cathode
+*                 |  |  |  anode-e
+*                 |  |  |  |  common-cathode
+*                 |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  anode-d
+*                 |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  |  |  |  anode-g
+*                 |  |  |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_N103 2  3  4  5  6  10 11 12 13 14 15 17
+
+DA1    2   4  dHDSP_N103
+DB1   15   4  dHDSP_N103
+DC1   13   4  dHDSP_N103
+DD1   11   4  dHDSP_N103
+DE1    5   4  dHDSP_N103
+DF1    3   4  dHDSP_N103
+DG1   14   4  dHDSP_N103
+DDP1  10   4  dHDSP_N103
+
+DA2    2   6  dHDSP_N103
+DB2   15   6  dHDSP_N103
+DC2   13   6  dHDSP_N103
+DD2   11   6  dHDSP_N103
+DE2    5   6  dHDSP_N103
+DF2    3   6  dHDSP_N103
+DG2   14   6  dHDSP_N103
+DDP2  10   6  dHDSP_N103
+
+DA3    2  12  dHDSP_N103
+DB3   15  12  dHDSP_N103
+DC3   13  12  dHDSP_N103
+DD3   11  12  dHDSP_N103
+DE3    5  12  dHDSP_N103
+DF3    3  12  dHDSP_N103
+DG3   14  12  dHDSP_N103
+DDP3  10  12  dHDSP_N103
+
+DA4    2  17  dHDSP_N103
+DB4   15  17  dHDSP_N103
+DC4   13  17  dHDSP_N103
+DD4   11  17  dHDSP_N103
+DE4    5  17  dHDSP_N103
+DF4    3  17  dHDSP_N103
+DG4   14  17  dHDSP_N103
+DDP4  10  17  dHDSP_N103
+  
+.MODEL dHDSP_N103 D
++ (  
++    IS  = 2.08276754E-16 
++     N  = 2.17799178 
++    RS  = 0.50892350
++    BV  = 14.25
++   IBV  = 100u
++ )  
+
+.ENDS HDSP_N103

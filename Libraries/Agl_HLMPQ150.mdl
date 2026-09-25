@@ -1,0 +1,8 @@
+* Agl_HLMPQ150 LED Model
+* Created by Shaun Quin 30-05-2002
+* jj 9/9/2002: changed RS, N values.
+*Typ LED: Vf=1.6 Vr=15V If=1mA 
+*LED Pinout: 1=A, 2=K
+.MODEL Agl_HLMPQ150 D (IS=171.285n RS=1265.77 N=1.5 BV=15 IBV=100U
++ CJO=30P VJ=.75 M=.333 TT=30n)
+*Temperature and Noise Effects are not Modelled

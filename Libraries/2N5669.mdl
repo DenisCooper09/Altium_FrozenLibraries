@@ -1,0 +1,6 @@
+*2N5669 MCE
+*Ref: Motorola Small-Signal Databook, Q4/94
+*25V  20mA  35.3ohm  Dep-Mode pkg:TO-92B 3,1,2
+.MODEL 2N5669 NJF(VTO=-3.5 BETA=0.0035 LAMBDA=0.0012 RD=4.95 RS=4.45 
++ CGS=2.35E-12 CGD=4E-12 IS=6.32E-15 )
+* Origin: Mcejfets.lib

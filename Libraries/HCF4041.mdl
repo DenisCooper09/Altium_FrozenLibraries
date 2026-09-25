@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCF4041: Qaud True/Complement Buffer
+.MODEL HCF4041 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4041 {mntymx})

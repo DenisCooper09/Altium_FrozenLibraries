@@ -1,0 +1,59 @@
+*EL2073 Macromodel 
+* 
+* Connections:          +input
+*                       |   -input
+*                       |   |   +Vsupply
+*                       |   |   |   -Vsupply
+*                       |   |   |   |   output
+*                       |   |   |   |   |
+.subckt EL2073          3   2   7   4   6
+*
+*Input Stage 
+*
+ie 37 4 1mA
+r6 36 37 125
+r7 38 37 125
+rc1 7 30 200
+rc2 7 39 200
+q1 30 3 36 qn
+q2 39 2 38 qna
+ediff 33 0 39 30 1
+rdiff 33 0 1Meg
+*
+* Compensation Section 
+*
+ga 0 34 33 0 2m
+rh 34 0 500K
+ch 34 0 1.2pF
+rc 34 40 400
+cc 40 0 0.3pF
+*
+* Poles
+*
+ep 41 0 40 0 1
+rpa 41 42 75
+cpa 42 0 0.5pF
+rpb 42 43 50
+cpb 43 0 0.5pF
+*
+* Output Stage  
+* 
+ios1 7 50 3.0mA
+ios2 51 4 3.0mA
+q3  4 43 50 qp 
+q4  7 43 51 qn
+q5  7 50 52 qn
+q6  4 51 53 qp 
+ros1 52 6 2
+ros2 6 53 2
+*
+* Power Supply Current
+*
+ips 7 4 11.4mA
+*
+* Models 
+*
+.model qna npn(is=800e-18 bf=170 tf=0.2nS)
+.model qn  npn(is=810e-18 bf=200 tf=0.2nS)
+.model qp  pnp(is=800e-18 bf=200 tf=0.2nS)
+.ends

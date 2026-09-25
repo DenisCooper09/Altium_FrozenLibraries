@@ -1,0 +1,71 @@
+*//////////////////////////////////////////////////////////////
+* LT1497  Dual 125mA, 50MHz Current Feedback Amplifier       //
+*//////////////////////////////////////////////////////////////
+*
+* connections:     non-inverting input
+*                  |   inverting input
+*                  |   |   positive power supply
+*                  |   |   |   negative power supply
+*                  |   |   |   |   output
+*                  |   |   |   |   |
+*                  |   |   |   |   |
+.SUBCKT LT1497     3   2   7   4   6
+*
+Q1A  4   33   10  QP
+Q2A  4   33   110 QP 
+Q3A  11  10   22  QN 0.45X
+Q4A  11  11   14  QP
+RBC  11  11A      300
+Q5A  9   11A  16  QP
+Q6A  12  11A  17  QP 2X
+Q7A  4   9    12  QP 2X
+Q8A  15  18   13  QN 21X
+RBA  12  18       150
+RSCA 13  6        2.4
+IBA  7   10       370U
+ROA  7   10       80K
+DIA  10  7        DCC 3X
+*
+Q1B  7   33   110 QN
+Q2B  7   33   10  QN
+Q3B  111 110  22  QP 0.55X
+Q4B  111 111  114 QN
+RBD  111 111B     300
+Q5B  9   111B 116 QN
+Q6B  112 111B 117 QN 2X
+Q7B  7   9    112 QN 2X
+Q8B  115 118  113 QP 21X
+RBB  112 118      150
+RSCB 6   113      2.4
+IBB  110 4        370U
+ROB  110 4        80K 
+DIB  4   110      DCC 3X
+*
+RIP  3   33       .01
+RIM  2   22       15
+RIB  7   11       120K
+R4A  14  15       400
+R5A  16  15       400
+R6A  17  7        200
+RBSA 7   15       6
+R4B  114 115      400
+R5B  116 115      400
+R6B  117 4        200
+RBSB 4   115      6
+R9A  7   9        1200K
+R9B  9   4        1200K
+C9   9   4        3PF
+D1   9   6        DCC
+D2   6   9        DCC
+D3   9   7        DCC 2X
+D4   4   9        DCC 2X
+CMA  7   11       4PF
+CMB  111 4        4PF
+IB   7   4        600UA
+*
+.MODEL DCC D CJO=3PF VJ=0.57 M=0.36
+.MODEL QN NPN BF=150 TF=400P
+.MODEL QP PNP BF=150 TF=400P
+*
+.ENDS LT1497
+*

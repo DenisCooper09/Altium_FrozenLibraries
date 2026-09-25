@@ -1,0 +1,7 @@
+* Agl_HSMMC540 LED Model
+* Created by Shaun Quin 29-05-2002
+*Typ LED: Vf=3.8V Vr=5V If=20mA 
+*LED Pinout: 1=A, 2=K
+.MODEL Agl_HSMMC540 D (IS=51.39n RS=165.197 N=1.5 BV=5 IBV=10U
++ CJO=50P VJ=.75 M=.333 TT=4.32U)
+*Temperature and Noise Effects are not Modelled

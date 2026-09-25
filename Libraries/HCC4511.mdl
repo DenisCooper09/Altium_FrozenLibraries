@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4511: BCD-TO-7segment Latch/Decoder/Driver
+.MODEL HCC4511 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4511 {mntymx})

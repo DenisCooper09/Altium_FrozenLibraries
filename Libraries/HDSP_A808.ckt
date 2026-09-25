@@ -1,0 +1,41 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-A808  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 common-cathode
+*                 |  anode-PLUS
+*                 |  |  anode-MINUS
+*                 |  |  |  common-cathode
+*                 |  |  |  |  anode-DP
+*                 |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |
+.SUBCKT HDSP_A808 1  2  3  6  7  8  9
+
+DPLUS1  2  1 dHDSP_A808
+DMINUS1 3  1 dHDSP_A808
+DB1     9  1 dHDSP_A808
+DC1     8  1 dHDSP_A808
+DDP1    7  1 dHDSP_A808
+
+DPLUS2  2  6 dHDSP_A808
+DMINUS2 3  6 dHDSP_A808
+DB2     9  6 dHDSP_A808
+DC2     8  6 dHDSP_A808
+DDP2    7  6 dHDSP_A808
+ 
+.MODEL dHDSP_A808 D
++ (  
++     IS = 6.64511693E-21 
++      N = 1.66825537 
++     RS = 20.13814139 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_A808 

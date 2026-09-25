@@ -1,0 +1,6 @@
+*2N5640 MCE
+*Ref: Motorola Small-Signal Databook, Q4/94
+*30V  20mA  35.3ohm  Dep-Mode pkg:TO-92B 3,1,2
+.MODEL 2N5640 NJF(VTO=-2.5 BETA=0.005 LAMBDA=0.001 RD=4.95 RS=4.45 
++ CGS=1.92E-11 CGD=5.12E-12 IS=5.26E-15 )
+* Origin: Mcejfets.lib

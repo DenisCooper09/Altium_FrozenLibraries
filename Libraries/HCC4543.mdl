@@ -1,0 +1,3 @@
+*ST Microlectronics
+*HCC4543: BCD-TO-SEVEN Segment Decoder
+.MODEL HCC4543 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4543 {mntymx})

@@ -1,0 +1,54 @@
+* BF547W SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT323 DIE MODEL : BF547
+* 1: COLLECTOR; 2: BASE; 3: EMITTER
+.SUBCKT BF547W 1 2 3
+Q1 6 5 7 7 BF547
+* SOT323 parasitic model
+               Lb  4 5 .6n
+               Le  7 8 .6n
+               L1  2 4 .34n
+               L2  1 6 .1n
+               L3  3 8 .34n
+              Ccb  4 6 100f
+              Cbe  4 8 2f
+*
+* PHILIPS SEMICONDUCTORS                                     Version:     1.0
+* Filename:    BF547.PRM                                     Date: March 1992
+*
+.MODEL  BF547   NPN
++(
++              IS = 2.89100E-016
++              BF = 9.42900E+001
++              NF = 9.89200E-001
++             VAF = 9.00000E+001
++             IKF = 1.58600E-001
++             ISE = 4.26600E-016
++              NE = 1.49100E+000
++              BR = 1.23200E+001
++              NR = 9.89400E-001
++             VAR = 1.93900E+001
++             IKR = 2.47500E-002
++             ISC = 2.49700E-014
++              NC = 1.20000E+000
++              RB = 5.00000E+001
++             IRB = 1.00000E-006
++             RBM = 5.00000E+001
++              RE = 5.00000E-001
++              RC = 1.30900E+000
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 1.07100E-012
++             VJE = 7.27300E-001
++             MJE = 3.32100E-001
++              TF = 9.29800E-011
++             XTF = 4.38900E+001
++             VTF = 1.81300E+000
++             ITF = 1.43900E-001
++             CJC = 1.16700E-012
++             VJC = 4.89000E-001
++             MJC = 2.52700E-001
++)
+.ENDS

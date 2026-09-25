@@ -1,0 +1,32 @@
+*
+*  ZETEX  ZVP3306F Mosfet Spice Subcircuit     Last revision 3/5/00
+*
+.SUBCKT ZVP3306F 3 4 5
+*                D G S
+M1 3 2 5 5 P3306M
+RG 4 2 252
+RL 3 5 1.2E8
+C1 2 5 28E-12
+C2 3 2 3E-12
+D1 3 5 P3306D
+*
+.MODEL P3306M PMOS VTO=-2.875 RS=5.227 RD=7.524 IS=1E-15 KP=.145
++CBD=35E-12 PB=1 LAMBDA=6.67E-3
+.MODEL P3306D D IS=5E-12 RS=.768
+.ENDS ZVP3306F
+*
+*$
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

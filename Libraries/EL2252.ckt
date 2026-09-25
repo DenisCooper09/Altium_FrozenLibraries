@@ -1,0 +1,104 @@
+* jjt 7/7/2000: modified .ckt to hook up two EL2252 subcircuits and share the V+, V-, HYS and /TTL
+*               pins
+*
+*EL2252 Whole Device
+* Connections:           +input1
+*                        |   -input1
+*                        |   |   +input2            
+*                        |   |   |   -input2
+*                        |   |   |   |
+*                        |   |   |   |   +V
+*                        |   |   |   |   |   -V    
+*                        |   |   |   |   |   |   HYS ___   
+*                        |   |   |   |   |   |   |   TTL
+*                        |   |   |   |   |   |   |   |   output1
+*                        |   |   |   |   |   |   |   |   |   output2  
+*                        |   |   |   |   |   |   |   |   |   |
+.subckt EL2252W          1   2   3   4   5   6   7   8   9   10
+X1    1   2   5   6   7   8   9    EL2252
+X2    3   4   5   6   7   8   10   EL2252
+.ends EL2252W
+
+*EL2252 Macromodel
+* Connections:          +input
+*                       |   -input
+*                       |   |   +V
+*                       |   |   |   -V    
+*                       |   |   |   |   HYS ___   
+*                       |   |   |   |   |   TTL
+*                       |   |   |   |   |   |   output
+*                       |   |   |   |   |   |   |  
+*                       |   |   |   |   |   |   |
+.subckt EL2252          2   3   14  7   4   5   13
+*
+* Application Hints:
+*
+* Connect pin 4 to ground through 1000 Megohm resistor to inhibit
+* Hysteresis; to invoke Hysteresis, connect pin 4 to V-.
+*
+* Connect pin 5 to ground to invoke TTL Voh; pin 5 may left open
+* for CMOS Voh.
+*
+* To faciltate .OP, set itl1 = 200, itl2 = 200, set node 27 to 13.8
+* volts, and node 30 to -12 volts.  As an example, if you called your
+* subckt x1, then the following statement should be added to your deck:
+* 
+* .NODESET V(x1.27)=13.8 V(x1.30)=-12
+*
+*Input Stage 
+*
+i1  22  7 1.7mA
+r1  14 20 300
+r2  14 21 300
+q1  20  2 22 qn
+q2  21  3 22 qn
+q3  20 26 23 qn 
+q4  21 25 23 qn
+q13 25 27 20 qp
+q14 26 27 21 qp
+v1  14 27 1.2v 
+r3  23 24 1.4K
+d1  24 4 ds
+r4  25 33 700
+r5  26 33 700
+q16 33 33 34 qn
+q17 34 34 37 qn
+v4  37 7 1.2v         
+*
+* 2nd Stage 
+*
+i2 30 7  3mA   
+i3 14 28 1.5mA
+q7  0 35 28 qp
+v2  44 0 1.2V
+s1  44 35 5 0 swa
+s2  45 35 5 0 swb
+rsw 14 5 10K
+v3  45 0 2.5v
+q5  0 26 30 qn
+q6 28 25 30 qn 
+d3 0 28 ds
+*
+* Output Stage  
+* 
+i4 14 38 1mA
+q8 38 38 39 qn
+q9 32 32 39 qp
+q10 7 28 32 qp
+q11 14 38 40 qn 2
+q12  7 28 13 qp 2
+r6 40 13 50
+*
+* Models 
+*
+.model qn npn(is=2e-15 bf=120 tf=0.2nS cje=0.2pF cjc=0.2pF ccs=0.2pF)
+.model qp pnp(is=0.6e-15 bf=60 tf=0.2nS cje=0.5pF cjc=0.3pF ccs=0.2pF)
+.model ds d(is=3e-12 tt=0.05nS eg=0.72V vj=0.58)
+
+*.model swa vswitch(von=0v voff=2.5v)
+*.model swb vswitch(von=2.5 voff= 0v)
+*jg, 7/7/2000: model syntax corrected
+
+.model swa sw(RON=1 ROFF=1000G vt=0v vh=2.5v)
+.model swb sw(RON=1 ROFF=1000G vt=2.5v vh= 0v)
+.ends

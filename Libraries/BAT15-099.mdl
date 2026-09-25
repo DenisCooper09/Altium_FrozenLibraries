@@ -1,0 +1,7 @@
+*****************************************************************
+.MODEL BAT15-099 D(Is=130n N=1.08 Rs=4.5 Xti=1.8 Eg=.68 Cjo=285f M=.043
++ Vj=.11 Fc=.5 Bv=4 Ibv=10u Tt=25p)
+* Case SOT143, 2 diodes, connection pins 4-1 / 2-3
+* Data for each diode, add R=3.3MEG parallel to each diode for better IR and
+* R0 simulation
+* 10.11.1994 SIEMENS HL EH PD1 Kurth

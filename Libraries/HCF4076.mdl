@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCF4076: 4-bit D-Type Register
+.MODEL HCF4076 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4076 {mntymx})

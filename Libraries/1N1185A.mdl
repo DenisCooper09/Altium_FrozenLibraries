@@ -1,0 +1,7 @@
+*1N1185A MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*150V 40000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 1N1185A D (IS=56.8N RS=1.05M N=1.7 BV=150 IBV=330U
++ CJO=1.65N VJ=0.75 M=0.333 TT=4.32U)
+
+

@@ -1,0 +1,7 @@
+*SD800C40L 3/10/98
+*Ref: IR Power Semiconductors Product Digest '94
+*4000V 1.06E+03A 3us Si pkg:DIODE0.7 1,2
+.MODEL SD800C40L D (IS=1.51U RS=39.4U N=1.7 BV=4K IBV=10U
++ CJO=43.8N VJ=0.75 M=0.333 TT=4.32U IBV=0.234)
+
+

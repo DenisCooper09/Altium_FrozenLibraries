@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-315G  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 g - cathode
+*                 |  f - cathode
+*                 |  |  common-anode
+*                 |  |  |  e - cathode
+*                 |  |  |  |  d - cathode
+*                 |  |  |  |  |  DP - cathode
+*                 |  |  |  |  |  |  c - cathode
+*                 |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  b - cathode
+*                 |  |  |  |  |  |  |  |  |  a - cathode
+*                 |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_315G 1  2  3  4  5  6  7  8  9  10
+
+DA1  3 10 dHDSP_315G
+DB1  3  9 dHDSP_315G
+DC1  3  7 dHDSP_315G
+DD1  3  5 dHDSP_315G
+DE1  3  4 dHDSP_315G
+DF1  3  2 dHDSP_315G
+DG1  3  1 dHDSP_315G
+DDP1 3  6 dHDSP_315G
+
+DA2  8 10 dHDSP_315G
+DB2  8  9 dHDSP_315G
+DC2  8  7 dHDSP_315G
+DD2  8  5 dHDSP_315G
+DE2  8  4 dHDSP_315G
+DF2  8  2 dHDSP_315G
+DG2  8  1 dHDSP_315G
+DDP2 8  6 dHDSP_315G
+
+.MODEL dHDSP_315G D
++ (  
++     IS = 1.61114016E-27 
++      N = 1.30291189 
++     RS = 12.83456794 
++     BV = 50 
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_315G

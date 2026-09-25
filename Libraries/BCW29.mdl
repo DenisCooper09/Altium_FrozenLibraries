@@ -1,0 +1,20 @@
+*ZETEX  BCW29 Spice model    Last revision  4/90
+*
+.MODEL BCW29 PNP IS =1.149E-14 ISE=5E-14 NF =.9872 NE =1.4 BF =330 BR =13
++IKF=.1 IKR=.012 ISC=1.43E-14 NC =1.1 NR =.996 RB =.2 RE =.4 RC =.95 VAR=8.15
++VAF=84.56 CJE=16E-12 TF =.493E-9 CJC=10.5E-12 TR =73.55E-9 MJC=.415 VJC=.565
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

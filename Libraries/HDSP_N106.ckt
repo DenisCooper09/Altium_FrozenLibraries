@@ -1,0 +1,47 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-N106  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 cathode-a
+*                 |  anode-d
+*                 |  |  cathode-d
+*                 |  |  |  cathode-c
+*                 |  |  |  |  cathode-e
+*                 |  |  |  |  |  anode-e
+*                 |  |  |  |  |  |  cathode-DP
+*                 |  |  |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  |  |  cathode-DP
+*                 |  |  |  |  |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  |  |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_N106 2  3  4  5  6  7  8  10 11 12 13 14 15 17
+
+DA1  15   2  dHDSP_N106
+DA2  15  17  dHDSP_N106
+
+DB   13  12  dHDSP_N106
+DC   14   5  dHDSP_N106
+DD    3   4  dHDSP_N106
+DE    7   6  dHDSP_N106
+
+DDP1 10   8  dHDSP_N106
+DDP2 10  11  dHDSP_N106
+
+.MODEL dHDSP_N106 D
++ (  
++    IS  = 2.08276754E-16 
++     N  = 2.17799178 
++    RS  = 0.50892350
++    BV  = 14.25
++   IBV  = 100u
++ )  
+
+.ENDS HDSP_N106

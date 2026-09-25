@@ -1,0 +1,7 @@
+*8AF4NPP MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*400V 50000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 8AF4NPP D (IS=71N RS=840U N=1.7 BV=400 IBV=1099U
++ CJO=2.06N VJ=0.75 M=0.333 TT=4.32U)
+
+

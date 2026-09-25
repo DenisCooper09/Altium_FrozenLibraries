@@ -1,0 +1,52 @@
+*
+.SUBCKT BDL31 1 2 3
+* housing parasitics
+LBlead 2 22 1.63E-09
+LE 3 333 3.77E-09
+LC 1 11 4.1E-10
+LBbond 22 222 2.5E-09
+CBCG 222 11 1.76E-13
+CBEG 222 333 8.6E-14
+CCEG 11 333 1.76E-13
+Q1 11 222 333 BDL31
+.MODEL BDL31 NPN(
++ IS = 9.791E-13
++ NF = 0.9879
++ ISE = 1.549E-14
++ NE = 1.461
++ BF = 399.9
++ IKF = 5.58
++ VAF = 54.99
++ NR = 0.9914
++ ISC = 3.649E-14
++ NC = 1.486
++ BR = 101
++ IKR = 0.39
++ VAR = 11.9
++ RB = 33.6
++ IRB = 0.0003203
++ RBM = 1.18
++ RE = 0.0917
++ RC = 0.02
++ XTB = 0
++ EG = 1.11
++ XTI = 3
++ CJE = 4.493E-10
++ VJE = 0.9469
++ MJE = 0.4101
++ TF = 6E-10
++ XTF = 59
++ VTF = 3
++ ITF = 11
++ PTF = 0
++ CJC = 2.441E-10
++ VJC = 0.3643
++ MJC = 0.32
++ XCJC = 1
++ TR = 1.5E-08
++ CJS = 0
++ VJS = 0.75
++ MJS = 0.333
++ FC = 0.78)
+.ENDS
+*

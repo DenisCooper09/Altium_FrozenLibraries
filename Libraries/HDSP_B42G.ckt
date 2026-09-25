@@ -1,0 +1,63 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  5-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-B42G  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-e
+*                 |  cathode-d
+*                 |  |  cathode-DP
+*                 |  |  |  cathode-c
+*                 |  |  |  |  cathode-g
+*                 |  |  |  |  |  common-anode-4
+*                 |  |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  |  common-anode-3
+*                 |  |  |  |  |  |  |  |  common-anode-2
+*                 |  |  |  |  |  |  |  |  |  cathode-f
+*                 |  |  |  |  |  |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  |  |  |  |  |  common-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_B42G 1  2  3  4  5  6  7  8  9  10 11 12
+
+DB1 12  7 dHDSP_B42G
+DC1 12  4 dHDSP_B42G
+
+DA2  9 11 dHDSP_B42G
+DB2  9  7 dHDSP_B42G
+DC2  9  4 dHDSP_B42G
+DD2  9  2 dHDSP_B42G
+DE2  9  1 dHDSP_B42G
+DF2  9 10 dHDSP_B42G
+DG2  9  5 dHDSP_B42G
+DDP2 9  3 dHDSP_B42G
+
+DA3  8 11 dHDSP_B42G
+DB3  8  7 dHDSP_B42G
+DC3  8  4 dHDSP_B42G
+DD3  8  2 dHDSP_B42G
+DE3  8  1 dHDSP_B42G
+DF3  8 10 dHDSP_B42G
+DG3  8  5 dHDSP_B42G
+DDP3 8  3 dHDSP_B42G
+
+DA4  6 11 dHDSP_B42G
+DB4  6  7 dHDSP_B42G
+DC4  6  4 dHDSP_B42G
+DD4  6  2 dHDSP_B42G
+DE4  6  1 dHDSP_B42G
+DF4  6 10 dHDSP_B42G
+DG4  6  5 dHDSP_B42G
+
+.MODEL dHDSP_B42G D
++ (  
++     IS = 5.45751596E-12 
++      N = 3.47011329 
++     RS = 12.18613587 
++     BV = 4.8 
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_B42G

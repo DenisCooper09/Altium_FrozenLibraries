@@ -1,0 +1,6 @@
+*1N4764
+*Ref: Motorola
+*100V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4764 D(IS=2.67E-9 RS=289 TT=5.01E-8 CJO=2.45E-11 M=0.33 
++ BV=99.32 IBV=0.0025 )
+* Origin: Mcediode.lib

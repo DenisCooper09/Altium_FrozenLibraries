@@ -1,0 +1,43 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-4136  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*
+*                 CATHODE-d 
+*                 |  ANODE-d 
+*                 |  |  CATHODE-c 
+*                 |  |  |  CATHODE-e 
+*                 |  |  |  |  ANODE-e 
+*                 |  |  |  |  |  ANODE-c 
+*                 |  |  |  |  |  |  ANODE-dp 
+*                 |  |  |  |  |  |  |  CATHODE-dp 
+*                 |  |  |  |  |  |  |  |  CATHODE-b 
+*                 |  |  |  |  |  |  |  |  |  CATHODE-a 
+*                 |  |  |  |  |  |  |  |  |  |  ANODE-a 
+*                 |  |  |  |  |  |  |  |  |  |  |  ANODE-b
+*                 |  |  |  |  |  |  |  |  |  |  |  | 
+*                 |  |  |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_4136 1  2  4  5  6  7  8  9  10 11 13 14
+
+DA 13 11 dHDSP_4136
+DB 14 10 dHDSP_4136
+DC  7  4 dHDSP_4136
+DD  2  1 dHDSP_4136
+DE  6  5 dHDSP_4136
+DDP 8  9 dHDSP_4136
+ 
+.MODEL dHDSP_4136 D
++ (  
++     IS = 8.07922028E-13 
++      N = 3.08151986 
++     RS = 5.65168121 
++     BV = 2.25
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_4136

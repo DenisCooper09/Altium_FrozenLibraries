@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP_4033  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 common-cathode   
+*                 |  f    
+*                 |  |  g  
+*                 |  |  |  e    
+*                 |  |  |  |  d  
+*                 |  |  |  |  |  common-cathode    
+*                 |  |  |  |  |  |  DP   
+*                 |  |  |  |  |  |  |  c  
+*                 |  |  |  |  |  |  |  |  b  
+*                 |  |  |  |  |  |  |  |  |  a 
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_4033 1  2  3  4  5  6  7  8  9  10
+
+DA1  10  1 dHDSP_4033
+DB1   9  1 dHDSP_4033
+DC1   8  1 dHDSP_4033
+DD1   5  1 dHDSP_4033
+DE1   4  1 dHDSP_4033
+DF1   2  1 dHDSP_4033
+DG1   3  1 dHDSP_4033
+DDP1  7  1 dHDSP_4033
+
+DA2  10  6 dHDSP_4033
+DB2   9  6 dHDSP_4033
+DC2   8  6 dHDSP_4033
+DD2   5  6 dHDSP_4033
+DE2   4  6 dHDSP_4033
+DF2   2  6 dHDSP_4033
+DG2   3  6 dHDSP_4033
+DDP2  7  6 dHDSP_4033
+
+.MODEL dHDSP_4033 D
++ (  
++     IS = 8.07922028E-13 
++      N = 3.08151986 
++     RS = 5.65168121 
++     BV = 2.25
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_4033

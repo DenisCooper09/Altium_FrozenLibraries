@@ -1,0 +1,20 @@
+*ZETEX  BC850B Spice model     Last revision  4/90
+*
+.MODEL BC850B NPN IS =1.8E-14 ISE=5.0E-14 NF =.9955 NE =1.46 BF =400 BR =35.5
++IKF=.14 IKR=.03 ISC=1.72E-13 NC =1.27 NR =1.005 RB =.56 RE =.6 RC =.25 VAF=80
++VAR=12.5 CJE=13E-12 TF =.64E-9 CJC=4E-12 TR =50.72E-9 VJC=.54 MJC=.33
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

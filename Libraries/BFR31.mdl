@@ -1,0 +1,17 @@
+*PHILIPS SEMICONDUCTORS        Version: 1.0
+*Filename: BFR31.PRM         Date: Oct 1992
+*
+.MODEL  BFR31   NJF
++(
++             VTO = -1.0686E+000
++            BETA = 1.73071E-003
++          LAMBDA = 2.29157E-002
++              RD = 9.05115E+000
++              RS = 9.05115E+000
++              IS = 1.70538E-016
++            CGS  = 2.20000E-012
++            CGD  = 2.20000E-012
++              PB = 9.78591E-001
++              FC = 5.00000E-001
++)
+*Parameter with default value: FC

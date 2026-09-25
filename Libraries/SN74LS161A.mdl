@@ -1,0 +1,4 @@
+*Texas Instruments
+*SN74LS161A: Synchronous 4-Bit Counter
+.MODEL SN74LS161A xsimcode(file="{MODEL_PATH}LS.SCB" func=ls161 {mntymx})
+

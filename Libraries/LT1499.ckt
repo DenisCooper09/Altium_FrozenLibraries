@@ -1,0 +1,119 @@
+*//////////////////////////////////////////////////////////////
+* LT1499  10MHz, 6V/µs, Quad Rail-to-Rail Input and Output   //
+*         Precision C-Load Operational Amplifier             //
+*//////////////////////////////////////////////////////////////
+*
+* connections:     non-inverting input
+*                  |   inverting input
+*                  |   |   positive power supply
+*                  |   |   |   negative power supply
+*                  |   |   |   |   output
+*                  |   |   |   |   |
+*                  |   |   |   |   |
+.SUBCKT LT1499     3   2   7   4   6
+X_LT1499 3 2 7 4 6 LT1498
+.ENDS LT1499
+*
+*
+.SUBCKT LT1498     3 2 7 4 6
+*
+*Q4 17 11 18 [4] P1 1.006
+*Q3 16 10 15 [4] P1 1
+*Q5 33 32 14 [4] P1 1
+*QIC2 10 10 11 [4] P1 1
+*QIC1 11 11 10 [4] P1 1
+*Q4C 16 11 11 [4] P1 1.5
+*Q3C 17 10 10 [4] P1 1.5
+*Q1 12 11 20 [4] N1 1.006
+*Q2 13 10 21 [4] N1 1
+*Q2C 12 10 10 [4] N1 1.5
+*Q1C 13 11 11 [4] N1 1.5
+*jg, 3/7/2000: corrected syntax error
+
+Q4 17 11 18 4 P1 1.006
+Q3 16 10 15 4 P1 1
+Q5 33 32 14 4 P1 1
+QIC2 10 10 11 4 P1 1
+QIC1 11 11 10 4 P1 1
+Q4C 16 11 11 4 P1 1.5
+Q3C 17 10 10 4 P1 1.5
+Q1 12 11 20 4 N1 1.006
+Q2 13 10 21 4 N1 1
+Q2C 12 10 10 4 N1 1.5
+Q1C 13 11 11 4 N1 1.5
+
+*
+RINP 10 3 200
+RINN 11 2 200
+R1 12 7 2K
+RCMP 14 7 12MEG
+R4 4 17 2K
+R2 13 7 2K
+ROUT1 27 6 31.2
+ROUT2 27 0 50K
+RCMN 4 19 12MEG
+RPS1 4 22 1600MEG
+RPS2 22 7 1600MEG
+RI 23 24 4K
+RC1 22 26 400
+RO1 0 22 9MEG
+RC3 29 22 2K
+RC2 25 24 100
+R3 4 16 2K
+REQ4 18 14 450
+REQ3 14 15 450
+REQ1 20 19 450
+REQ2 19 21 450
+*
+C1 12 13 1PF
+C2 16 17 1PF
+CCMP 14 7 1.6PF
+CCMN 4 19 1.6PF
+CC1 26 6 10P
+CPS2 22 7 0.1PF
+CC2 25 6 20P
+CC3 29 0 50P
+CINP 10 0 5P
+CINN 11 0 5P
+CPS1 4 22 0.1PF
+*
+VESAT 30 4 0.814
+VCSAT 7 31 0.814
+VSENSE 33 4 0
+FSENSE 19 4 VSENSE 1
+VLS 7 32 1.4
+GN1 7 22 13 12 290U
+GP1 22 4 17 16 340U
+GOUT 0 27 0 24 22E-3
+I1 7 14 75U
+IOS 3 2 5NA
+IQ 7 4 1.9MA
+E1 23 0 22 0 6
+EOUT 28 0 6 0 1
+*
+DI2 11 7 DM1
+DI1 10 7 DM1
+DC1 22 0 DMX
+DO1 6 31 DM1
+DO2 30 6 DM1
+DL1 28 27 DMX
+DL2 27 28 DMX
+DC2 0 22 DMX
+DSUB 4 7 DM2
+*
+.MODEL N1 NPN
++ IS=400E-18   
++ BF=150     
++ RB=340                                                         
++ TF=400PS                                     
+ .MODEL P1 PNP
++ IS=400E-18                             
++ BF=150                                
++ RB=400                                       
++ TF=410PS                                     
+.MODEL DM1 D IS=8E-16
+.MODEL DMX D IS=3.4E-24
+.MODEL DM2 D IS=8E-16 BV=39
+*
+.ENDS LT1498
+*

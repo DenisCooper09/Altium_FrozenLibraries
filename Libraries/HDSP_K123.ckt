@@ -1,0 +1,58 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-K123  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 anode-e-1
+*                 |  anode-d-1
+*                 |  |  anode-c-1
+*                 |  |  |  anode-DP-1
+*                 |  |  |  |  anode-e-2
+*                 |  |  |  |  |  anode-d-2
+*                 |  |  |  |  |  |  anode-g-2
+*                 |  |  |  |  |  |  |  anode-c-2
+*                 |  |  |  |  |  |  |  |  anode-DP-2
+*                 |  |  |  |  |  |  |  |  |  anode-b-2
+*                 |  |  |  |  |  |  |  |  |  |  anode-a-2
+*                 |  |  |  |  |  |  |  |  |  |  |  anode-f-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  common-cathode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  common-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  anode-b-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  anode-a-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  anode-g-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  anode-f-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_K123 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+
+DA1  16  14  dHDSP_K123
+DB1  15  14  dHDSP_K123
+DC1   3  14  dHDSP_K123
+DD1   2  14  dHDSP_K123
+DE1   1  14  dHDSP_K123
+DF1  18  14  dHDSP_K123
+DG1  17  14  dHDSP_K123
+DDP1  4  14  dHDSP_K123
+
+DA2  11  13  dHDSP_K123
+DB2  10  13  dHDSP_K123
+DC2   8  13  dHDSP_K123
+DD2   6  13  dHDSP_K123
+DE2   5  13  dHDSP_K123
+DF2  12  13  dHDSP_K123
+DG2   7  13  dHDSP_K123
+DDP2  9  13  dHDSP_K123
+
+.MODEL dHDSP_K123 D
++ (  
++    IS  = 2.08276754E-16 
++     N  = 2.17799178 
++    RS  = 0.50892350
++    BV  = 14.25
++   IBV  = 100u
++ )  
+
+.ENDS HDSP_K123

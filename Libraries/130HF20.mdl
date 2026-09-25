@@ -1,0 +1,7 @@
+*130HF20PV MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*200V 130000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 130HF20 D (IS=185N RS=323U N=1.7 BV=200 IBV=1431U
++ CJO=5.35N VJ=0.75 M=0.333 TT=4.32U)
+
+

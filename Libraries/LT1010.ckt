@@ -1,0 +1,85 @@
+*//////////////////////////////////////////////////////////////
+* LT1010  Fast ± 150mA Power Buffer                          //
+*//////////////////////////////////////////////////////////////
+*
+* connections:     input
+*                  |   positive power supply
+*                  |   |   negative power supply
+*                  |   |   |   BIAS
+*                  |   |   |   |   output
+*                  |   |   |   |   |
+*                  |   |   |   |   |
+.SUBCKT LT1010     1   2   3   4   5
+XBUF  1 2 3 5 4  MD1010
+.ENDS LT1010
+*
+*
+.SUBCKT MD1010     1 3 4 5 6
+* input stage
+CIN 1 99 1.4139e-012
+RIN 1 99 8.6124e+007
+Q1 11 2 13 Q1
+Q2 12 1 14 Q2
+RC1 444 11 2.7359e+002
+RC2 444 12 2.7359e+002
+VCMIR 444 4 DC -1.0
+RE1 10 13 9.1059e+001
+RE2 10 14 9.1059e+001
+C1 11 12 1.2437e-012
+RFB 2 16 1.0000e+002
+EFB 16 99 50 99 1.0030e+000
+IEE 3 10 DC 7.4602e-003
+*GSR 3 10 11 12 1.2286e-003
+GSR 3 10 POLY(2) 11 12 121 0  0  0  0  0  1.2286e-003
+D1 10 3 DX
+GA 60 99 11 12 3.6551e-003
+* bias and SR control
+RBIAS1 6 3 1.0E12
+VBIAS1 6 120 DC 0
+IBIAS1 120 3 DC 6.05E-1
+RBIAS2 3 120 1.33
+FBIAS1 3 4 VBIAS1 1.0
+FSR1 0 121 POLY(1) VBIAS1 1.0E-3  -26.5E-3
+RSR1 121 0 1.0E3
+FSR2   3  10  VBIAS1  7.37E-2
+* noise voltage
+GR 99 60 605 606 8.6534e+000
+IR1 0 605 DC 1
+IR2 0 606 DC 1
+DR1 605 0 DR
+DR2 606 0 DR
+* output stage
+R2 60 99 1.0000e+006
+C2 60 99 6.2599e-011
+DC 53 3 DX
+DE 4 54 DX
+VC 53 60 DC 8.6000e-001
+VE 60 54 DC 1.7324e+000
+GB 70 99 60 99 1.4286e-001
+R01 70 99 7.0000e+000
+R02 70 50 1.0000e-001
+R03 50 5 7.5000e+000
+R04 5 99 1.0000e+012
+ELIM1 91 0 70 50 2.5906e+001
+ELIM2 92 0 70 50 2.1823e+001
+DLP 91 90 DX
+DLN 90 92 DX
+VLIM 90 0 DC 0
+FB 70 99 VLIM 2.0655e+001
+* supply characteristic
+EGND 99 0 POLY(2) 3 0 4 0 0 0.5 0.5
+IP 3 4 DC -2.4602e-003
+RP 3 4 1.5000e+005
+GV 31 0 70 50 1.0000e+001
+DP1 3 31 DX
+DP2 32 4 DX
+RGV 32 33 10.0
+EGV 31 33 POLY(1) 3 4 -0.8 1.0
+.MODEL Q1 PNP IS=3.7926e-015 BF=48.7 XTB=-1.3209e+000
++ XTI=5.50008e+000
+.MODEL Q2 PNP IS=2.6367e-016 BF=48.7 XTB=-1.3209e+000
++ XTI=4.99918e-001
+.MODEL DX D IS=8.0000e-016 RS=0 XTI=0
+.MODEL DR D IS=8.0000e-016 KF=8.0939e-017 RS=0 XTI=0
+.ENDS MD1010
+*

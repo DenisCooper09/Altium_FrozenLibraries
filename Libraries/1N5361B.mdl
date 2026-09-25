@@ -1,0 +1,5 @@
+*1N5361B
+*Ref: Diodes Incorporated Catalog, 1994
+*27V 5W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N5361B D(IS=8.95E-12 RS=4.48 TT=5.01E-8 CJO=1.91E-10 M=0.33 
++ BV=26.78 IBV=0.05 )

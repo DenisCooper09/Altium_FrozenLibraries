@@ -1,0 +1,6 @@
+*1N4743
+*Ref: Motorola
+*13V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4743 D(IS=1.28E-14 RS=4.63 TT=5.01E-8 CJO=8.81E-11 M=0.33 
++ BV=12.91 IBV=0.019 )
+* Origin: Mcediode.lib

@@ -1,0 +1,133 @@
+* BUF601X1 - DIAMOND BUFFER MACROMODEL SIMPLIFIED VERSION
+
+*
+
+* CREATED 8/92 KL
+
+* REV.B   7/9/93 BCB : CLARIFICATION OF NODE SET INSTRUCTIONS
+
+*
+
+*  ------------------------------------------------------------------------ 
+
+* |  NOTICE: THE INFORMATION PROVIDED HEREIN IS BELIEVED TO BE RELIABLE;   |
+
+* |  HOWEVER; BURR-BROWN ASSUMES NO RESPONSIBILITY FOR INACCURACIES OR     |
+
+* |  OMISSIONS.  BURR-BROWN ASSUMES NO RESPONSIBILITY FOR THE USE OF THIS  |
+
+* |  INFORMATION, AND ALL USE OF SUCH INFORMATION SHALL BE ENTIRELY AT     |
+
+* |  THE USER'S OWN RISK.  NO PATENT RIGHTS OR LICENSES TO ANY OF THE      |
+
+* |  CIRCUITS DESCRIBED HEREIN ARE IMPLIED OR GRANTED TO ANY THIRD PARTY.  |
+
+* |  BURR-BROWN DOES NOT AUTHORIZE OR WARRANT ANY BURR-BROWN PRODUCT FOR   |
+
+* |  USE IN LIFE-SUPPORT DEVICES AND/OR SYSTEMS.                           |
+
+*  ------------------------------------------------------------------------ 
+
+* |-------------------------------------------------------------|
+
+* |  This macro model is being supplied as an aid to            |
+
+* |  circuit designs.  While it reflects reasonably close       |
+
+* |  similarity to the actual device in terms of performance,   |
+
+* |  it is not suggested as a replacement for breadboarding.    |
+
+* |  Simulation should be used as a forerunner or a supplement  |
+
+* |  to traditional lab testing.                                |
+
+* |-------------------------------------------------------------|
+
+*
+
+* NOTE : THIS MACROMODEL WILL CONVERGE QUICKER IS THE NODESETS 
+
+*        V(Xyour.21)=+4.2689 AND  V(Xyour.24)=-4.2697 ARE IN THE 
+
+*        ROOT SIMULATION FILE. ("Xyour" IS DEVICE NAME IN ROOT
+
+*        FILE.)
+
+*
+
+* CONNECTIONS:   POSITIVE POWER SUPPLY   
+
+*                | VOLTAGE IN
+
+*                | | NEGATIVE POWER SUPPLY
+
+*                | | | VOLTAGE OUT
+
+*                | | | |
+
+.SUBCKT BUF601X1 1 4 5 8
+
+**
+
+I21  21 24  0.1E-6
+
+**
+
+V41  1 41  1.5
+
+V42  42 5  1.5
+
+**
+
+C33  33 0  2E-12
+
+C39  39 0  0.04E-12
+
+C40  40 0  0.04E-12
+
+C208  8 0  2E-12
+
+**
+
+R33  33 0  2.4E6
+
+R34  33 4  65
+
+RQC  22 5  320
+
+**
+
+Q21  21 21  1 5  PI
+
+Q22  21 24 22 1  NI 12
+
+Q23  24 21  1 5  PI
+
+Q24  24 24  5 1  NI
+
+Q29  39 21  1 5  PI
+
+Q30  40 24  5 1  NI
+
+Q33   5 33 39 5  PI
+
+Q34   1 33 40 1  NI
+
+Q41  41 39  8 1  NIL 16
+
+Q42  42 40  8 5  PIL 16
+
+**
+
+.MODEL PI PNP
+
+.MODEL NI NPN
+
+.MODEL NIL NPN (BF = 500)
+
+.MODEL PIL PNP (BF = 500)
+
+*
+
+.ENDS

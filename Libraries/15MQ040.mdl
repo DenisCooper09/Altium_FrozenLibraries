@@ -1,0 +1,7 @@
+*15MQ040 MCE 3/26/98
+*Ref: IR Power Semiconductors Product Digest '94
+*MCE 40V 1.7A 3us pkg:D0213AA/KA 2,1
+.MODEL 15MQ040 D (IS=2.42N RS=24.7M N=1.7 BV=40 IBV=5M
++ CJO=71.2P VJ=0.75 M=0.333 TT=4.32U EG=.69 XTI=2)
+
+

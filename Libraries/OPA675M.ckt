@@ -1,0 +1,463 @@
+* OPA675M   SPICE MACRO MODEL
+
+* Created 3/23/92  BCB
+
+* REV.A
+
+*
+
+*  ------------------------------------------------------------------------ 
+
+* |  NOTICE: THE INFORMATION PROVIDED HEREIN IS BELIEVED TO BE RELIABLE;   |
+
+* |  HOWEVER; BURR-BROWN ASSUMES NO RESPONSIBILITY FOR INACCURACIES OR     |
+
+* |  OMISSIONS.  BURR-BROWN ASSUMES NO RESPONSIBILITY FOR THE USE OF THIS  |
+
+* |  INFORMATION, AND ALL USE OF SUCH INFORMATION SHALL BE ENTIRELY AT     |
+
+* |  THE USER'S OWN RISK.  NO PATENT RIGHTS OR LICENSES TO ANY OF THE      |
+
+* |  CIRCUITS DESCRIBED HEREIN ARE IMPLIED OR GRANTED TO ANY THIRD PARTY.  |
+
+* |  BURR-BROWN DOES NOT AUTHORIZE OR WARRANT ANY BURR-BROWN PRODUCT FOR   |
+
+* |  USE IN LIFE-SUPPORT DEVICES AND/OR SYSTEMS.                           |
+
+*  ------------------------------------------------------------------------ 
+
+* |-------------------------------------------------------------|
+
+* |  This macro model is being supplied as an aid to            |
+
+* |  circuit designs.  While it reflects reasonably close       |
+
+* |  similarity to the actual device in terms of performance,   |
+
+* |  it is not suggested as a replacement for breadboarding.    |
+
+* |  Simulation should be used as a forerunner or a supplement  |
+
+* |  to traditional lab testing.                                |
+
+* |								|
+
+* |  Neither this library nor any part may be copied without 	|
+
+* |  the express written consent of Burr-Brown Corporation.	|
+
+* |								|
+
+* |  The users should carefully note the following factors 	|
+
+* |  regarding this model.					|
+
+* |								|
+
+* |-------------------------------------------------------------|
+
+* 
+
+*  	This model includes the device characteristics as well as
+
+*       package parasitics.  If you are using the product in die
+
+*	form, the package parasitics no longer apply.
+
+*
+
+*		NON-INVERTING INPUT A
+
+*		|  INVERTING INPUT A
+
+*		|  |  COMPENSATION PIN (see note above)
+
+*		|  |  |  OUTPUT
+
+*		|  |  |  |  POSITIVE POWER SUPPLY
+
+*		|  |  |  |  |  NEGATIVE POWER SUPPLY
+
+*		|  |  |  |  |  |  NON-INVERTING INPUT B
+
+*		|  |  |  |  |  |  |  INVERTING INPUT B
+
+*               |  |  |  |  |  |  |  |  ECL
+
+*		|  |  |  |  |  |  |  |  |  NOT ECL
+
+*		|  |  |  |  |  |  |  |  |  |  GND
+
+*		|  |  |  |  |  |  |  |  |  |  | 
+
+.SUBCKT	OPA675M 1  2  5  8  7  10 16 15 13 12 11
+
+
+
+* Output and comp cap bond pad and pin parasitics
+
+*
+
+LOUT 3 8 2.5N
+
+COUT1 3 11 2.2P
+
+COUT2 8 11 2.2P
+
+
+
+CCPP1 19 0 1.1P
+
+CCPP2 5 0 1.1P
+
+LCPP 19 5 10N
+
+
+
+* common mode reference
+
+*
+
+R11 7 99 382
+
+R12 10 99 382
+
+
+
+* Side A bond pad and pin parasitics
+
+*
+
+LM 2 102 5N
+
+CM1 2 11 1.1P
+
+CM2 102 11 1.1P
+
+
+
+LP 1 101 5N
+
+CP1 1 11 1.1P
+
+CP2 101 11 1.1P
+
+
+
+* Side A input stage (2nd pole @ 569M Hz)
+
+*
+
+Q1 110 102 114 QX
+
+Q2 111 113 115 QX
+
+R5 114 116 1065
+
+R6 115 116 1065
+
+RIN1 102 4 2.107E3
+
+RIN2 101 4 2.107E3
+
+CIN 102 101 2P
+
+IOS 101 102 0.8U
+
+VOS 113 101 250E-6
+
+
+
+* Side B bond pad and pin parasitics
+
+*
+
+LM_2 15 202 5N
+
+CM1_2 15 11 1.1P
+
+CM2_2 202 11 1.1P
+
+
+
+LP_2 16 201 5N
+
+CP1_2 16 11 1.1P
+
+CP2_2 201 11 1.1P
+
+
+
+* Side B input stage (2nd pole @ 569M Hz)
+
+*
+
+Q1_2 110 202 214 QX
+
+Q2_2 111 213 215 QX
+
+R5_2 214 216 1065
+
+R6_2 215 216 1065
+
+RIN1_2 202 6 2.107E3
+
+RIN2_2 201 6 2.107E3
+
+CIN_2 202 201 2P
+
+IOS_2 201 202 0.8U
+
+VOS_2 213 201 250E-6
+
+
+
+* SWOP AMP switch
+
+*
+
+RSW1 995 997 1
+
+CSW1 997 11 1000P
+
+RSW2 996 998 1
+
+CSW2 998 11 1000P
+
+Q11 116 997 999 QY
+
+Q12 216 998 999 QY
+
+C11 116 10 1.1P
+
+C12 216 10 1.1P
+
+IEE 999 10 0.9452E-3
+
+VECL1 13 995 1
+
+VECL2 12 996 1
+
+
+
+* Common-input stage load for both sides
+
+*
+
+C1 110 111 1.2485E-13
+
+R3 7 110 1120
+
+R4 7 111 1120
+
+
+
+* first gain stage (36dB)
+
+*
+
+R9 7 118 18.11K
+
+R10 10 118 18.11K
+
+G1 7 118 110 111 3.4E-3
+
+G2 10 118 110 111 3.4E-3
+
+E1 7 22 POLY(1) 7 99 -1.847 1
+
+E2 23 10 POLY(1) 99 10 -1.847 1
+
+D1 118 22 DX
+
+D2 23 118 DX
+
+
+
+* second gain stage (1st pole @ 1.5M Hz {determined by device 
+
+* and pad parasitics}, 34dB) and external compensation stage
+
+*
+
+R7 7 19 56.14K
+
+R8 10 19 56.14K
+
+C3 7 19 0.791P
+
+C4 10 19 0.791P
+
+G3 7 19 POLY(1) 118 99 6.48E-3  0.8928E-3
+
+G4 19 10 POLY(1) 99 118 6.48E-3  0.8928E-3
+
+V3 7 20 2.667
+
+V4 21 10 2.352
+
+D3 19 20 DX
+
+D4 21 19 DX
+
+
+
+* pole stage @ 800 MHz
+
+*
+
+G60 7 60 19 99 1E-6
+
+G61 10 60 19 99 1E-6
+
+R60 7 60 1E6
+
+R61 10 60 1E6
+
+C60 7 60 198.9E-18
+
+C61 10 60 198.9E-18
+
+
+
+* pole stage @ 2 GHz 
+
+*
+
+G80 7 80 60 99 1E-6
+
+G81 10 80 60 99 1E-6
+
+R80 7 80 1E6
+
+R81 10 80 1E6
+
+C80 7 80 795.8E-19
+
+C81 10 80 795.8E-19
+
+
+
+* pole stage @ 200 MHz 
+
+*
+
+G90 7 90 80 99 1E-6
+
+G91 10 90 80 99 1E-6
+
+R90 7 90 1E6
+
+R91 10 90 1E6
+
+C90 7 90 795.8E-18
+
+C91 10 90 795.8E-18
+
+
+
+* pole stage @ 20 GHz 
+
+*
+
+G100 7 100 90 99 1E-6
+
+G101 10 100 90 99 1E-6
+
+R100 7 100 1E6
+
+R101 10 100 1E6
+
+C100 7 100 795.8E-20
+
+C101 10 100 795.8E-20
+
+
+
+* pole stage @ 20 GHz 
+
+*
+
+G110 7 119 100 99 1E-6
+
+G111 10 119 100 99 1E-6
+
+R110 7 119 1E6
+
+R111 10 119 1E6
+
+C110 7 119 795.8E-20
+
+C111 10 119 795.8E-20
+
+
+
+* zero / pole pair @  (fz = 142 MHz ,  fp = 569 MHz)
+
+*
+
+G120 7 120 119 99 1E-6
+
+G121 10 120 119 99 1E-6
+
+R120 7 81 3E6
+
+R123 82 10 3E6
+
+R121 81 120 1E6
+
+R122 120 82 1E6
+
+L120 7 81 839.1E-6
+
+L123 10 82 839.1E-6
+
+
+
+* correction current and output stage
+
+*
+
+D5 7 51 DX
+
+D6 7 52 DX
+
+D7 120 53 DX
+
+D8 54 120 DX
+
+D9 10 51 DY
+
+D10 10 52 DY
+
+V5 53 3 -.05
+
+V6 3 54 -.05
+
+G7 7 3 120 7 .03333
+
+G8 10 3 120 10 .03333
+
+G9 51 10 3 120 .03333
+
+G10 52 10 120 3 .03333
+
+R15 7 3 30
+
+R16 10 3 30
+
+
+
+.MODEL QY NPN(BF=400)
+
+.MODEL QX NPN(BF=41)
+
+.MODEL DX D(IS=1E-15)
+
+.MODEL DY D(IS=1E-15 BV=50)
+
+
+
+.ENDS
+
+

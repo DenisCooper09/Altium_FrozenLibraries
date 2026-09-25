@@ -1,0 +1,130 @@
+*  HA-5112
+*  COPYRIGHT (C) 1991 HARRIS CORPORATION
+*  ALL RIGHTS RESERVED
+*
+* HA-5112 Macro Model
+*
+* Rev:  8/8/91 DLYoungblood
+* The schematic for this rev is the same as 11/03/89
+* The subcircuit call is different and only 1 amp is present
+* Actual chip Icc/Iee will have 2 amplifiers + 1mA
+* pinout changed to conform to "standard"
+*
+* Connections:
+*               Non-Inverting Input
+*               |  Inverting Input
+*               |  |  Positive Power Supply
+*               |  |  |  Negative Power Supply
+*               |  |  |  |   Output
+*               |  |  |  |   |
+.SUBCKT HA5112  6  7  9  10  8
+.MODEL DP D  IS=1E-14  N=7.4847E-01
+.MODEL DN D  IS=8.9347E-15 N=7.4847E-01
+.MODEL DV D  IS=1E-14  N=.1
+.MODEL D1 D  IS=1E-14  N=1
+.MODEL D2 D  IS=1E-14  N=9.8914E-01
+*
+* Input Stage
+*
+VP 6 12 0
+DP 12 1 DP
+*
+* The value of source "VIO" represents offset voltage
+* and may be changed to simulate worst case if desired
+*
+VIO 7 13 2.2845E-04
+*
+DN 13 1 DN
+FA 7 0 VIO 9.7559E-02
+I1 1 0 4.8579E-08
+C1 1 0 3.7600E-16             IC=-2.8380E-01
+FP 4 0 VP  6.4861E+03
+FN 0 4 VIO  7.2595E+03
+GC 0 4 1 0 8.6533E-08
+GPP 0 4 9 46 8.5523E-09
+GPN 0 4 47 10 1.2428E-07
+RT 4 0 1.0
+VPP 46 0 1.5E+01
+RPP 46 0 1K
+VPN 0 47 1.5E+01
+RPN 0 47 1K
+*
+* General Poles
+*
+EP1 14 0 4 0 1.0
+RP1 14 15 1.5422E+02
+CP1 15 0 1.0E-10
+EP2 16 0 15 0 1.0
+RP2 16 17 4.6010E+01
+CP2 17 0 1.0E-10
+EP3 18 0 17 0 1.0
+RP3 18 19 2.4832E+01
+CP3 19 0 1.0E-10
+EP4 20 0 19 0 1.0
+RP4 20 21 1.4510E+01
+CP4 21 0 1.0E-10
+EP5 22 0 21 0 1.0
+RP5 22 23 1.1908E+01
+CP5 23 0 1.0E-10
+*
+* General Zeroes
+*
+GZ1 0 24 23 0 1.5909E-02
+VZ01 24 25 0.0
+HZ1 25 26 VZ01   6.2857E+01
+LZ1 26 0 1.0E-6
+GZ2 0 27 24 0 4.0668E-03
+VZ02 27 28 0.0
+HZ2 28 29 VZ02   2.4589E+02
+LZ2 29 0 1.0E-6
+*
+* Complex Zero
+*
+GCZ 0 30 27 0 1.0
+LCZ 30 31 1.0E-6
+CC1Z 31 32 1.1755E-11
+HCZ 32 33 VCZ1   4.4739E+02
+VCZ1 33 0 0.0
+RBIG1 30 0 1.0E+7
+ECZ 34 0 30 0 1.0
+VCZ2 34 35 0.0
+CC2Z 35 0 1.1755E-11
+RBIG2 35 0 1.0E+7
+FC1Z 0 36 VCZ2    1.0
+RCZ 36 0 1.0
+*
+* Complex Pole
+*
+ECP 37 0 36 0 1.0
+RCP 37 38 7.9230E+03
+LCP 38 39 4.4779E-05
+CCPX 39 0 1.0E-12
+*
+* Gain/Output Stage
+*
+G2 0 2 39 0 1.0
+R2 2 0 1.0475E+05
+CC 2 3 2.2000E-11
+GOL 3 0 2 0 6.3619E+01
+RD 3 0 4.5290E+00
+DH 3 5 DV
+DL 50 3 DV
+VH 9 5 1.607
+VL 50 10 1.5986
+IH 9 0 1.0E-3
+IL 0 10 1.0E-03
+D1 3 53 D1
+D2 53 3 D2
+*EX1 53 0 POLY  2  3 0 3 8 0  1  -4.0500E-01
+BEX1 53 0 V=1*v(3,0)-4.0500E-01*v(3,8)
+RO 54 8 1.0628E+02
+VIS 3 54 0
+FI 0 55 VIS 1
+DIP 55 56 DV
+DIN 58 57 DV
+VIP 56 58 0
+VIN 57 55 0
+RI 58 0 1.0
+FIP 9 0 VIP 1.0
+FIN 0 10 VIN 1.0
+.ENDS HA5112

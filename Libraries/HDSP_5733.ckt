@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-5733  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 e 
+*                 |  d 
+*                 |  |  common-cathode
+*                 |  |  |  c 
+*                 |  |  |  |  DP  
+*                 |  |  |  |  |  b 
+*                 |  |  |  |  |  |  a 
+*                 |  |  |  |  |  |  |  common-cathode    
+*                 |  |  |  |  |  |  |  |  f  
+*                 |  |  |  |  |  |  |  |  |  g
+*                 |  |  |  |  |  |  |  |  |  |  
+.SUBCKT HDSP_5733 1  2  3  4  5  6  7  8  9  10
+
+DA1   7 3 dHDSP_5733
+DB1   6 3 dHDSP_5733
+DC1   4 3 dHDSP_5733
+DD1   2 3 dHDSP_5733
+DE1   1 3 dHDSP_5733
+DF1   9 3 dHDSP_5733
+DG1  10 3 dHDSP_5733
+DDP1  5 3 dHDSP_5733
+
+DA2   7 8 dHDSP_5733
+DB2   6 8 dHDSP_5733
+DC2   4 8 dHDSP_5733
+DD2   2 8 dHDSP_5733
+DE2   1 8 dHDSP_5733
+DF2   9 8 dHDSP_5733
+DG2  10 8 dHDSP_5733
+DDP2  5 8 dHDSP_5733
+
+.MODEL dHDSP_5733 D
++ (  
++     IS = 8.07922028E-13 
++      N = 3.08151986 
++     RS = 5.65168121 
++     BV = 2.25
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_4136

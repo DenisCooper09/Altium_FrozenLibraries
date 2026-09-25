@@ -1,0 +1,6 @@
+*1N753
+*Ref: Motorola
+*6.2V 500mW Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N753 D(IS=1E-11 RS=4.685 N=1.27 TT=5E-8 CJO=3.463E-10 VJ=0.75 
++ M=0.33 BV=6.106 IBV=0.01 )
+* Origin: Mcediode.lib

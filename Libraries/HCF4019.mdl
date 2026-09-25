@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCF4019: Quadruple 2-input Multiplexer
+.MODEL HCF4019 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4019 {mntymx})

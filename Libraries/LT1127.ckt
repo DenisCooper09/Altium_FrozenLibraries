@@ -1,0 +1,78 @@
+*////////////////////////////////////////////////////////////////////////////////////
+* LT1127  Quad Decompensated Low Noise, High-Speed Precision Operational Amplifier //
+*////////////////////////////////////////////////////////////////////////////////////
+*
+* connections:     non-inverting input
+*                  |   inverting input
+*                  |   |   positive power supply
+*                  |   |   |   negative power supply
+*                  |   |   |   |   output
+*                  |   |   |   |   |
+*                  |   |   |   |   |
+.SUBCKT LT1127     3   2   7   4   6
+X_LT1127 3 2 7 4 6 LT1126
+.ENDS LT1127
+*
+* 
+.SUBCKT LT1126     3 2 7 4 6 
+* INPUT
+RC1 7  80 58 
+RC2 7  90 58 
+Q1  80 2  10 QM1 
+Q2  90 3  11 QM2 
+CIN 2  3  2.0000E-12
+DDM1 2 104 DM2  
+DDM3 104 3  DM2  
+DDM2 3 105 DM2  
+DDM4 105 2  DM2  
+C1  80 91 10NF
+RE1 10 12 -72 
+RE2 11 12 -72 
+IEE 12 4  400E-6 
+RE  12 0  1.0100E+06
+*
+RXC1 91 90 12
+CXC1 91 90 2NF
+RXC2 8 98 10K
+C2 1 98 18.000E-12
+CXC2  98 8 1E-12
+* INTERMEDIATE 
+GCM 0  8  12 0  7.1360E-09
+GA  8  0  80 90 1.1310E-02
+R2  8  0  1.0000E+05
+*C2  1  8  1.8000E-11
+GB  1  0  8  0  3.5671E+01
+RO2 1  0  7.4000E+01
+* OUTPUT 
+RSO 1  6  1.0000E+00
+ECL 18 0  1  6  3.6430E+01
+GCL 0  8  20 0  1.0000E+00
+RCL 20 0  1.0000E+01
+D1  18 19 DM1  
+VOD1 19 20 0.0000E+00
+D2  20 21 DM1  
+VOD2 21 18 0.0000E+00
+* 
+D3A 131 70 DM3 
+D3B 13 131 DM3 
+GPL 0  8  70 7  1.0000E+00
+VC  13 6  2.6370E+00
+RPLA 7  70 1.0000E+01
+RPLB 7  131 1.0000E+03
+D4A 60 141 DM3 
+D4B 141 14  DM3 
+GNL 0  8  60 4  1.0000E+00
+VE  6  14 2.6370E+00
+RNLA 60 4  1.0000E+01
+RNLB 141 4  1.0000E+03
+* 
+IP  7  4  2.4020E-03
+DSUB 4  7  DM2  
+* MODELS 
+.MODEL QM1 NPN (IS=8.0000E-16 BF=20E+03)
+.MODEL QM2 NPN (IS=8.0077E-16 BF=50E+03)
+.MODEL DM1  D   (IS=1.0000E-20)
+.MODEL DM2  D   (IS=8.0000E-16 BV=5.2800E+01)
+.MODEL DM3  D   (IS=1.0000E-16)
+.ENDS LT1126
+* 

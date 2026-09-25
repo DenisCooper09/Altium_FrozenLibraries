@@ -1,0 +1,13 @@
+*1N961B MCE 5/30/96
+*Ref: National Discrete Products Databook, 1996
+*10V 500mW Si pkg:DIODE0.4 1,2
+.SUBCKT 1N961B   1 2
+*    TERMINALS:  A K
+D1 1 2  DF
+DZ 3 1  DR
+VZ 2 3  9.468
+.MODEL DF D (IS=2.51N RS=84M N=1.7 CJO=34.5P VJ=0.75 M=0.33 TT=50.1N)
+.MODEL DR D (IS=15U RS=2.55 N=2.9)
+.ENDS 
+
+

@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4081: CMOS Quad 2-input AND
+.MODEL HCC4081 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4081 {mntymx})

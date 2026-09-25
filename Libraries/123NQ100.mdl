@@ -1,0 +1,7 @@
+*123NQ100 MCE 3/30/98
+*Ref: IR Power Semiconductors Product Digest '94
+*MCE 100V 120A 3us pkg:Diode0.7 1,2
+.MODEL 123NQ100 D (IS=171N RS=350U N=1.7 BV=100 IBV=70M
++ CJO=4.93N VJ=0.75 M=0.333 TT=4.32U EG=.69 XTI=2)
+
+

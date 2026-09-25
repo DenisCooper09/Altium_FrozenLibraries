@@ -1,0 +1,49 @@
+*
+* Diode Sim Model Produced by Altium Ltd
+* Date:  24-Mar-2003
+*
+* Manufacturer: Philips
+* Component Name: PMBD7000
+*
+*Note: This macromodel derived from data sheets and pspice models obtained from Philips Semiconductor.
+*
+* 1 = Anode; 2 = Cathode; 3 = Common Connection
+.SUBCKT PMBD7000 1 2 3
+X1 1 3 DPMBD7000
+X2 3 2 DPMBD7000
+
+* This macromodel models the effect of carrier recombination-generation
+* and high-level injection on the diode.
+.SUBCKT DPMBD7000 10 30
+D1 10 20 DIDEAL
+D2 10 20 DRECOMB
+D3 20 30 DHIGH
+
+* Subcircuit models
+.MODEL DIDEAL D
++(
++  IS =  6.0289E-09
++  N =  2.1283
++  TT =  5.7708E-09
++  CJO =  5.9363E-13
++  VJ =  0.68774
++  M =  0.1
++  BV =  113.6
++  IBV =  1.00E+01
++)
+
+.MODEL DHIGH D
++(
++  IS =  0.04
++  N =  2.1283
++  RS =  0.001
++)
+
+.MODEL DRECOMB D
++(
++  IS =  0.000000001
++  N =  2.5
++)
+
+.ENDS DPMBD7000
+.ENDS PMBD7000

@@ -1,0 +1,5 @@
+*1N5365B
+*Ref: Diodes Incorporated Catalog, 1994
+*36V 5W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N5365B D(IS=1.65E-10 RS=10.1 TT=5.01E-8 CJO=1.47E-10 M=0.33 
++ BV=35.71 IBV=0.03 )

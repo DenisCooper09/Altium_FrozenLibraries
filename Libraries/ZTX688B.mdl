@@ -1,0 +1,22 @@
+*ZETEX   ZTX688B  Spice model   Last revision 8/11/90
+*
+.MODEL ZTX688B NPN IS =1.09E-12 NF =0.9935 BF =1180 IKF=5.2 VAF=25
++ISE=1.3E-13 NE =1.35 NR =0.992 BR =790 IKR=.5 VAR=5 ISC=0.174E-12
++NC =1.399 RB =.3 RE =.036 RC =.034 CJC=104E-12 MJC=.29 VJC=.46
++CJE=280E-12 TF =.93E-9 TR =1.05E-9
+*
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

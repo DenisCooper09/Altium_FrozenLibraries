@@ -1,0 +1,6 @@
+*30WQ03F MCE 3/26/98
+*Ref: IR Power Semiconductors Product Digest '94
+*MCE 30V 3.3A 3us pkg:DPAK 3,2
+.MODEL 30WQ03F D (IS=4.69N RS=12.7M N=1.7 BV=30 IBV=12M
++ CJO=137P VJ=0.75 M=0.333 TT=4.32U EG=.69 XTI=2)
+

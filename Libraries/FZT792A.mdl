@@ -1,0 +1,23 @@
+*ZETEX   FZT792A  Spice model   Last revision 7/1/92
+*
+.MODEL FZT792A PNP IS=5.98255E-13 NF=1.0022 BF=525 IKF=1.25 VAF=30
++ISE=1.45E-13 NE=1.54 NR=0.995 BR=75 IKR=0.4 VAR=34 ISC=1.58913E-13
++NC=1.03943 RB=0.06 RE=0.059 RC=0.08 CJC=90E-12 MJC=0.5 VJC=0.71
++CJE=286E-12 TF=0.75E-9 TR=93.75E-9
+*Note, The model may be inaccurate for collector currents above 1.2A.
+*
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

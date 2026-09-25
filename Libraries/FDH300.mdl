@@ -1,0 +1,7 @@
+*FDH300 MCE 3-31-97
+*Ref: National Discrete Products Databook, 1996
+*125V 200mA Si LoLeakage Diode pkg:DIODE0.4 1,2
+.MODEL FDH300 D (IS=284P RS=0.21 N=1.7 BV=125 IBV=1.38U
++ CJO=7.96P VJ=0.75 M=0.333 TT=4.32U)
+
+

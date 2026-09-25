@@ -1,0 +1,65 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  5-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP_433G  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 common-cathode-1
+*                 |  anode-e
+*                 |  |  anode-c
+*                 |  |  |  anode-d
+*                 |  |  |  |  common-cathode-2
+*                 |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  common-cathode-3
+*                 |  |  |  |  |  |  |  anode-g
+*                 |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  |  |  |  |  common-cathode-L
+*                 |  |  |  |  |  |  |  |  |  |  |  anode-f
+*                 |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_433G 1  2  3  4  5  6  7  8  11 12 14 15
+
+DA1   12  1  dHDSP_433G
+DB1   11  1  dHDSP_433G
+DC1    3  1  dHDSP_433G
+DD1    4  1  dHDSP_433G
+DE1    2  1  dHDSP_433G
+DF1   15  1  dHDSP_433G
+DG1    8  1  dHDSP_433G
+DDP1   6  1  dHDSP_433G
+
+DL1   12 14  dHDSP_433G
+DL2   11 14  dHDSP_433G
+DL3    3 14  dHDSP_433G
+
+DA2   12  5  dHDSP_433G
+DB2   11  5  dHDSP_433G
+DC2    3  5  dHDSP_433G
+DD2    4  5  dHDSP_433G
+DE2    2  5  dHDSP_433G
+DF2   15  5  dHDSP_433G
+DG2    8  5  dHDSP_433G
+DDP2   6  5  dHDSP_433G
+
+DA3   12  7  dHDSP_433G
+DB3   11  7  dHDSP_433G
+DC3    3  7  dHDSP_433G
+DD3    4  7  dHDSP_433G
+DE3    2  7  dHDSP_433G
+DF3   15  7  dHDSP_433G
+DG3    8  7  dHDSP_433G
+DDP3   6  7  dHDSP_433G
+
+.MODEL dHDSP_433G D
++ (  
++     IS = 5.45751596E-12 
++      N = 3.47011329 
++     RS = 12.18613587 
++     BV = 4.8 
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_433G

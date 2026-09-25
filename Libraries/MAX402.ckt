@@ -1,0 +1,86 @@
+* MAX402 FAMILY MACROMODELS
+*
+*
+* FEATURES:
+* High gain-bandwidth at low supply current (>10MHz/mA)
+* Supply Voltage ---------------  +- 3V to +-5V
+* Offset Voltage ---------------  2.0mV max.
+* Input Bias Current -----------  +/- 5nA max. (MAX402/403)
+*                                 +/- 25nA max. (MAX438/439)
+*
+* PART NUMBER    DESCRIPTION
+* __________     ______________________________________________
+*  MAX402        2MHz GBW,   75uA Idd, Av=1 stable,  7V/uS slew
+*  MAX403        10MHz GBW, 375uA Idd, Av=1 stable, 40V/uS slew
+*  MAX438        6MHz GBW,   75uA Idd, Av>=5 min.,  10V/uS slew
+*  MAX439        25MHz GBW, 375uA Idd, Av>=5 min.,  48V/uS slew
+*
+*
+*  ////////////// MAX402 MACROMODEL //////////////////
+*
+* connections:          non-inverting input
+*                       |      inverting input
+*                       |      |      positive power-supply
+*                       |      |      |    negative power-supply
+*                       |      |      |      |       output
+*                       |      |      |      |       |
+* NODE CONNECTIONS:     1      2      99     50      97
+*
+.SUBCKT MAX402 1 2 99 50 97
+****************INPUT STAGE**********************
+*IOS 2 1 0N
+I1 4 50 50E-6
+GIN 2 1 2 1 1E-9
+R1 5 99 9000
+R2 6 99 9000
+*EOS 1 9 POLY(1) 98 30  0.5M 1
+BEOS 1 9 V=0.5E-3 +1*v(98,30)
+*               ^       OFFSET VOLTAGE, NODE 30 FROM COM. MODE STAGE.
+Q1 5 2 103 QX
+Q2 6 9 104 QX
+REE1 104 4 9000
+REE2 103 4 9000
+* Second Pole
+C4 5 6 6PF
+***************SECOND STAGE******************
+*IS 99 50 -2M
+*  SETS IS ^
+****OUTPUT VOLTAGE LIMITING****
+V2 99 11 1.81
+D1 12 11 DX
+D2 10 12 DX
+V3 10 50 1.81
+****LEVEL TRANSLATION ****
+EH 99 98 99 50 0.5
+****GAIN, 1ST POLE****
+G3 98 12 5 6 0.0018
+R4 12 98 5.57E+6
+C3 98 12 1.14E-10
+*
+****COMMON-MODE STAGE****
+G11 98 30 104 98 17.8E-9
+R13 30 98 1E3
+*
+*******************OUTPUT STAGE****************
+F6 99 50 VA7 1
+F5 99 38 VA8 1
+D9 40 38 DX
+D10 38 99 DX
+VA7 99 40 0
+****************
+G12 98 32 12 98 1E-3
+R15 98 32 1E3
+D3 32 36 DX
+D4 37 32 DX
+V5 35 37 -0.6V
+V4 36 35 -0.6V
+R16 34 35 200
+E1 99 33 99 32 1
+VA8 33 34 0V
+L 35 96 50P
+R17 96 97 4
+*
+***** MODELS USED ******
+.MODEL DX D(IS=1E-15)
+.MODEL QX NPN(BF=12500)
+.ENDS

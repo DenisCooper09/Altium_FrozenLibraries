@@ -1,0 +1,24 @@
+*   ZETEX  FMMV2102  Spice Model        Last revision 18/8/92
+*
+.MODEL FMMV2102 D IS=8.441E-15 N=1.087 RS=.233 XTI=3 
++      EG=1.11 CJO=17.88E-12 M=.424 VJ=.7266 FC=.5 BV=45.13 
++      IBV=.1295 TT=164.5E-9
+*
+*    + ISR=8.99E-12 NR=2.392 IKF=9.564 (LATER SPICE VERSIONS ONLY)
+*
+*NOTES: FOR RF OPERATION ADD PACKAGE INDUCTANCE OF 2.5E-9H 
+*       AND SET RS=0.39 FOR 3V TUNING BIAS.
+*
+*                          (C)  1992 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agents.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

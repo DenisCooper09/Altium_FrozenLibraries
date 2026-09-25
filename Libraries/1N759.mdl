@@ -1,0 +1,6 @@
+*1N759
+*Ref: Motorola
+*12V 500mW Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N759 D(IS=1E-11 RS=14.95 N=1.27 TT=5E-8 CJO=2.008E-10 VJ=0.75 
++ M=0.33 BV=11.7 IBV=0.01 )
+* Origin: Mcediode.lib

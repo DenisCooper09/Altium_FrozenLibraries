@@ -1,0 +1,17 @@
+*PHILIPS SEMICONDUCTORS        Version 1.0
+*Filename: PMBFJ108.PRM     date: oct 1992
+*
+.MODEL  PMBFJ108   NJF
++(
++             VTO = -5.4528E+000
++            BETA = 1.11439E-002
++          LAMBDA = 1.00000E-001
++              RD = 3.11414E+000
++              RS = 3.11414E+000
++              IS = 6.90136E-015
++            CGS  = 2.75000E-011
++            CGD  = 4.30000E-011
++              PB = 5.90984E-001
++              FC = 5.00000E-001
++)
+*Parameter with default value: FC

@@ -1,0 +1,6 @@
+*1N4758
+*Ref: Motorola
+*56V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4758 D(IS=2.67E-9 RS=69.2 TT=5.01E-8 CJO=3.19E-11 M=0.33 
++ BV=55.71 IBV=0.0045 )
+* Origin: Mcediode.lib

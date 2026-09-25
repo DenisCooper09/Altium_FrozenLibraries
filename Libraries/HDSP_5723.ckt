@@ -1,0 +1,58 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  6-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-5723  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 E-anode-1
+*                 |  D-anode-1
+*                 |  |  C-anode-1
+*                 |  |  |  DP-anode-1
+*                 |  |  |  |  E-anode-1
+*                 |  |  |  |  |  D-anode-2
+*                 |  |  |  |  |  |  G-anode-2
+*                 |  |  |  |  |  |  |  C-anode-2
+*                 |  |  |  |  |  |  |  |  DP-anode-2
+*                 |  |  |  |  |  |  |  |  |  B-anode-2
+*                 |  |  |  |  |  |  |  |  |  |  A-anode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  F-anode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  common-cathode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  common-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  B-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  A-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  G-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  F-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_5723 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+
+DA1  16  14  dHDSP_5723
+DB1  15  14  dHDSP_5723
+DC1   3  14  dHDSP_5723
+DD1   2  14  dHDSP_5723
+DE1   1  14  dHDSP_5723
+DF1  18  14  dHDSP_5723
+DG1  17  14  dHDSP_5723
+DDP1  4  14  dHDSP_5723
+
+DA2  11  13  dHDSP_5723
+DB2  10  13  dHDSP_5723
+DC2   8  13  dHDSP_5723
+DD2   6  13  dHDSP_5723
+DE2   5  13  dHDSP_5723
+DF2  12  13  dHDSP_5723
+DG2   7  13  dHDSP_5723
+DDP2  9  13  dHDSP_5723
+
+.MODEL dHDSP_5723 D
++ (  
++     IS = 1.82902372E-24 
++      N = 1.34581490 
++     RS = 23.36447097 
++     BV = 40 
++    IBV = 100u 
++ ) 
+
+.ENDS HDSP_5723

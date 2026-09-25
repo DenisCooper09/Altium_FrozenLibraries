@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4001: CMOS 2-in NOR Buffer
+.MODEL HCC4001 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4001 {mntymx})

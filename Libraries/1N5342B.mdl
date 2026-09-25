@@ -1,0 +1,5 @@
+*1N5342B
+*Ref: Diodes Incorporated Catalog, 1994
+*6.8V 5W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N5342B D(IS=7.56E-18 RS=0.859 TT=5.01E-8 CJO=6.15E-10 VJ=0.75 
++ M=0.33 BV=6.645 IBV=0.183 )

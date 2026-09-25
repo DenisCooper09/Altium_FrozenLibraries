@@ -1,0 +1,7 @@
+*1N6098 MCE 7-14-95
+*Ref: IR Power Semiconductors Product Digest '94
+*MCE 40V 50A pkg:DIODE0.4 1,2
+.MODEL 1N6098 D(IS=1.04E-5 RS=0.0025 N=1.17 TT=4.32E-6 CJO=3.94E-9 
++ VJ=0.75 M=0.333 EG=0.69 XTI=2 BV=40 IBV=0.0161 )
+
+

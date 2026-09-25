@@ -1,0 +1,6 @@
+*MMAD1109 MCE 2-27-96
+*Ref: Motorola Small-Signal devices databook, 1994
+* 50V 400mA 7-Diode Array pkg:DIP14 (A:14,1)(B:13,2)(C:12,3)(D:11,4)(E:10,5)(F:9,6)(G:8,7)
+.MODEL MMAD1109 D (IS=210N RS=.201 N=2.51 BV=50 IBV=406U
++ CJO=17.7P VJ=.75 M=.333 TT=11.5N)
+* Origin: Mcediode.lib

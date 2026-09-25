@@ -1,0 +1,7 @@
+* Agl_HLMP6000 LED Model
+* Created by Shaun Quin 30-05-2002
+*Typ LED: Vf=1.6V Vr=12V If=10mA 
+*LED Pinout: 1=A, 2=K
+.MODEL Agl_HLMP6000 D (IS=214.11n RS=118.56 N=1.5 BV=12 IBV=100U
++ CJO=100P VJ=.75 M=.333 TT=15n)
+*Temperature and Noise Effects are not Modelled

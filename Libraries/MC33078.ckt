@@ -1,0 +1,47 @@
+* MC33078 operational amplifier
+*"macromodel" subcircuit
+*
+* connections:
+*    1 -  non-inverting input
+*    2 -  inverting input
+*    3 -  positive power supply
+*    4 -  negative power supply
+*    5 -  output
+*
+.subckt MC33078  1 2 3 4 5
+*
+  c1   11 12 3.501E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+*egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  begnd 99  0 v=.5*v(3,0)+.5*v(4,0)
+*fb    7 99 poly(5) vb vc ve vlp vln 0 27.96E6 -30E6 30E6 30E6 -30E6
+  bfb   7 99 i=27.96E6*I(vb)-30E6*I(vc)+30E6*I(ve)+30E6*I(vlp)-30E6*I(vln)
+  ga    6  0 11 12 565.5E-6
+  gcm   0  6 10 99 5.655E-9
+  iss  10  4 dc 70.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   3 11 1.768E3
+  rd2   3 12 1.768E3
+  ro1   8  5 10
+  ro2   7 99 20
+  rp    3  4 29.03E3
+  rss  10 99 2.857E6
+  vb    9  0 dc 0
+  vc    3 53 dc .9
+  ve   54  4 dc .4
+  vlim  7  8 dc 0
+  vlp  91  0 dc 30
+  vln   0 92 dc 30
+.model dx D(Is=800.0E-18)
+.model jx NJF(Is=150.0E-9 Beta=4.568E-3
++ Vto=-1)
+.ends
+*$

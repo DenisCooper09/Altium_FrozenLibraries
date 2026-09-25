@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4068: CMOS 8-input NAND
+.MODEL HCC4068 xsimcode(file="{MODEL_PATH}ST MICROELECTRONICS\HCC4068.TXT" func=hcc4068 {mntymx})

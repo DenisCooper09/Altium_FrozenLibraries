@@ -1,0 +1,42 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  3-May-2004 
+*  
+* Manufacturer: Renesas  
+* Component Name: HDSP-7504  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 anode-colon
+*                 |  anode-f
+*                 |  |  anode-g
+*                 |  |  |  anode-e
+*                 |  |  |  |  anode-d
+*                 |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_7504 1  2  3  4  5  6  7  8  9  10
+
+DA  10  6  dHDSP_7504
+DB   9  6  dHDSP_7504
+DC   8  6  dHDSP_7504
+DD   5  6  dHDSP_7504
+DE   4  6  dHDSP_7504
+DF   2  6  dHDSP_7504
+DG   3  6  dHDSP_7504
+DDP  7  6  dHDSP_7504
+DCL  1  6  dHDSP_7504
+
+.MODEL dHDSP_7504 D
++ (  
++     IS = 1.31238168E-27 
++      N = 1.06196807 
++     RS = 24.48189481 
++     BV = 25
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_7504

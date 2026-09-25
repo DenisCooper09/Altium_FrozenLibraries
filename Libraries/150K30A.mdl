@@ -1,0 +1,7 @@
+*150K30A MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*300V 150000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 150K30A D (IS=213N RS=280U N=1.7 BV=300 IBV=2471U
++ CJO=6.17N VJ=0.75 M=0.333 TT=4.32U)
+
+

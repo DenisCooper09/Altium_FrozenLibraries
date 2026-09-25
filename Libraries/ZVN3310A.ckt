@@ -1,0 +1,32 @@
+*
+*  ZETEX  ZVN3310A Mosfet Spice Subcircuit   Last revision  3/5/00
+*              
+.SUBCKT ZVN3310A 3 4 5
+* NODES: DRAIN GATE SOURCE
+M1 3 2 5 5 MOD1   
+RG 4 2 356
+RL 3 5 1E8
+C1 2 5 21.5P
+C2 3 2 2.5P 
+D1 5 3 DIODE1
+*
+.MODEL MOD1 NMOS VTO=1.736 RS=2.147 RD=1.682 IS=1E-15 KP=0.157
++CBD=25.5P PB=1
+.MODEL DIODE1 D IS=6.12E-13 RS=.629
+.ENDS ZVN3310A
+*
+*$
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

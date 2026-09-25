@@ -1,0 +1,21 @@
+*ZETEX  ZTX651 Spice model   Last revision  16/1/91
+*
+.MODEL ZTX651 NPN IS =2.218E-13 NF =.9956 BF =230 IKF=2 VAF=100 ISE=2.9E-14
++NE =1.35 NR =.995 BR =56 IKR=1 VAR=30 ISC=2.971E-13 NC =1.321 RB =.04
++RE =.075 RC =.069 CJC=51E-12 MJC=.42 VJC=.595 CJE=318E-12 TF =.77E-9
++TR =27E-9
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

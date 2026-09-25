@@ -1,0 +1,69 @@
+* BFM505  SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT363 DIE MODEL : BFR505
+* 1: COLLECTOR1; 2: BASE1; 3: EMITTER1;
+* 4: COLLECTOR2; 5: BASE2; 6: EMITTER2
+.SUBCKT BFM505  1 2 3 4 5 6
+Q1 7 8 9 9 BFR505
+Q2 10 11 12 12 BFR505
+* SOT363 parasitic model
+               Lb1    2  8 .6n
+               Lb2    5 11 .6n
+               Le1    3  9 1n
+               Le2    6 12 1n
+               Lp1    1  7 .4n
+               Lp2    4 10 .4n
+               Cc1b1  1  2 48f
+               Cc2b2  4  5 48f
+               Cc1b2  1  5 3f
+               Cc2b1  2  4 3f
+               Cc1e1  1  3 17f
+               Cc1e2  1  6 36f
+               Cc2e2  4  6 17f
+               Cc2e1  3  4 36f
+               Cb1b2  2  5 1f
+               Cc1c2  1  4 6f
+               Ce1e2  3  6 6f
+               Cb1e1  2  3 27f
+               Cb2e2  5  6 27f
+               Cb1e2  2  6 3f
+*
+* PHILIPS SEMICONDUCTORS                                     Version:   1.0
+* Filename:   BFR505.PRM                                     Date: Feb 1992
+*
+.MODEL  BFR505   NPN
++(
++              IS = 1.34186E-016
++              BF = 1.80000E+002
++              NF = 9.88285E-001
++             VAF = 3.83491E+001
++             IKF = 1.50000E-001
++             ISE = 2.78188E-014
++              NE = 2.05149E+000
++              BR = 5.51997E+001
++              NR = 9.82213E-001
++             VAR = 2.45944E+000
++             IKR = 2.92072E-003
++             ISC = 1.74527E-017
++              NC = 1.06245E+000
++              RB = 2.00000E+001
++             IRB = 1.00000E-006
++             RBM = 2.00000E+001
++              RE = 1.17190E+000
++              RC = 4.35000E+000
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 2.84731E-013
++             VJE = 6.00000E-001
++             MJE = 3.03697E-001
++              TF = 7.03759E-012
++             XTF = 1.23460E+001
++             VTF = 1.70189E+000
++             ITF = 3.06496E-002
++             CJC = 2.42404E-013
++             VJC = 1.88622E-001
++             MJC = 4.14981E-002
++)
+.ENDS

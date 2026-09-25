@@ -1,0 +1,7 @@
+*1N4045 3/9/98
+*Ref: IR Power Semiconductors Product Digest '94
+*100V 275A 3us Si pkg:DIODE0.7 1,2
+.MODEL 1N4045 D (IS=391N RS=153U N=1.7 BV=100 IBV=10U
++ CJO=11.3N VJ=0.75 M=0.333 TT=4.32U IBV=0.002)
+
+

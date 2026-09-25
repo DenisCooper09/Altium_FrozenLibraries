@@ -1,0 +1,21 @@
+*   ZETEX   ZTX948   Spice model   Last revision 26/5/92
+*
+.MODEL ZTX948  PNP IS=1.5554E-12 NF=1.013 BF=208 IKF=14.7 VAF=22.4
++ISE=1.48E-13 NE=1.485 NR=1.004 BR=140 IKR=1.34 VAR=15.4 
++ISC=1.3946E-11 NC=1.702 RB=0.020 RE=0.0177 RC=0.015 CJC=440E-12  
++MJC=0.3604 VJC=0.685 CJE=1.23E-9 TF=1.38E-9 TR=4.8E-9
+*
+*
+*                          (C)  1992 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agents.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

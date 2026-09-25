@@ -1,0 +1,58 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-521E  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 E-cathode-1
+*                 |  D-cathode-1
+*                 |  |  C-cathode-1
+*                 |  |  |  DP-cathode-1
+*                 |  |  |  |  E-cathode-2
+*                 |  |  |  |  |  D-cathode-2
+*                 |  |  |  |  |  |  G-cathode-2
+*                 |  |  |  |  |  |  |  C-cathode-2
+*                 |  |  |  |  |  |  |  |  DP-cathode-2
+*                 |  |  |  |  |  |  |  |  |  B-cathode-2
+*                 |  |  |  |  |  |  |  |  |  |  A-cathode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  F-cathode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  common-anode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  common-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  B-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  A-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  G-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  F-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_521E 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+
+DA1  14 16 dHDSP_521E
+DB1  14 15 dHDSP_521E
+DC1  14  3 dHDSP_521E
+DD1  14  2 dHDSP_521E
+DE1  14  1 dHDSP_521E
+DF1  14 18 dHDSP_521E
+DG1  14 17 dHDSP_521E
+DDP1 14  4 dHDSP_521E
+
+DA2  13 11 dHDSP_521E
+DB2  13 10 dHDSP_521E
+DC2  13  8 dHDSP_521E
+DD2  13  6 dHDSP_521E
+DE2  13  5 dHDSP_521E
+DF2  13 12 dHDSP_521E
+DG2  13  7 dHDSP_521E
+DDP2 13  9 dHDSP_521E
+
+.MODEL dHDSP_521E D
++ (  
++     IS = 2.97916223E-13 
++      N = 2.65811387 
++     RS = 19.04725440 
++     BV = 4.8
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_521E

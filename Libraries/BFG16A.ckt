@@ -1,0 +1,54 @@
+* BFG16A SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT223A DIE MODEL : BFW16A
+* 1: COLLECTOR; 2: BASE; 3: EMITTER;
+.SUBCKT BFG16A 1 2 3
+Q1 6 5 7 7 BFW16A
+* SOT223A parasitic model
+               Lb  4 5 1.5n
+               Le  7 8 .5n
+               L1  2 4 .025n
+               L2  1 6 1.19n
+               L3  3 8 .6n
+              Ccb  4 6 16f
+              Cbe  4 8 182f
+*
+* PHILIPS SEMICONDUCTORS                                        Version:    3.0
+* Filename:   BFW16A.PRM                                        Date:March 1993
+*
+.MODEL  BFW16A   NPN
++(
++              IS = 2.38723E-015
++              BF = 8.60000E+001
++              NF = 9.92505E-001
++             VAF = 4.80000E+001
++             IKF = 8.00000E-001
++             ISE = 5.46670E-011
++              NE = 2.15243E+000
++              BR = 8.00000E+000
++              NR = 9.86531E-001
++             VAR = 1.00990E+001
++             IKR = 7.53676E-002
++             ISC = 9.71537E-015
++              NC = 1.17989E+000
++              RB = 2.00000E+000
++             IRB = 1.00000E-006
++             RBM = 2.00000E+000
++              RE = 5.00000E-002
++              RC = 7.65100E-001
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 8.13827E-012
++             VJE = 6.00000E-001
++             MJE = 2.72002E-001
++              TF = 8.77730E-011
++             XTF = 2.43638E+000
++             VTF = 6.41428E-001
++             ITF = 1.77271E-001
++             PTF = 1.00000E+001
++             CJC = 5.37854E-012
++             VJC = 5.68500E-001
++)
+.ENDS

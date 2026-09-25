@@ -1,0 +1,114 @@
+*BEGIN MODEL LMV854
+*Rev. A November-2007
+*//////////////////////////////////////////////////////////////////////
+* (C) National Semiconductor, Corporation.
+* Models developed and under copyright by:
+* National Semiconductor, Corporation.  
+*/////////////////////////////////////////////////////////////////////
+* Legal Notice:  
+* The model may be copied, and distributed without any modifications;
+* however, reselling or licensing the material is illegal.
+* We reserve the right to make changes to the model without prior notice. 
+* PSPICE Models are provided "AS IS, WITH NO WARRANTY OF ANY KIND" 
+*////////////////////////////////////////////////////////////////////
+*MODEL KEY FEATURES INCLUDE:
+*OUTPUT SWING, OPEN LOOP GAIN AND PHASE, SLEW RATE, 
+*COMMON MODE REJECTION vs FREQUENCY, POWER SUPPLY REJECTION vs FREQUENCY,
+*INPUT VOLTAGE NOISE WITH 1/F, OUTPUT SATURATION VOLTAGE,
+*INPUT CAPACITANCE, INPUT BIAS CURRENT, INPUT COMMON MODE RANGE, 
+*INPUT OFFSET VOLTAGE, QUIESCENT SUPPLY CURRENT.
+*NOTE THAT SUPPLY CURRENT MODELED IS THAT OF THE SINGLE AMPLFIER ONLY.
+*//////////////////////////////////////////////////////////////////////////
+*MODEL TEMP RANGE IS +25 DEG C (ROOM TEMP ONLY).
+* Vsupply = +5V
+* PINOUT ORDER  +IN -IN V+ V- OUT
+* 
+*/////////////////////////////////////////////////////////////////////
+* Node Assignments
+*                       noninverting input
+*                       |   inverting input
+*                       |   |    positive supply
+*                       |   |    |   negative supply
+*                       |   |    |   |   output
+*                       |   |    |   |   |
+*                       |   |    |   |   |
+.SUBCKT LMV854          1   2   99  50  45
+*
+* INPUT STAGE
+*
+M1   4  7  8  8 PIX L=1E-6 W=1.10E-02
+M2   6  2  8  8 PIX L=1E-6 W=1.10E-02
+RD1  4 50 4.00E+03
+RD2  6 50 4.00E+03
+C1   4  6 1.16E-12
+I1  99  8 1.00E-04
+V1   9  8 1.170E+00
+D1   9 99 DX
+EOS  7  1 POLY(4) (73,98) (22,98) (81,98) (83,98) 260E-6 0 1 1 1
+IOS  1  2 0.1E-12
+*
+* CMRR=94dB, POLE AT 100 Hz
+*
+E1  72 98 POLY(2) (1,98) (2,98) 0 9.98E-04 9.98E-04
+R10 72 73 1.59
+R20 73 98 1.59E-02
+C10 72 73 1.00E-06
+*
+* PSRR=93dB, POLE AT 10 Hz
+*
+EPSY 21 98 POLY(1) (99,50) -1.12E+02 2.24E+01
+RPS1 21 22 1.59E+04
+RPS2 22 98 1.59E-02
+CPS1 21 22 1.00E-06
+*
+* VOLTAGE NOISE REFERENCE OF 11nV/rt(Hz)
+*
+VN1 80 98 0
+RN1 80 98 16.45E-3
+HN  81 98 VN1 1.09E+01
+RN2 81 98 1
+*
+* FLICKER NOISE CORNER = 1000 Hz
+*
+DFN 82 98 DNOISE
+VFN 82 98 DC 0.6551
+HFN 83 98 POLY(1) VFN 1.00E-03 1.00E+00
+RFN 83 98 1
+*
+* INTERNAL VOLTAGE REFERENCE
+*
+EREF 98  0 POLY(2) (99,0) (50,0) 0 0.5 0.5
+GSY  99 50 POLY(1) (99,50) -7.268E-04 2.00E-04
+EVP  97 98 (99,50) 0.5
+EVN  51 98 (50,99) 0.5
+*
+* GAIN STAGE
+*
+G1 98 30 (4,6) 3.73E-03
+R1 30 98 1.00E+06
+CF 30 31 8.1E-10
+RZ 45 31 3.91E+02
+V3 32 30 2.14E+00
+V4 30 33 2.08E+00
+D3 32 97 DX
+D4 51 33 DX
+*
+* OUTPUT STAGE
+*
+M5  45 46 99 99 POX L=1E-6 W=3.20E-03
+M6  45 47 50 50 NOX L=1E-6 W=2.78E-03
+EG1 99 46 POLY(1) (98,30) 3.684E-01 1
+EG2 47 50 POLY(1) (30,98) 3.714E-01 1
+*
+* MODELS
+*
+.MODEL POX PMOS (LEVEL=2,KP=1.00E-05,VTO=-0.328,LAMBDA=0.01,RD=0)
+.MODEL NOX NMOS (LEVEL=2,KP=1.00E-05,VTO=+0.328,LAMBDA=0.01,RD=0)
+.MODEL PIX PMOS (LEVEL=2,KP=1.00E-05,VTO=-5.00E-01,LAMBDA=0.01)
+.MODEL DX D(IS=1E-14,RS=0.1)
+.MODEL DNOISE D(IS=1E-14,RS=0,KF=1.21E-10)
+*
+*
+.ENDS 
+* END MODEL LMV854
+

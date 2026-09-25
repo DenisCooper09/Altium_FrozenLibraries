@@ -1,0 +1,3 @@
+*Texas Instruments
+*SN74F151A: 1-of-8 Data Selector/Multiplexer
+.MODEL SN74F151A xsimcode(file="{MODEL_PATH}FAST.SCB" func=f151a {mntymx})

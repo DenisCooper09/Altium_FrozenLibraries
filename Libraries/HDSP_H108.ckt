@@ -1,0 +1,45 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-H108  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 anode-c
+*                 |  cathode-c,d
+*                 |  |  anode-b
+*                 |  |  |  cathode-a,b DP
+*                 |  |  |  |  anode-DP
+*                 |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  cathode-a,b DP
+*                 |  |  |  |  |  |  |  cathode-c,d
+*                 |  |  |  |  |  |  |  |  anode-d
+*                 |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_H108 1  2  3  4  5  6  7  8  9
+
+DA1  6  4 dHDSP_H108
+DB1  3  4 dHDSP_H108
+DDP1 5  4 dHDSP_H108
+
+DA2  6  7 dHDSP_H108
+DB2  3  7 dHDSP_H108
+DDP2 5  7 dHDSP_H108
+
+DC1  1  2 dHDSP_H108
+DD1  9  2 dHDSP_H108
+
+DC2  1  8 dHDSP_H108
+DD2  9  8 dHDSP_H108
+
+.MODEL dHDSP_H108 D
++ (  
++    IS  = 2.08276754E-16 
++     N  = 2.17799178 
++    RS  = 0.50892350
++    BV  = 14.25
++   IBV  = 100u
++ )  
+
+.ENDS HDSP_H108

@@ -1,0 +1,5 @@
+*1N5363B
+*Ref: Diodes Incorporated Catalog, 1994
+*30V 5W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N5363B D(IS=1.65E-10 RS=7.38 TT=5.01E-8 CJO=1.73E-10 M=0.33 
++ BV=29.7 IBV=0.0416 )

@@ -1,0 +1,24 @@
+*   ZETEX  ZC830A  Spice Model        Last revision 4/3/92
+*
+.MODEL ZC830A D IS=5.355E-15 N=1.08 RS=0.1161 XTI=3
++ EG=1.11 CJO=19.15E-12 M=0.9001 VJ=2.164 FC=0.5
++ BV=45.1 IBV=51.74E-3 TT=129.8E-9
+* + ISR=1.043E-12 NR=2.01 (INCLUDE FOR LATER SPICE VERSIONS)
+*
+*NOTES: FOR RF OPERATION ADD PACKAGE INDUCTANCE 0F 2.5E-9H AND SET
+*  RS=0.68 FOR 2V, 0.60 FOR 5V, 0.52 FOR 10V OR 0.46 FOR 20V BIAS.
+*
+*                          (C)  1992 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

@@ -1,0 +1,58 @@
+*
+* Diode Sim Model Produced by Altium Ltd
+* Date:  20-Mar-2003
+*
+* Manufacturer: Philips
+* Component Name: BZX84C18V
+*
+* This macromodel models the effect of carrier recombination-generation
+* and high-level injection on the diode.
+*
+*Note: This macromodel derived from data sheets and pspice models obtained from Philips Semiconductor.
+
+.SUBCKT BZX84C18V 10 30
+
+*These components model forward-biased conditions
+D1 10 20 DIDEAL
+D2 10 20 DRECOMB
+D3 20 30 DHIGH
+
+*These components model reversed-biased conditions
+D4 30 60 DPARASITIC
+RZ 50 60 0.85899
+Vbrk 50 10 18
+
+* Subcircuit models
+*+  BV =  18.118
+*+  IBV =  0.56589
+.MODEL DIDEAL D
++(
++  IS =  1.1088E-16
++  N =  0.92657
++  TT =  0.00000277
++  CJO =  2.4981E-11
++  VJ =  0.64091
++  M =  0.331
++)
+
+.MODEL DHIGH D
++(
++  IS =  4.74729681
++  N =  0.92657
++  RS =  0.85899
++)
+
+.MODEL DRECOMB D
++(
++  IS =  3.61875E-11
++  N =  2.065507833
++)
+
+.MODEL DPARASITIC D
++(
++	N = 0.001
++	RS = 0.001
++	CJO = 0.001P
++)
+
+.ENDS BZX84C18V

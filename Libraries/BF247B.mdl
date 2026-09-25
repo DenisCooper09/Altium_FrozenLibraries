@@ -1,0 +1,6 @@
+*BF247B 3/9/98
+*Ref: Motorola Small-Signal Databook, Rev. 5 DL126/D
+*25V 0.1A 15.8ohm TO-92B 3,1,2
+.MODEL BF247B NJF (VTO=-7.5 BETA=23M LAMBDA=1.2M RD=2.21
++ RS=1.99 IS=31.6F PB=1 FC=.5 CGS=40.4P CGD=11.9P)
+* Origin: Mcejfets.lib

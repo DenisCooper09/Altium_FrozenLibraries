@@ -1,0 +1,68 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-B04E  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 cathode-e
+*                 |  cathode-d
+*                 |  |  cathode-DP
+*                 |  |  |  cathode-c
+*                 |  |  |  |  cathode-g
+*                 |  |  |  |  |  common-anode-4
+*                 |  |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  |  common-anode-3
+*                 |  |  |  |  |  |  |  |  common-anode-2
+*                 |  |  |  |  |  |  |  |  |  cathode-f
+*                 |  |  |  |  |  |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  |  |  |  |  |  common-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_B04E 1  2  3  4  5  6  7  8  9  10 11 12
+
+DA0  12  11 dHDSP_B04E
+DB0  12   7 dHDSP_B04E
+DC0  12   4 dHDSP_B04E
+DD0  12   2 dHDSP_B04E
+DE0  12   1 dHDSP_B04E
+DF0  12  10 dHDSP_B04E
+DG0  12   5 dHDSP_B04E
+
+DA1   9 11 dHDSP_B04E
+DB1   9  7 dHDSP_B04E
+DC1   9  4 dHDSP_B04E
+DD1   9  2 dHDSP_B04E
+DE1   9  1 dHDSP_B04E
+DF1   9 10 dHDSP_B04E
+DG1   9  5 dHDSP_B04E
+DDP1  9  3 dHDSP_B04E
+
+DA2   8 11 dHDSP_B04E
+DB2   8  7 dHDSP_B04E
+DC2   8  4 dHDSP_B04E
+DD2   8  2 dHDSP_B04E
+DE2   8  1 dHDSP_B04E
+DF2   8 10 dHDSP_B04E
+DG2   8  5 dHDSP_B04E
+DDP2  8  3 dHDSP_B04E
+
+DA3   6 11 dHDSP_B04E
+DB3   6  7 dHDSP_B04E
+DC3   6  4 dHDSP_B04E
+DD3   6  2 dHDSP_B04E
+DE3   6  1 dHDSP_B04E
+DF3   6 10 dHDSP_B04E
+DG3   6  5 dHDSP_B04E
+ 
+.MODEL dHDSP_B04E D
++ (  
++     IS = 1.62605804E-27 
++      N = 1.17901481 
++     RS = 10.42683582 
++     BV = 4.8
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_B04E

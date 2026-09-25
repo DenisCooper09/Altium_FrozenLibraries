@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCF4022: Octal Counter
+.MODEL HCF4022 xsimcode(file="{MODEL_PATH}ST MICROELECTRONICS\HCF4022.TXT" func=hcf4022 {mntymx})

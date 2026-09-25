@@ -1,0 +1,58 @@
+* EL2445 Macromodel
+* connections:          +input
+*                       |   -input
+*                       |   |   +Vsupply
+*                       |   |   |   -Vsupply
+*                       |   |   |   |   output
+*                       |   |   |   |   |
+.subckt EL2445          3   2   7   4   6 
+*
+* Input stage 
+*
+ie 7 37 1mA
+r6 36 37 400
+r7 38 37 400
+rc1 4 30 850
+rc2 4 39 850
+q1 30 3 36 qp
+q2 39 2 38 qpa
+ediff 33 0 39 30 1.0
+rdiff 33 0 1Meg
+*
+* Compensation Section 
+*
+ga 0 34 33 0 1m
+rh 34 0 2Meg
+ch 34 0 1.3pF
+rc 34 40 1K
+cc 40 0 1pF
+*
+* Poles
+*
+ep 41 0 40 0 1
+rpa 41 42 200
+cpa 42 0 1pF
+rpb 42 43 200
+cpb 43 0 1pF
+*
+* Output Stage 
+* 
+ios1 7 50 1.0mA
+ios2 51 4 1.0mA
+q3  4 43 50 qp 
+q4  7 43 51 qn
+q5  7 50 52 qn
+q6  4 51 53 qp 
+ros1 52 6 25
+ros2 6 53 25
+*
+* Power Supply Current
+*
+ips 7 4 2.7mA
+*
+* Models 
+*
+.model qn  npn(is=800e-18 bf=200 tf=0.2nS)
+.model qpa pnp(is=864e-18 bf=100 tf=0.2nS)
+.model qp  pnp(is=800e-18 bf=125 tf=0.2nS)
+.ends

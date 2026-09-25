@@ -1,0 +1,340 @@
+* OPA650X  WIDEBAND, LOW POWER VOLTAGE FEEDBACK OP AMP MACROMODEL
+
+* CREATED  1/12/95   DY
+
+* REV.A 
+
+*
+
+*  ------------------------------------------------------------------------ 
+
+* |  NOTICE: THE INFORMATION PROVIDED HEREIN IS BELIEVED TO BE RELIABLE;   |
+
+* |  HOWEVER; BURR-BROWN ASSUMES NO RESPONSIBILITY FOR INACCURACIES OR     |
+
+* |  OMISSIONS.  BURR-BROWN ASSUMES NO RESPONSIBILITY FOR THE USE OF THIS  |
+
+* |  INFORMATION, AND ALL USE OF SUCH INFORMATION SHALL BE ENTIRELY AT     |
+
+* |  THE USER'S OWN RISK.  NO PATENT RIGHTS OR LICENSES TO ANY OF THE      |
+
+* |  CIRCUITS DESCRIBED HEREIN ARE IMPLIED OR GRANTED TO ANY THIRD PARTY.  |
+
+* |  BURR-BROWN DOES NOT AUTHORIZE OR WARRANT ANY BURR-BROWN PRODUCT FOR   |
+
+* |  USE IN LIFE-SUPPORT DEVICES AND/OR SYSTEMS.                           |
+
+*  ------------------------------------------------------------------------ 
+
+*
+
+
+
+* CONNECTIONS:    INVERTING INPUT
+
+*                 |   NON-INVERTING INPUT
+
+*                 |   |   NEGATIVE POWER SUPPLY
+
+*                 |   |   |   OUTPUT
+
+*                 |   |   |   |   POSITIVE POWER SUPPLY
+
+*                 |   |   |   |   |   
+
+.SUBCKT OPA650X   13  14  11  12  10 
+
+*
+
+* Input Stage and Current Source
+
+*
+
+Q2       16  6   19  2 NPN1 4
+
+Q1       17  7   18  2 NPN1 4
+
+Q3       20  24  23  2 NPN1 2
+
+R3       18  20  300
+
+R5       19  20  300
+
+R4       23  22  500
+
+ISOUR    27  24  DC 370E-6
+
+Q6       27  26  28  3 PNP1 1
+
+Q7       24  24  25  2 NPN1 1
+
+Q10      2   27  26  3 PNP1 1
+
+R8       21  28  2K
+
+R9       25  22  1K
+
+R2       2   22  20
+
+R1       3   21  20
+
+C1       27  24  .6E-12
+
+*
+
+* Gain Stage
+
+*
+
+Q11      29  26  17  3 PNP1 1
+
+Q15      30  32  31  2 NPN1 1
+
+Q16      46  26  16  3 PNP1 1
+
+Q17      47  30  32  2 NPN1 1
+
+Q18      32  32  33  2 NPN1 1
+
+R11      21  17  1K
+
+R13      21  16  1K
+
+R12      31  22  320
+
+R14      33  22  320
+
+R18      46  47  500
+
+V1       29  30  DC 2.4
+
+C2       32  22  0.4E-12
+
+C4       46  22  1.0E-12
+
+C3       47  22  0.35E-12
+
+* 
+
+* Output Stage
+
+*
+
+Q19      35  26  34  3 PNP1 2
+
+Q20      35  35  44  2 NPN1 2
+
+Q21      38  47  44  3 PNP1 2
+
+Q22      39  46  45  2 NPN1 2
+
+Q23      36  36  45  3 PNP1 2
+
+Q24      36  24  37  2 NPN1 2
+
+Q25      21  17  39  2 NPN1 2
+
+Q26      22  31  38  3 PNP1 2
+
+Q27      43  40  42  3 PNP1 10
+
+Q28      3   35  42  2 NPN1 2
+
+Q29      2   36  43  3 PNP1 2
+
+Q30      42  40  43  2 NPN1 10
+
+Q31      3   42  41  2 NPN1 48
+
+Q32      2   43  41  3 PNP1 48
+
+R17      41  5   10
+
+R16      37  22  500
+
+R15      21  34  1K
+
+*
+
+* Package Parasitics
+
+*
+
+R11P     12  65  .1
+
+R10P     64  63  .01
+
+R9P      10  62  .1
+
+R8P      61  60  .01
+
+R7P      57  58  .01
+
+R6P      11  56  .1
+
+R5P      58  59  .01
+
+R4P      14  53  .1
+
+R3P      54  55  .01
+
+R2P      13  50  .1
+
+R1P      51  52  .01
+
+C3P      51  54  .05E-12
+
+C6P      54  58  .05E-12
+
+L7P      2   57  .7E-9
+
+L2P      50  51  1.08E-9
+
+L4P      53  54  1.08E-9
+
+L6P      56  58  1.5E-9
+
+L11P     65  64  1.08E-9
+
+L10P     63  5   .7E-9
+
+L9P      62  61  1.08E-9
+
+L8P      60  3   .7E-9
+
+L5P      59  2   .7E-9
+
+L1P      52  6   .7E-9
+
+C11P     61  64  .05E-12
+
+C10P     61  2   .0425E-12
+
+C9P      3   2   .15E-12
+
+C8P      58  2   .0125E-12
+
+C7P      2   2   .15E-12
+
+C5P      54  2   .0425E-12
+
+C4P      7   2   .15E-12
+
+C2P      51  2   .0425E-12
+
+L3P      55  7   .7E-9
+
+C1P      6   2   .15E-12
+
+C12P     5   2   .15E-12
+
+C13P     64  2   .0425E-12
+
+*
+
+* Models Used
+
+*
+
+*.MODEL NPN1 NPN
+
+*+ IS  = 4.647E-17  BF   = 2.293E+02  NF  = 1.000E+00  VAF = 4.398E+01
+
+*+ IKF = 7.233E-03  ISE  = 1.222E-14  NE  = 2.000E+00  BR  = 3.695E+01
+
+*+ NR  = 1.000E+00  VAR  = 1.494E+00  IKR = 1.667E+05  ISC = 1.057E-14
+
+*+ NC  = 1.653E+00  RB   = 3.170E+02  IRB = 0.000E+00  RBM = 1.500E+02
+
+*+ RE  = 1.133E+01  RC   = 2.768E+01  CJE = 2.070E-14  VJE = 7.414E-01
+
+*+ MJE = 4.950E-01  TF   = 1.150E-11  XTF = 2.452E+01  VTF = 1.029E+00
+
+*+ ITF = 1.878E-02  PTF  = 0.000E+00  CJC = 3.661E-14  VJC = 6.465E-01
+
+*+ MJC = 4.509E-01  XCJC = 1.270E-01  TR  = 3.240E-10  CJS = 5.326E-14
+
+*+ VJS = 5.291E-01  MJS  = 4.389E-01  XTB = 1.218E+00  EG  = 1.184E+00
+
+*+ XTI = 2.000E+00  KF   = 0.000E+00  AF  = 1.000E+00  FC  = 8.614E-01
+*jg, 14/6/2000: corrected syntax model.
+
+.MODEL NPN1 NPN (IS  = 4.647E-17  BF   = 2.293E+02  NF  = 1.000E+00  VAF = 4.398E+01
++ IKF = 7.233E-03  ISE  = 1.222E-14  NE  = 2.000E+00  BR  = 3.695E+01
++ NR  = 1.000E+00  VAR  = 1.494E+00  IKR = 1.667E+05  ISC = 1.057E-14
++ NC  = 1.653E+00  RB   = 3.170E+02  IRB = 0.000E+00  RBM = 1.500E+02
++ RE  = 1.133E+01  RC   = 2.768E+01  CJE = 2.070E-14  VJE = 7.414E-01
++ MJE = 4.950E-01  TF   = 1.150E-11  XTF = 2.452E+01  VTF = 1.029E+00
++ ITF = 1.878E-02  PTF  = 0.000E+00  CJC = 3.661E-14  VJC = 6.465E-01
++ MJC = 4.509E-01  XCJC = 1.270E-01  TR  = 3.240E-10  CJS = 5.326E-14
++ VJS = 5.291E-01  MJS  = 4.389E-01  XTB = 1.218E+00  EG  = 1.184E+00
++ XTI = 2.000E+00  KF   = 0.000E+00  AF  = 1.000E+00  FC  = 8.614E-01)
+
+
+*.MODEL PNP1 PNP
+
+*+ IS  = 2.628E-17  BF   = 1.478E+02  NF  = 1.000E+00  VAF = 3.106E+01
+
+*+ IKF = 3.115E-03  ISE  = 8.930E-17  NE  = 1.283E+00  BR  = 3.061E+03
+
+*+ NR  = 1.000E+00  VAR  = 1.448E+00  IKR = 5.000E-03  ISC = 1.061E-14
+
+*+ NC  = 1.634E+00  RB   = 2.794E+02  IRB = 0.000E+00  RBM = 1.544E+02
+
+*+ RE  = 7.452E+00  RC   = 1.142E+02  CJE = 2.038E-14  VJE = 7.470E-01
+
+*+ MJE = 4.930E-01  TF   = 1.434E-11  XTF = 2.216E+01  VTF = 1.072E+00
+
+*+ ITF = 2.397E-02  PTF  = 0.000E+00  CJC = 6.106E-14  VJC = 7.743E-01
+
+*+ MJC = 5.185E-01  XCJC = 8.499E-02  TR  = 6.500E-10  CJS = 2.855E-13
+
+*+ VJS = 9.063E-01  MJS  = 4.931E-01  XTB = 1.181E+00  EG  = 1.184E+00
+
+*+ XTI = 2.000E+00  KF   = 0.000E+00  AF  = 1.000E+00  FC  = 9.014E-01
+*jg, 14/6/2000: corrected syntax model.
+
+.MODEL PNP1 PNP  (IS  = 2.628E-17  BF   = 1.478E+02  NF  = 1.000E+00  VAF = 3.106E+01
++ IKF = 3.115E-03  ISE  = 8.930E-17  NE  = 1.283E+00  BR  = 3.061E+03
++ NR  = 1.000E+00  VAR  = 1.448E+00  IKR = 5.000E-03  ISC = 1.061E-14
++ NC  = 1.634E+00  RB   = 2.794E+02  IRB = 0.000E+00  RBM = 1.544E+02
++ RE  = 7.452E+00  RC   = 1.142E+02  CJE = 2.038E-14  VJE = 7.470E-01
++ MJE = 4.930E-01  TF   = 1.434E-11  XTF = 2.216E+01  VTF = 1.072E+00
++ ITF = 2.397E-02  PTF  = 0.000E+00  CJC = 6.106E-14  VJC = 7.743E-01
++ MJC = 5.185E-01  XCJC = 8.499E-02  TR  = 6.500E-10  CJS = 2.855E-13
++ VJS = 9.063E-01  MJS  = 4.931E-01  XTB = 1.181E+00  EG  = 1.184E+00
++ XTI = 2.000E+00  KF   = 0.000E+00  AF  = 1.000E+00  FC  = 9.014E-01)
+
+.ENDS OPA650X
+
+*
+
+****************** OPA650 TEST CIRCUIT ******************
+
+*
+
+*VCC      80  0   DC 5V
+
+*VEE      0   81  DC 5V
+
+*VIN      85  0   PWL ( 0N -2 1N 2 50N 2 51N -2 )
+
+*RL       82  0   100
+
+*CL       82  0   5E-12
+
+*CFB      83  82  .15E-12
+
+*CFF1     83  0   0.75E-12
+
+*RIN      85  84  25
+
+*RFB      86  82  25
+
+*LFB      83  86  2.2E-9
+
+*X82      83  84  81  82  80  OPA650X
+
+*.END
+
+*********************************************************

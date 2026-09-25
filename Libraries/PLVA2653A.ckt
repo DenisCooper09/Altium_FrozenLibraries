@@ -1,0 +1,63 @@
+*
+* Diode Sim Model Produced by Altium Ltd
+* Date:  24-Mar-2003
+*
+* Manufacturer: Philips
+* Component Name: PLVA2653A
+*
+*Note: This macromodel derived from data sheets and pspice models obtained from Philips Semiconductor.
+*
+* 1 = Cathode; 2 = Cathode; 3 = Common Anode
+.SUBCKT PLVA2653A 1 2 3
+X1 3 1 DPLVA2653A
+X2 3 2 DPLVA2653A
+
+* This macromodel models the effect of carrier recombination-generation
+* and high-level injection on the diode.
+.SUBCKT DPLVA2653A 10 30
+
+*These components model forward-biased conditions
+D1 10 20 DIDEAL
+D2 10 20 DRECOMB
+D3 20 30 DHIGH
+
+*These components model reversed-biased conditions
+D4 30 60 DPARASITIC
+RZ 50 60 0.48
+Vbrk 50 10 5.3
+
+* Subcircuit models
+* +  BV =  5.7651
+* +  IBV =  3.27E+00
+.MODEL DIDEAL D
++(
++  IS =  1.2302E-15
++  N =  0.99169
++  TT =  1.0445E-07
++  CJO =  1.2526E-10
++  VJ =  0.68657
++  M =  0.33643
++)
+
+.MODEL DHIGH D
++(
++  IS =  8.356565475
++  N =  0.99169
++  RS =  0.4793
++)
+
+.MODEL DRECOMB D
++(
++  IS =  3.44063E-08
++  N =  2.092986996
++)
+
+.MODEL DPARASITIC D
++(
++	N = 0.001
++	RS = 0.001
++	CJO = 0.001P
++)
+
+.ENDS DPLVA2653A
+.ENDS PLVA2653A

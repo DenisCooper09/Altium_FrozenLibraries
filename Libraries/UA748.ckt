@@ -1,0 +1,45 @@
+*uA748
+*Sngl GenPurpose OpAmp pkg:DIP8 3,2,7,4,6,1,8. pkg:CAN8 3,2,7,4,6,1,8. 
+* Connections: 
+*             Non-Inverting Input
+*             | Inverting Input
+*             | | Positive Power Supply
+*             | | | Negative Power Supply
+*             | | | | Output
+*             | | | | | Comp
+*             | | | | | | Comp
+*             | | | | | | |
+.SUBCKT UA748 1 2 3 4 5 6 7
+  C1   11 12 7.977E-12
+  DC    5 53 DX
+  DE   54  5 DX
+  DLP  90 91 DX
+  DLN  92 90 DX
+  DP    4  3 DX
+  BGND 99  0 V=V(3)*.5 + V(4)*.5
+  BB    7 99 I=I(VB)*42.44E6 - I(VC)*40E6 + I(VE)*40E6 +
++              I(VLP)*40E6 - I(VLN)*40E6
+  GA    6  0 11 12 188.5E-6
+  GCM   0  6 10 99 3.352E-9
+  IEE  10  4 DC 15.14E-6
+  HLIM 90  0 VLIM 1K
+  Q1   11  2 13 QX
+  Q2   12  1 14 QX
+  R2    6  9 100E3
+  RC1   3 11 5.305E3
+  RC2   3 12 5.305E3
+  RE1  13 10 1.839E3
+  RE2  14 10 1.839E3
+  REE  10 99 13.21E6
+  RO1   8  5 50
+  RO2   7 99 25
+  RP    3  4 16.81E3
+  VB    9  0 DC 0
+  VC    3 53 DC 2.6
+  VE   54  4 DC 2.6
+  VLIM  7  8 DC 0
+  VLP  91  0 DC 25
+  VLN   0 92 DC 25
+.MODEL DX D(IS=800E-18)
+.MODEL QX NPN(IS=800E-18 BF=107.1)
+.ENDS UA748

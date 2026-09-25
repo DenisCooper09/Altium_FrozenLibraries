@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-A803  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 common-cathode
+*                 |  anode-f
+*                 |  |  anode-g
+*                 |  |  |  anode-e
+*                 |  |  |  |  anode-d
+*                 |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_A803 1  2  3  4  5  6  7  8  9  10
+
+DA1  10  1 dHDSP_A803
+DB1   9  1 dHDSP_A803
+DC1   8  1 dHDSP_A803
+DD1   5  1 dHDSP_A803
+DE1   4  1 dHDSP_A803
+DF1   2  1 dHDSP_A803
+DG1   3  1 dHDSP_A803
+DDP1  7  1 dHDSP_A803
+
+DA2  10  6 dHDSP_A803
+DB2   9  6 dHDSP_A803
+DC2   8  6 dHDSP_A803
+DD2   5  6 dHDSP_A803
+DE2   4  6 dHDSP_A803
+DF2   2  6 dHDSP_A803
+DG2   3  6 dHDSP_A803
+DDP2  7  6 dHDSP_A803
+
+.MODEL dHDSP_A803 D
++ (  
++     IS = 6.64511693E-21 
++      N = 1.66825537 
++     RS = 20.13814139 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_A803

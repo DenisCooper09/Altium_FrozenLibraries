@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4027: J-K FLIP FLOP
+.MODEL HCC4027 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4027 {mntymx})

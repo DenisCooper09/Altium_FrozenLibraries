@@ -1,0 +1,186 @@
+* jjt 8/1/2002: converted temp. coeff. to Spice3 syntax.
+*//////////////////////////////////////////////////////////////////////
+* LT1635 Micropower Rail-to-Rail Operational Amplifier and Reference //
+*//////////////////////////////////////////////////////////////////////
+*
+* connections:     non-inverting input
+*                  |   inverting input
+*                  |   |   positive power supply
+*                  |   |   |   negative power supply
+*                  |   |   |   |   output
+*                  |   |   |   |   |   REF OUT
+*                  |   |   |   |   |   |   REF FB
+*                  |   |   |   |   |   |   |
+*                  |   |   |   |   |   |   |
+.SUBCKT LT1635     3   2   7   4   6   1   8
+XOP  3 2 7 4 6 OP1635
+XREF 1 4 7 8 REF1635
+.ENDS LT1635
+*
+***
+*
+.SUBCKT OP1635     1 2 3 4 5
+*
+* input range / phase reversal protection
+*
+GRP1 1 111 1 111 1.6667e-004
+GRP2 2 112 2 112 1.6667e-004
+DIP1 114 111 DX
+DIP2 114 112 DX
+VCM 114 4 DC 3.4000e-001
+*
+* input stage
+*
+CIN 111 112 2.2785e-012
+GRIN 111 112 111 112 1.8115e-008
+VCMEP 303 3 DC 0.8
+VCMEN 4 304 DC 1.6
+Q1 11 112 13 Q1
+Q2 12 113 14 Q2
+RC1 304 11 2.6854e+003
+RC2 304 12 2.6854e+003
+RE1 10 13 3.0583e+001
+RE2 10 14 3.0583e+001
+C1 11 12 5.9268e-011
+IEE 303 10 DC 7.4478e-004
+GSR 303 10 12 11 2.5978e-005
+D1 10 303 DX
+GA 60 99 11 12 3.7239e-004
+*
+* noise sources
+*
+FRI1 99 1 VRI1 1
+VRI1 101 0 DC 0
+RRI1 101 0 8.6103e+006
+FRI2 99 2 VRI2 1
+VRI2 201 0 DC 0
+RRI2 201 0 8.6103e+006
+GR 99 60 605 606 2.4145e+001
+IR1 0 605 DC 1
+IR2 0 606 DC 1
+DR1 605 0 DR
+DR2 606 0 DR
+*
+* common mode rejection
+*GCM1 99 20 POLY(2) 111 99 112 99 0 5.0000e-004 5.0000e-004
+
+RCM1 21 99 1.000000e+003
+RCM2 20 99 1.0000e+006
+LCM 20 21 1.9894e-003
+ECM 113 111 20 99 3.1623e-006
+*
+* frequency shaper
+*
+RP1 601 99 1.3636e+003
+CP1 60 601 2.3343e-009
+RP11 60 99 1.0000e+004
+GP1 99 61 60 99 1.0000e-004
+RP2 61 99 1.0000e+004
+CP2 61 99 5.3052e-011
+GP2 99 62 61 99 1.0000e-004
+RP3 621 99 1.1111e+004
+LP3 62 621 3.5368e-002
+RP33 62 99 1.0000e+005
+GP3 99 63 62 99 1.0000e-004
+RP4 63 99 1.0000e+004
+CP4 63 99 3.1831e-011
+GP4 99 6 63 99 1.0000e-004
+*
+* output stage
+*
+R2 6 99 1.0000e+003
+C2 6 7 9.5036e-009
+GB 7 99 6 99 1.8070e+003
+R01 7 99 2.3531e+001
+R02 7 50 1.0000e-001
+R03 50 5 2.6369e+001
+R04 5 99 1.0000e+012
+VC 53 50 DC 1.0769e+000
+VE 54 50 DC -1.0706e+000
+DC1 53 55 DX
+DC2 55 56 DX
+DE1 57 54 DX
+DE2 58 57 DX
+GVC1 3 56 3 56 1.0E-4
+GVE1 4 58 4 58 1.0E-4
+GVC2 3 55 3 55 1.0E-5
+GVE2 4 57 4 57 1.0E-5
+GVLP 99 60 56 3 1.0000e+000
+GVLN 99 60 58 4 1.0000e+000
+ECLP 91 0 7 50 2.5000e+002
+ECLN 92 0 7 50 2.5000e+002
+DCLP 91 90 DX
+DCLN 90 92 DX
+VLIM 90 0 DC 0
+FB 7 99 VLIM 2.6627e+001
+*
+* supply characteristic
+*
+EGND 99 0 POLY(2) 3 0 4 0 0 0.5 0.5
+DSUB 4 3 DX
+IP 3 4 DC -6.1478e-004
+*
+GV 31 0 7 50 1.0000e+001
+DP1 3 31 DX
+DP2 33 4 DX
+RGV 32 33 10.0
+EGV 31 32 POLY(1) 3 4 -0.8 1.0
+*
+.MODEL DX D IS=8.0000e-016 RS=0 XTI=0
+.MODEL Q1 PNP (IS=1.0059e-015 BF=204344.4 XTB=1.1308e+000
++ XTI=3.01156e+000 KF=2.7778e-018)
+.MODEL Q2 PNP (IS=9.9416e-016 BF=211088.6 XTB=1.1079e+000
++ XTI=2.98844e+000 KF=2.7778e-018)
+*jg, 3/7/2000: corrected model syntax
+
+.MODEL DR D IS=8.0000e-016 KF=3.8504e-019 RS=0 XTI=0
+*
+.ENDS OP1635
+*
+***
+*
+.SUBCKT REF1635    1 4 7 8
+*
+* 200 mV reference with temperature drift
+*
+IREF 4 10 1.0E-3
+
+*RREF 10 4 200  TC=3.3E-5
+RREF 10 4 200 RREFMOD
+.MODEL RREFMOD R (TC1=3.3E-5)
+
+* reference amp, poles at 8Hz / 500KHz
+*
+CIN 8 4 3.0E-12
+IBIAS 8 4 DC 3.5E-9
+GIN 4 11 10 8 1.0E-5
+RP1 11 4 1.0E5
+CP1 11 4 1.98E-7
+GP2 4 12 11 4 1.0E-5
+RP2 12 4 1.0E5
+CP2 12 4 3.2E-12
+GOUT 4 22 12 4 900
+ROUT1 22 4 100
+ROUT2 22 1 100
+*
+* voltage limiter to Vdd-0.8V, Vss + 0.02V
+*
+DLP 22 23 DX
+ELP 23 4 POLY(1) 7 4 -1.792 1.0
+DLN 24 22 DX
+VLN 24 4 DC 0.995
+*
+* current limiter to 2mA / 10uA source / sink
+*
+ECLP 91 0 22 1 5.4
+ECLN 92 0 22 1 7.5E2
+DCLP 91 90 DX
+DCLN 90 92 DX
+VLIM 90 89 DC 0
+RLIM 89 0 0.05
+FB 22 4 VLIM  10
+*
+.MODEL DX D IS=8.0000E-016 RS=0 XTI=0
+*
+.ENDS REF1635
+*

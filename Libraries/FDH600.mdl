@@ -1,0 +1,7 @@
+*FDH600 MCE 3-31-97
+*Ref: National Discrete Products Databook, 1996
+*50V 200mA Si Computer Diode pkg:DIODE0.4 1,2
+.MODEL FDH600 D (IS=284P RS=0.21 N=1.7 BV=50 IBV=550N
++ CJO=3.31P VJ=0.75 M=0.333 TT=7.2N)
+
+

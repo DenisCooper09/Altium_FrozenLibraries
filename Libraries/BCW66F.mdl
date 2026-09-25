@@ -1,0 +1,21 @@
+*ZETEX  BCW66F Spice model     Last revision  4/90
+*
+.MODEL BCW66F NPN IS =3.941445E-14 BF =175 VAF=109.45 NF =1 IKF=.8
++ISE=7.4025E-15 NE =1.3 BR =20.5 VAR=14.25 NR =.974 IKR=.1 ISC=3.157E-13
++NC =1.2 RB =1.1 RE =.1259 RC =.0539 CJE=63E-12 TF =.75E-9 CJC=15.8E-12
++TR =85E-9 VJC=.505 MJC=.39
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

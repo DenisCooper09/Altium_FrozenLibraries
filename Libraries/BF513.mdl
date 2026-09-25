@@ -1,0 +1,17 @@
+*PHILIPS SEMICONDUCTORS        Version: 1.0
+*Filename: BF513.PRM         Date: sep 1992
+*
+.MODEL  BF513   NJF
++(
++             VTO = -3.1715E+000
++            BETA = 1.22441E-003
++          LAMBDA = 1.98434E-002
++              RD = 2.61448E+000
++              RS = 2.61448E+000
++              IS = 3.88189E-014
++            CGS  = 5.40000E-012
++            CGD  = 4.08000E-012
++              PB = 8.59053E-001
++              FC = 5.00000E-001
++)
+*Parameter with default value: FC

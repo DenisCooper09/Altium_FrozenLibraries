@@ -1,0 +1,52 @@
+*
+* Diode Sim Model Produced by Altium Ltd
+* Date:  24-Mar-2003
+*
+* Manufacturer: Philips
+* Component Name: BAS321
+*
+* This macromodel models the effect of carrier recombination-generation
+* and high-level injection on the diode.
+*
+*Note: This macromodel derived from data sheets and pspice models obtained from Philips Semiconductor.
+
+.SUBCKT BAS321 10 30
+D1 10 20 DIDEAL
+D2 10 20 DRECOMB
+D3 20 30 DHIGH
+
+* Subcircuit models
+.MODEL DIDEAL D
++(
++  IS =  3.7106E-09
++  N =  1.9403
++  TT =  3.751E-08
++	CJO=7.9900E-13
++	VJ=0.1900
++	M=0.125
++  BV =  319.86
++  IBV =  5.17E-06
++)
+
+.MODEL DHIGH D
++(
++  IS =  9.330811501
++  N =  1.9403
++  RS =  0.41967
++)
+
+.MODEL DRECOMB D
++(
++  IS =  0.000000005
++  N =  1.984146275
++)
+
+.ENDS BAS321
+
+
+
+
+
+
+
+

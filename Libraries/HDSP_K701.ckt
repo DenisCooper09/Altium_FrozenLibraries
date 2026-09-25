@@ -1,0 +1,58 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-K701  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 cathode-e-1
+*                 |  cathode-d-1
+*                 |  |  cathode-c-1
+*                 |  |  |  cathode-DP-1
+*                 |  |  |  |  cathode-e-2
+*                 |  |  |  |  |  cathode-d-2
+*                 |  |  |  |  |  |  cathode-g-2
+*                 |  |  |  |  |  |  |  cathode-c-2
+*                 |  |  |  |  |  |  |  |  cathode-DP-2
+*                 |  |  |  |  |  |  |  |  |  cathode-b-2
+*                 |  |  |  |  |  |  |  |  |  |  cathode-a-2
+*                 |  |  |  |  |  |  |  |  |  |  |  cathode-f-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  common-anode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  common-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  cathode-b-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  cathode-a-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  cathode-g-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  cathode-f-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_K701 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+
+DA1  14  16  dHDSP_K701
+DB1  14  15  dHDSP_K701
+DC1  14   3  dHDSP_K701
+DD1  14   2  dHDSP_K701
+DE1  14   1  dHDSP_K701
+DF1  14  18  dHDSP_K701
+DG1  14  17  dHDSP_K701
+DDP1 14   4  dHDSP_K701
+
+DA2  13  11  dHDSP_K701
+DB2  13  10  dHDSP_K701
+DC2  13   8  dHDSP_K701
+DD2  13   6  dHDSP_K701
+DE2  13   5  dHDSP_K701
+DF2  13  12  dHDSP_K701
+DG2  13   7  dHDSP_K701
+DDP2 13   9  dHDSP_K701
+
+.MODEL dHDSP_K701 D
++ (  
++     IS = 7.07436607E-24 
++      N = 1.24380258 
++     RS = 22.12166762 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_K701

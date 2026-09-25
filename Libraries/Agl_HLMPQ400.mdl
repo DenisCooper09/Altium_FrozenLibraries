@@ -1,0 +1,8 @@
+* Agl_HLMPQ400 LED Model
+* Created by Shaun Quin 30-05-2002
+* jj 9/9/2002: changed Rs, N values.
+*Typ LED: Vf=1.9V Vr=30V If=10mA 
+*LED Pinout: 1=A, 2=K
+.MODEL Agl_HLMPQ400 D (IS=85.64n RS=145.03 N=1.5 BV=30 IBV=100U
++ CJO=4P VJ=.75 M=.333 TT=260n)
+*Temperature and Noise Effects are not Modelled

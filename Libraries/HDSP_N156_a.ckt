@@ -1,0 +1,45 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-N156  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-a 
+*                 |  anode-d 
+*                 |  |  cathode-d 
+*                 |  |  |  cathode-c 
+*                 |  |  |  |  cathode-e 
+*                 |  |  |  |  |  anode-e 
+*                 |  |  |  |  |  |  cathode-DP 
+*                 |  |  |  |  |  |  |  anode-DP 
+*                 |  |  |  |  |  |  |  |  cathode-DP 
+*                 |  |  |  |  |  |  |  |  |  cathode-b 
+*                 |  |  |  |  |  |  |  |  |  |  anode-b 
+*                 |  |  |  |  |  |  |  |  |  |  |  anode-c 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  anode-a 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_N156 2  3  4  5  6  7  8  10 11 12 13 14 15 17
+
+DA1  15  2 dHDSP_N156
+DA2  15 17 dHDSP_N156
+DB   13 12 dHDSP_N156
+DC   14  5 dHDSP_N156
+DD    3  4 dHDSP_N156
+DE    7  6 dHDSP_N156
+DDP1 10  8 dHDSP_N156
+DDP2 10 11 dHDSP_N156
+ 
+.MODEL dHDSP_N156 D
++ (  
++    IS = 1.72301609E-14 
++     N = 2.43230682 
++    RS = 1.67295284
++    BV = 14.25
++   IBV = 100u 
++ )  
+
+.ENDS HDSP_N156

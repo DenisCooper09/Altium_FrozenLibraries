@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCF4008: 4-bit Binary Full Adder
+.MODEL HCF4008 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4008 {mntymx})

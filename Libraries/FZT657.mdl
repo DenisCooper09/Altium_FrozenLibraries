@@ -1,0 +1,21 @@
+*ZETEX  FZT657 Spice model   Last revision   30/11/90
+*
+.MODEL FZT657 NPN IS =1.8805E-13 NF =1.0027 BF =120 VAF=1400 IKF=.22
++ISE=2.1E-14 NE =1.28 BR =8.3 VAR=50 NR =1.005 IKR=1.1 ISC=5E-13 NC =1.8
++RB =.1 RE =.095 RC =.146 CJE=370E-12 TF =1.77E-9 CJC=24E-12 MJC=.48 VJC=.525
++TR =800E-9
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

@@ -1,0 +1,245 @@
+* OPA671M  SPICE MACRO MODEL 
+
+* Created 1/8/92 BCB
+
+* REV.B   6-3-92 BCB (added TC for Aol, Is, PSR, and GBWP)
+
+*
+
+*  ------------------------------------------------------------------------ 
+
+* |  NOTICE: THE INFORMATION PROVIDED HEREIN IS BELIEVED TO BE RELIABLE;   |
+
+* |  HOWEVER; BURR-BROWN ASSUMES NO RESPONSIBILITY FOR INACCURACIES OR     |
+
+* |  OMISSIONS.  BURR-BROWN ASSUMES NO RESPONSIBILITY FOR THE USE OF THIS  |
+
+* |  INFORMATION, AND ALL USE OF SUCH INFORMATION SHALL BE ENTIRELY AT     |
+
+* |  THE USER'S OWN RISK.  NO PATENT RIGHTS OR LICENSES TO ANY OF THE      |
+
+* |  CIRCUITS DESCRIBED HEREIN ARE IMPLIED OR GRANTED TO ANY THIRD PARTY.  |
+
+* |  BURR-BROWN DOES NOT AUTHORIZE OR WARRANT ANY BURR-BROWN PRODUCT FOR   |
+
+* |  USE IN LIFE-SUPPORT DEVICES AND/OR SYSTEMS.                           |
+
+*  ------------------------------------------------------------------------ 
+
+* |-------------------------------------------------------------|
+
+* |  This macro model is being supplied as an aid to            |
+
+* |  circuit designs.  While it reflects reasonably close       |
+
+* |  similarity to the actual device in terms of performance,   |
+
+* |  it is not suggested as a replacement for breadboarding.    |
+
+* |  Simulation should be used as a forerunner or a supplement  |
+
+* |  to traditional lab testing.                                |
+
+* |                                                             |
+
+* |  Neither this library nor any part may be copied without    |
+
+* |  the express written consent of Burr-Brown Corporation.     |
+
+* |                                                             |
+
+* |  The users should carefully note the following factors      |
+
+* |  regarding this model.                                      |
+
+* |                                                             |
+
+* |-------------------------------------------------------------|
+
+* 
+
+*
+
+* CONNECTIONS:  NON-INVERTING INPUT
+
+*               |  INVERTING INPUT
+
+*               |  |  POSITIVE POWER SUPPLY
+
+*               |  |  |  NEGATIVE POWER SUPPLY
+
+*               |  |  |  |  OUTPUT
+
+*               |  |  |  |  |
+
+.SUBCKT OPA671M 31 32 7  4  36
+
+
+
+* Input and output parasitics
+
+CINP1 31 4 1.1P
+
+CINP2 3 4 1.9P
+
+LINP 3 31 4N
+
+CINM1 32 4 1.1P
+
+CINM2 2 4 1.9P
+
+LINM 2 32 4N
+
+COUT1 36 4 2.2P
+
+COUT2 6 4 2.2P
+
+LOUT 6 36 75N
+
+CDIF1 2 3 4.5P
+
+R11 2 13 5E12
+
+R12 13 3 5E12
+
+
+
+* Input stage (2nd pole @ 56M Hz) and GBW product vs temperature
+
+*
+
+J11 15 2 14 JX
+
+J12 16 12 14 JX
+
+G11 2 4 POLY(3) (15,2) (14,2) (4,2) 0 1E-12 1E-12 1E-12
+
+G12 12 4 POLY(3) (16,12) 14,12) (4,12) 0 1E-12 1E-12 1E-12
+
+*C12 15 16 CX 3.336E-12
+*jg, 26/6/2000, CX is taken out because its model is unknown.
+
+C12 15 16  3.336E-12
+
+R13 15 4 426
+
+R14 16 4 426
+
+EOS 12 3 POLY(2) 81 71 63 4 0.5E-3 1 1
+
+ISS 7 14 0.666E-3
+
+
+
+* Gain stage (80dB)[over temperature] and first pole (@ 6K HZ)
+
+*
+
+*R27 7 21 4.26E6 TC=-0.55E-2
+*jg, 26/6/2000, TC (temperature coefficient) value is taken out because its model is not declared.
+
+R27 7 21 4.26E6 
+
+*R28 4 21 4.26E6 TC=-0.55E-2
+*jg, 26/6/2000, TC (temperature coefficient) value is taken out because its model is not declared.
+
+R28 4 21 4.26E6
+C22 7 21 6.2267E-12
+
+C23 4 21 6.2267E-12
+
+G21 7 21 POLY(1) 15 16 9.35E-3 2.347E-3
+
+G22 21 4 POLY(1) 16 15 9.35E-3 2.347E-3
+
+V21 7 22 2.89
+
+V22 23 4 2.89
+
+D21 21 22 DX
+
+D22 23 21 DX
+
+* power supply voltage vs current and supply center reference
+
+* quiescent error current and supply current vs temperature
+
+R9 7 71 4.5E3
+
+R10 4 71 4.5E3
+
+*R15 7 4 20.724E3 TC=-1E-3
+*jg, 26/6/2000, TC (temperature coefficient) value is taken out because its model is not declared.
+
+R15 7 4 20.724E3
+G10 7 4 7 4 -0.5
+
+* Power-supply rejection vs temperature
+
+GPSR1 63 4 7 22 207.1204E-6
+
+GPSR2 63 4 7 4 -19.9526E-6
+
+*R61   63 4 1 TC=27.5E-3
+*jg, 26/6/2000, TC (temperature coefficient) value is taken out because its model is not declared.
+
+R61   63 4 1
+
+* Common-mode gain network -92dB, zero at 400kHz
+
+R82 82 81 1
+
+L82 7 82 .3979E-6
+
+R83 81 83 1
+
+L83 83 4 .3979E-6
+
+G82 7 81 13 71 25E-6
+
+G83 81 4 71 13 25E-6
+
+
+
+* correction current and output stage
+
+*
+
+D91 21 92 DX
+
+D92 93 21 DX
+
+D93 7 94 DX
+
+D94 7 95 DX
+
+D95 4 94 DY
+
+D96 4 95 DY
+
+V93 92 6 1.39
+
+V94 6 93 1.05
+
+G91 7 6 21 7 25E-3
+
+G92 4 6 21 4 25E-3
+
+G95 94 4 6 21 25E-3
+
+G96 95 4 21 6 25E-3
+
+R91 7 6 40
+
+R92 4 6 40
+
+.MODEL JX PJF(BETA=2E-3 VTO=-2 IS=2.5E-12 AF=1 KF=19E-18)
+.MODEL DX D(IS=1E-15)
+.MODEL DY D(IS=1E-15  BV=50)
+
+*.MODEL CX CAP(TC1=-.008)
+*jg, 26/6/2000, the capacitor model is taken out because of inappropriate model structure.
+
+.ENDS
+
+

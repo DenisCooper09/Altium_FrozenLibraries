@@ -1,0 +1,6 @@
+*****************************************************************
+* BBY53x Series Diode Model
+.MODEL D353 D(IS=200E-18 N=1.021 RS=0.4883 XTI=3 EG=1.11 CJO=9.2E-12
++ M=0.74 VJ=0.8 FC=.5 BV=6 IBV=1E-6 TT=120E-9)
+* hyperabrupt Diode, M=f(VR)! C-curve approximated between VR=1..3V
+* 9.1.96 SIEMENS PD1 Moschovis

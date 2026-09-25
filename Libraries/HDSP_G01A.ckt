@@ -1,0 +1,54 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-G01A  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-C-1
+*                 |  cathode-E-1
+*                 |  |  cathode-D-1
+*                 |  |  |  common-anode-1
+*                 |  |  |  |  common-anode-2
+*                 |  |  |  |  |  cathode-D-2
+*                 |  |  |  |  |  |  cathode-E-2
+*                 |  |  |  |  |  |  |  cathode-C-2
+*                 |  |  |  |  |  |  |  |  cathode-G-2
+*                 |  |  |  |  |  |  |  |  |  cathode-A-2
+*                 |  |  |  |  |  |  |  |  |  |  cathode-F-2
+*                 |  |  |  |  |  |  |  |  |  |  |  cathode-B-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  cathode-B-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  cathode-F-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  cathode-A-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  cathode-G-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_G01A 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16
+
+DA1 4 15 dHDSP_G01A
+DB1 4 13 dHDSP_G01A
+DC1 4  1 dHDSP_G01A
+DD1 4  3 dHDSP_G01A
+DE1 4  2 dHDSP_G01A
+DF1 4 14 dHDSP_G01A
+DG1 4 16 dHDSP_G01A
+
+DA2 5 10 dHDSP_G01A
+DB2 5 12 dHDSP_G01A
+DC2 5  8 dHDSP_G01A
+DD2 5  6 dHDSP_G01A
+DE2 5  7 dHDSP_G01A
+DF2 5 11 dHDSP_G01A
+DG2 5  9 dHDSP_G01A
+
+.MODEL dHDSP_G01A D
++ (  
++    IS  = 4.92088043E-22 
++     N  = 1.51994259 
++    RS  = 3.79496255
++    BV  = 4.5
++   IBV  = 100u 
++ )  
+
+.ENDS HDSP_G01A

@@ -1,0 +1,63 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-B01E  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 anode-e
+*                 |  anode-d
+*                 |  |  anode-DP
+*                 |  |  |  anode-c
+*                 |  |  |  |  anode-g
+*                 |  |  |  |  |  common-cathode-4
+*                 |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  common-cathode-3
+*                 |  |  |  |  |  |  |  |  common-cathode-2
+*                 |  |  |  |  |  |  |  |  |  anode-f
+*                 |  |  |  |  |  |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  |  |  |  |  |  common-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_B01E 1  2  3  4  5  6  7  8  9  10 11 12
+
+DB0   7 12 dHDSP_B01E
+DC0   4 12 dHDSP_B01E
+
+DA1  11  9 dHDSP_B01E
+DB1   7  9 dHDSP_B01E
+DC1   4  9 dHDSP_B01E
+DD1   2  9 dHDSP_B01E
+DE1   1  9 dHDSP_B01E
+DF1  10  9 dHDSP_B01E
+DG1   5  9 dHDSP_B01E
+DDP1  3  9 dHDSP_B01E
+
+DA2  11  8 dHDSP_B01E
+DB2   7  8 dHDSP_B01E
+DC2   4  8 dHDSP_B01E
+DD2   2  8 dHDSP_B01E
+DE2   1  8 dHDSP_B01E
+DF2  10  8 dHDSP_B01E
+DG2   5  8 dHDSP_B01E
+DDP2  3  8 dHDSP_B01E
+
+DA3  11  6 dHDSP_B01E
+DB3   7  6 dHDSP_B01E
+DC3   4  6 dHDSP_B01E
+DD3   2  6 dHDSP_B01E
+DE3   1  6 dHDSP_B01E
+DF3  10  6 dHDSP_B01E
+DG3   5  6 dHDSP_B01E
+ 
+.MODEL dHDSP_B01E D
++ (  
++     IS = 1.62605804E-27 
++      N = 1.17901481 
++     RS = 10.42683582 
++     BV = 4.8
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_B01E

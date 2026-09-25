@@ -1,0 +1,7 @@
+*73HF80 MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*800V 70000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 73HF80 D (IS=99.5N RS=600U N=1.7 BV=800 IBV=3078U
++ CJO=2.88N VJ=0.75 M=0.333 TT=4.32U)
+
+

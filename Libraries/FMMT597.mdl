@@ -1,0 +1,21 @@
+*ZETEX  FMMT597 Linear Operation Spice Model   Last revision 4/7/91
+*
+.MODEL FMMT597 PNP IS =8.79E-14 NF =1.0032 BF =190 IKF=.145 VAF=647
++ISE=2.77E-14 NE =1.525 NR =1.03 ISC=5E-13 NC =1.3 VAR=80 BR =2.6 IKR=.25
++RB =.2 RE =.5 RC =1.0 CJC=20.8E-12 MJC=.505 VJC=.8 CJE=106E-12 TF =1.64E-9
++TR =1.1E-6
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

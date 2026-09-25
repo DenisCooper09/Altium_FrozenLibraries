@@ -1,0 +1,54 @@
+* BFG97 SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT223A DIE MODEL : BFR96
+* 1: COLLECTOR; 2: BASE; 3: EMITTER;
+.SUBCKT BFG97 1 2 3
+Q1 6 5 7 7 BFR96
+* SOT223A parasitic model
+               Lb  4 5 1.5n
+               Le  7 8 .5n
+               L1  2 4 .025n
+               L2  1 6 1.19n
+               L3  3 8 .6n
+              Ccb  4 6 16f
+              Cbe  4 8 182f
+*
+* PHILIPS SEMICONDUCTORS                                         Version:   2.0
+* Filename:    BFR96.PRM                                         Date: May 1992
+*
+.MODEL  BFR96   NPN
++(
++              IS = 2.44463E-015
++              BF = 9.80000E+001
++              NF = 9.87224E-001
++             VAF = 2.66948E+001
++             IKF = 2.00000E+000
++             ISE = 3.95722E-014
++              NE = 1.41333E+000
++              BR = 8.53970E+001
++              NR = 9.78180E-001
++             VAR = 4.69684E+000
++             IKR = 3.08736E-002
++             ISC = 3.07780E-015
++              NC = 1.12019E+000
++              RB = 3.00000E+000
++             IRB = 1.00000E-006
++             RBM = 3.00000E+000
++              RE = 7.17149E-002
++              RC = 6.62000E-001
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 5.15057E-012
++             VJE = 6.00000E-001
++             MJE = 3.77782E-001
++              TF = 1.61902E-011
++             XTF = 7.50000E+001
++             VTF = 2.83687E-002
++             ITF = 2.48030E-001
++             CJC = 2.38386E-012
++             VJC = 2.98165E-001
++             MJC = 2.14438E-001
++)
+.ENDS

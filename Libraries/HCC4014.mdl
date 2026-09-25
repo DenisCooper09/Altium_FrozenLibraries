@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4014: 8-bit Static Shift Register
+.MODEL HCC4014 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4014 {mntymx})

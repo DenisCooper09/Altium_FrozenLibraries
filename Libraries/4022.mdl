@@ -1,0 +1,4 @@
+*Octal Counter - type:digital pkg:DIP16 [DVCC=16;DGND=8;](13,14,15,12,10,5,4,11,7,3,1,2)
+.MODEL 4022 xsimcode(file="{MODEL_PATH}\Fairchild\4022.txt" func=4022 {mntymx})
+
+* Origin: CD4022.mod

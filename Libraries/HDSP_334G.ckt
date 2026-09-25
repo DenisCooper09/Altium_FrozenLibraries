@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-334G  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 common-cathode
+*                 |  anode-E
+*                 |  |  anode-G
+*                 |  |  |  anode-F
+*                 |  |  |  |  anode-D
+*                 |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  |  anode-C
+*                 |  |  |  |  |  |  |  |  anode-B
+*                 |  |  |  |  |  |  |  |  |  anode-A
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_334G 1  2  3  4  5  6  7  8  9  10
+
+DA1  10  1  dHDSP_334G
+DB1   9  1  dHDSP_334G
+DC1   8  1  dHDSP_334G
+DD1   5  1  dHDSP_334G
+DE1   2  1  dHDSP_334G
+DF1   4  1  dHDSP_334G
+DG1   3  1  dHDSP_334G
+DDP1  7  1  dHDSP_334G
+
+DA2  10  6  dHDSP_334G
+DB2   9  6  dHDSP_334G
+DC2   8  6  dHDSP_334G
+DD2   5  6  dHDSP_334G
+DE2   2  6  dHDSP_334G
+DF2   4  6  dHDSP_334G
+DG2   3  6  dHDSP_334G
+DDP2  7  6  dHDSP_334G
+
+.MODEL dHDSP_334G D
++ (  
++    IS = 2.00000000E-15 
++    N  = 2.63648757 
++    RS = 11.31715644 
++    BV = 4.8 
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_334G

@@ -1,0 +1,8 @@
+* Agl_HLMPQ102 LED Model
+* Created by Shaun Quin 30-05-2002
+* jj 9/9/2002: changed N and Rs.
+*Typ LED: Vf=1.9 Vr=20V If=20mA
+*LED Pinout: 1=A, 2=K
+.MODEL Agl_HLMPQ102 D (IS=128.4n RS=71.96 N=1.5 BV=20 IBV=100U
++ CJO=20P VJ=.75 M=.333 TT=45n)
+*Temperature and Noise Effects are not Modelled

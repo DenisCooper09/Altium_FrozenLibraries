@@ -1,0 +1,58 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-G153  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 e-anode-1 
+*                 |  d-anode-1 
+*                 |  |  c-anode-1 
+*                 |  |  |  dp-anode-1 
+*                 |  |  |  |  e-anode-2 
+*                 |  |  |  |  |  d-anode-2 
+*                 |  |  |  |  |  |  g-anode-2 
+*                 |  |  |  |  |  |  |  c-anode-2 
+*                 |  |  |  |  |  |  |  |  dp-anode-2 
+*                 |  |  |  |  |  |  |  |  |  b-anode-2 
+*                 |  |  |  |  |  |  |  |  |  |  a-anode-2 
+*                 |  |  |  |  |  |  |  |  |  |  |  f-anode-2 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  common-cathode-2 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  common-cathode-1 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  b-anode-1 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  a-anode-1 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  g-anode-1 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  f-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_G153 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+
+DA1  16 14 dHDSP_G153
+DB1  15 14 dHDSP_G153
+DC1   3 14 dHDSP_G153
+DD1   2 14 dHDSP_G153
+DE1   1 14 dHDSP_G153
+DF1  18 14 dHDSP_G153
+DG1  17 14 dHDSP_G153
+DDP1  4 14 dHDSP_G153
+
+DA2  11 13 dHDSP_G153
+DB2  10 13 dHDSP_G153
+DC2   8 13 dHDSP_G153
+DD2   6 13 dHDSP_G153
+DE2   5 13 dHDSP_G153
+DF2  12 13 dHDSP_G153
+DG2   7 13 dHDSP_G153
+DDP2  9 13 dHDSP_G153
+
+.MODEL dHDSP_G153 D
++ (  
++    IS  = 1.31055154E-15 
++     N  = 2.20660855 
++    RS  = 1.60736539 
++    BV  = 14.25
++   IBV  = 100u
++ )  
+
+.ENDS HDSP_G153

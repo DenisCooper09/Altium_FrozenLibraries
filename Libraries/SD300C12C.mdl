@@ -1,0 +1,7 @@
+*SD300C12C 3/10/98
+*Ref: IR Power Semiconductors Product Digest '94
+*1200V 650A 3us Si pkg:DIODE0.7 1,2
+.MODEL SD300C12C D (IS=924N RS=64.6U N=1.7 BV=1.2K IBV=10U
++ CJO=26.7N VJ=0.75 M=0.333 TT=4.32U IBV=0.043)
+
+

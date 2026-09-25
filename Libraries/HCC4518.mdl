@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4518: Dual Up Counter
+.MODEL HCC4518 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4518 {mntymx})

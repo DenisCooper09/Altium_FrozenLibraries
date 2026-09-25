@@ -1,0 +1,54 @@
+*////////////////////////////////
+* OP05E  Operational Amplifier //
+*////////////////////////////////
+*
+* connections:     non-inverting input
+*                  |   inverting input
+*                  |   |   positive power supply
+*                  |   |   |   negative power supply
+*                  |   |   |   |   output
+*                  |   |   |   |   |
+*                  |   |   |   |   |
+.SUBCKT OP05E      3   2   7   4   6
+* INPUT
+RC1 7 80 8.842E+03
+RC2 7 90 8.842E+03
+Q1 80 102 10 QM1 
+Q2 90 103 11 QM2 
+RB1 2 102 5.000E+02
+RB2 3 103 5.000E+02
+DDM1 102 104 DM2 
+DDM3 104 103 DM2 
+DDM2 103 105 DM2 
+DDM4 105 102 DM2 
+C1 80 90 5.460E-12
+RE1 10 12 3.097E+03
+RE2 11 12 3.097E+03
+IEE 12 4 9.002E-06
+RE 12 0 2.222E+07
+CE 12 0 1.579E-12
+* INTERMEDIATE 
+GCM 0 8 12 0 5.668E-11
+GA 8 0 80 90 1.131E-04
+R2 8 0 1.000E+05
+C2 1 8 3.000E-11
+GB 1 0 8 0 6.647E+02
+* OUTPUT 
+RO1 1 6 3.333E+01
+RO2 1 0 6.667E+01
+RC 17 0 1.393E-05
+GC 0 17 6 0 7.179E+04
+D1 1 17 DM1 
+D2 17 1 DM1 
+D3 6 13 DM2 
+D4 14 6 DM2 
+VC 7 13 2.803E+00
+VE 14 4 2.803E+00
+IP 7 4 2.991E-03
+DSUB 4 7 DM2 
+* MODELS 
+.MODEL QM1 NPN (IS=8.000E-16 BF=2.501E+03)
+.MODEL QM2 NPN (IS=8.062E-16 BF=7.502E+03)
+.MODEL DM1 D (IS=5.991E-12)
+.MODEL DM2 D (IS=8.000E-16)
+.ENDS OP05E

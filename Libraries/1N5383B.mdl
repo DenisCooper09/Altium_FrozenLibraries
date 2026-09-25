@@ -1,0 +1,5 @@
+*1N5383B
+*Ref: Diodes Incorporated Catalog, 1994
+*150V 5W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N5383B D(IS=1.65E-10 RS=327 TT=5.01E-8 CJO=4.66E-11 M=0.33 
++ BV=147.3 IBV=0.00833 )

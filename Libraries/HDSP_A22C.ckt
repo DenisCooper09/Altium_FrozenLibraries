@@ -1,0 +1,71 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  11-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-A22C  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 1E/2E Cathode  
+*                 |  1M/2M Cathode  
+*                 |  |  1L/2L Cathode
+*                 |  |  |  1K/2K Cathode
+*                 |  |  |  |  1J/2J Cathode
+*                 |  |  |  |  |  1D/2D Cathode
+*                 |  |  |  |  |  |  DP1 Cathode
+*                 |  |  |  |  |  |  |  1C/2C Cathode
+*                 |  |  |  |  |  |  |  |  1B/2B Cathode
+*                 |  |  |  |  |  |  |  |  |  DIGIT No. 2 Common Anode
+*                 |  |  |  |  |  |  |  |  |  |  1A/2A Cathode
+*                 |  |  |  |  |  |  |  |  |  |  |  1N/2N Cathode
+*                 |  |  |  |  |  |  |  |  |  |  |  |  1H/2H Cathode
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  1G/2G Cathode
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  DIGIT No. 1 Common Anode
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  1P/2P Cathode
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  1F/2F Cathode
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_A22C 1  2  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+
+DA1  16  12  dHDSP_A22C
+DB1  16  10  dHDSP_A22C
+DC1  16   9  dHDSP_A22C
+DD1  16   7  dHDSP_A22C
+DE1  16   1  dHDSP_A22C
+DF1  16  18  dHDSP_A22C
+DG1  16  15  dHDSP_A22C
+DH1  16  14  dHDSP_A22C
+DJ1  16   6  dHDSP_A22C
+DK1  16   5  dHDSP_A22C
+DL1  16   4  dHDSP_A22C
+DM1  16   2  dHDSP_A22C
+DN1  16  13  dHDSP_A22C
+DP1  16  17  dHDSP_A22C
+DDP1 16   8  dHDSP_A22C
+
+DA2  11  12  dHDSP_A22C
+DB2  11  10  dHDSP_A22C
+DC2  11   9  dHDSP_A22C
+DD2  11   7  dHDSP_A22C
+DE2  11   1  dHDSP_A22C
+DF2  11  18  dHDSP_A22C
+DG2  11  15  dHDSP_A22C
+DH2  11  14  dHDSP_A22C
+DJ2  11   6  dHDSP_A22C
+DK2  11   5  dHDSP_A22C
+DL2  11   4  dHDSP_A22C
+DM2  11   2  dHDSP_A22C
+DN2  11  13  dHDSP_A22C
+DP2  11  17  dHDSP_A22C
+DDP2 11   8  dHDSP_A22C
+
+.MODEL dHDSP_A22C D
++ (  
++    IS = 2.34165185E-18 
++     N = 1.64080796 
++    RS = 5.35791037 
++    BV = 4.5
++   IBV = 100u
++ )  
+
+.ENDS HDSP_A22C

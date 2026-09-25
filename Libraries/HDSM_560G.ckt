@@ -1,0 +1,87 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  5-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSM-560G  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 Cathode 1L
+*                 |  Cathode 1P
+*                 |  |  Cathode 1N
+*                 |  |  |  Cathode 1O
+*                 |  |  |  |  Cathode 1M
+*                 |  |  |  |  |  Cathode 1E, 2E, 3E, 4E
+*                 |  |  |  |  |  |  Cathode 1D, 2D, 3D, 4D
+*                 |  |  |  |  |  |  |  Cathode 1C, 2C, 3C, 4C
+*                 |  |  |  |  |  |  |  |  Cathode 1H, 2H, 3H, 4H
+*                 |  |  |  |  |  |  |  |  |  Cathode 2G, 3G, 4G
+*                 |  |  |  |  |  |  |  |  |  |  Common Anode DIG.4
+*                 |  |  |  |  |  |  |  |  |  |  |  Cathode 1B, 2B, 3B, 4B
+*                 |  |  |  |  |  |  |  |  |  |  |  |  Common Anode DIG.3
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  Cathode 1F, 2F, 3F, 4F
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  Common Anode DIG.2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  Cathode 1A, 2A, 3A, 4A
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  Common Anode DIG.1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  Cathode 1K
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  Cathode 1J, LC
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  Cathode 1I, UC
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSM_560G 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19 20
+
+D1A 17 16 dHDSM_560G
+D1B 17 12 dHDSM_560G
+D1C 17  8 dHDSM_560G
+D1D 17  7 dHDSM_560G
+D1E 17  6 dHDSM_560G
+D1F 17 14 dHDSM_560G
+D1H 17  9 dHDSM_560G
+D1I 17 20 dHDSM_560G
+D1J 17 19 dHDSM_560G
+D1K 17 18 dHDSM_560G
+D1L 17  1 dHDSM_560G
+D1M 17  5 dHDSM_560G
+D1N 17  3 dHDSM_560G
+D1O 17  4 dHDSM_560G
+D1P 17  2 dHDSM_560G
+
+D2A 15 16 dHDSM_560G
+D2B 15 12 dHDSM_560G
+D2C 15  8 dHDSM_560G
+D2D 15  7 dHDSM_560G
+D2E 15  6 dHDSM_560G
+D2F 15 14 dHDSM_560G
+D2G 15 10 dHDSM_560G
+D2H 15  9 dHDSM_560G
+DUC 15 20 dHDSM_560G
+DLC 15 19 dHDSM_560G
+
+D3A 13 16 dHDSM_560G
+D3B 13 12 dHDSM_560G
+D3C 13  8 dHDSM_560G
+D3D 13  7 dHDSM_560G
+D3E 13  6 dHDSM_560G
+D3F 13 14 dHDSM_560G
+D3G 13 10 dHDSM_560G
+D3H 13  9 dHDSM_560G
+
+D4A 11 16 dHDSM_560G
+D4B 11 12 dHDSM_560G
+D4C 11  8 dHDSM_560G
+D4D 11  7 dHDSM_560G
+D4E 11  6 dHDSM_560G
+D4F 11 14 dHDSM_560G
+D4G 11 10 dHDSM_560G
+D4H 11  9 dHDSM_560G
+
+.MODEL dHDSM_560G D
++ (  
++     IS = 1.14485573E-16 
++      N = 2.37171406 
++     RS = 9.65148982 
++     BV = 4.8
++    IBV = 100u 
++ )  
+
+.ENDS HDSM_560G

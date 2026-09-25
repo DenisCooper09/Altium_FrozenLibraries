@@ -1,0 +1,24 @@
+* BF861B NJF model
+* created using Parts release 6.2 on 07/20/95 at 14:48
+* Parts is a MicroSim product.
+
+************************DISCLAIMER****************************
+* This model was originally a PSPICE model and as a result the parameters 	 	*
+* ALPHA,VK,PB, BETATCE and VTOTC have been removed from the model as 	  	*
+* they aren't compatible with the SPICE simulator.										  	*
+*+ ALPHA=1.000E-6,VK=1,PB=.7072 and VTOTC=-2.500E-3,BETATCE=-.5		 	*
+*************************************************************
+
+.MODEL BF861B NJF
++(
++ VTO=-.6391
++ BETA=13.93E-3
++ LAMBDA=47.02E-3
++ IS=376.9E-18
++ RD=3.577
++ RS=3.577
++ CGD=6.025E-12
++ CGS=6.025E-12
++ KF=20.35E-18
++ AF=.7958
++)

@@ -1,0 +1,11 @@
+*1N5264B MCE 4/7/98
+*Ref: Temic Semiconductor Short Form, 1996
+*60V 500mW Si Zener pkg:Diode0.4 1,2
+.SUBCKT 1N5264B  1 2
+*    TERMINALS:  A K
+D1 1 2  DF
+DZ 3 1  DR
+VZ 2 3  59.34
+.MODEL DF D (IS=2.51N RS=84M N=1.7 CJO=22.9P VJ=1 M=0.33 TT=50.1N)
+.MODEL DR D (IS=352U RS=57.1 N=11)
+.ENDS

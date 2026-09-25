@@ -1,0 +1,54 @@
+* BFG11_X SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT143X DIE MODEL : BLT11
+* 1: COLLECTOR; 2: BASE; 3: EMITTER;
+.SUBCKT BFG11_X 1 2 3
+Q1 6 5 7 7 BLT11
+* SOT143X parasitic model
+               Lb  4 5 .95n
+               Le  7 8 .4n
+               L1  2 4 .12n
+               L2  1 6 .21n
+               L3  3 8 .06n
+              Ccb  4 6 17f
+              Cbe  4 8 84f
+*
+* PHILIPS SEMICONDUCTORS                                 Version:         3.0
+* Filename:    BLT11.PRM                                 Date: September 1993
+*
+.MODEL  BLT11   NPN
++(
++              IS = 3.33800E-015
++              BF = 9.71400E+001
++              NF = 9.88400E-001
++             VAF = 3.14000E+001
++             IKF = 5.14500E+001
++             ISE = 2.35300E-011
++              NE = 2.38600E+000
++              BR = 1.37300E+001
++              NR = 9.88800E-001
++             VAR = 2.44800E+000
++             IKR = 1.00000E+002
++             ISC = 5.41000E-014
++              NC = 1.22400E+000
++              RB = 1.74000E+000
++             IRB = 1.00000E-006
++             RBM = 1.74000E+000
++              RE = 5.96500E-002
++              RC = 1.23800E-001
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 9.55500E-012
++             VJE = 6.00000E-001
++             MJE = 3.15100E-001
++              TF = 1.29600E-011
++             XTF = 4.00000E+002
++             VTF = 8.66100E-001
++             ITF = 5.94000E+000
++             CJC = 4.27400E-012
++             VJC = 6.50000E-001
++             MJC = 3.92100E-001
++)
+.ENDS

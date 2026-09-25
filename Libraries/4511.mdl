@@ -1,0 +1,4 @@
+* 4511. BCD-to-7 Segment Latch/Decoder/Driver
+.MODEL 4511 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4511 {mntymx}) 
+
+* Origin: 4511.mod

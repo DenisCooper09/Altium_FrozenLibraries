@@ -1,0 +1,10 @@
+*****************************************************************
+* BB835 Diode Model
+.MODEL D348 D(IS=115.11E-15 RS=0.07705 N=1.22 XTI=1 EG=1.11
++CJo=13.9P M=1.407 Vj=2.85 FC=0.5 BV=30 IBV=5E-6 TT=80N)
+*Hyperabrupt diode M=f(VR)! C-curve approximated between VR=1.....28V
+*VR range 1..4V   Cj0=13,9P  M=1,407   Vj=2,85
+*VR range 5..13V  Cj0=13,9P  M=1,33    Vj=1,75
+*VR range 13..23V Cj0=13,9P  M=1,33    Vj=2,3
+*VR range 24..28V Cj0=13,9P  M=1,407   Vj=2,85
+27.1.1994 SIEMENS HL EH PD1  Moschovis  

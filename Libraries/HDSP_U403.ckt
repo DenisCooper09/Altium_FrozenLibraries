@@ -1,0 +1,41 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-U403  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                  anode-a 
+*                  |  anode-f 
+*                  |  |  anode-g 
+*                  |  |  |  anode-e 
+*                  |  |  |  |  anode-d 
+*                  |  |  |  |  |  cathode-DP 
+*                  |  |  |  |  |  |  anode-DP 
+*                  |  |  |  |  |  |  |  anode-c 
+*                  |  |  |  |  |  |  |  |  common-cathode 
+*                  |  |  |  |  |  |  |  |  |  anode-b
+*                  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_U403 1  2  3  4  5  6  7  8  9  10
+
+D1  1  9 dHDSP_U403
+D2  2  9 dHDSP_U403
+D3  3  9 dHDSP_U403
+D4  4  9 dHDSP_U403
+D5  5  9 dHDSP_U403
+D6  7  6 dHDSP_U403
+D7  8  9 dHDSP_U403
+D8 10  9 dHDSP_U403
+
+.MODEL dHDSP_U403 D
++ (  
++     IS = 3.04174763E-24 
++      N = 1.23122391 
++     RS = 24.19303791 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_U403

@@ -1,0 +1,54 @@
+* BFG198 SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT223C DIE MODEL : BFQ195
+* 1: COLLECTOR; 2: BASE; 3: EMITTER;
+.SUBCKT BFG198 1 2 3
+Q1 6 5 7 7 BFQ195
+* SOT223C parasitic model
+               Lb  4 5 1.5n
+               Le  7 8 .2n
+               L1  2 4 .025n
+               L2  1 6 1.19n
+               L3  3 8 .6n
+              Ccb  4 6 16f
+              Cbe  4 8 182f
+*
+* PHILIPS SEMICONDUCTORS                                     Version:   1.0
+* Filename:   BFQ195.PRM                                     Date: Feb 1992
+*
+.MODEL  BFQ195   NPN
++(
++              IS = 1.97217E-015
++              BF = 1.50000E+002
++              NF = 9.90823E-001
++             VAF = 5.47229E+001
++             IKF = 3.00000E+001
++             ISE = 4.78220E-014
++              NE = 1.58002E+000
++              BR = 1.65412E+002
++              NR = 9.93986E-001
++             VAR = 2.35124E+000
++             IKR = 9.96750E+000
++             ISC = 3.51001E-015
++              NC = 1.12472E+000
++              RB = 5.00000E+000
++             IRB = 1.00000E-006
++             RBM = 5.00000E+000
++              RE = 3.68182E-001
++              RC = 9.37200E-001
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 3.38837E-012
++             VJE = 6.00000E-001
++             MJE = 3.02953E-001
++              TF = 1.10683E-011
++             XTF = 3.00256E+001
++             VTF = 1.64951E+000
++             ITF = 4.01991E-001
++             CJC = 1.19014E-012
++             VJC = 1.60156E-001
++             MJC = 8.94442E-002
++)
+.ENDS

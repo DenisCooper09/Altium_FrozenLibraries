@@ -1,0 +1,70 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-N155  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 anode-a 
+*                 |  anode-f 
+*                 |  |  common-cathode 
+*                 |  |  |  anode-e 
+*                 |  |  |  |  common-cathode 
+*                 |  |  |  |  |  anode-DP 
+*                 |  |  |  |  |  |  anode-d 
+*                 |  |  |  |  |  |  |  common-cathode 
+*                 |  |  |  |  |  |  |  |  anode-c 
+*                 |  |  |  |  |  |  |  |  |  anode-g 
+*                 |  |  |  |  |  |  |  |  |  |  anode-b 
+*                 |  |  |  |  |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  |  |  |  |       
+.SUBCKT HDSP_N155 2  3  4  5  6  7  11 12 13 14 15 17
+
+DA1   2  4 dHDSP_N155
+DB1  15  4 dHDSP_N155
+DC1  13  4 dHDSP_N155
+DD1  11  4 dHDSP_N155
+DE1   5  4 dHDSP_N155
+DF1   3  4 dHDSP_N155
+DG1  14  4 dHDSP_N155
+DDP1  7  4 dHDSP_N155
+
+DA2   2  6 dHDSP_N155
+DB2  15  6 dHDSP_N155
+DC2  13  6 dHDSP_N155
+DD2  11  6 dHDSP_N155
+DE2   5  6 dHDSP_N155
+DF2   3  6 dHDSP_N155
+DG2  14  6 dHDSP_N155
+DDP2  7  6 dHDSP_N155
+
+DA3   2 12 dHDSP_N155
+DB3  15 12 dHDSP_N155
+DC3  13 12 dHDSP_N155
+DD3  11 12 dHDSP_N155
+DE3   5 12 dHDSP_N155
+DF3   3 12 dHDSP_N155
+DG3  14 12 dHDSP_N155
+DDP3  7 12 dHDSP_N155
+
+DA4   2 17 dHDSP_N155
+DB4  15 17 dHDSP_N155
+DC4  13 17 dHDSP_N155
+DD4  11 17 dHDSP_N155
+DE4   5 17 dHDSP_N155
+DF4   3 17 dHDSP_N155
+DG4  14 17 dHDSP_N155
+DDP4  7 17 dHDSP_N155
+
+.MODEL dHDSP_N155 D
++ (  
++    IS = 1.72301609E-14 
++     N = 2.43230682 
++    RS = 1.67295284
++    BV = 14.25
++   IBV = 100u 
++ )  
+
+.ENDS HDSP_N155

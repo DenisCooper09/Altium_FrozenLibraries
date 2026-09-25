@@ -1,0 +1,25 @@
+*   ZETEX  BAS16  Spice Model        Last revision 24/8/92
+*
+.MODEL BAS16 D IS=1.795E-9 N=1.874 RS=1.263 XTI=3 
++      EG=1.11 BV=153.1 IBV=17.26E-3 TT=7.358E-9
+*
+*      FOR LATER VERSIONS OF SPICE:-  SET RS=1.173 AND ADD
+*    + ISR=1.086E-9 NR=2.955 IKF=2.726
+*
+*   NOTES: FOR RF OPERATION ADD PACKAGE INDUCTANCE 0F 2.5E-9H AND 
+*          PARALLEL CAPACITANCE OF 0.555E-12F.
+*
+*
+*                          (C)  1992 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agents.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

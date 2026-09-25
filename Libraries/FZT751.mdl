@@ -1,0 +1,21 @@
+*ZETEX  FZT751 Spice model   Last revision  23/1/91
+*
+.MODEL FZT751 PNP IS =2.715E-13 BF =170 VAF=70 NF =1.004 IKF=2.75 ISE=1E-13
++NE =1.535 BR =23 VAR=40 NR =1.005 IKR=.55 ISC=5.15E-14 NC =1.13 RB =.07
++RE =.065 RC =.085 CJE=360E-12 TF =.94E-9 CJC=90E-12 TR =60E-9 VJC=.705
++MJC=.46
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

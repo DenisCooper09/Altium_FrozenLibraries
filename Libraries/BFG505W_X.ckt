@@ -1,0 +1,54 @@
+* BFG505W_X SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT343X DIE MODEL : BFR505
+* 1: COLLECTOR; 2: BASE; 3: EMITTER
+.SUBCKT BFG505W_X 1 2 3
+Q1 6 5 7 7 BFR505
+* SOT343X parasitic model
+               Lb  4 5 .4n
+               Le  7 8 .4n
+               L1  2 4 .34n
+               L2  1 6 .1n
+               L3  3 8 .25n
+              Ccb  4 6 50f
+              Cbe  4 8 70f
+*
+* PHILIPS SEMICONDUCTORS                                     Version:   1.0
+* Filename:   BFR505.PRM                                     Date: Feb 1992
+*
+.MODEL  BFR505   NPN
++(
++              IS = 1.34186E-016
++              BF = 1.80000E+002
++              NF = 9.88285E-001
++             VAF = 3.83491E+001
++             IKF = 1.50000E-001
++             ISE = 2.78188E-014
++              NE = 2.05149E+000
++              BR = 5.51997E+001
++              NR = 9.82213E-001
++             VAR = 2.45944E+000
++             IKR = 2.92072E-003
++             ISC = 1.74527E-017
++              NC = 1.06245E+000
++              RB = 2.00000E+001
++             IRB = 1.00000E-006
++             RBM = 2.00000E+001
++              RE = 1.17190E+000
++              RC = 4.35000E+000
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 2.84731E-013
++             VJE = 6.00000E-001
++             MJE = 3.03697E-001
++              TF = 7.03759E-012
++             XTF = 1.23460E+001
++             VTF = 1.70189E+000
++             ITF = 3.06496E-002
++             CJC = 2.42404E-013
++             VJC = 1.88622E-001
++             MJC = 4.14981E-002
++)
+.ENDS

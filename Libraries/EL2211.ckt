@@ -1,0 +1,44 @@
+* EL2211/EL2311/EL2411 Macromodel
+* Revision A, June 1994
+* Application Hints:
+*
+* A pull down resistor between the output and V- is recommended
+* to allow output voltages to swing close to V-. See datasheet
+* for recommended values.
+*
+* Connections:      +In
+*                   |   -In 
+*                   |   |   V+
+*                   |   |   |   V-
+*                   |   |   |   |   Vout
+*                   |   |   |   |   |
+.subckt  EL2211     3   2   8   4   1
+q1  20  3 24 qp
+q2  21  2 25 qp
+q3  10 10 26 qp
+q4  12 10 11 qp 
+q5  14 10 13 qp
+q6  19 19 20 qn
+q7  14 19 21 qn
+q8   8 14 15 qn
+q9   8 16 17 qn 10
+r1   24 12 175
+r2   12 25 175
+r3    8 26 250
+r4    8 11 150 
+r5    8 13 240
+r6   20  4 150
+r7   21  4 150
+r8   15 17 700
+r9    1  4 1250
+r10  15 16 40
+r11  17  1 15
+r12  10 19 10K
+r13  14 22 20
+c1   22  4 0.42pF
+c2   22 19 1pF
+d1   1 14 dcap
+.model qn npn(bf=150 tf=0.05nS)
+.model qp pnp(bf=90 tf=0.05nS)
+.model dcap d(rs=200 cjo=1e-12 vj=0.8 tt=100e-9)
+.ends

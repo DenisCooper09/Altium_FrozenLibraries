@@ -1,0 +1,285 @@
+* LOG100M LOGARITHMIC AND LOG RATIO AMPLIFIER "MACROMODEL" SUBCIRCUIT
+
+* CREATED 8/8/95  BCB
+
+*
+
+*  ------------------------------------------------------------------------ 
+
+* |  NOTICE: THE INFORMATION PROVIDED HEREIN IS BELIEVED TO BE RELIABLE;   |
+
+* |  HOWEVER; BURR-BROWN ASSUMES NO RESPONSIBILITY FOR INACCURACIES OR     |
+
+* |  OMISSIONS.  BURR-BROWN ASSUMES NO RESPONSIBILITY FOR THE USE OF THIS  |
+
+* |  INFORMATION, AND ALL USE OF SUCH INFORMATION SHALL BE ENTIRELY AT     |
+
+* |  THE USER'S OWN RISK.  NO PATENT RIGHTS OR LICENSES TO ANY OF THE      |
+
+* |  CIRCUITS DESCRIBED HEREIN ARE IMPLIED OR GRANTED TO ANY THIRD PARTY.  |
+
+* |  BURR-BROWN DOES NOT AUTHORIZE OR WARRANT ANY BURR-BROWN PRODUCT FOR   |
+
+* |  USE IN LIFE-SUPPORT DEVICES AND/OR SYSTEMS.                           |
+
+*  ------------------------------------------------------------------------ 
+
+*
+
+*                
+
+* CONNECTIONS:   I1 INPUT  
+
+*                |  K=1
+
+*                |  |  K=3
+
+*                |  |  |  K=5
+
+*                |  |  |  |  POSITIVE POWER SUPPLY
+
+*                |  |  |  |  |  OUTPUT
+
+*                |  |  |  |  |  |  NEGATIVE POWER SUPPLY
+
+*                |  |  |  |  |  |  |  COMMON
+
+*                |  |  |  |  |  |  |  |  I2 INPUT
+
+*                |  |  |  |  |  |  |  |  |
+
+.SUBCKT LOG100M  1  3  4  5  6  7  9 10 14
+
+X1 10 1 6 9 23 10 OPA1
+
+X2 10 14 6 9 7 OPA2
+
+Q1 1 2 21 QX
+
+Q2 14 10 21 QX
+
+
+
+R1 2 3 15E3
+
+R2 2 3 15E3
+
+R3 2 4 48E3
+
+R4 2 4 48E3
+
+R5 2 5 78E3
+
+R6 2 5 78E3
+
+R7 10 2 490
+
+
+
+R8 23 21 6.5E3
+
+C8 1 23 10P
+
+
+
+D1 21 2 DX
+
+DD1 1 10 DX
+
+D2 21 10 DX
+
+DD2 14 10 DX
+
+
+.MODEL DX D(BV=2)
+
+*.MODEL QX NPN 
+*IS=.29FA      BF=378         BR=1           NF=.99         NR=.99
+*+EG=1.2056     ISE=.12FA      NE=1.38        ISC=2.05FA     NC=1.01
+*+VAF=101       VAR=6.79       IKF=1.59MA     IKR=6MA        RB=157 
+*+IRB=60UA      RBM=65         RE=3.93        RC=100
+*+CJE=0.5PF     VJE=0.77       MJE=0.3     
+*+CJC=0.2PF     VJC=0.64       MJC=0.425
+*+CJS=1.5PF     VJS=0.58       MJS=0.5      
+*+FC=0.0        XCJC=1.0       TF=300PS      TR=1.0US       XTF=1.0        
+*+VTF=0.0       ITF=10MA       PTF=5         XTB=.006       XTI=2.33
+*jg, 27/6/2000: model syntax corrected.
+
+.MODEL QX NPN (IS=.29FA      BF=378         BR=1           NF=.99         NR=.99
++EG=1.2056     ISE=.12FA      NE=1.38        ISC=2.05FA     NC=1.01
++VAF=101       VAR=6.79       IKF=1.59MA     IKR=6MA        RB=157 
++IRB=60UA      RBM=65         RE=3.93        RC=100
++CJE=0.5PF     VJE=0.77       MJE=0.3     
++CJC=0.2PF     VJC=0.64       MJC=0.425
++CJS=1.5PF     VJS=0.58       MJS=0.5      
++FC=0.0        XCJC=1.0	      TF=300PS      TR=1.0US       XTF=1.0        
++VTF=0.0       ITF=10MA	      PTF=5         XTB=.006       XTI=2.33)
+.ENDS
+
+
+
+.SUBCKT OPA1  3 2 7 4 6 10
+
+* INPUT STAGE
+
+J1 13 2 12 PJ
+
+J2 14 3 12 PJ
+
+R3 4 13 583.56
+
+R4 4 14 583.56
+
+IEE 7 12 1E-3
+
+G51 2 4 POLY(2) (13,2) (12,2) 0 1E-12 1E-12
+
+G52 3 4 POLY(2) (14,3) (12,3) 0 1E-12 1E-12
+
+
+
+* GAIN STAGE (gain=103dB, pole=0.5Hz)
+
+V21 10 21 0.1
+
+D21 20 21 DX
+
+V22 22 4 0.1
+
+D22 22 20 DX
+
+G21 7 20 POLY(1) (13,14)  2.092E-3   3E-3
+
+G22 4 20 POLY(1) (13,14) -2.092E-3   3E-3
+
+R27 7 20 47.79E6
+
+R28 4 20 47.79E6
+
+C22 7 20 6.6E-9
+
+C23 4 20 6.6E-9
+
+
+
+* OUTPUT STAGE
+
+D3 20 71 DX
+
+D4 72 20 DX
+
+D5 7 73 DX
+
+D6 7 74 DX
+
+D7 4 73 DZ
+
+D8 4 74 DZ
+
+G14 73 4 6 20 20E-3
+
+G13 74 4 20 6 20E-3
+
+V3 71 6 0.387
+
+V4 6 72 0.387
+
+G11 6 7 7 20   20E-3
+
+G12 4 6 20  4  20E-3
+
+R23 7 6 50
+
+R24 4 6 50
+
+
+
+.MODEL DX D(IS=1E-15)
+
+.MODEL PJ PJF(BETA=1.67E-3 VTO=-2 IS=5E-13)
+
+.MODEL DZ D(IS=1E-15 BV=50)
+
+.ENDS
+
+
+
+.SUBCKT OPA2  3 2 7 4 6
+
+* INPUT STAGE
+
+J1 13 2 12 PJ
+
+J2 14 3 12 PJ
+
+R3 4 13 583.56
+
+R4 4 14 583.56
+
+IEE 7 12 1E-3
+
+G51 2 4 POLY(2) (13,2) (12,2) 0 1E-12 1E-12
+
+G52 3 4 POLY(2) (14,3) (12,3) 0 1E-12 1E-12
+
+
+* GAIN STAGE (gain=103dB, pole=0.5Hz)
+
+V21 7 21 3.432
+
+D21 20 21 DX
+
+V22 22 4 3.432
+
+D22 22 20 DX
+
+G21 7 20 POLY(1) (13,14)  2.092E-3   3E-3
+
+G22 4 20 POLY(1) (13,14) -2.092E-3   3E-3
+
+R27 7 20 47.79E6
+
+R28 4 20 47.79E6
+
+C22 7 20 6.6E-9
+
+C23 4 20 6.6E-9
+
+
+* OUTPUT STAGE
+
+D3 20 71 DX
+
+D4 72 20 DX
+
+D5 7 73 DX
+
+D6 7 74 DX
+
+D7 4 73 DZ
+
+D8 4 74 DZ
+
+G14 73 4 6 20 20E-3
+
+G13 74 4 20 6 20E-3
+
+V3 71 6 0.387
+
+V4 6 72 0.387
+
+G11 6 7 7 20   20E-3
+
+G12 4 6 20  4  20E-3
+
+R23 7 6 50
+
+R24 4 6 50
+
+.MODEL DX D(IS=1E-15)
+.MODEL PJ PJF(BETA=1.67E-3 VTO=-2 IS=5E-13)
+.MODEL DZ D(IS=1E-15 BV=50)
+
+.ENDS
+
+

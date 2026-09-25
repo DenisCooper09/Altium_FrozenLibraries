@@ -1,0 +1,3 @@
+*Texas Instruments
+*SN74LS242: Quadruple Bus Transceiver
+.MODEL SN74LS242 xsimcode(file="{MODEL_PATH}TEXAS INSTRUMENTS\LS242.TXT" func=ls242 {mntymx})

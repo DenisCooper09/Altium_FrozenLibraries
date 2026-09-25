@@ -1,0 +1,65 @@
+*MC33204 RAIL-TO-RAIL OPERATIONAL AMPLIFIER "MACROMODEL" SUBCIRCUIT
+*
+* Connections:
+*                Non-Inverting Input
+*                | Inverting Input
+*                | | Positive Power Supply
+*                | | | Negative Power Supply
+*                | | | | Output
+*                | | | | |
+.SUBCKT MC33204  1 2 3 4 5
+  C1    11  12 8.160E-12
+  C1P  111 112 4.160E-12
+  C2     6   7 35.00E-12
+  DB1    2  1 DX
+  DB2    1  2 DX
+  DC     5 53 DX
+  DCC1   1  3 DX
+  DCC2   2  3 DX
+  DE    54  5 DX
+  DLP   90 91 DX
+  DLN   92 90 DX
+  DP     4  3 DX
+  DIEE 104  4 DX
+*EGND  99  0 POLY(2) (3,0) (4,0) 0 .5 .5
+  BEGND  99  0 V=.5*v(3,0)+.5*v(4,0)
+*FB     7 99 POLY(5) VB VC VE VLP VLN 0 5.167E6 -5E6 5E6 5E6 -5E6
+  BFB     7 99 I=5.167E6*I(VB)-5E6*I(VC)+5E6*I(VE)+5E6*I(VLP)-5E6*I(VLN)
+  GA     6  0 11 12 483.8E-6
+  GAP    6  0 111 112 483.8E-6
+  GCM    0  6 10 99 15.30E-9
+  GCMP   0  6 110 99 15.30E-9
+  HLIM  90  0 VLIM 1K
+  IEEP   3 110 DC 35.16E-6
+  Q1    11  2 13 QX
+  Q1P  111  2 113 QP
+  Q2    12  1 14 QX
+  Q2P  112  1 114 QP
+  QIEE  10 104   4 QX
+  QT   104 103 110 QP
+  R2     6  9 100.0E3
+  R2P    6  9 100.0E3
+  RC1    3 11   2.067E3
+  RC1P   4 111  2.067E3
+  RC2    3 12   2.067E3
+  RC2P   4 112  2.067E3
+  RE1   13  10 556.3
+  RE1P 113 110 516.3
+  RE2   14  10 556.3
+  RE2P 114 110 516.3
+  REE   10  99 5.688E6
+  REEP 110  99 5.688E6
+  RO1    8  5  100
+  RO2    7 99  100
+  RP     3  4  5.780E3
+  VB     9  0 DC 0
+  VC     3 53 DC .7951
+  VE    54  4 DC .7951
+  VLIM   7  8 DC 0
+  VT   103  4 DC 700M
+  VLP   91  0 DC 80
+  VLN    0 92 DC 80
+.MODEL DX D(IS=800.0E-18)
+.MODEL QX NPN(IS=800.0E-18 BF=218.8)
+.MODEL QP PNP(IS=800.0E-18 BF=218.8)
+.ENDS MC33204

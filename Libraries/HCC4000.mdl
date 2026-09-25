@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4000: 3-in NOR and INVERTER
+.MODEL HCC4000 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4000 {mntymx})

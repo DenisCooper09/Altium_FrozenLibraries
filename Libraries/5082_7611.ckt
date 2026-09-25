@@ -1,0 +1,52 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: 5082-7611  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-a
+*                 |  cathode-f
+*                 |  |  common-anode
+*                 |  |  |  cathode-e
+*                 |  |  |  |  cathode-d
+*                 |  |  |  |  |  cathode-DP
+*                 |  |  |  |  |  |  cathode-c
+*                 |  |  |  |  |  |  |  cathode-g
+*                 |  |  |  |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  |  |
+*                 |  |  |  |  |  |  |  |  |  | 
+.SUBCKT 5082_7611 1  2  3  7  8  9  10 11 13 14
+
+DA1   3  1 d5082_7611
+DB1   3 13 d5082_7611
+DC1   3 10 d5082_7611
+DD1   3  8 d5082_7611
+DE1   3  7 d5082_7611
+DF1   3  2 d5082_7611
+DG1   3 11 d5082_7611
+DDP1  3  9 d5082_7611
+
+DA2  14  1 d5082_7611
+DB2  14 13 d5082_7611
+DC2  14 10 d5082_7611
+DD2  14  8 d5082_7611
+DE2  14  7 d5082_7611
+DF2  14  2 d5082_7611
+DG2  14 11 d5082_7611
+DDP2 14  9 d5082_7611
+
+
+.MODEL d5082_7611 D
++ (  
++     IS = 1.95991353E-12 
++      N = 2.90687588 
++     RS = 18.38470387 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS 5082_7611

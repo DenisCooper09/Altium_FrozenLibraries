@@ -1,0 +1,23 @@
+*ZETEX   ZTX795A  Spice model   Last revision 8/1/92
+*
+.MODEL ZTX795A PNP IS=7.2932E-13 NF=1.003 BF=595 IKF=0.4 VAF=45
++ISE=8.77307E-14 NE=1.44784 NR=0.996 BR=65 IKR=0.42 VAR=41
++ISC=1.52968E-13 NC=1.01957 RB=0.056 RE=0.093 RC=0.143 CJC=65.5E-12
++MJC=0.52 VJC=0.74 CJE=275E-12 TF=0.83E-9 TR=307E-9
+*Note, Model may be inaccurate for collector currents above 0.45A.
+*
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

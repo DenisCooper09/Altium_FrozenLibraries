@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCF4077: Qaud 2-input XNOR
+.MODEL HCF4077 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4077 {mntymx})

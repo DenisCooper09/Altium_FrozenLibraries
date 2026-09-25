@@ -1,0 +1,7 @@
+*8TQ080S MCE 3/26/98
+*Ref: IR Power Semiconductors Product Digest '94
+*MCE 80V 8A 3us pkg:D2PAK 3,1
+.MODEL 8TQ080S D (IS=11.4N RS=5.25M N=1.7 BV=80 IBV=7M
++ CJO=330P VJ=0.75 M=0.333 TT=4.32U EG=.69 XTI=2)
+
+

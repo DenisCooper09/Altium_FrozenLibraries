@@ -1,0 +1,6 @@
+*1N4746
+*Ref: Motorola
+*18V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4746 D(IS=4.19E-13 RS=9.15 TT=5.01E-8 CJO=6.78E-11 M=0.33 
++ BV=17.88 IBV=0.014 )
+* Origin: Mcediode.lib

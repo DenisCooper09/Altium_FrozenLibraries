@@ -1,0 +1,14 @@
+* .: 1 = Anode .: 2 = Cathode .: 3 = Anode
+.SUBCKT hfa30pa60c 1 2 3
+D1 1 2 hfa30pa60c
+D2 3 2 hfa30pa60c
+
+.MODEL hfa30pa60c d
++(
++IS=0.000690394 RS=0.0117897 N=6.00599 EG=0.6
++XTI=0.5 BV=600 IBV=0.0001 CJO=4.84089e-11
++VJ=4720.92 M=0.899999 FC=0.5 TT=1e-09
++KF=0 AF=1
++)
+
+.ENDS hfa30pa60c

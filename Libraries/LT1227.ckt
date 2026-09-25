@@ -1,0 +1,55 @@
+*///////////////////////////////////////////////////
+* LT1227  140MHz Video Current Feedback Amplifier //
+*///////////////////////////////////////////////////
+*
+* connections:     non-inverting input
+*                  |   inverting input
+*                  |   |   positive power supply
+*                  |   |   |   negative power supply
+*                  |   |   |   |   output
+*                  |   |   |   |   |
+*                  |   |   |   |   |
+.SUBCKT LT1227     3   2   7   4   6
+*
+Q2A 4 3 10 QPI 0.5
+Q3A 11 10 200 QNI
+Q4A 11 11 7 QPI
+Q5A 9 11 7 QPI
+Q6A 12 11 7 QPI 2
+Q7A 4 9 12 QPI
+Q8A 7 12 13 QNI 10
+RSCA 13 6 12
+IBA 7 10 DC 325U
+RBA 7 10 73K
+DIA 10 7 DCC 3
+*
+Q2B 7 3 110 QNI 0.5
+Q3B 111 110 200 QPI
+Q4B 111 111 4 QNI
+Q5B 9 111 4 QNI
+Q6B 112 111 4 QNI 2
+Q7B 7 9 112 QNI
+Q8B 4 112 113 QPI 10
+RSCB 6 113  12
+IBB 110 4 DC 325U
+RBB 110 4 73K
+DIB 4 110 DCC 5
+*
+CM1 7 11 10PF
+CM2 111 4 10PF
+*
+RIB 7 11 75K
+RC 2 200 75
+R9 9 0 250K
+D1 9 6 DC
+D2 6 9 DC
+D3 9 7 DCC
+D4 4 9 DCC
+*
+.MODEL DC D
+.MODEL DCC D CJO=3PF VJ=0.62 M=0.44 
+*
+.MODEL QNI NPN TF=225P
+.MODEL QPI PNP TF=225P
+*
+.ENDS LT1227

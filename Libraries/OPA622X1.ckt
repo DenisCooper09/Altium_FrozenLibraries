@@ -1,0 +1,277 @@
+* OPA622X1 - WIDE-BANDWIDTH OPERATIONAL AMPLIFIER MACROMODEL SIMPLIFIED VERSION
+
+*
+
+* CREATED 8/92 KL
+
+* REV.B   7/9/93 BCB : CLARIFICATION OF NODE SET INSTRUCTIONS
+
+* jjt 14/6/2000: modified to include (nest) all of the models within the OPA622X1 subcircuit
+
+*
+
+*  ------------------------------------------------------------------------ 
+
+* |  NOTICE: THE INFORMATION PROVIDED HEREIN IS BELIEVED TO BE RELIABLE;   |
+
+* |  HOWEVER; BURR-BROWN ASSUMES NO RESPONSIBILITY FOR INACCURACIES OR     |
+
+* |  OMISSIONS.  BURR-BROWN ASSUMES NO RESPONSIBILITY FOR THE USE OF THIS  |
+
+* |  INFORMATION, AND ALL USE OF SUCH INFORMATION SHALL BE ENTIRELY AT     |
+
+* |  THE USER'S OWN RISK.  NO PATENT RIGHTS OR LICENSES TO ANY OF THE      |
+
+* |  CIRCUITS DESCRIBED HEREIN ARE IMPLIED OR GRANTED TO ANY THIRD PARTY.  |
+
+* |  BURR-BROWN DOES NOT AUTHORIZE OR WARRANT ANY BURR-BROWN PRODUCT FOR   |
+
+* |  USE IN LIFE-SUPPORT DEVICES AND/OR SYSTEMS.                           |
+
+*  ------------------------------------------------------------------------ 
+
+* |-------------------------------------------------------------|
+
+* |  This macro model is being supplied as an aid to            |
+
+* |  circuit designs.  While it reflects reasonably close       |
+
+* |  similarity to the actual device in terms of performance,   |
+
+* |  it is not suggested as a replacement for breadboarding.    |
+
+* |  Simulation should be used as a forerunner or a supplement  |
+
+* |  to traditional lab testing.                                |
+
+* |-------------------------------------------------------------|
+
+*
+
+* NOTE : FOR QUICKER CONVERSION PLACE THE NODESET 
+
+*        V(Xyour.X1.131)=+4.2798 AND
+
+*        V(Xyour.X1.141)=-4.2808 IN THE ROOT SIMULATION FILE.
+
+*        ("Xyour" IS DEVICE NAME CALLED OUT IN THE ROOT FILE.)
+
+*
+
+*
+
+* CONNECTIONS:    Iq ADJUST
+
+*                 | INVERTING INPUT
+
+*                 | | NON-INVERTING INPUT
+
+*                 | | | NEGATIVE POWER SUPPLY
+
+*                 | | | | NEGATIVE OUTPUT POWER SUPPLY
+
+*                 | | | | | BUFFER -
+
+*                 | | | | | | VOLTAGE OUT
+
+*                 | | | | | | | OTA
+
+*                 | | | | | | | |  POSITIVE OUTPUT POWER SUPPLY
+
+*                 | | | | | | | |  |  POSITIVE POWER SUPPLY
+
+*                 | | | | | | | |  |  |  BUFFER +
+
+*                 | | | | | | | |  |  |  |
+
+.SUBCKT OPA622X1  2 3 4 5 6 8 9 10 11 12 13
+
+** 
+
+X1  2 5 12 131 141                BC ; Biasing Circuit BC
+
+X2  4 5 10 12 13 111 121 131 141  DT ; Diamond Transistor DT
+
+X3  6 9 11 111 121                CB ; Current-Buffer CB
+
+X4  3 5 8 12 131 141              DB ; Diamond-Buffer DB
+
+**
+
+C202    2  0   2E-12
+
+C208    8  0   2E-12
+
+C209    9  0   2E-12
+
+C210   10  0   2E-12
+
+C213   13  0   2E-12
+
+**
+
+
+
+
+
+**Diamond Buffer DB
+
+**
+
+.SUBCKT DB 3 5 8 12 131 141
+
+**
+
+R63  63 3  40
+
+**
+
+C61  61 0  0.02E-12
+
+C62  62 0  0.02E-12
+
+C63  63 0  2E-12
+
+**
+
+Q61  61 131 12 12  PI
+
+Q62  62 141  5  5  NI
+
+Q63   5 63  61 12  PI
+
+Q64  12 63  62  5  NI
+
+Q65  12 61   8  5  NI 6
+
+Q66   5 62   8 12  PI 6
+
+**
+
+.ENDS DB
+
+
+
+**Diamond Transistor DT
+
+**
+
+.SUBCKT DT 4 5 10 12 13 111 121 131 141
+
+**
+
+R23  23 4  40
+
+**
+
+C10  10 0  2.0E-12
+
+C21  21 0  0.02E-12
+
+C22  22 0  0.02E-12
+
+C23  23 0  2E-12
+
+C27  27 0  14E-12
+
+C28  28 0  14E-12
+
+**
+
+Q21  21  131 12 12  PI
+
+Q22  22  141  5  5  NI
+
+Q23   5  23  21 12  PI
+
+Q24  12  23  22  5  NI
+
+Q25  27  21  13  5  NI 6
+
+Q26  28  22  13 12  PI 6
+
+Q27  27  27  12 12  PIM
+
+Q28  28  28   5  5  NIM
+
+Q29  111 27  12 12  PIM
+
+Q30  121 28   5  5  NIM
+
+Q31  111 111 33  5  NI
+
+Q32  121 121 34 12  PI
+
+Q33  33  33  10  5  NI
+
+Q34  34  34  10 12  PI
+
+**
+
+.ENDS DT
+
+
+
+**Current Buffer CB
+
+**
+
+.SUBCKT CB 6 9 11 111 121
+
+**
+
+Q35  11 111 37  6  NI
+
+Q36   6 121 38 11  PI
+
+Q37  37 37  39  6  NI
+
+Q38  38 38  39 11  PI
+
+Q39  11 37   9  6  NI 2.2
+
+Q40   6 38   9 11  PI 2.2
+
+**
+
+.ENDS CB
+
+
+
+**Biasing Circuit BC
+
+**
+
+.SUBCKT BC 2 5 12 131 141
+
+**
+
+R122  122  5  100k
+
+R123  122  2  200
+
+**
+
+Q121  131 131  12 12  PI
+
+Q122  131 141 122  5  NI 10
+
+Q123  141 131  12 12  PI
+
+Q124  141 141   5  5  NI
+
+**
+
+.ENDS BC
+
+
+
+.MODEL NI NPN
+
+.MODEL PI PNP
+
+.MODEL NIM NPN (VAF=18)
+
+.MODEL PIM PNP (VAF=18)
+
+.ENDS OPA622X1

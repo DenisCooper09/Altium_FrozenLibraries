@@ -1,0 +1,104 @@
+* jjt 8/1/2002: converted temp. coeff. to Spice3 syntax.
+*/////////////////////////////////////////////////////////////////////////////////////////
+* LT1495  1.5µA Max, Dual Precision Rail-to-Rail Input and Output Operational Amplifier //
+*/////////////////////////////////////////////////////////////////////////////////////////
+*
+* connections:     non-inverting input
+*                  |   inverting input
+*                  |   |   positive power supply
+*                  |   |   |   negative power supply
+*                  |   |   |   |   output
+*                  |   |   |   |   |
+*                  |   |   |   |   |
+.SUBCKT LT1495     1   2   3   4   5
+*
+GRP1 1 111 1 111 1.0000e+000
+GRP2 2 112 2 112 1.0000e+000
+DIP1 114 111 DX
+DIP2 115 112 DX
+DIP3 116 114 DX
+DIP4 116 115 DX
+VCM 116 4 DC -3.7125e+000
+RCMP 114 117 1.0000e+004
+ECMP 117 4 111 4 1.0
+RCMN 115 118 1.0000e+004
+ECMN 118 4 112 4 1.0
+CIN 111 112 8.7628e-012
+GRIN 111 112 111 112 1.0000e-012
+M1 11 112 10 10 M1 L=100U W=100U
+M2 12 113 10 10 M2 L=100U W=100U
+
+*RD1 444 11 5.2141e+003 TC=1.1220e-005
+RD1 444 11 5.2141e+003 rd1mod
+.model rd1mod r (TC1=1.1220e-005)
+
+*RD2 444 12 5.2141e+003 TC=-1.1220e-005
+RD2 444 12 5.2141e+003 rd2mod
+.model rd2mod r (TC1=-1.1220e-005)
+
+VCMEN 444 4 DC -1.0
+DI1 113 3 DI1
+DI2 112 3 DI2
+C1 11 12 3.0524e-009
+IEE 3 10 DC 3.8358e-004
+GA 60 99 11 12 1.9179e-004
+IR1 0 101 DC 1
+IR2 0 102 DC 1
+DR1 101 0 DRI
+DR2 102 0 DRI
+GRI1 99 1 101 102 7.6350e-010
+IR3 0 103 DC 1
+IR4 0 104 DC 1
+DR3 103 0 DRI
+DR4 104 0 DRI
+GRI2 99 2 103 104 7.6350e-010
+RRu 605 0 4.8389e-003
+VRu 605 0 DC 0
+FRu 99 60 VRu 1
+GCM1 99 20 POLY(2) 111 99 112 99 0 5.0000e-004 5.0000e-004
+RCM1 21 99 1.000000e+003
+RCM2 20 99 1.0000e+006
+LCM 20 21 1.5915e+001
+ECM 113 111 20 99 5.0119e-006
+RR1 6 60 1.0000e-003
+R2 6 99 1.0000e+003
+C2 6 7 3.8358e-007
+GB 7 99 6 99 4.0728e+001
+R01 7 99 1.5928e+003
+R02 7 50 1.0000e-001
+R03 50 5 1.4071e+003
+R04 5 99 1.0000e+012
+VC 53 50 DC 1.0804e+000
+VE 54 50 DC -1.0959e+000
+DC1 53 55 DX
+DC2 55 56 DX
+DE1 57 54 DX
+DE2 58 57 DX
+GVC1 3 56 3 56 1.0E-4
+GVE1 4 58 4 58 1.0E-4
+GVC2 3 55 3 55 1.0E-5
+GVE2 4 57 4 57 1.0E-5
+GVLP 99 60 56 3 1.0000e+000
+GVLN 99 60 58 4 1.0000e+000
+ECLP 91 0 7 50 7.6923e+003
+ECLN 92 0 7 50 7.6923e+003
+DCLP 91 90 DX
+DCLN 90 92 DX
+VLIM 90 0 DC 0
+FB 7 99 VLIM 3.0908e-001
+EGND 99 0 POLY(2) 3 0 4 0 0 0.5 0.5
+DSUB 4 3 DX
+IP 3 4 DC -3.8259e-004
+GV 31 0 7 50 1.0000e+001
+DP1 3 31 DX
+DP2 33 4 DX
+RGV 32 33 10.0
+EGV 31 32 POLY(1) 3 4 -0.85 1.0
+.MODEL DX D IS=8.0000e-016 RS=0 XTI=0
+.MODEL M1 PMOS LEVEL=3 KP=2.6070e-001 VTO=-9.999250e-001 KF=3.0810e-026
+.MODEL M2 PMOS LEVEL=3 KP=2.6070e-001 VTO=-1.000075e+000 KF=3.0810e-026
+.MODEL DI1  D IS=2.8246e-010 EG=2.2547e-001 XTI=3.0000e+000
+.MODEL DI2  D IS=2.6045e-010 EG=2.2157e-001 XTI=3.0000e+000
+.MODEL DRI D IS=8.0000e-016 KF=0.0000e+000 RS=0 XTI=0
+.ENDS LT1495
+*

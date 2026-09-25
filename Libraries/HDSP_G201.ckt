@@ -1,0 +1,58 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-G201  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 e-cathode-1 
+*                 |  d-cathode-1 
+*                 |  |  c-cathode-1 
+*                 |  |  |  dp-cathode-1 
+*                 |  |  |  |  e-cathode-2 
+*                 |  |  |  |  |  d-cathode-2 
+*                 |  |  |  |  |  |  g-cathode-2 
+*                 |  |  |  |  |  |  |  c-cathode-2 
+*                 |  |  |  |  |  |  |  |  cp-cathode-2 
+*                 |  |  |  |  |  |  |  |  |  b-cathode-2 
+*                 |  |  |  |  |  |  |  |  |  |  a-cathode-2 
+*                 |  |  |  |  |  |  |  |  |  |  |  f-cathode-2 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  common-anode-2 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  common-anode-1 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  b-cathode-1 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  a-cathode-1 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  g-cathode-1 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  f-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_G201 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+
+DA1  14 16 dHDSP_G201
+DB1  14 15 dHDSP_G201
+DC1  14  3 dHDSP_G201
+DD1  14  2 dHDSP_G201
+DE1  14  1 dHDSP_G201
+DF1  14 18 dHDSP_G201
+DG1  14 17 dHDSP_G201
+DDP1 14  4 dHDSP_G201
+
+DA2  13 11 dHDSP_G201
+DB2  13 10 dHDSP_G201
+DC2  13  8 dHDSP_G201
+DD2  13  6 dHDSP_G201
+DE2  13  5 dHDSP_G201
+DF2  13 12 dHDSP_G201
+DG2  13  7 dHDSP_G201
+DDP2 13  9 dHDSP_G201
+
+.MODEL dHDSP_G201 D
++ (  
++     IS = 3.04174763E-24 
++      N = 1.23122391 
++     RS = 24.19303791 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_G201

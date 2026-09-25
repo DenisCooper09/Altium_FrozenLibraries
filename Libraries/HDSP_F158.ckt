@@ -1,0 +1,41 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-F158  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 common-cathode 
+*                 |  anode-PLUS 
+*                 |  |  anode-MINUS 
+*                 |  |  |  common-cathode 
+*                 |  |  |  |  anode-DP 
+*                 |  |  |  |  |  anode-c 
+*                 |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |
+.SUBCKT HDSP_F158 1  2  3  6  7  8  9
+
+DPLUS1  2 1 dHDSP_F158
+DMINUS1 3 1 dHDSP_F158
+DB1     9 1 dHDSP_F158
+DC1     8 1 dHDSP_F158
+DDP1    7 1 dHDSP_F158
+
+DPLUS2  2 6 dHDSP_F158
+DMINUS2 3 6 dHDSP_F158
+DB2     9 6 dHDSP_F158
+DC2     8 6 dHDSP_F158
+DDP2    7 6 dHDSP_F158
+
+.MODEL dHDSP_F158 D
++ (  
++    IS  = 1.31055154E-15 
++     N  = 2.20660855 
++    RS  = 1.60736539 
++    BV  = 14.25
++   IBV  = 100u
++ )  
+
+.ENDS HDSP_F158

@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4515: 4-bit Latch to 16 Line Decoder
+.MODEL HCC4515 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4515 {mntymx})

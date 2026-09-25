@@ -1,0 +1,15 @@
+*Agl_HLMP6620 LED Model
+*Typ LED: Vf=5V Vr=30V If=3.5mA
+*LED Pinout: 1=A, 2=K
+.MODEL Agl_HLMP6620 D
++(
++		IS = 85.64n
++		RS = 1311.654
++		N = 1.5
++		BV = 30
++		IBV = 100u
++		CJO = 11p
++		VJ = .75
++		M = .333
++		TT = 90n
++)

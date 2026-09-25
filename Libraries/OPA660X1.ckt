@@ -1,0 +1,227 @@
+* OPA660X1 = MDB + MDT + MBC OPERATIONAL TRANSCONDUCTANCE AMPLIFIER
+
+*            AND BUFFER SIMPLIFIED CIRCUIT MODEL 
+
+*
+
+* CREATED 8/92 KL
+
+* REV.B   7/9/93 BCB : CLARIFCATION OF NODE SET INSTRUCTIONS
+
+
+* jjt 26/6/2000: nested the buffer etc. within the 660X1
+*
+
+*  ------------------------------------------------------------------------ 
+
+* |  NOTICE: THE INFORMATION PROVIDED HEREIN IS BELIEVED TO BE RELIABLE;   |
+
+* |  HOWEVER; BURR-BROWN ASSUMES NO RESPONSIBILITY FOR INACCURACIES OR     |
+
+* |  OMISSIONS.  BURR-BROWN ASSUMES NO RESPONSIBILITY FOR THE USE OF THIS  |
+
+* |  INFORMATION, AND ALL USE OF SUCH INFORMATION SHALL BE ENTIRELY AT     |
+
+* |  THE USER'S OWN RISK.  NO PATENT RIGHTS OR LICENSES TO ANY OF THE      |
+
+* |  CIRCUITS DESCRIBED HEREIN ARE IMPLIED OR GRANTED TO ANY THIRD PARTY.  |
+
+* |  BURR-BROWN DOES NOT AUTHORIZE OR WARRANT ANY BURR-BROWN PRODUCT FOR   |
+
+* |  USE IN LIFE-SUPPORT DEVICES AND/OR SYSTEMS.                           |
+
+*  ------------------------------------------------------------------------ 
+
+* |-------------------------------------------------------------|
+
+* |  This macro model is being supplied as an aid to            |
+
+* |  circuit designs.  While it reflects reasonably close       |
+
+* |  similarity to the actual device in terms of performance,   |
+
+* |  it is not suggested as a replacement for breadboarding.    |
+
+* |  Simulation should be used as a forerunner or a supplement  |
+
+* |  to traditional lab testing.                                |
+
+* |-------------------------------------------------------------|
+
+*
+
+* NOTE : FOR QUICKER CONVERSION USE THE NODESET V(Xyour.13)=+4.2758 AND
+
+*        V(Xyour.14)=-4.2774 IN THE ROOT SIMULATION FILE. ("Xyour" IS
+
+*        THE DEVICE NAME USED IN THE ROOT FILE.)
+
+*
+
+*
+
+* CONNECTIONS:   IQ ADJUST
+
+*                | E (EMITTER)
+
+*                | | B (BASE)
+
+*                | | | NEGATIVE SUPPLY
+
+*                | | | | BUFFER IN
+
+*                | | | | | BUFFER OUT
+
+*                | | | | | | POSITIVE SUPPLY
+
+*                | | | | | | | C (COLLECTOR)
+
+*                | | | | | | | |
+
+.SUBCKT OPA660X1 1 2 3 4 5 6 7 8
+
+* 
+
+X1 4 5 6 7 13 14 MDB   
+* Diamond Buffer DB
+
+X2 2 3 4 7 8 13 14 MDT 
+* Diamond Transistor DT
+
+X3 1 4 7 13 14 MBC     
+* Biasing Circuit BC
+
+*
+
+C201  1 0  2.0E-12
+
+C202  2 0  3.3E-12
+
+C206  6 0  2.0E-12
+
+C208  8 0  4.2E-12
+
+*
+
+*Diamond Buffer MDB
+
+*
+
+.SUBCKT MDB 4 5 6 7 13 14
+
+C71  71 0  0.06E-12
+
+C72  72 0  0.06E-12
+
+C73  73 0  2.00E-12
+
+**
+
+R73  73 5  90
+
+**
+
+Q71  71 13  7  PI 2
+
+Q72  72 14  4  NI 2
+
+Q73   4 73 71  PI
+
+Q74   7 73 72  NI
+
+Q75   7 71  6  NI 7
+
+Q76   4 72  6  PI 7
+
+*
+
+.ENDS MDB
+
+
+
+*Diamond Transistor MDT
+
+*
+
+.SUBCKT MDT 2 3 4 7 8 13 14
+
+**
+
+R23  23 3  90
+
+**
+
+C21  21 0  0.06E-12
+
+C22  22 0  0.06E-12
+
+C23  23 0  2.00E-12
+
+C25  25 0  28E-12
+
+C26  26 0  28E-12
+
+**
+
+Q21  21 13  7  PI 2
+
+Q22  22 14  4  NI 2
+
+Q23   4 23 21  PI
+
+Q24   7 23 22  NI
+
+Q25  25 21  2  NI 7
+
+Q26  26 22  2  PI 7
+
+**
+
+Q27  25 25  7  PIJ
+
+Q28  26 26  4  NIJ
+
+Q29   8 25  7  PIJ
+
+Q30   8 26  4  NIJ
+
+**
+
+.ENDS MDT
+
+
+
+* Biasing Circuit MBC
+
+*
+
+.SUBCKT MBC 1 4 7 13 14
+
+**
+
+R122  122  4  50E3
+
+R123  122  1  100
+
+**
+
+Q121  13 13   7  PI
+
+Q122  13 14 122  NI 9
+
+Q123  14 13   7  PI
+
+Q124  14 14   4  NI
+
+.ENDS MBC
+
+.MODEL NI NPN
+
+.MODEL PI PNP
+
+.MODEL NIJ NPN (VAF=100)
+
+.MODEL PIJ PNP (VAF=100)
+
+
+.ENDS OPA660X1

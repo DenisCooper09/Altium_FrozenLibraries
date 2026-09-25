@@ -1,0 +1,20 @@
+*ZETEX  FCX649 Spice model   Last revision  17/7/90
+*
+.MODEL FCX649 NPN IS =3E-13 BF =225 VAF=80 IKF=2.8 ISE=1.1E-13 NE =1.37
++BR =110 VAR=28 NR =.972 IKR=0.8 ISC=6.5E-13 NC =1.372 RB =0.3 RE =.063
++RC =.07 CJE=325E-12 TF =1E-9 CJC=70E-12 TR =10E-9
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

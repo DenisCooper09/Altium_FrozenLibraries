@@ -1,0 +1,4 @@
+* LS 47. BCD to 7-Segment Decoder/Driver with Open-Collector Output
+.MODEL 74LS47 xsimcode(file="{MODEL_PATH}\National Semiconductor\LS47.txt" func=ls47 {mntymx}) 
+
+* Origin: 74ls47.mod

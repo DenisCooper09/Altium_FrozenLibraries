@@ -1,0 +1,20 @@
+*ZETEX   ZTX749 Spice model       Last revision  17/7/90
+*
+.MODEL ZTX749 PNP IS =2.6E-13 BF =210 VAF=27 IKF=7 ISE=1.2E-13 NE =1.43 BR =70
++VAR=14 IKR=.6 ISC=12.04E-13 NC =1.4474 NF =.999 NR =.982 RB =.3 RE =.065
++RC =.04 CJE=410E-12 TF =.65E-9 CJC=140E-12 TR =12E-9 MJC=.35 VJC=.305
+*
+*                          (C)  1991 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP
+

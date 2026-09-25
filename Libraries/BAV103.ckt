@@ -1,0 +1,42 @@
+*
+* Diode Sim Model Produced by Altium Ltd
+* Date:  19-Mar-2003
+*
+* Manufacturer: Philips
+* Component Name: BAV103
+*
+* This macromodel models the effect of high-level injection on the diode.
+*
+*Note: This macromodel derived from data sheets and pspice models obtained from Philips Semiconductor.
+
+.SUBCKT BAV103 10 30
+D1 10 20 DIDEAL
+D2 20 30 DHIGH
+
+* Subcircuit models
+.MODEL DIDEAL D
++(
++ IS =  2.191E-08
++ RS =  0.001
++ N =  2.233
++ TT =  5.194E-08
++ CJO =  1.45E-12
++ VJ =  0.75
++ M =  0.1001
++ BV =  293.1
++ IBV =  0.001293
++)
+
+.MODEL DHIGH D
++(
++ IS =  0.020082402
++ N =  2.233
++)
+
+.ENDS BAV103
+
+
+
+
+
+

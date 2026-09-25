@@ -1,0 +1,4 @@
+*LS Octal 3-state Inverter - type:digital pkg:DIP20 [DVCC=20;DGND=10;](8,6,4,2,11,13,15,17,12,14,16,18,9,7,5,3,1,19)
+.MODEL 74LS240 xsimcode(file="{MODEL_PATH}LS.SCB" func=ls240 {mntymx})
+
+* Origin: 74LS240.mod

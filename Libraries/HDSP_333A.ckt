@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-333A  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 anode-F
+*                 |  anode-G
+*                 |  |  common-cathode
+*                 |  |  |  anode-E
+*                 |  |  |  |  anode-D
+*                 |  |  |  |  |  anode-C
+*                 |  |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  anode-B
+*                 |  |  |  |  |  |  |  |  |  anode-A
+*                 |  |  |  |  |  |  |  |  |  |  
+.SUBCKT HDSP_333A 1  2  4  6  7  8  9  12 13 14
+
+DA1  14  4  dHDSP_333A
+DB1  13  4  dHDSP_333A
+DC1   8  4  dHDSP_333A
+DD1   7  4  dHDSP_333A
+DE1   6  4  dHDSP_333A
+DF1   1  4  dHDSP_333A
+DG1   2  4  dHDSP_333A
+DDP1  9  4  dHDSP_333A
+
+DA2  14 12  dHDSP_333A
+DB2  13 12  dHDSP_333A
+DC2   8 12  dHDSP_333A
+DD2   7 12  dHDSP_333A
+DE2   6 12  dHDSP_333A
+DF2   1 12  dHDSP_333A
+DG2   2 12  dHDSP_333A
+DDP2  9 12  dHDSP_333A
+
+.MODEL dHDSP_333A D
++ (  
++    IS  = 4.92088043E-22 
++     N  = 1.51994259 
++    RS  = 3.79496255
++    BV  = 4.5
++   IBV  = 100u 
++ )  
+
+.ENDS HDSP_333A

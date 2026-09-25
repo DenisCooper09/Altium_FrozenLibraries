@@ -1,0 +1,6 @@
+*****************************************************************
+.MODEL BAS125 D(IS=1.45N RS=12 N=1.03 XTI=1.6 EG=.68
++ CJO=.95P M=.2 VJ=.24 FC=.5 BV=25 IBV=100n TT=25P)
+* ISR=15n NR=4k IKF=10m
+* for 27C reverse current simulation use GMIN=1e-9
+* 17.12.1993 SIEMENS PD1 KURTH

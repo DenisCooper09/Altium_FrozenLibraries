@@ -1,0 +1,50 @@
+*===============================
+*Reference3 Pin Order: A, K, Ref
+*TL431 model from EDN magazine: March 15,1990, page 180-181
+*Programmable Precision Reference pkg:TO-92 2,3,1. pkg:DIP8 6,1,8
+* jjt 24/1/2002: added extra anode connections
+* jjt 10/6/2003: renamed subcircuit to prevent confusion with other TL431s.
+*Connections
+*               Anode1
+*               | Anode2
+*               | |   Anode3
+*               | |   |   Anode4
+*               | |   |   |
+*               | |   |   |   Cathode
+*               | |   |   |   | |Reference
+*               | |   |   |   | |
+.SUBCKT TL431A4 2 202 203 204 3 1
+* Extra anode connections:
+V002 2 202 0
+V003 2 203 0
+V004 2 204 0
+*Reference input stage
+Q1   3 1 10 QINPUT
+RIN 10 2 500K
+*
+*Internal reference voltage
+VR  20 2 DC 1.7791
+RVR 20 2 1G
+*
+*Pole/Zero modeling
+GM  0 30 10 20 1
+RGM 30 0 1MEG
+*Pole/Zeros: Pole 1= RGM & CP2, 10KHz
+*            Pole 2= RP2 & CP2, 60KHz
+*            Pole 3= CP1 & RZ1, 500KHz
+*
+CP1 30 40 15.9P
+RZ1 40 0 20K
+RP2 30 50 10MEG
+CP2 50 0 0.265P
+*Gain stage voltage clamp
+DC  0 30 DCLAMP
+*
+*Output stage
+GO  3 2 50 0 2.5U
+DR  2 3 DNOM
+*
+.MODEL DNOM D(IS=100E-15 RS=7)
+.MODEL DCLAMP D(IS=0.1)
+.MODEL QINPUT NPN (BF=1 VAF=11.15)
+.ENDS TL431A4

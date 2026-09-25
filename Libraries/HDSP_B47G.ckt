@@ -1,0 +1,63 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  5-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-B47G  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 anode-e
+*                 |  anode-d
+*                 |  |  anode-DP
+*                 |  |  |  anode-c
+*                 |  |  |  |  anode-g
+*                 |  |  |  |  |  common-cathode-4
+*                 |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  common-cathode-3
+*                 |  |  |  |  |  |  |  |  common-cathode-2
+*                 |  |  |  |  |  |  |  |  |  anode-f
+*                 |  |  |  |  |  |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  |  |  |  |  |  common-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_B47G 1  2  3  4  5  6  7  8  9  10 11 12
+
+DB1  7 12 dHDSP_B47G
+DC1  4 12 dHDSP_B47G
+
+DA2 11  9 dHDSP_B47G
+DB2  7  9 dHDSP_B47G
+DC2  4  9 dHDSP_B47G
+DD2  2  9 dHDSP_B47G
+DE2  1  9 dHDSP_B47G
+DF2 10  9 dHDSP_B47G
+DG2  5  9 dHDSP_B47G
+DDP2 3  9 dHDSP_B47G
+
+DA3 11  8 dHDSP_B47G
+DB3  7  8 dHDSP_B47G
+DC3  4  8 dHDSP_B47G
+DD3  2  8 dHDSP_B47G
+DE3  1  8 dHDSP_B47G
+DF3 10  8 dHDSP_B47G
+DG3  5  8 dHDSP_B47G
+DDP3 3  8 dHDSP_B47G
+
+DA4 11  6 dHDSP_B47G
+DB4  7  6 dHDSP_B47G
+DC4  4  6 dHDSP_B47G
+DD4  2  6 dHDSP_B47G
+DE4  1  6 dHDSP_B47G
+DF4 10  6 dHDSP_B47G
+DG4  5  6 dHDSP_B47G
+
+.MODEL dHDSP_B47G D
++ (  
++     IS = 5.45751596E-12 
++      N = 3.47011329 
++     RS = 12.18613587 
++     BV = 4.8 
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_B47G

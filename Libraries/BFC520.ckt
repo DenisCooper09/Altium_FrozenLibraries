@@ -1,0 +1,69 @@
+* BFC520 SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT353A DIE MODEL : BFR520
+* 1: COLLECTOR1; 2: BASE1; 3: EMITTER1; 4: COLLECTOR2; 5: BASE2
+.SUBCKT BFC520 1 2 3 4 5
+Q1 6 7 8 8 BFR520
+Q2 9 10 11 11 BFR520
+* SOT353A parasitic model
+               Lb1      7  13 .5n
+               Lb2     10  12 .5n
+               Le1      8  14 .8n
+               Le2      6  11 .8n
+               Lp1      2  13 .4n
+               Lp2      5  12 .4n
+               Lp3      4   9 .4n
+               Lp4      1   6 .4n
+               Lp5      3  14 .4n
+               Cc1e2b1  1   2 36f
+               Cc1e2b2  1   5 2f
+               Cc1e2e1  1   3 35f
+               Cc1e2c2  1   4 15f
+               Cc2b1    4   2 2f
+               Cc2e1    4   3 35f
+               Cc2b2    4   5 36f
+               Cb2b1    5   2 3.5f
+               Cb2e1    5   3 35f
+               Cb1e1    2   3 35f
+             Klb1le1  Lb1 Le1 .632
+             Klb1le2  Lb1 Le2 .395
+*
+* PHILIPS SEMICONDUCTORS                                     Version:   1.0
+* Filename:   BFR520.PRM                                     Date: Feb 1992
+*
+.MODEL  BFR520   NPN
++(
++              IS = 1.01677E-015
++              BF = 2.20182E+002
++              NF = 1.00065E+000
++             VAF = 4.80619E+001
++             IKF = 5.10042E-001
++             ISE = 2.83095E-013
++              NE = 2.03568E+000
++              BR = 1.00714E+002
++              NR = 9.88109E-001
++             VAR = 1.69288E+000
++             IKR = 2.35262E-003
++             ISC = 2.44898E-017
++              NC = 1.02256E+000
++              RB = 1.00000E+001
++             IRB = 1.00000E-006
++             RBM = 1.00000E+001
++              RE = 7.75349E-001
++              RC = 2.21000E+000
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 1.24548E-012
++             VJE = 6.00000E-001
++             MJE = 2.58153E-001
++              TF = 8.61625E-012
++             XTF = 6.78866E+000
++             VTF = 1.41469E+000
++             ITF = 1.10365E-001
++             PTF = 4.50197E+001
++             CJC = 4.47646E-013
++             VJC = 1.89234E-001
++)
+.ENDS

@@ -1,0 +1,11 @@
+*BZX55C16 MCE 4/7/98
+*Ref: Temic Semiconductor Short Form, 1996
+*16V 500mW Si Zener pkg:Diode0.4 1,2
+.SUBCKT BZX55C16 1 2
+*    TERMINALS:  A K
+D1 1 2  DF
+DZ 3 1  DR
+VZ 2 3  15.47
+.MODEL DF D (IS=2.51N RS=84M N=1.7 CJO=44.7P VJ=1 M=0.33 TT=50.1N)
+.MODEL DR D (IS=1.52U RS=5.29 N=2.4)
+.ENDS

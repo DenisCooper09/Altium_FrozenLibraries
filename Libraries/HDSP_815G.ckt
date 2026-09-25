@@ -1,0 +1,70 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-815G  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 cathode-a
+*                 |  cathode-f
+*                 |  |  common-anode
+*                 |  |  |  cathode-e
+*                 |  |  |  |  common-anode
+*                 |  |  |  |  |  cathode-DP
+*                 |  |  |  |  |  |  cathode-d
+*                 |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  cathode-c
+*                 |  |  |  |  |  |  |  |  |  cathode-g
+*                 |  |  |  |  |  |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_815G 1  2  3  4  5  9  10 11 12 13 14 16
+
+DA1   3   1  dHDSP_815G
+DB1   3  14  dHDSP_815G
+DC1   3  12  dHDSP_815G
+DD1   3  10  dHDSP_815G
+DE1   3   4  dHDSP_815G
+DF1   3   2  dHDSP_815G
+DG1   3  13  dHDSP_815G
+DDP1  3   9  dHDSP_815G
+
+DA2   5   1  dHDSP_815G
+DB2   5  14  dHDSP_815G
+DC2   5  12  dHDSP_815G
+DD2   5  10  dHDSP_815G
+DE2   5   4  dHDSP_815G
+DF2   5   2  dHDSP_815G
+DG2   5  13  dHDSP_815G
+DDP2  5   9  dHDSP_815G
+
+DA3  11   1  dHDSP_815G
+DB3  11  14  dHDSP_815G
+DC3  11  12  dHDSP_815G
+DD3  11  10  dHDSP_815G
+DE3  11   4  dHDSP_815G
+DF3  11   2  dHDSP_815G
+DG3  11  13  dHDSP_815G
+DDP3 11   9  dHDSP_815G
+
+DA4  16   1  dHDSP_815G
+DB4  16  14  dHDSP_815G
+DC4  16  12  dHDSP_815G
+DD4  16  10  dHDSP_815G
+DE4  16   4  dHDSP_815G
+DF4  16   2  dHDSP_815G
+DG4  16  13  dHDSP_815G
+DDP4 16   9  dHDSP_815G
+
+.MODEL dHDSP_815G D
++ (  
++     IS = 2.68043027E-27 
++      N = 1.26683886 
++     RS = 20.03550993 
++     BV = 50
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_815G

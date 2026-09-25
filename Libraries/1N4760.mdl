@@ -1,0 +1,6 @@
+*1N4760
+*Ref: Motorola
+*68V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4760 D(IS=2.67E-9 RS=93 TT=5.01E-8 CJO=2.89E-11 M=0.33 
++ BV=67.68 IBV=0.0037 )
+* Origin: Mcediode.lib

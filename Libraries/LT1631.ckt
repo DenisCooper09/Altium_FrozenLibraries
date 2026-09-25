@@ -1,0 +1,119 @@
+*//////////////////////////////////////////////////////////////
+* LT1631  30MHz, 10V/µs, Quad Rail-to-Rail Input and Output  //
+*         Precision Operational Amplifier                    //
+*//////////////////////////////////////////////////////////////
+*
+* connections:     non-inverting input
+*                  |   inverting input
+*                  |   |   positive power supply
+*                  |   |   |   negative power supply
+*                  |   |   |   |   output
+*                  |   |   |   |   |
+*                  |   |   |   |   |
+.SUBCKT LT1631     3   2   4   11  1
+XOP1 3 2 4 11 1 LT1631_MD
+.ENDS LT1631
+*
+***
+*
+.SUBCKT LT1631_MD  1 2 3 4 5
+*
+* input protection
+RIP1 1 111 2.2500e+002
+RIP2 2 112 2.2500e+002
+DIP1 111 112 DX
+DIP2 112 111 DX
+DIP3 111 3 DX
+DIP4 112 3 DX
+DIP5 4 111 DX
+DIP6 4 112 DX
+*
+* input stage
+CIN 111 112 5.0000e-012
+GRIN 111 112 111 112 1.0000e-012
+VCMEP 303 3 DC 0.8
+VCMEN 4 304 DC 1.6
+Q1 11 112 13 Q1
+Q2 12 113 14 Q2
+RC1 304 11 7.5162e+002
+RC2 304 12 7.5162e+002
+RE1 10 13 9.2358e+000
+RE2 10 14 9.2358e+000
+C1 11 12 2.6469e-012
+IEE 303 10 DC 2.6620e-003
+GSR 303 10 11 12 5.7327e-005
+D1 10 303 DX
+GA 60 99 11 12 1.3305e-003
+*
+* noise sources
+FRI1 99 1 VRI1 1
+VRI1 101 0 DC 0
+RRI1 101 0 2.5998e+004
+FRI2 99 2 VRI2 1
+VRI2 201 0 DC 0
+RRI2 201 0 2.5998e+004
+GR 99 60 605 606 9.1834e+000
+IR1 0 605 DC 1
+IR2 0 606 DC 1
+DR1 605 0 DR
+DR2 606 0 DR
+*
+* common mode rejection
+GCM1 99 20 POLY(2) 111 99 112 99 0 5.0000e-004 5.0000e-004
+RCM1 21 99 1.000000e+003
+RCM2 20 99 1.0000e+006
+LCM 20 21 6.6315e-003
+ECM 113 111 20 99 1.0000e-005
+*
+* frequency shaper
+RP1 601 99 3.0435e+003
+CP1 60 601 8.7156e-012
+RP11 60 99 1.0000e+004
+GP1 99 6 60 99 1.0000e-004
+*
+* output stage
+R2 6 99 1.0000e+003
+C2 6 7 1.8617e-010
+GB 7 99 6 99 3.1658e+003
+R01 7 99 3.1400e+001
+R02 7 50 1.0000e-001
+R03 50 5 2.8500e+001
+R04 5 99 5.9379e+009
+VC 53 50 DC 1.1178e+000
+VE 54 50 DC -1.1117e+000
+DC1 53 55 DX
+DC2 55 56 DX
+DE1 57 54 DX
+DE2 58 57 DX
+GVC1 3 56 3 56 1.0E-4
+GVE1 4 58 4 58 1.0E-4
+GVC2 3 55 3 55 1.0E-5
+GVE2 4 57 4 57 1.0E-5
+GVLP 99 60 56 3 1.0000e+000
+GVLN 99 60 58 4 1.0000e+000
+ECLP 91 0 7 50 2.4390e+002
+ECLN 92 0 7 50 2.4390e+002
+DCLP 91 90 DX
+DCLN 90 92 DX
+VLIM 90 0 DC 0
+FB 7 99 VLIM 1.6144e+002
+*
+* supply characteristic
+EGND 99 0 POLY(2) 3 0 4 0 0 0.5 0.5
+DSUB 4 3 DX
+IP 3 4 DC 8.3800e-004
+*
+GV 31 0 7 50 1.0000e+001
+DP1 3 31 DX
+DP2 33 4 DX
+RGV 32 33 9.7531
+EGV 31 32 POLY(1) 3 4 -0.8 1.0
+*
+.MODEL DX D (IS=8.2592e-016 RS=0 XTI=0)
+.MODEL Q1 PNP (IS=1.0030e-015 BF=2428.5 XTB=4.3858e-001
++ XTI=3.01148e+000 KF=3.7500e-017)
+.MODEL Q2 PNP (IS=9.9698e-016 BF=2507.9 XTB=4.1684e-001
++ XTI=2.98852e+000 KF=3.7500e-017)
+.MODEL DR D (IS=8.2592e-016 KF=4.6553e-018 RS=0 XTI=0)
+.ENDS LT1631_MD
+*

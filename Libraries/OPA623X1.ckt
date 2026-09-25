@@ -1,0 +1,209 @@
+* OPA623X1 WIDE BANDWIDTH, CURRENT FEEDBACK, SIMPLIFIED VERSION MACROMODEL
+
+*
+
+* CREATED 8/92 KL
+
+* REV.B   7/9/93 BCB : CLARIFICATION OF NODE SET INSTRUCTIONS
+
+*
+
+*  ------------------------------------------------------------------------ 
+
+* |  NOTICE: THE INFORMATION PROVIDED HEREIN IS BELIEVED TO BE RELIABLE;   |
+
+* |  HOWEVER; BURR-BROWN ASSUMES NO RESPONSIBILITY FOR INACCURACIES OR     |
+
+* |  OMISSIONS.  BURR-BROWN ASSUMES NO RESPONSIBILITY FOR THE USE OF THIS  |
+
+* |  INFORMATION, AND ALL USE OF SUCH INFORMATION SHALL BE ENTIRELY AT     |
+
+* |  THE USER'S OWN RISK.  NO PATENT RIGHTS OR LICENSES TO ANY OF THE      |
+
+* |  CIRCUITS DESCRIBED HEREIN ARE IMPLIED OR GRANTED TO ANY THIRD PARTY.  |
+
+* |  BURR-BROWN DOES NOT AUTHORIZE OR WARRANT ANY BURR-BROWN PRODUCT FOR   |
+
+* |  USE IN LIFE-SUPPORT DEVICES AND/OR SYSTEMS.                           |
+
+*  ------------------------------------------------------------------------ 
+
+* |-------------------------------------------------------------|
+
+* |  This macro model is being supplied as an aid to            |
+
+* |  circuit designs.  While it reflects reasonably close       |
+
+* |  similarity to the actual device in terms of performance,   |
+
+* |  it is not suggested as a replacement for breadboarding.    |
+
+* |  Simulation should be used as a forerunner or a supplement  |
+
+* |  to traditional lab testing.                                |
+
+* |-------------------------------------------------------------|
+
+*
+
+* NOTE : FOR QUICKER CONVERGENCE ADD THE NODESET 
+
+*        V(Xyour.X1.131)=+4.2885 AND
+
+*        V(Xyour.X1.141)=-4.2893 IN THE ROOT SIMULATION FILE.
+
+*        ("Xyour" IS THE DEVICE NAME CALLED OUT IN THE ROOT FILE.)
+
+*
+
+* CONNECTIONS:    INVERTING INPUT
+
+*                 | NON-INVERTING INPUT
+
+*                 | | NEGATIVE POWER SUPPLY
+
+*                 | | | OUTPUT
+
+*                 | | | | POSITIVE POWER SUPPLY
+
+*                 | | | | |
+
+.SUBCKT OPA623X1  2 3 4 6 7
+
+** 
+
+X1  4 7 131 141              BC ; Biasing Circuit BC
+
+X2  2 3 4 7 111 121 131 141  DT ; Diamond Transistor DT
+
+X3  4 6 7 111 121            CB ; Current-Buffer CB
+
+**
+
+C202    2  0   2E-12
+
+C206    6  0   2E-12
+
+.ENDS OPA623X1
+
+
+
+**Diamond Transistor DT
+
+**
+
+.SUBCKT DT 2 3 4 7 111 121 131 141
+
+**
+
+R23  23 3  40
+
+**
+
+C21  21 0  0.02E-12
+
+C22  22 0  0.02E-12
+
+C23  23 0  2E-12
+
+C27  27 0  14E-12
+
+C28  28 0  14E-12
+
+C35  35 0  3.1E-12
+
+**
+
+Q21  21  131  7  7  PI
+
+Q22  22  141  4  4  NI
+
+Q23   4  23  21  7  PI
+
+Q24   7  23  22  4  NI
+
+Q25  27  21   2  4  NI 6
+
+Q26  28  22   2  7  PI 6
+
+Q27  27  27   7  7  PIM
+
+Q28  28  28   4  4  NIM
+
+Q29  111 27   7  7  PIM
+
+Q30  121 28   4  4  NIM
+
+Q31  111 111 33  4  NI
+
+Q32  121 121 34  7  PI
+
+Q33  33  33  35  4  NI
+
+Q34  34  34  35  7  PI
+
+**
+
+.ENDS DT
+
+
+
+**Current Buffer CB
+
+**
+
+.SUBCKT CB 4 6 7 111 121
+
+**
+
+Q35   7 111 37  4  NI
+
+Q36   4 121 38  7  PI
+
+Q37  37 37  39  4  NI
+
+Q38  38 38  39  7  PI
+
+Q39   7 37   6  4  NI 2.2
+
+Q40   4 38   6  7  PI 2.2
+
+**
+
+.ENDS CB
+
+
+
+**Biasing Circuit BC
+
+**
+
+.SUBCKT BC 4 7 131 141
+
+**
+
+RQC  122 4  630 ; 745
+
+**
+
+Q121  131 131   7 7  PI
+
+Q122  131 141 122 4  NI 10
+
+Q123  141 131   7 7  PI
+
+Q124  141 141   4 4  NI
+
+**
+
+.ENDS BC
+
+
+
+.MODEL NI NPN
+
+.MODEL PI PNP
+
+.MODEL PIM PNP (VAF=18)
+
+.MODEL NIM NPN (VAF=18)

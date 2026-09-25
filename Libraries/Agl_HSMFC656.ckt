@@ -1,0 +1,24 @@
+* Agl_HSMFC656 LED Model Green/Yellow Bi-Colour LED
+* Created by Shaun Quin 04-06-2002
+*Typ Green: Vf=2.2V Vr=5V If=20mA 
+*Typ Yellow LED: Vf=2.1V Vr=5V If=20mA 
+*	       	    Green LED Anode
+*	        	    |  Green LED Cathode
+*	       	    |  |  Yellow LED Anode
+*	  	          |  |  |  Yellow LED Cathode     
+*	                |  |  |  |
+*           	   A1 K1 A2 K2
+.subckt Agl_HSMFC656 1  2  3  4
+
+D_Green  1 2 Agl_HSMGC650
+D_Yellow 3 4 Agl_HSMYC650
+
+.MODEL Agl_HSMGC650 D (IS=513.7n RS=89.63 N=1.5 BV=5 IBV=100U
++ CJO=9P VJ=.75 M=.333 TT=4.32U)
+
+.MODEL Agl_HSMYC650 D (IS=513.7n RS=84.63 N=1.5 BV=5 IBV=100U
++ CJO=6P VJ=.75 M=.333 TT=4.32U)
+
+*Temperature and Noise Effects are not Modelled
+
+.ends Agl_HSMFC656

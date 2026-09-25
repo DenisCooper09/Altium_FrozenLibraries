@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-516H  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 e - anode
+*                 |  d - anode
+*                 |  |  common-cathode
+*                 |  |  |  c - anode
+*                 |  |  |  |  DP - anode
+*                 |  |  |  |  |  b - anode
+*                 |  |  |  |  |  |  a - anode
+*                 |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  f - anode
+*                 |  |  |  |  |  |  |  |  |  g - anode
+*                 |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_516H 1  2  3  4  5  6  7  8  9  10
+
+DA1   7 3 dHDSP_516H
+DB1   6 3 dHDSP_516H
+DC1   4 3 dHDSP_516H
+DD1   2 3 dHDSP_516H
+DE1   1 3 dHDSP_516H
+DF1   9 3 dHDSP_516H
+DG1  10 3 dHDSP_516H
+DDP1  5 3 dHDSP_516H
+
+DA2   7 8 dHDSP_516H
+DB2   6 8 dHDSP_516H
+DC2   4 8 dHDSP_516H
+DD2   2 8 dHDSP_516H
+DE2   1 8 dHDSP_516H
+DF2   9 8 dHDSP_516H
+DG2  10 8 dHDSP_516H
+DDP2  5 8 dHDSP_516H
+
+.MODEL dHDSP_516H D
++ (  
++    IS  = 2.08276754E-16 
++     N  = 2.17799178 
++    RS  = 0.50892350
++    BV  = 14.25
++   IBV  = 100u
++ )  
+
+.ENDS HDSP_516H

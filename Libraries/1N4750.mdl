@@ -1,0 +1,6 @@
+*1N4750
+*Ref: Motorola
+*27V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4750 D(IS=2.22E-10 RS=17.2 TT=5.01E-8 CJO=5.02E-11 M=0.33 
++ BV=26.84 IBV=0.0095 )
+* Origin: Mcediode.lib

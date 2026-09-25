@@ -1,0 +1,12 @@
+*MMSZ18T1 MCE 6/20/97
+*Ref: Motorola TVS/Zener Databook, Q2/94
+*18V 1000mW Si Zener pkg:SOD-123 1,2
+.SUBCKT MMSZ18T1 1 2
+*    TERMINALS:  A K
+D1 1 2  DF
+DZ 3 1  DR
+VZ 2 3  17.43
+.MODEL DF D (IS=1.8E-91 RS=42M N=1.7 CJO=67.8P VJ=1 M=0.33 TT=50.1N)
+.MODEL DR D (IS=209U RS=13.5 N=6.1)
+.ENDS 
+* Origin: Mcediode.lib

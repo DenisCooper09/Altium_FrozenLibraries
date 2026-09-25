@@ -1,0 +1,8 @@
+* Agl_HLMPQG00 LED Model
+* Created by Shaun Quin 30-05-2002
+* jj 9/9/2002: changed Rs and N values.
+*Typ LED: Vf=1.9 Vr=25V If=20mA 
+*LED Pinout: 1=A, 2=K
+.MODEL Agl_HLMPQG00 D (IS=102.7n RS=71.53 N=1.5 BV=25 IBV=100U
++ CJO=40P VJ=.75 M=.333 TT=13n)
+*Temperature and Noise Effects are not Modelled

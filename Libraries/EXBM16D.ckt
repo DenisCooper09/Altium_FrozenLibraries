@@ -1,0 +1,24 @@
+*
+* Ladder Network
+*
+*Res1 = R, Res2 = 2R
+*ResPack_16
+*
+.SUBCKT EXBM16D 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 PARAMS: Res1=10k Res2=20k
+R1 1 16 {Res2}
+R2 2 15 {Res2}
+R3 3 14 {Res2}
+R4 4 13 {Res2}
+R5 5 12 {Res2}
+R6 6 11 {Res2}
+R7 7 10 {Res2}
+R8 16 15 {Res1}
+R9 15 14 {Res1}
+R10 14 13 {Res1}
+R11 13 12 {Res1}
+R12 12 11 {Res1}
+R13 11 10 {Res1}
+R14 10 20 {Res1}
+R15 9 20 {Res2}
+R16 8 20 {Res2}
+.ENDS EXBM16D

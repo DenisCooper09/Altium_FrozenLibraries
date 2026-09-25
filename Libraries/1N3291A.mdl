@@ -1,0 +1,7 @@
+*1N3291A MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*400V 100000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 1N3291A D (IS=142N RS=420U N=1.7 BV=400 IBV=2197U
++ CJO=4.11N VJ=0.75 M=0.333 TT=4.32U)
+
+

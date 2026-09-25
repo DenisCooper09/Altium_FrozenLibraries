@@ -1,29 +1,64 @@
-### Altium ###
+* text=auto
 
-# PCB and schematic
+### Altium Binary Files ###
+# Design files
 *.[Pp]cb[Dd]oc              filter=lfs diff=lfs merge=lfs -text
 *.[Ss]ch[Dd]oc              filter=lfs diff=lfs merge=lfs -text
+*.[Ww]ir[Dd]oc              filter=lfs diff=lfs merge=lfs -text
+*.[Ll]dr[Dd]oc              filter=lfs diff=lfs merge=lfs -text
 
 # Libraries
 *.[Pp]cb[Ll]ib              filter=lfs diff=lfs merge=lfs -text
 *.[Ss]ch[Ll]ib              filter=lfs diff=lfs merge=lfs -text
-
-# Integrated libraries
 *.[Ii]nt[Ll]ib              filter=lfs diff=lfs merge=lfs -text
-*.[Ll]ib[Pp]kg              filter=lfs diff=lfs merge=lfs -text
+*.[Cc]mp[Ll]ib              filter=lfs diff=lfs merge=lfs -text
 
-# 3D models
-*.[Ss]tep                   filter=lfs diff=lfs merge=lfs -text
+# CAM / Manufacturing & Output
+*.[Cc][Aa][Mm]              filter=lfs diff=lfs merge=lfs -text
+*.[Dd][Ff][Ff]              filter=lfs diff=lfs merge=lfs -text
+*.[Tt][Dd][Ff]              filter=lfs diff=lfs merge=lfs -text
+
+# Microsoft DB
+*.[Mm][Dd][Bb]              filter=lfs diff=lfs merge=lfs -text
+
+# 3D models & CAD data
+*.[Ss][Tt][Ee][Pp]          filter=lfs diff=lfs merge=lfs -text
 *.[Ss][Tt][Pp]              filter=lfs diff=lfs merge=lfs -text
 *.[Ii][Gg][Ee][Ss]          filter=lfs diff=lfs merge=lfs -text
+*.[Ii][Gg][Ss]              filter=lfs diff=lfs merge=lfs -text
 *.3[Dd][Pp][Rr][Tt]         filter=lfs diff=lfs merge=lfs -text
 *.[Ii][Dd][Ff]              filter=lfs diff=lfs merge=lfs -text
 
 ### Docs ###
 *.[Pp][Dd][Ff]              filter=lfs diff=lfs merge=lfs -text
 
+### Altium Text & Configuration Files (Diffable) ###
+# Projects and Workspaces
+*.[Dd]sn[Ww]rk              text eol=crlf
+*.[Pp]rj[Pp]cb              text eol=crlf
+*.[Pp]rj[Cc]mp              text eol=crlf
+*.[Pp]rj[Cc]sl              text eol=crlf
+*.[Pp]rj[Ff]pg              text eol=crlf
+*.[Pp]rj[Hh]ar              text eol=crlf
+*.[Ll]ib[Pp]kg              text eol=crlf
+*.[Oo]ut[Jj]ob              text eol=crlf
+
+# Design Definitions and Rules
+*.[Hh]arness                text eol=crlf
+*.[Dd][Bb][Ll]ib            text eol=crlf
+*.[Ss][Vv][Dd][Bb][Ll]ib    text eol=crlf
+*.[Aa]n[Cc]nf               text eol=crlf
+*.[Ff]t[Cc]nf               text eol=crlf
+
+# Output Configurations & Text BOMs
+*.[Rr][Cc][Ff][Gg]          text eol=crlf
+*.BOM                       text eol=crlf
+*.LOG                       text eol=crlf
+
 ### Linguist ###
 *.[Pp]cb[Dd]oc linguist-generated
 *.[Ss]ch[Dd]oc linguist-generated
+*.[Ww]ir[Dd]oc linguist-generated
+*.[Ll]dr[Dd]oc linguist-generated
 *.[Pp]cb[Ll]ib linguist-generated
 *.[Ss]ch[Ll]ib linguist-generated

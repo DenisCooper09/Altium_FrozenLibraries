@@ -1,0 +1,3 @@
+*Texas Instruments
+*SN74LS26: 2-in H.V. O/C NAND
+.MODEL SN74LS26 xsimcode(file="{MODEL_PATH}LS.SCB" func=ls26 {mntymx})

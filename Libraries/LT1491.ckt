@@ -1,0 +1,132 @@
+* jjt 8/1/2002: converted temp. coeff. to Spice3 syntax.
+*///////////////////////////////////////////////////////////////////////////////
+* LT1491  Quad Micropower Rail-to-Rail Input and Output Operational Amplifier //
+*///////////////////////////////////////////////////////////////////////////////
+*
+* connections:     non-inverting input
+*                  |   inverting input
+*                  |   |   positive power supply
+*                  |   |   |   negative power supply
+*                  |   |   |   |   output
+*                  |   |   |   |   |
+*                  |   |   |   |   |
+.SUBCKT LT1491     3   2   7   4   6
+X_LT1491 3 2 7 4 6 LT1490
+.ENDS LT1491
+*
+*
+.SUBCKT LT1490     1 2 3 4 5 
+IBP 303 0 DC -3.9675E-09 
+RBP 303 0 1E6 rbpmod
+.model rbpmod r (TC1=-1.6154E-02)
+ 
+IBN 304 0 DC -3.7860E-09 
+RBN 304 0 1E6 rbnmod
+.model rbnmod r (TC1=-1.4615E-02)
+
+* 
+GCV1 0 306 POLY(3) 3 0 1 0 2 0 -0.85E-4 1.0E-4 -0.5E-4 -0.5E-4 
+RCV1 306 0 1.0E5 
+DCV1 307 306 DX 
+DCV2 308 307 DX 
+VCV1 308 0 DC -0.35 
+RCV2 307 0 1.0E5 
+* 
+GCV2 0 309 POLY(3) 3 0 1 0 2 0 0.0E-4 1.0E-4 -0.5E-4 -0.5E-4 
+RCV3 309 0 1.0E5 
+DCV3 310 309 DX 
+DCV4 311 310 DX 
+VCV2 311 0 DC -0.35 
+RCV4 310 0 1.0E5 
+* 
+GBP 111 99 POLY(3) 303 0 307 0 310 0 0.0 1.0E-6 20.0E-9 3.6E-6 
+GBN 112 99 POLY(3) 304 0 307 0 310 0 0.0 1.0E-6 22.0E-9 3.20E-6 
+* 
+ROFF1 301 0 1.00022E+00 roff1mod
+.model roff1mod r (TC1=-2.0000E-06)
+
+ROFF2 302 0 1.0000E+00 
+IOFF1 0 301 DC 1 
+IOFF2 0 302 DC 1 
+EOFF  114 112 301 302 1 
+ROFF3 114 112 1.0000E+09 
+* 
+GCM1 0 20 POLY(2) 111 0 112 0 0 5.0000E-04 5.0000E-04 
+RCM4 21 0 1.000000E+03 
+RCM5 20 0 1.0000E+06 
+LCM 20 21 7.2343E-02
+ECM 113 111 20 0 1.25892E-05  
+RCM3 113 111 1E12 
+*
+GRP1 1 111 1 111 1.0000E-03 
+GRP2 2 112 2 112 1.0000E-03 
+DIP1 4 111 DX 
+DIP2 4 112 DX 
+* 
+CIN 111 112 3.95E-12 
+RDIFF 111 112 1.7E+07 
+* COMMON MODE RESISTANCE COMMENTED OUT
+* FOR CORRECT BIAS MODELING AT HIGH INPUT VOLTAGES
+* RCM1 111 99 11E+06 
+* RCM2 112 99 11E+06 
+GIN 99 10 113 114 0.022273 
+RCC 10 99 4.4896E+03 
+C1 10 99 1.41798E-10
+DSRP 10 11 DX 
+VSRP 11 99 DC 5.35
+DSRN 12 10 DX 
+VSRN 12 99 DC -3.85
+GA 60 99 10 99 1.0E-5 
+* 
+GR 99 60 605 606 2.41668
+IR1 0 605 DC 1 
+IR2 0 606 DC 1 
+DR1 605 0 DR 
+DR2 606 0 DR 
+*
+RP1 601 99 2.0000E+04
+CP1 60 601 1.3263E-10
+RP11 60 99 1.0000E+04
+GP1 99 6 60 99 1.0000E-04
+*
+R2 6 99 1.0000E+03 
+C2 6 7 6.3819E-10 
+GB 7 99 6 99 2731.5 
+R01 7 99 6.8222E+02 
+R02 7 50 1.6427E+03 
+R03 50 51 1.0750E+02
+*
+* R04 51 5 1.2501E+01
+R04 51 5 1.7501E+01
+*
+R05 5 99 1.0000E+12 
+DOP 50 51 DO 
+DON 51 50 DO
+DSUB 4 5 DX
+*
+EVLP 53 0  POLY(2) 3 99 50 99 1.024 -1.0  1.0 
+DLVP 53 90 DX
+EVLN 54 0  POLY(2) 4 99 50 99 -1.024 -1.0  1.0 
+DLVN 90 54 DX
+*
+ELIM1 91 0 7 50 2.5406E-02
+ELIM2 92 0 7 50 2.5406E-02
+DLP 91 90 DX 
+DLN 90 92 DX 
+VLIM 90 0 DC 0 
+FB 7 99 VLIM 5.1074E-01 
+* 
+EGND 99 0 POLY(2) 3 0 4 0 0 0.5 0.5
+IP 3 4 DC 38.0E-6 
+RP 3 4 2.5000E+06 
+GV 31 0 7 50 6.0877E-04 
+DP1 3 31 DX 
+DP2 32 4 DX 
+EGV 31 32 POLY(1) 3 4 -1.0 1.0
+*
+.MODEL DX  D IS=8.0000E-16 VJ=1.0 RS=0 XTI=0 
+.MODEL DR D IS=8.0000E-16 KF=1.9244E-19 RS=0 XTI=0 
+.MODEL DO D IS=2.2260E-06 RS=0 XTI=0
+*
+.ENDS LT1490
+*

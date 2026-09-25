@@ -1,0 +1,6 @@
+*****************************************************************
+* BB639C / BB659C Diode Model
+.MODEL D349 D(IS=2.148E-15 N=1.035 RS=.09364 XTI=3 EG=1.11 CJO=60.35E-12
++ M=1.23 VJ=2.2 FC=.5 BV=35 IBV=100E-9 TT=160E-9)
+* Model without package capacitance.
+* 12.0.96 SIEMENS PD1 Moschovis

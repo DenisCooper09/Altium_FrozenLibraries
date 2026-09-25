@@ -1,0 +1,3 @@
+*Texas Instruments
+*SN74F377: Octal D-Type Flip-Flop with Clock Enable
+.MODEL SN74F377 xsimcode(file="{MODEL_PATH}F377.TXT" func=f377 {mntymx})

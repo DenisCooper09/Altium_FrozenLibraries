@@ -1,0 +1,11 @@
+*BZX85C13 MCE 4/7/98
+*Ref: Temic Semiconductor Short Form, 1996
+*13V 1300mW Si Zener pkg:Diode0.4 1,2
+.SUBCKT BZX85C13 1 2
+*    TERMINALS:  A K
+D1 1 2  DF
+DZ 3 1  DR
+VZ 2 3  12.47
+.MODEL DF D (IS=6.53N RS=32.3M N=1.7 CJO=110P VJ=1 M=0.33 TT=50.1N)
+.MODEL DR D (IS=9.54U RS=1.4 N=2.5)
+.ENDS

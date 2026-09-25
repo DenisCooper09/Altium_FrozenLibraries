@@ -1,0 +1,58 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  6-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-5521  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 E-cathode-1
+*                 |  D-cathode-1
+*                 |  |  C-cathode-1
+*                 |  |  |  DP-cathode-1
+*                 |  |  |  |  E-cathode-1
+*                 |  |  |  |  |  D-cathode-2
+*                 |  |  |  |  |  |  G-cathode-2
+*                 |  |  |  |  |  |  |  C-cathode-2
+*                 |  |  |  |  |  |  |  |  DP-cathode-2
+*                 |  |  |  |  |  |  |  |  |  B-cathode-2
+*                 |  |  |  |  |  |  |  |  |  |  A-cathode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  F-cathode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  common-anode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  common-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  B-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  A-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  G-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  F-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_5521 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+
+DA1  14  16  dHDSP_5521
+DB1  14  15  dHDSP_5521
+DC1  14   3  dHDSP_5521
+DD1  14   2  dHDSP_5521
+DE1  14   1  dHDSP_5521
+DF1  14  18  dHDSP_5521
+DG1  14  17  dHDSP_5521
+DDP1 14   4  dHDSP_5521
+
+DA2  13  11  dHDSP_5521
+DB2  13  10  dHDSP_5521
+DC2  13   8  dHDSP_5521
+DD2  13   6  dHDSP_5521
+DE2  13   5  dHDSP_5521
+DF2  13  12  dHDSP_5521
+DG2  13   7  dHDSP_5521
+DDP2 13   9  dHDSP_5521
+
+.MODEL dHDSP_5521 D
++ (  
++     IS = 3.78006861E-14 
++      N = 2.44553183 
++     RS = 19.51958310 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_5521

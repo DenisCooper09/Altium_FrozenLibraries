@@ -1,0 +1,7 @@
+*85HF100 MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*1000V 85000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 85HF100 D (IS=121N RS=494U N=1.7 BV=1E+03 IBV=4679U
++ CJO=3.5N VJ=0.75 M=0.333 TT=4.32U)
+
+

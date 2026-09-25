@@ -1,0 +1,41 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  3-May-2004 
+*  
+* Manufacturer: Renesas  
+* Component Name: HDSP-7508  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 common-cathode
+*                 |  anode-PLUS
+*                 |  |  anode-MINUS
+*                 |  |  |  common-cathode
+*                 |  |  |  |  anode-DP
+*                 |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |
+.SUBCKT HDSP_7508 1  2  3  6  7  8  9
+
+DPLUS1  2  1  dHDSP_7508
+DMINUS1 3  1  dHDSP_7508
+DB1     9  1  dHDSP_7508
+DC1     8  1  dHDSP_7508
+DDP1    7  1  dHDSP_7508
+
+DPLUS2  2  6  dHDSP_7508
+DMINUS2 3  6  dHDSP_7508
+DB2     9  6  dHDSP_7508
+DC2     8  6  dHDSP_7508
+DDP2    7  6  dHDSP_7508
+ 
+.MODEL dHDSP_7508 D
++ (  
++     IS = 1.31238168E-27 
++      N = 1.06196807 
++     RS = 24.48189481 
++     BV = 25
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_7508

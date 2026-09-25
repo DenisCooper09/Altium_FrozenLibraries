@@ -1,0 +1,6 @@
+*1N4742
+*Ref: Motorola
+*12V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4742 D(IS=9.67E-15 RS=4.26 TT=5.01E-8 CJO=9.42E-11 M=0.33 
++ BV=11.91 IBV=0.021 )
+* Origin: Mcediode.lib

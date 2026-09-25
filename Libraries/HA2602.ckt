@@ -1,0 +1,69 @@
+*  HA-2602
+*  COPYRIGHT (C) 1991 HARRIS CORPORATION
+*  ALL RIGHTS RESERVED
+*
+*  HA-2602 MacroModel
+*  Rev: 8-01-91  DW Riemer
+*
+* Connections:
+*               Non-Inverting Input
+*               | Inverting Input
+*               | | Positive Power Supply
+*               | | | Negative Power Supply
+*               | | | | Output
+*               | | | | |
+.SUBCKT HA2602  1 2 4 5 3
+.MODEL DP D  IS=1E-14  N=1.1563
+.MODEL DN D  IS=1.1428E-14    N=1.1563
+.MODEL DV D  IS=1.061E-15  N=.2
+.MODEL D1 D  IS=1E-9  N=1
+.MODEL D2 D  IS=1E-9  N=1.0
+.MODEL DX D  IS=1E-20  N=30.0
+*
+*                     Input Stage
+*  Value of source VN models Vio and may be adjusted as desired.
+VP 1 6 0
+VN 2 7 2E-03
+I1 8 0 5.3571E-09
+FA 2 0 VN +1.625
+DP 6 8 DP
+DN 7 8 DN
+FP 9 0 VP  3.2853E+04
+FN 0 9 VN  2.8747E+04
+GC 0 9 8 0 1.5546E-07
+GPP 9 0 4 0 4.9162E-08
+GPN 9 0 5 0 1.5546E-07
+IRX 0 9 -1.5371E-06
+RT 9 0 1.0
+*
+*                 Poles
+EP1 10 0 9 0 1.0
+RP1 10 11 6.368E+01
+CP1 11 0 1E-10
+EP2 12 0 11 0 1.0
+RP2 12 13 4.5483E+01
+CP2 13 0 1E-10
+*
+*                 Output Stage
+G2 0 14 13 0 1.0
+R2 14 0 6.5577E+02
+CC 14 15 2.2E-11
+GOL 15 0 14 0 7.3545E+02
+RD 15 0 +90.0
+DH 15 16 DV
+DL 17 15 DV
+*ECC 16 0 POLY 1  4 0 -2.7  1.0
+BECC 16 0 V=-2.7+1.0*v(4,0)
+*EEE 17 0 POLY 1  5 0 +2.9  1.0
+BEEE 17 0 V=2.9+1.0*v(5,0)
+IH 4 0 3.5E-03
+IL 0 5 3.5E-03
+GPS 18 0 15 3 0.9999E-01
+DPH 4 18 DX
+DPL 18 5 DX
+D1 15 19 D1
+D2 19 15 D2
+*EX1 19 0 POLY 2  15 0 3 0 0.0   -8.4731E-01   +1.8436
+BEX1 19 0 V=-8.4731E-01*v(15,0)+1.8436*v(3,0)
+RO 15 3 +10.0
+.ENDS HA2602

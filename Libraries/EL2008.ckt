@@ -1,0 +1,40 @@
+*EL2008 Macromodel 
+* Connections:          +input
+*                       |   output
+*                       |   |   +Vsupply
+*                       |   |   |   -Vsupply
+*                       |   |   |   |  
+.subckt EL2008          4   2   5   1  
+*
+* Input Stage 
+*
+e1 10 0 4 0 1.0
+r1 10 0 1K  
+rh 10 11 1K  
+ch 11 0 2.65pF    
+rc 11 12 10K
+cc 12 0 0.159pF
+e2 13 0 12 0 1.0
+*
+* Output Stage 
+*
+q1  1 13 14 qp    
+q2  5 13 15 qn 
+q3  5 14 16 qn 15
+q4  1 15 19 qp 15
+r2 16 2 0.4
+r3 19 2 0.4
+c1 14 0 0.6pF
+c2 15 0 0.6pF
+i1 5 14 1.2mA
+i2 15 1 1.2mA    
+*
+* Bias Current
+*
+iin+ 4 0 5uA 
+*
+* Models
+*
+.model qn npn(is=5e-15 bf=1500) 
+.model qp pnp(is=5e-15 bf=1500)
+.ends

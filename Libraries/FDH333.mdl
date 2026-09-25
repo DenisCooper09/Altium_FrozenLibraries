@@ -1,0 +1,7 @@
+*FDH333 MCE 3-31-97
+*Ref: National Discrete Products Databook, 1996
+*125V 300mA Si LoLeakage Diode pkg:DIODE0.4 1,2
+.MODEL FDH333 D (IS=426P RS=0.14 N=1.7 BV=125 IBV=2.06U
++ CJO=7.96P VJ=0.75 M=0.333 TT=4.32U)
+
+

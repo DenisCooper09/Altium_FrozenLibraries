@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  10-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-333G  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 anode-F
+*                 |  anode-G
+*                 |  |  common-cathode
+*                 |  |  |  anode-E
+*                 |  |  |  |  anode-D
+*                 |  |  |  |  |  anode-C
+*                 |  |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  anode-B
+*                 |  |  |  |  |  |  |  |  |  anode-A
+*                 |  |  |  |  |  |  |  |  |  |  
+.SUBCKT HDSP_333G 1  2  4  6  7  8  9  12 13 14
+
+DA1  14  4  dHDSP_333G
+DB1  13  4  dHDSP_333G
+DC1   8  4  dHDSP_333G
+DD1   7  4  dHDSP_333G
+DE1   6  4  dHDSP_333G
+DF1   1  4  dHDSP_333G
+DG1   2  4  dHDSP_333G
+DDP1  9  4  dHDSP_333G
+
+DA2  14 12  dHDSP_333G
+DB2  13 12  dHDSP_333G
+DC2   8 12  dHDSP_333G
+DD2   7 12  dHDSP_333G
+DE2   6 12  dHDSP_333G
+DF2   1 12  dHDSP_333G
+DG2   2 12  dHDSP_333G
+DDP2  9 12  dHDSP_333G
+
+.MODEL dHDSP_333G D
++ (  
++    IS = 2.00000000E-15 
++    N  = 2.63648757 
++    RS = 11.31715644 
++    BV = 4.8 
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_333G

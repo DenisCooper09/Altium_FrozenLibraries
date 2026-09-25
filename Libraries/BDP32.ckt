@@ -1,0 +1,54 @@
+*
+.SUBCKT BDP32 1 2 3
+*
+* housing parasitics
+*
+LBlead 2 22 1.63E-09
+LE 3 333 3.77E-09
+LC 1 11 4.1E-10
+LBbond 22 222 2.5E-09
+CBCG 222 11 1.76E-13
+CBEG 222 333 8.6E-14
+CCEG 11 333 1.76E-13
+Q1 11 222 333 BDP32 AREA = 1
+.MODEL BDP32 PNP (
++    IS = 2.399E-13
++    NF = 0.9886
++    ISE = 1.502E-14
++    NE = 1.2
++    BF = 126
++    IKF = 3
++    VAF = 94.36
++    NR = 0.988
++    ISC = 2.127E-13
++    NC = 1.135
++    BR = 45.12
++    IKR = 0.13
++    VAR = 24
++    RB = 15.37
++    IRB = 0.0006455
++    RBM = 0.06333
++    RE = 0.17
++    RC = 0.002
++    XTB = 0
++    EG = 1.11
++    XTI = 3
++    CJE = 4.056E-10
++    VJE = 0.7881
++    MJE = 0.3843
++    TF = 1.15E-09
++    XTF = 55
++    VTF = 5
++    ITF = 9
++    PTF = 0
++    CJC = 1.965E-10
++    VJC = 0.3939
++    MJC = 0.374
++    XCJC = 1
++    TR = 60E-9
++    CJS = 0
++    VJS = 0.75
++    MJS = 0.333
++    FC = 0.78)
+.ENDS
+*

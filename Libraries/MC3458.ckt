@@ -1,0 +1,45 @@
+*MC3458 OPERATIONAL AMPLIFIER "MACROMODEL" SUBCIRCUIT
+*
+* Connections:
+*                Non-Inverting Input
+*                | Inverting Input
+*                | | Positive Power Supply
+*                | | | Negative Power Supply
+*                | | | | Output
+*                | | | | |
+.SUBCKT MC3458   1 2 3 4 5
+  C1   11 12 5.750E-12
+  C2    6  7 12.50E-12
+  DC    5 53 DX
+  DE   54  5 DX
+  DLP  90 91 DX
+  DLN  92 90 DX
+  DP    4  3 DX
+*EGND 99  0 POLY(2) (3,0) (4,0) 0 .5 .5
+  BEGND 99  0 V=.5*v(3,0)+.5*v(4,0)
+*FB    7 99 POLY(5) VB VC VE VLP VLN 0 45.39E6 -50E6 50E6 50E6 -50E6
+  BFB    7 99 I=45.39E6*I(VB)-50E6*I(VC)+50E6*I(VE)+50E6*I(VLP)-50E6*I(VLN)
+  GA    6  0 11 12 117.5E-6
+  GCM   0  6 10 99 3.716E-9
+  IEE   3 10 DC 7.000E-6
+  HLIM 90  0 VLIM 1K
+  Q1   11  2 13 QX
+  Q2   12  1 14 QX
+  R2    6  9 100.0E3
+  RC1   4 11 8.511E3
+  RC2   4 12 8.511E3
+  RE1  13 10 634.9
+  RE2  14 10 634.9
+  REE  10 99 28.57E6
+  RO1   8  5 37.50
+  RO2   7 99 37.50
+  RP    3  4 18.83E3
+  VB    9  0 DC 0
+  VC    3 53 DC 2.740
+  VE   54  4 DC 2.740
+  VLIM  7  8 DC 0
+  VLP  91  0 DC 20
+  VLN   0 92 DC 20
+.MODEL DX D(IS=800.0E-18)
+.MODEL QX PNP(IS=800.0E-18 BF=16.50)
+.ENDS MC3458

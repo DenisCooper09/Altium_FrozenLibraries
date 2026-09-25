@@ -1,0 +1,42 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  3-May-2004 
+*  
+* Manufacturer: Renesas  
+* Component Name: HDSP-7502  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-colon
+*                 |  cathode-f
+*                 |  |  cathode-g
+*                 |  |  |  cathode-e
+*                 |  |  |  |  cathode-d
+*                 |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  cathode-DP
+*                 |  |  |  |  |  |  |  cathode-c
+*                 |  |  |  |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_7502 1  2  3  4  5  6  7  8  9  10
+
+DA  6  10  dHDSP_7502
+DB  6   9  dHDSP_7502
+DC  6   8  dHDSP_7502
+DD  6   5  dHDSP_7502
+DE  6   4  dHDSP_7502
+DF  6   2  dHDSP_7502
+DG  6   3  dHDSP_7502
+DDP 6   7  dHDSP_7502
+DCL 6   1  dHDSP_7502
+
+.MODEL dHDSP_7502 D
++ (  
++     IS = 1.31238168E-27 
++      N = 1.06196807 
++     RS = 24.48189481 
++     BV = 25
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_7502

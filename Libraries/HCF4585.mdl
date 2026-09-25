@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCF4585: 4-bit Magnitude Comparator
+.MODEL HCF4585 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4585 {mntymx})

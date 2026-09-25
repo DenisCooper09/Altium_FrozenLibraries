@@ -1,0 +1,5 @@
+*1N5375B
+*Ref: Diodes Incorporated Catalog, 1994
+*82V 5W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N5375B D(IS=1.65E-10 RS=63.3 TT=5.01E-8 CJO=7.29E-11 M=0.33 
++ BV=81.09 IBV=0.015 )

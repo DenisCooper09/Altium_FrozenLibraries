@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4024: 7-Stage Ripple Counter
+.MODEL HCC4024 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4024 {mntymx})

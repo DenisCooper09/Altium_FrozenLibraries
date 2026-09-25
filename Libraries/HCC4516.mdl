@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCC4516: BCD UP/DOWN Counter
+.MODEL HCC4516 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4516 {mntymx})

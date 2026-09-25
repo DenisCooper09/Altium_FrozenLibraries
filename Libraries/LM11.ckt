@@ -1,0 +1,45 @@
+*LM11 OPERATIONAL AMPLIFIER  *"MACROMODEL" SUBCIRCUIT
+*CONNECTIONS: 1=+In, 2=-In, 3=+V, 4=-V, 5=Out
+*                Non-Inverting Input
+*                | Inverting Input
+*                | | Positive Power Supply
+*                | | | Negative Power Supply
+*                | | | | Output
+*                | | | | |
+.SUBCKT LM11     1 2 3 4 5
+  C1   11 12 12.59E-12
+  C2    6  7 28.00E-12
+  DC    5 53 DX
+  DE   54  5 DX
+  DLP  90 91 DX
+  DLN  92 90 DX
+  DP    4  3 DX
+  *EGND 99  0 POLY(2) (3,0) (4,0) 0 .5 .5
+  BEGND 99  0 V=.5*v(3,0)+.5*v(4,0)
+  *FB    7 99 POLY(5) VB VC VE VLP VLN 0 65.29E6
+  *+-70E6 70E6 70E6 -70E6
+  BFB    7 99 I=65.29E6*I(VB)-70E6*I(VC)+70E6*I(VE)+70E6*I(VLP)-70E6*I(VLN)
+  GA    6  0 11 12 122.5E-6
+  GCM   0  6 10 99 38.74E-12
+  IEE  10  4 DC 6.900E-6
+  HLIM 90  0 VLIM 1K
+  Q1   11  2 13 QX
+  Q2   12  1 14 QX
+  R2    6  9 100.0E3
+  RC1   3 11 8.162E3
+  RC2   3 12 8.162E3
+  RE1  13 10 660.9
+  RE2  14 10 660.9
+  REE  10 99 28.99E6
+  RO1   8  5 41
+  RO2   7 99 41
+  RP    3  4 102.4E3
+  VB    9  0 DC 0
+  VC    3 53 DC 2.65
+  VE   54  4 DC 2.65
+  VLIM  7  8 DC 0
+  VLP  91  0 DC 10
+  VLN   0 92 DC 10
+.MODEL DX D(IS=800.0E-18)
+.MODEL QX NPN(IS=800.0E-18 BF=202.9E3)
+.ENDS LM11

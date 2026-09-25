@@ -1,0 +1,7 @@
+*SD400C24C 3/10/98
+*Ref: IR Power Semiconductors Product Digest '94
+*2400V 800A 3us Si pkg:DIODE0.7 1,2
+.MODEL SD400C24C D (IS=1.14U RS=52.5U N=1.7 BV=2.4K IBV=10U
++ CJO=32.9N VJ=0.75 M=0.333 TT=4.32U IBV=0.106)
+
+

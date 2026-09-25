@@ -1,0 +1,45 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-8606  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-a 
+*                 |  anode-d 
+*                 |  |  cathode-d 
+*                 |  |  |  cathode-c 
+*                 |  |  |  |  cathode-e 
+*                 |  |  |  |  |  anode-e 
+*                 |  |  |  |  |  |  cathode-DP 
+*                 |  |  |  |  |  |  |  anode-DP 
+*                 |  |  |  |  |  |  |  |  cathode-DP 
+*                 |  |  |  |  |  |  |  |  |  cathode-b 
+*                 |  |  |  |  |  |  |  |  |  |  anode-b 
+*                 |  |  |  |  |  |  |  |  |  |  |  anode-c 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  anode-a 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_8606 2  3  4  5  6  7  8  10 11 12 13 14 15 17
+
+DA1  15  2 dHDSP_8606
+DA2  15 17 dHDSP_8606
+DB   13 12 dHDSP_8606
+DC   14  5 dHDSP_8606
+DD    3  4 dHDSP_8606
+DE    7  6 dHDSP_8606
+DDP1 10  8 dHDSP_8606
+DDP2 10 11 dHDSP_8606
+ 
+.MODEL dHDSP_8606 D
++ (  
++     IS = 3.97670539E-22 
++      N = 1.67603447 
++     RS = 9.10910000 
++     BV = 50
++    IBV = 100u 
++ ) 
+
+.ENDS HDSP_8606

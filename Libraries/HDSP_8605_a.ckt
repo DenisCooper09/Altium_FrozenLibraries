@@ -1,0 +1,70 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-8605  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 anode-a 
+*                 |  anode-f 
+*                 |  |  common-cathode 
+*                 |  |  |  anode-e 
+*                 |  |  |  |  common-cathode 
+*                 |  |  |  |  |  anode-DP 
+*                 |  |  |  |  |  |  anode-d 
+*                 |  |  |  |  |  |  |  common-cathode 
+*                 |  |  |  |  |  |  |  |  anode-c 
+*                 |  |  |  |  |  |  |  |  |  anode-g 
+*                 |  |  |  |  |  |  |  |  |  |  anode-b 
+*                 |  |  |  |  |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  |  |  |  |       
+.SUBCKT HDSP_8605 2  3  4  5  6  7  11 12 13 14 15 17
+
+DA1   2  4 dHDSP_8605
+DB1  15  4 dHDSP_8605
+DC1  13  4 dHDSP_8605
+DD1  11  4 dHDSP_8605
+DE1   5  4 dHDSP_8605
+DF1   3  4 dHDSP_8605
+DG1  14  4 dHDSP_8605
+DDP1  7  4 dHDSP_8605
+
+DA2   2  6 dHDSP_8605
+DB2  15  6 dHDSP_8605
+DC2  13  6 dHDSP_8605
+DD2  11  6 dHDSP_8605
+DE2   5  6 dHDSP_8605
+DF2   3  6 dHDSP_8605
+DG2  14  6 dHDSP_8605
+DDP2  7  6 dHDSP_8605
+
+DA3   2 12 dHDSP_8605
+DB3  15 12 dHDSP_8605
+DC3  13 12 dHDSP_8605
+DD3  11 12 dHDSP_8605
+DE3   5 12 dHDSP_8605
+DF3   3 12 dHDSP_8605
+DG3  14 12 dHDSP_8605
+DDP3  7 12 dHDSP_8605
+
+DA4   2 17 dHDSP_8605
+DB4  15 17 dHDSP_8605
+DC4  13 17 dHDSP_8605
+DD4  11 17 dHDSP_8605
+DE4   5 17 dHDSP_8605
+DF4   3 17 dHDSP_8605
+DG4  14 17 dHDSP_8605
+DDP4  7 17 dHDSP_8605
+
+.MODEL dHDSP_8605 D
++ (  
++     IS = 3.97670539E-22 
++      N = 1.67603447 
++     RS = 9.10910000 
++     BV = 50
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_8605

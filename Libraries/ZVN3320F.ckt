@@ -1,0 +1,63 @@
+*
+*ZETEX  ZVN3320F  Mosfet Spice Subcircuit    Last revision 27/5/02
+*      
+* BC 5/1/2004: converted from pspice to spice
+*        
+.SUBCKT ZVN3320F 3 4 5
+* ----connections---- D G S 
+*
+M1 6 2 8 8 MOSMOD
+M2 6 2 8 8 MOSMODS
+RG 4 2 190
+RIN 2 8 200E6
+RD 3 6 RDSMOD 18
+RS 8 5 RDSMOD 1.5 
+RL 3 5 35E6
+C1 2 8 6.5E-12
+C3 15 14 3.8E-12
+C4 16 8 5.3E-12
+D1 5 3 DMOD1
+D2 17 3  DMOD2
+S1 2 15 13 14 SMOD1a
+S2 13 15 13 14 SMOD1b
+S3 16 13 8 13 SMOD2a
+S4 16 2 8 13 SMOD2b
+Egs1 2 17 2 8 1
+Egs2 13 8 2 8 1
+Eds1 14 8 3 8 1
+.MODEL MOSMOD NMOS VTO=1.55 IS=1E-15 KP=0.07 CBD=39E-12 PB=1 LAMBDA=4.9E-3
+.MODEL MOSMODS NMOS VTO=0.8 IS=1E-15 KP=0.007 PB=1
+.MODEL DMOD1 D IS=3E-8 RS=.17 N=1.95 TT=1e-9 BV=220 IBV=1E-3
+.MODEL DMOD2 D CJO=1.8E-12 IS=1E-30 N=10
+
+* .MODEL SMOD1a VSWITCH RON=1e-2 ROFF=1e4  VON=1 VOFF=-1
+.MODEL SMOD1a SW(RON=1e-2 ROFF=1e4 VH=1 VT=0)
+
+* .MODEL SMOD1b VSWITCH RON=1e-2 ROFF=1e4  VON=-1 VOFF=1
+.MODEL SMOD1b SW(RON=1e-2 ROFF=1e4 VH=-1 VT=0)
+
+* .MODEL SMOD2a VSWITCH RON=1e2 ROFF=1e4  VON=1.5 VOFF=3.5
+.MODEL SMOD2a SW(RON=1e2 ROFF=1e4 VH=-1 VT=2.5)
+
+* .MODEL SMOD2b VSWITCH RON=1e-2 ROFF=1e4  VON=3.5 VOFF=1.5
+.MODEL SMOD2b SW(RON=1e-2 ROFF=1e4 VH=1 VT=2.5)
+
+* .MODEL RDSMOD RES (TC1=7E-3 TC2=4.2E-5)
+.MODEL RDSMOD R (TC1=7E-3 TC2=4.2E-5)
+
+.ENDS ZVN3320F
+*
+*$
+*
+*                          (C)  2002 ZETEX PLC
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agent.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

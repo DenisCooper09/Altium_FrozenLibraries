@@ -1,0 +1,7 @@
+*SD300C24C 3/10/98
+*Ref: IR Power Semiconductors Product Digest '94
+*2400V 650A 3us Si pkg:DIODE0.7 1,2
+.MODEL SD300C24C D (IS=924N RS=64.6U N=1.7 BV=2.4K IBV=10U
++ CJO=26.7N VJ=0.75 M=0.333 TT=4.32U IBV=0.086)
+
+

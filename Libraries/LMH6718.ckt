@@ -1,0 +1,166 @@
+*//////////////////////////////////////////////////////////////////////
+* (C) National Semiconductor, Corporation.
+* Models developed and under copyright by:
+* National Semiconductor, Corporation.  
+*/////////////////////////////////////////////////////////////////////
+* Legal Notice:  
+* The model may be copied, and distributed without any modifications;
+* however, reselling or licensing the material is illegal.
+* We reserve the right to make changes to the model without prior notice. 
+* Pspice Models are provided "AS IS, WITH NO WARRANTY OF ANY KIND" 
+*////////////////////////////////////////////////////////////////////
+* For more information, and our latest models,
+* please visit the models section of our website at
+*       http://www.national.com/models/
+*////////////////////////////////////////////////////////////////////
+* BEGIN SPICE MODEL LMH6718
+*  PINOUT IS FOR A AMPLIFIER ONLY
+*  PINOUT ORDER +IN -IN V+ V- OUT
+*                3   2   8  4  1
+*
+.SUBCKT LMH6718 3 2 8 4 1
+*
+* BEGIN NOTES AND ADJUSTABLE VALUES
+* SOME COMPONENTS IN THE MODEL CHANGE
+* VALUE DEPENDING ON TOTAL SUPPLY
+* VOLTAGE BETWEEN V+ AND -V
+* VALUES ARE AS FOLLOWS WITH GROUPS OF
+* STATEMENTS BELOW FOR 10V AND 5V
+* FOR OTHER TOTAL SUPPLY VOLTAGES
+* LINEARLY INTERPOLATE THE VALUES
+*
+* COMPONENT	VALUE	VALUE
+*                10V      5V
+*
+*   C 9          25   P   37   P
+*   C10          8.25 P   12.2 P
+*   C11          6    P    9   P
+*   C13          1.9  P    2.2 P
+*   E11          2         4
+*   E12          2         4
+*   E18          0.99840   0.99825
+*
+* INTERNAL INPUT AND FEEDBACK RESISTORS
+* ARE BELOW FOR ADJUSTMENT FROM NOMINAL
+* VALUES IF DESIRED
+* FEEDBACK RESISTOR
+R27 19 1 1E3
+* INPUT RESISTOR
+R29 2 19 1E3
+*
+* USE THIS GROUP FOR 10 V+ TOTAL SUPPLY
+C9 31 0 25E-12
+C10 30 0 8.25E-12
+C11 33 0 6E-12
+C13 29 0 1.9E-12
+E11 27 28 25 0 2
+E12 29 27 24 0 2
+E18 43 0 29 0 0.99840
+* END 10V GROUP
+* USE THIS GROUP FOR 5 V+ TOTAL SUPPLY
+*C9 31 0 37E-12
+*C10 30 0 12.2E-12
+*C11 33 0 9E-12
+*C13 29 0 2.2E-12
+*E11 27 28 25 0 4
+*E12 29 27 24 0 4
+*E18 43 0 29 0 0.99825
+* END 5V GROUP
+* END NOTES AND ADJUSTABLE VALUES
+*
+Q17 4 9 10 QOP
+Q21 8 11 10 QON
+D5 1 8 DD
+D6 4 1 DD
+D7 12 0 DIN
+D8 13 0 DIN
+I8 0 12 0.1E-3
+I9 0 13 0.1E-3
+E2 14 0 4 0 1
+E3 15 0 8 0 1
+D9 16 0 DVN
+D10 17 0 DVN
+I10 0 16 0.1E-3
+I11 0 17 0.1E-3
+E4 18 19 16 17 2.7
+G2 51 18 12 13 4.35E-3
+R22 4 8 25E3
+E5 20 0 15 0 1
+E6 21 0 14 0 1
+E7 22 0 23 0 1
+R30 20 24 1E6
+R31 21 25 1E6
+R32 22 26 1E6
+R33 0 24 100
+R34 0 25 100
+R35 0 26 100
+R36 18 23 1E9
+R37 23 51 1E9
+C6 20 24 1E-12
+C7 21 25 1E-12
+C8 22 26 1E-12
+Q22 14 30 11 QDP
+Q23 15 30 9 QDN
+I12 8 4 0.32E-3
+I13 15 11 2E-3
+I14 9 14 2E-3
+R38 0 31 10
+R39 0 30 10
+E15 32 33 34 0 1
+E16 33 35 34 0 1
+E17 36 0 33 0 1
+D11 37 15 DD
+D12 14 38 DD
+V11 35 38 1.35
+V12 37 32 1.35
+I15 0 39 1M
+D13 39 0 DD
+V13 34 39 -0.71465
+D14 40 41 DD
+D15 41 42 DD
+R40 41 33 155
+R41 0 41 160E3
+F1 41 0 V14 -0.7
+R42 43 44 110
+E19 45 0 18 0 0.999
+C12 18 0 0.25E-15
+V14 44 46 0
+R43 10 47 7
+G3 31 0 33 0 0.1
+G4 30 0 31 0 0.1
+C14 10 0 2E-12
+L1 47 1 4E-9
+R45 47 1 40
+E20 40 36 34 0 1
+E21 42 36 34 0 -1
+L2 45 46 5E-9
+R47 45 46 400
+E10 28 51 26 0 0.01
+C24 19 48 0.15E-12
+C26 18 29 0.9E-12
+R74 48 1 150
+V15 15 49 1
+V16 50 14 1
+D16 18 49 DV
+D17 50 18 DV
+D18 51 49 DV
+D19 50 51 DV
+I16 0 51 1.3E-6
+R76 0 34 1E9
+R77 27 29 1E9
+R78 28 27 1E9
+R79 51 28 1E9
+R80 19 18 1E9
+R81 35 33 1E9
+R82 33 32 1E9
+V17 51 3 0.1E-3
+.MODEL QDP PNP
+.MODEL QDN NPN
+.MODEL DD D
+.MODEL DV D RS=10E3
+.MODEL DVN D KF=2.5E-16
+.MODEL DIN D KF=8E-17
+.MODEL QON NPN VAF=150 BF=200 IKF=0.5 RE=1 RC=1
+.MODEL QOP PNP VAF=150 BF=200 IKF=0.5 RE=1 RC=1
+.ENDS
+* END SPICE MODEL LMH6718

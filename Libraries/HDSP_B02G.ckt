@@ -1,0 +1,63 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  5-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-B02G  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-e
+*                 |  cathode-d
+*                 |  |  cathode-DP
+*                 |  |  |  cathode-c
+*                 |  |  |  |  cathode-g
+*                 |  |  |  |  |  common-anode-K4
+*                 |  |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  |  common-anode-K3
+*                 |  |  |  |  |  |  |  |  common-anode-K2
+*                 |  |  |  |  |  |  |  |  |  cathode-f
+*                 |  |  |  |  |  |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  |  |  |  |  |  common-anode-K1
+*                 |  |  |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_B02G 1  2  3  4  5  6  7  8  9  10 11 12
+
+DB1  12  7 dHDSP_B02G
+DC1  12  4 dHDSP_B02G
+
+DA2   9 11 dHDSP_B02G
+DB2   9  7 dHDSP_B02G
+DC2   9  4 dHDSP_B02G
+DD2   9  2 dHDSP_B02G
+DE2   9  1 dHDSP_B02G
+DF2   9 10 dHDSP_B02G
+DG2   9  5 dHDSP_B02G
+DDP2  9  3 dHDSP_B02G
+
+DA3   8 11 dHDSP_B02G
+DB3   8  7 dHDSP_B02G
+DC3   8  4 dHDSP_B02G
+DD3   8  2 dHDSP_B02G
+DE3   8  1 dHDSP_B02G
+DF3   8 10 dHDSP_B02G
+DG3   8  5 dHDSP_B02G
+DDP3  8  3 dHDSP_B02G
+
+DA4   6 11 dHDSP_B02G
+DB4   6  7 dHDSP_B02G
+DC4   6  4 dHDSP_B02G
+DD4   6  2 dHDSP_B02G
+DE4   6  1 dHDSP_B02G
+DF4   6 10 dHDSP_B02G
+DG4   6  5 dHDSP_B02G
+
+.MODEL dHDSP_B02G D
++ (  
++     IS = 3.48036841E-22 
++      N = 1.64316142 
++     RS = 13.66953373 
++     BV = 4.8
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_B02G

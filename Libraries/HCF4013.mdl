@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCF4013: Dual D type Flip-Flop
+.MODEL HCF4013 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4013 {mntymx})

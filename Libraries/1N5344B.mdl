@@ -1,0 +1,5 @@
+*1N5344B
+*Ref: Diodes Incorporated Catalog, 1994
+*8.2V 5W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N5344B D(IS=4.65E-17 RS=1.33 TT=5.01E-8 CJO=4.64E-10 VJ=0.75 
++ M=0.33 BV=8.001 IBV=0.152 )

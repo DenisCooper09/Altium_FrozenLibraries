@@ -1,0 +1,6 @@
+*1N4737
+*Ref: Motorola
+*7.5V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4737 D(IS=9.33E-16 RS=1.23 TT=5.01E-8 CJO=1.06E-10 VJ=0.75 
++ M=0.33 BV=7.461 IBV=0.034 )
+* Origin: Mcediode.lib

@@ -1,0 +1,163 @@
+*///////////////////////////////////////////////////////////////////
+* LT1639  1.2MHz, 0.4V/µs Over-The-Top™ Micropower                //
+*         Rail-to-Rail Input and Output Operational Amplifier     //
+*///////////////////////////////////////////////////////////////////
+* jjt 7/1/2002: converted temp. coeff. to Spice3 syntax.
+*
+*
+* connections:     non-inverting input
+*                  |   inverting input
+*                  |   |   positive power supply
+*                  |   |   |   negative power supply
+*                  |   |   |   |   output
+*                  |   |   |   |   |
+*                  |   |   |   |   |
+.SUBCKT LT1639     3   2   4   11  1
+XOP1 3 2 4 11 1 LT1639_MD
+.ENDS LT1639
+*
+***
+*
+.SUBCKT LT1639_MD  1 2 3 4 5 
+*
+* input range / phase reversal protection
+RIP1 1 111 1.0000e+003
+RIP2 2 112 1.0000e+003
+DIP1 4 111 DX
+DIP2 4 112 DX
+*
+* bias current
+IBP 303 0 DC -2.0E-08 
+
+*RBP 303 0 1E6 TC=-1.6154E-02 
+RBP 303 0 1E6 RBPMOD
+.MODEL RBPMOD R (TC1=-1.6154E-02)
+
+
+IBN 304 0 DC -2.1E-08 
+
+*RBN 304 0 1E6 TC=-1.4615E-02
+RBN 304 0 1E6 RBNMOD
+.MODEL RBNMOD R (TC1=-1.4615E-02)
+
+GCV1 0 306 POLY(3) 3 0 1 0 2 0 -0.75E-4 1.0E-4 -0.5E-4 -0.5E-4 
+RCV1 306 0 1.0E5 
+DCV1 307 306 DX 
+DCV2 308 307 DX 
+VCV1 308 0 DC -0.35 
+RCV2 307 0 1.0E5 
+GCV2 0 309 POLY(3) 3 0 1 0 2 0 -0.1E-4 1.0E-4 -0.5E-4 -0.5E-4 
+RCV3 309 0 1.0E5 
+DCV3 310 309 DX 
+DCV4 311 310 DX 
+VCV2 311 0 DC -0.35 
+RCV4 310 0 1.0E5 
+GBP 1 99 POLY(3) 303 0 307 0 310 0 0.0 1.0E-6 60.0E-9 6.2E-6 
+GBN 2 99 POLY(3) 304 0 307 0 310 0 0.0 1.0E-6 68.0E-9 8.2E-6 
+*
+* offset voltage
+
+*ROFF1 301 0 1.000e+00 TC=-2.0000e-06
+ROFF1 301 0 1.000e+00 ROFF1MOD
+.MODEL ROFF1 R (TC1=-2.0000e-06)
+
+ROFF2 302 0 1.00018e+00 
+IOFF1 0 301 DC 1 
+IOFF2 0 302 DC 1 
+EOFF  114 112 301 302 1 
+ROFF3 114 112 1.0000e+09 
+*
+* common mode rejection
+GCM1 0 20 POLY(2) 111 0 112 0 0 5.0000e-04 5.0000e-04 
+RCM1 21 0 1.000000e+03 
+RCM2 20 0 1.0000e+06 
+LCM 20 21 4.3213e-002
+ECM 113 111 20 0 1.2589e-005
+RCM3 113 111 1E12 
+*
+* noise voltage
+GR 99 60 605 606 1.4747e+000
+IR1 0 605 DC 1
+IR2 0 606 DC 1
+DR1 605 0 DR
+DR2 606 0 DR
+*
+* input stage 
+CIN 111 112 4.3e-12 
+RDIFF 111 112 2.5e+6
+GIN 99 10 113 114 0.05024
+RCC 10 99 1.9903e+003
+*C1 10 99 7.98e-11
+C1 10 99 7.66e-11
+DSRP 10 11 DX 
+VSRP 11 99 DC 6.8
+DSRN 12 10 DX 
+VSRN 12 99 DC -5.1
+GA 60 99 10 99 1.538e-5 
+*
+* frequency shaper
+RP1 601 99 6.6667e+003
+CP1 60 601 4.7746e-011
+RP11 60 99 1.0000e+004
+GP1 99 6 60 99 1.0000e-004
+*
+* output stage
+R2 6 99 1.0000e+003
+C2 6 7 2.2368e-010
+GB 7 99 6 99 1.1372e+004
+R01 7 99 8.6900e+001
+R02 7 50 1.0000e-001
+R03 50 51 6.4533e+001
+R04 51 500 2.3467e+001
+*
+* switch output to high impedance when
+* VDD is switched off
+
+*SOUT 500 5 3 4  SHDN
+*jg, 3/7/2000: corrected syntax error
+
+SOUT 500 5 3 4  SW
+*
+R05 5 99 5.9379e+009
+DOP 50 51 DOUT
+DON 51 50 DOUT
+VC 53 50 DC 1.0306e+000
+VE 54 50 DC -1.0092e+000
+DC1 53 55 DX
+DC2 55 56 DX
+DE1 57 54 DX
+DE2 58 57 DX
+GVC1 3 56 3 56 1.0E-4
+GVE1 4 58 4 58 1.0E-4
+GVC2 3 55 3 55 1.0E-5
+GVE2 4 57 4 57 1.0E-5
+GVLP 99 60 56 3 1.0000e+000
+GVLN 99 60 58 4 1.0000e+000
+ECLP 91 0 7 50 4.0000e+002
+ECLN 92 0 7 50 4.0000e+002
+DCLP 91 90 DX
+DCLN 90 92 DX
+VLIM 90 0 DC 0
+FB 7 99 VLIM 2.1900e+001
+*
+* supply characteristic
+EGND 99 0 POLY(2) 3 0 4 0 0 0.5 0.5
+DSUB 4 3 DX
+IP 3 4 DC 1.7e-004
+*
+GV 31 0 7 50 1.0000e+001
+DP1 3 31 DX
+DP2 33 4 DX
+RGV 32 33 9.7531
+EGV 31 32 POLY(1) 3 4 -0.8 1.0
+*
+.MODEL DX D (IS=8.2592e-016 RS=0 XTI=0)
+.MODEL DR D (IS=8.2592e-016 KF=3.6798e-018 RS=0 XTI=0)
+.MODEL DOUT D (IS=9.0917e-007 RS=0 XTI=0)
+*.MODEL SHDN VSWITCH (RON=0.1 ROFF=1.0E9 VON=2.4 VOFF=2.2)
+*jg, 3/7/2000: corrected syntax model
+
+.MODEL SW SW(RON=0.1 ROFF=1.0E9 VT=2.4 VH=2.2)
+.ENDS LT1639_MD
+*
+***

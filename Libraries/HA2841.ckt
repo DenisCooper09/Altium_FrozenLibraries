@@ -1,0 +1,85 @@
+*  HA-2841
+*  COPYRIGHT (C) 1991 HARRIS CORPORATION
+*  ALL RIGHTS RESERVED
+*
+*  HA-2841 MacroModel
+*  Rev: 4-22-91  DW Riemer
+*
+* Connections:
+*               Non-Inverting Input
+*               | Inverting Input
+*               | | Positive Power Supply
+*               | | | Negative Power Supply
+*               | | | | Output
+*               | | | | |
+.SUBCKT HA2841  1 2 4 5 3
+.MODEL DP D  IS=1E-14  N=1.7623E+01
+.MODEL DN D  IS=7.7329E-15    N=1.7623E+01
+.MODEL DV D  IS=1.0269E-15  N=.2
+.MODEL D1 D  IS=1E-9  N=1
+.MODEL D2 D  IS=1E-9  N=9.8971E-01
+.MODEL DX D  IS=1E-20  N=30.0
+*
+*                      Input Stage
+*  Value of source VN models VIO and may be adjusted as desired.
+*
+VP 1 6 0
+VN 2 7 1.30E-03
+I1 8 0 7.9798E-06
+FA 2 0 VN 5.8055E-01
+DP 6 8 DP
+DN 7 8 DN
+C1 8 0 3.1293E-15     IC=-9.02199
+FP 9 0 VP  7.0303E+02
+FN 0 9 VN  9.0914E+02
+GC 0 9 8 0 4.4083E-07
+GPP 9 0 4 0 4.4814E-07
+GPN 9 0 5 0 4.3562E-07
+IRX 0 9 4.16498E-06
+RT 9 0 1.0
+*
+*                 Poles and Zeros
+ECP 10 0 9 0 1.0
+RCP 10 11 8.8417E+02
+LCP 11 12 3.1272E-06
+CCP 12 13 1E-12
+RXP 12 13 1E+07
+VCP 13 0 0.0
+FCZ 0 14 VCP  1.0
+RCZ 14 15 7.7951E+02
+LCZ 15 16 2.6374E-06
+CCZ 16 0 1E-12
+RXZ 16 0 1E+07
+EP1 17 0 14 0 1.0
+RP1 17 18 +3.184
+CP1 18 0 1E-10
+EP2 19 0 18 0 1.0
+RP2 19 20 +3.0615
+CP2 20 0 1E-10
+EP3 21 0 20 0 1.0
+RP3 21 22 +2.6533
+CP3 22 0 1E-10
+*
+*                 Output Stage
+G2 0 23 22 0 1.0
+R2 23 0 6.5577E+02
+CC 23 24 2.2000E-11
+GOL 24 0 23 0 2.2332E+01
+RD 24 0 2.7100E+02
+DH 24 25 DV
+DL 26 24 DV
+*ECC 25 0 POLY 1  4 0 -3.7708  1.0
+BECC 25 0 V=-3.7708+1.0*v(4,0)
+*EEE 26 0 POLY 1  5 0 +2.7237  1.0
+BEEE 26 0 V=2.7237+1.0*v(5,0)
+IH 4 0 9.79497E-03
+IL 0 5 9.8050E-03
+GPS 27 0 24 3 4.0000E-02
+DPH 4 27 DX
+DPL 27 5 DX
+D1 24 28 D1
+D2 28 24 D2
+*EX1 28 0 POLY 2  24 0 3 0 0.0   5.9483E-01   3.9758E-01
+BEX1 28 0 V=5.9483E-01*v(24,0)+3.9758E-01*v(3,0)
+RO 24 3 +25.0
+.ENDS HA2841

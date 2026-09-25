@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-4133  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 a
+*                 |  f
+*                 |  |  common-cathode 
+*                 |  |  |  e
+*                 |  |  |  |  d
+*                 |  |  |  |  |  DP
+*                 |  |  |  |  |  |  c
+*                 |  |  |  |  |  |  |  g
+*                 |  |  |  |  |  |  |  |  b
+*                 |  |  |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_4133 1  2  3  7  8  9  10 11 13 14
+
+DA1   1  3 dHDSP_4133
+DB1  13  3 dHDSP_4133
+DC1  10  3 dHDSP_4133
+DD1   8  3 dHDSP_4133
+DE1   7  3 dHDSP_4133
+DF1   2  3 dHDSP_4133
+DG1  11  3 dHDSP_4133
+DDP1  9  3 dHDSP_4133
+
+DA2   1 14 dHDSP_4133
+DB2  13 14 dHDSP_4133
+DC2  10 14 dHDSP_4133
+DD2   8 14 dHDSP_4133
+DE2   7 14 dHDSP_4133
+DF2   2 14 dHDSP_4133
+DG2  11 14 dHDSP_4133
+DDP2  9 14 dHDSP_4133
+
+.MODEL dHDSP_4133 D
++ (  
++     IS = 8.07922028E-13 
++      N = 3.08151986 
++     RS = 5.65168121 
++     BV = 2.25
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_4133

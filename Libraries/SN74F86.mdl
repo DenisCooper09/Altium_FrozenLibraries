@@ -1,0 +1,4 @@
+*Texas Instruments
+*SN74F86: FAST Qaud 2-input XOR
+.MODEL SN74F86 xsimcode(file="{MODEL_PATH}FAST.SCB" func=f86 {mntymx})
+

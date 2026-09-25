@@ -1,0 +1,39 @@
+*EL2002 Macromodel 
+* Connections:          +input
+*                       |   output
+*                       |   |   +Vsupply
+*                       |   |   |   -Vsupply
+*                       |   |   |   |  
+.subckt EL2002          2   7   1   4  
+*
+* Input Stage 
+*
+e1 10 0 2 0 1.0
+r1 10 0 1K  
+rh 10 11 150  
+ch 11 0 2pF    
+rc 11 12 100
+cc 12 0 3pF
+e2 13 0 12 0 1.0
+*
+* Output Stage 
+*
+q1 4 13 14 qp  
+q2 1 13 15 qn 
+q3 1 14 16 qn  
+q4 4 15 19 qp 
+r2 16 7 1 
+r3 19 7 1 
+i1 1 14 2mA
+i2 15 4 2mA
+*
+* Bias Current
+*
+iin+ 2 0 3uA 
+*
+* Models
+*
+.model qn npn(is=5e-15 bf=150 rb=200 ptf=45 tf=0.1nS)
+.model qp pnp(is=5e-15 bf=150 rb=200 ptf=45 tf=0.1nS)
+*
+.ends

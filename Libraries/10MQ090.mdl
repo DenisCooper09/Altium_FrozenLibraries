@@ -1,0 +1,5 @@
+*10MQ090 MCE 3/26/98
+*Ref: IR Power Semiconductors Product Digest '94
+*MCE 90V .77A 3us pkg:D0213AA/KA 2,1
+.MODEL 10MQ090 D (IS=1.09N RS=54.5M N=1.7 BV=90 IBV=5M
++ CJO=33P VJ=0.75 M=0.333 TT=4.32U EG=.69 XTI=2)

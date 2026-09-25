@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  6-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-5501  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-e
+*                 |  cathode-d
+*                 |  |  common-anode
+*                 |  |  |  cathode-c
+*                 |  |  |  |  cathode-DP
+*                 |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  cathode-f
+*                 |  |  |  |  |  |  |  |  |  cathode-g
+*                 |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_5501 1  2  3  4  5  6  7  8  9  10
+
+DA1  3  7 dHDSP_5501
+DB1  3  6 dHDSP_5501
+DC1  3  4 dHDSP_5501
+DD1  3  2 dHDSP_5501
+DE1  3  1 dHDSP_5501
+DF1  3  9 dHDSP_5501
+DG1  3 10 dHDSP_5501
+DDP1 3  5 dHDSP_5501
+
+DA2  8  7 dHDSP_5501
+DB2  8  6 dHDSP_5501
+DC2  8  4 dHDSP_5501
+DD2  8  2 dHDSP_5501
+DE2  8  1 dHDSP_5501
+DF2  8  9 dHDSP_5501
+DG2  8 10 dHDSP_5501
+DDP2 8  5 dHDSP_5501
+
+.MODEL dHDSP_5501 D
++ (  
++     IS = 3.78006861E-14 
++      N = 2.44553183 
++     RS = 19.51958310 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_5501

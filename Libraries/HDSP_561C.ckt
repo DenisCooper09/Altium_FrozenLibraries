@@ -1,0 +1,51 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  11-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-561C  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 cathode-e
+*                 |  cathode-d
+*                 |  |  common-anode
+*                 |  |  |  cathode-c
+*                 |  |  |  |  cathode-DP
+*                 |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  cathode-f
+*                 |  |  |  |  |  |  |  |  |  cathode-g
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_561C 1  2  3  4  5  6  7  8  9  10
+
+DA1  3  7 dHDSP_561C
+DB1  3  6 dHDSP_561C
+DC1  3  4 dHDSP_561C
+DD1  3  2 dHDSP_561C
+DE1  3  1 dHDSP_561C
+DF1  3  9 dHDSP_561C
+DG1  3 10 dHDSP_561C
+DDP1 3  5 dHDSP_561C
+
+DA2  8  7 dHDSP_561C
+DB2  8  6 dHDSP_561C
+DC2  8  4 dHDSP_561C
+DD2  8  2 dHDSP_561C
+DE2  8  1 dHDSP_561C
+DF2  8  9 dHDSP_561C
+DG2  8 10 dHDSP_561C
+DDP2 8  5 dHDSP_561C
+
+ 
+.MODEL dHDSP_561C D
++ (  
++    IS = 2.34165185E-18 
++     N = 1.64080796 
++    RS = 5.35791037 
++    BV = 4.5
++   IBV = 100u
++ )  
+
+.ENDS HDSP_561C

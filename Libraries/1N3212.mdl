@@ -1,0 +1,7 @@
+*1N3212 MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*400V 15000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 1N3212 D (IS=21.3N RS=2.8M N=1.7 BV=400 IBV=330U
++ CJO=618P VJ=0.75 M=0.333 TT=4.32U)
+
+

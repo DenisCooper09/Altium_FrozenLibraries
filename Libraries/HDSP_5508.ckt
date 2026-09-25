@@ -1,0 +1,45 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  6-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-5508  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 anode-c
+*                 |  cathode-c, d
+*                 |  |  anode-b
+*                 |  |  |  cathode-a, b, DP
+*                 |  |  |  |  anode-DP
+*                 |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  cathode-a, b, DP
+*                 |  |  |  |  |  |  |  cathode-c, d
+*                 |  |  |  |  |  |  |  |  anode-d
+*                 |  |  |  |  |  |  |  |  |  
+.SUBCKT HDSP_5508 1  2  3  4  5  6  7  8  9
+
+DA1   6  4 dHDSP_5508
+DB1   3  4 dHDSP_5508
+DDP1  5  4 dHDSP_5508
+
+DA2   6  7 dHDSP_5508
+DB2   3  7 dHDSP_5508
+DDP2  5  7 dHDSP_5508
+
+DC1   1  2 dHDSP_5508
+DD1   9  2 dHDSP_5508
+
+DC2   1  8 dHDSP_5508
+DD2   9  8 dHDSP_5508
+
+.MODEL dHDSP_5508 D
++ (  
++     IS = 3.78006861E-14 
++      N = 2.44553183 
++     RS = 19.51958310 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_5508

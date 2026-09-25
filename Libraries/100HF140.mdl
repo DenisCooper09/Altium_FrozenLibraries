@@ -1,0 +1,7 @@
+*100HF140PV MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*1400V 100000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 100HF140 D (IS=142N RS=420U N=1.7 BV=1.4K IBV=7687U
++ CJO=4.11N VJ=0.75 M=0.333 TT=4.32U)
+
+

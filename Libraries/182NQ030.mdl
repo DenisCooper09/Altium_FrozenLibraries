@@ -1,0 +1,7 @@
+*182NQ030 MCE 3/30/98
+*Ref: IR Power Semiconductors Product Digest '94
+*MCE 30V 180A 3us pkg:Diode0.7 1,2
+.MODEL 182NQ030 D (IS=256N RS=233U N=1.7 BV=30 IBV=0.84
++ CJO=7.4N VJ=0.75 M=0.333 TT=4.32U EG=.69 XTI=2)
+
+

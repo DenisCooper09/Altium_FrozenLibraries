@@ -1,0 +1,39 @@
+*EL2082 Marcromodel
+* Connections :    Vgain
+*                    |   Iin       
+*                    |    |   Vin
+*                    |    |    |
+*                    |    |    |   Iout
+*                    |    |    |    |
+.subckt EL2082       1    2    3    6
+*
+* Capacitors & Inductors 
+*
+cini 2 0 2pF
+c500 502 0 0.9845pF
+c501 505 0 1000pF
+cout 6 0 5pF
+l501 503 504 0.1uH
+*
+* Resistors
+*
+rsilly1 1 0 1e9
+rsilly2 505 0 1e9
+rini 2 500 95
+rinv 3 0 2Meg
+rout 6 0 1Meg
+r500 501 502 1K
+r501 504 505 5
+r502 506 507 50
+r503 508 0 50
+*
+* Active Elements
+*
+e500 500 0 3 0 1.0
+e501 501 0 poly(1) (2,500) 0 2 0 -0.8 
+e502 503 0 poly(1) (1,0) 0 1.05 -0.05
+e503 506 0 poly(2) (505,0) (502,0) 0 0 0 0 1
+g500 6 0 508 0 -0.0105
+t500 508 0 507 0 zo=50 td=1.95nS
+*
+.ends

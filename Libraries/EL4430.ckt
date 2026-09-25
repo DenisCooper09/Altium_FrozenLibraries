@@ -1,0 +1,70 @@
+* EL4430 Macromodel
+*  Revision A, May 1995
+*  This is a Pspice-compatible macromodel of the EL4430 video instrumentation 
+*  amplifier assembled as a subcircuit.  The pins are numbered sequentially 
+*  as the subcircuit interface nodes.  T1 is a transmission line which
+*provides 
+*  a good emulation of the more complicated real device.  This model correctly 
+*  displays the characteristics of input clipping, frequency response, CMRR
+*  both AC and DC, output clipping, output sensitivity to capacitive loads,
+*  gain accuracy, slewrate limiting, input bias current and impedance.  The
+*  macromodel does not exibit proper results with respect to supply current,
+*  supply sensitivities, offsets, output current limit, differential gain or
+*  phase, nor temperature.
+*  Connections:           IN+
+*                         |   VIN-
+*                         |   |   V-
+*                         |   |   |   V+
+*                         |   |   |   |   VFB
+*                         |   |   |   |   |   VREF
+*                         |   |   |   |   |   |   VOUT
+*                         |   |   |   |   |   |   |   GND
+*                         |   |   |   |   |   |   |   |
+.SUBCKT EL4430            3   4   2   7   6   5   8   1
+***
+*** EL4430 macromodel ***
+***
+******
+i1 7 10 .00103
+i2 7 11 .00103
+i3 7 12 .00105
+i4 7 13 .00105
+v1 7 14 3
+v2 7 15 3
+v3 19 2 3
+******
+c1 11 1 .03p
+c2 12 1 .03p
+c3 18 1 2.1p
+c4 16 17 0.6p
+******
+r1 10 11 2000
+r2 12 13 2000
+r3 10 1 30e6
+r4 16 2 1000
+r5 17 2 1000
+r6 18 1 1.27e6
+r7 23 21 20
+r8 21 8 100
+******
+l1 21 8 50n
+******
+d1 11 14 diode
+d2 12 14 diode
+d3 18 15 diode
+d4 19 18 diode
+.model diode d(tt=120n)
+******
+q1 16 3 10 1 pnp
+q2 17 4 11 1 pnp
+q3 16 5 12 1 pnp
+q4 17 6 13 1 pnp
+.model pnp pnp (bf=90 va=44 tr=50n)
+******
+g1 18 1 17 16 .0005
+e1 20 1 1 18 1.0
+t1 22 1 20 1 z0=50 td=1.5n
+rlt1 22 1 50
+e2 23 1 22 1 1.0
+******
+.ENDS

@@ -1,0 +1,58 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-523G  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 E-anode-1
+*                 |  D-anode-1
+*                 |  |  C-anode-1
+*                 |  |  |  DP-anode-1
+*                 |  |  |  |  E-anode-2
+*                 |  |  |  |  |  D-anode-2
+*                 |  |  |  |  |  |  G-anode-2
+*                 |  |  |  |  |  |  |  C-anode-2
+*                 |  |  |  |  |  |  |  |  DP-anode-2
+*                 |  |  |  |  |  |  |  |  |  B-anode-2
+*                 |  |  |  |  |  |  |  |  |  |  A-anode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  F-anode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  common-cathode-2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  common-cathode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  B-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  A-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  G-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  F-anode-1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_523G 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18
+
+DA1  16 14 dHDSP_523G
+DB1  15 14 dHDSP_523G
+DC1   3 14 dHDSP_523G
+DD1   2 14 dHDSP_523G
+DE1   1 14 dHDSP_523G
+DF1  18 14 dHDSP_523G
+DG1  17 14 dHDSP_523G
+DDP1  4 14 dHDSP_523G
+
+DA2  11 13 dHDSP_523G
+DB2  10 13 dHDSP_523G
+DC2   8 13 dHDSP_523G
+DD2   6 13 dHDSP_523G
+DE2   5 13 dHDSP_523G
+DF2  12 13 dHDSP_523G
+DG2   7 13 dHDSP_523G
+DDP2  9 13 dHDSP_523G
+
+.MODEL dHDSP_523G D
++ (  
++     IS = 1.61114016E-27 
++      N = 1.30291189 
++     RS = 12.83456794 
++     BV = 50 
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_523G

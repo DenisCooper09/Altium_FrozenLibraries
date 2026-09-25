@@ -1,0 +1,17 @@
+*PHILIPS SEMICONDUCTORS        Version: 1.0
+*Filename: PMBFJ177.PRM      Date: sep 1992
+*
+.MODEL  PMBFJ177   PJF
++(
++             VTO = -1.8000E+000
++            BETA = 3.37432E-003
++          LAMBDA = 2.41676E-002
++              RD = 1.45880E+000
++              RS = 1.45880E+000
++              IS = 7.27555E-016
++            CGS  = 8.90000E-012
++            CGD  = 1.02500E-011
++              PB = 6.94243E-001
++              FC = 5.00000E-001
++)
+*Parameter with default value: FC

@@ -1,0 +1,5 @@
+*1N5371B
+*Ref: Diodes Incorporated Catalog, 1994
+*60V 5W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N5371B D(IS=1.65E-10 RS=38.7 TT=5.01E-8 CJO=9.42E-11 M=0.33 
++ BV=59.25 IBV=0.02 )

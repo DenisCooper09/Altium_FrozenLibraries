@@ -1,0 +1,7 @@
+*50WQ10F MCE 3/26/98
+*Ref: IR Power Semiconductors Product Digest '94
+*MCE 100V 5.5A 3us pkg:DPAK 3,2
+.MODEL 50WQ10F D (IS=7.82N RS=7.64M N=1.7 BV=100 IBV=3M
++ CJO=227P VJ=0.75 M=0.333 TT=4.32U EG=.69 XTI=2)
+
+

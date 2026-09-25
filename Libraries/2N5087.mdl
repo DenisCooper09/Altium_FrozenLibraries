@@ -1,0 +1,7 @@
+* SPICE model from datasheet dated 1997
+* jjt 29/5/2000: copied straight from .pdf into .txt file, with +s added
+
+.MODEL 2N5087 PNP (IS=6.734F XTI=3 EG=1.11 VAF=45.7 
++ BF=254.1 NE=1.741 ISE=6.734F IKF=.1962 XTB=1.5 BR=2.683 NC=2
++ ISC=0 IKR=0 RC=1.67 CJC=6.2P MJC=.301 VJC=.75 FC=.5 CJE=7.5P 
++ MJE=.2861 VJE=.75 TR=10.1N TF=467.8P ITF=.17 VTF=5 XTF=8 RB=10)

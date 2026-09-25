@@ -1,0 +1,17 @@
+*PHILIPS SEMICONDUCTORS        Version: 1.0
+*Filename: J110.PRM          Date: sep 1992
+*
+.MODEL  J110   NJF
++(
++             VTO = -2.7780E+000
++            BETA = 1.20784E-002
++          LAMBDA = 1.74601E-001
++              RD = 1.03157E+000
++              RS = 1.03157E+000
++              IS = 4.42809E-015
++            CGS  = 2.80000E-011
++            CGD  = 3.80000E-011
++              PB = 4.64070E-001
++              FC = 5.00000E-001
++)
+*Parameter with default value: FC

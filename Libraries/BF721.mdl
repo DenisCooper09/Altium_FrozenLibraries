@@ -1,0 +1,11 @@
+.MODEL BF721 PNP(
++       AF= 1.00E+00    BF= 1.40E+02    BR= 1.00E-02   CJC= 1.65E-11
++      CJE= 4.20E-11   CJS= 0.00E+00    EG= 1.11E+00    FC= 5.00E-01
++      IKF= 2.41E-02   IKR= 1.00E+00   IRB= 1.10E-02    IS= 5.35E-16
++      ISC= 1.00E-13   ISE= 9.81E-17   ITF= 3.00E+00    KF= 0.00E+00
++      MJC= 7.00E-01   MJE= 4.13E-01   MJS= 3.30E-01    NC= 2.00E+00
++       NE= 1.03E+00    NF= 8.73E-01    NR= 9.84E-01   PTF= 0.00E+00
++       RB= 1.99E+01   RBM= 2.41E-02    RC= 2.22E+00    RE= 1.85E-02
++       TF= 1.11E-09    TR= 0.00E+00   VAF= 1.49E+02   VAR= 9.18E+01
++      VJC= 3.00E-01   VJE= 3.00E-01   VJS= 7.50E-01   VTF= 9.99E+05
++     XCJC= 1.00E+00   XTB= 0.00E+00   XTF= 5.76E+02   XTI= 3.00E+00)

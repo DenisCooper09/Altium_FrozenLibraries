@@ -1,0 +1,96 @@
+*/////////////////////////////////////////////////
+* LT1357  25MHz, 600V/µs Operational Amplifier  //
+*/////////////////////////////////////////////////
+*
+* connections:     non-inverting input
+*                  |   inverting input
+*                  |   |   positive power supply
+*                  |   |   |   negative power supply
+*                  |   |   |   |   output
+*                  |   |   |   |   |
+*                  |   |   |   |   |
+.SUBCKT LT1357     3   2   7   4   6 
+* INPUT
+RC1 7  80 6.3662E+02
+RC2 7  90 6.3662E+02
+Q1  80 2  10 QM1 
+Q2  90 3  11 QM2 
+CIN 2  3  2.0000E-12
+*INPUT POLE AT 150MHZ
+C1  80 90 0.834E-12
+
+*RE1 10 12 +6.2798E+02
+*RE2 11 12 +6.2798E+02
+*jg, 30/6/2000: corrected syntax errors.
+
+RE1 10 12  6.2798E+02
+RE2 11 12  6.2798E+02
+
+IEE 12 4  6.0002E-03
+RE  12 0  3.3332E+04
+* INTERMEDIATE 
+GCM 8  0  12 0  2.2188E-08
+GA  8  0  78 0  1.5708E-03
+R2  8  0  17.4E+06
+C2  8  0  9.6E-12
+DC1 8  7  DM3
+DC2 4  8  DM3
+*
+*POLE AT 150MHZ
+GX1 0  28 90 80 1E-06
+RX1 28 0  1E+06
+CX1 28 0  01.06E-15
+*POLE AT 150MHZ
+GX2 0  38 28 0  1E-06
+RX2 38 0  1E+06
+CX2 38 0  1.06E-15
+*POLE AT 150MHZ
+GX3 0  48 38 0  1E-06
+RX3 48 0  1E+06
+CX3 48 0  1.06E-15  
+*ZERO AT 30MHZ
+GX4 0  58 48 0  1E-06
+RX4 58 59 1E+06
+LX4 59 0  5.31E-03
+*POLE AT 60MHZ
+GX5 0  68 58 0  1E-06
+RX5 68 0 1E+06
+CX5 68 0 2.65E-15
+*POLE AT 150MHZ
+GX6 0  78 68 0  1E-06
+RX6 78 0  1E+06
+CX6 78 0  1.06E-15
+*
+EB  1  0  8  0  1
+RO2 1  6  46
+RF  8  99 2000
+CF  99 6  7.5E-12
+* OUTPUT 
+ECL 18 1  6  1  0.395
+Q3  7  18 8  QM3
+Q4  4  18 8  QM4
+* 
+D3A 131 70 DM3 
+D3B 13 131 DM3 
+GPL 8  0  70 7  1.0000E+00
+VC  13 6  3.2486E+00
+RPLA 7  70 1.0000E+01
+RPLB 7  131 1.0000E+03
+D4A 60 141 DM3 
+D4B 141 14  DM3 
+GNL 8  0  60 4  1.0000E+00
+VE  6  14 3.2486E+00
+RNLA 60 4  1.0000E+01
+RNLB 141 4  1.0000E+03
+* 
+IP  7  4  -.4000E-02
+DSUB 4  7  DM2  
+* MODELS 
+.MODEL QM1 NPN (IS=8.0000E-16 BF=2.1429E+04)
+.MODEL QM2 NPN (IS=8.0463E-16 BF=3.0000E+04)
+.MODEL QM3 NPN (IS=8.0000E-16 BF=100)
+.MODEL QM4 PNP (IS=8.0000E-16 BF=100)
+.MODEL DM1  D   (IS=1.0000E-20)
+.MODEL DM2  D   (IS=8.0000E-16 BV=4.3200E+01)
+.MODEL DM3  D   (IS=1.0000E-16)
+.ENDS LT1357

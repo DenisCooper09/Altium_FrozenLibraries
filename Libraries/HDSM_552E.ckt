@@ -1,0 +1,94 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  6-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSM-552E  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 a(5&7)/CLEAN1
+*                 |  b(5&7)/CLEAN2
+*                 |  |  c(5&7)/BAKE1
+*                 |  |  |  d(5&7)/BAKE2
+*                 |  |  |  |  e(5&7)/ON
+*                 |  |  |  |  |  f(5&7)/-
+*                 |  |  |  |  |  |  g(5&7)/-
+*                 |  |  |  |  |  |  |  a6/PROBE1/-
+*                 |  |  |  |  |  |  |  |  b6/PROBE2/-
+*                 |  |  |  |  |  |  |  |  |  c6/DELAY1/-
+*                 |  |  |  |  |  |  |  |  |  |  d6/DELAY2/-
+*                 |  |  |  |  |  |  |  |  |  |  |  e6/BROIL1/-
+*                 |  |  |  |  |  |  |  |  |  |  |  |  f6/BROIL2/-
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  g6/CONV1/-
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  SET1/CONV2/-
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  SET2/O/-
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  K1
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  K2
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  K3 
+*                 |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSM_552E 1  2  3  4  5  6  7  8  9  10 11 12 13 14 15 16 17 18 19
+
+D1   1 19 dHDSM_552E
+D2   1 18 dHDSM_552E
+D3   1 17 dHDSM_552E
+
+D4   2 19 dHDSM_552E
+D5   2 18 dHDSM_552E
+D6   2 17 dHDSM_552E
+
+D7   3 19 dHDSM_552E
+D8   3 18 dHDSM_552E
+D9   3 17 dHDSM_552E
+
+D10  4 19 dHDSM_552E
+D11  4 18 dHDSM_552E
+D12  4 17 dHDSM_552E
+
+D13  5 19 dHDSM_552E
+D14  5 18 dHDSM_552E
+D15  5 17 dHDSM_552E
+
+D16  6 19 dHDSM_552E
+D17  6 18 dHDSM_552E
+
+D18  7 19 dHDSM_552E
+D19  7 18 dHDSM_552E
+
+D20  8 19 dHDSM_552E
+D21  8 18 dHDSM_552E
+
+D22  9 19 dHDSM_552E
+D23  9 18 dHDSM_552E
+
+D24 10 19 dHDSM_552E
+D25 10 18 dHDSM_552E
+
+D26 11 19 dHDSM_552E
+D27 11 18 dHDSM_552E
+
+D28 12 19 dHDSM_552E
+D29 12 18 dHDSM_552E
+
+D30 13 19 dHDSM_552E
+D31 13 18 dHDSM_552E
+
+D32 14 19 dHDSM_552E
+D33 14 18 dHDSM_552E
+
+D34 15 19 dHDSM_552E
+D35 15 18 dHDSM_552E
+
+D36 16 19 dHDSM_552E
+D37 16 18 dHDSM_552E
+
+.MODEL dHDSM_552E D
++ (  
++     IS = 1.90184053E-20 
++      N = 1.70867152 
++     RS = 10.06223730 
++     BV = 4.8
++    IBV = 100u 
++ )  
+
+.ENDS HDSM_552E

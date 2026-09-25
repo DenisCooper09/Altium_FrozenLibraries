@@ -1,0 +1,32 @@
+* Agl_HSMFC155 LED Model Green/Red Bi-Colour LED
+* Created by Shaun Quin 03-06-2002
+*Typ Green: Vf=2.2V Vr=5V If=20mA 
+*Typ Red LED: Vf=2.1V Vr=5V If=20mA 
+*	       	    Green LED Anode
+*	        	    |  Green LED Cathode
+*	       	    |  |  Red LED Anode
+*	        	    |  |  |  Red LED Cathode
+*	       	    |  |  |  |
+*           	   A1 K1 A2 K2
+.subckt Agl_HSMFC155 1  2  3  4
+
+D_Green 1 2 Agl_HSMGC110
+D_Red   3 4 Agl_HSMSC110
+
+.MODEL Agl_HSMGC110 D (IS=513.7n RS=89.63 N=1.5 BV=5 IBV=100U
++ CJO=9P VJ=.75 M=.333 TT=4.32U)
+
+.MODEL Agl_HSMSC110 D (IS=513.7n RS=84.63 N=1.5 BV=5 IBV=100U
++ CJO=5P VJ=.75 M=.333 TT=4.32U)
+
+*Temperature and Noise Effects are not Modelled
+
+.ends Agl_HSMFC155
+
+
+
+
+
+
+
+

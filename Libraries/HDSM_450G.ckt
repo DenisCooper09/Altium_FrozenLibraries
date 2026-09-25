@@ -1,0 +1,56 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  11-Mar-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSM-450G  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*
+*                 A1
+*                 |  e/HRS1
+*                 |  |  c/MINS1
+*                 |  |  |  d/MINS2
+*                 |  |  |  |  A2
+*                 |  |  |  |  |  A
+*                 |  |  |  |  |  |  g
+*                 |  |  |  |  |  |  |  b/C
+*                 |  |  |  |  |  |  |  |  a/F
+*                 |  |  |  |  |  |  |  |  |  
+*                 |  |  |  |  |  |  |  |  |  f/HRS2
+*                 |  |  |  |  |  |  |  |  |  |
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSM_450G 1  2  3  4  5  7  8  11 12 15
+
+D1  1 12 dHDSM_450G
+D2  1 11 dHDSM_450G
+D3  1  3 dHDSM_450G
+D4  1  4 dHDSM_450G
+D5  1  2 dHDSM_450G
+D6  1 15 dHDSM_450G
+D7  1  8 dHDSM_450G
+D8  5 12 dHDSM_450G
+D9  5 11 dHDSM_450G
+D10 5  3 dHDSM_450G
+D11 5  4 dHDSM_450G
+D12 5  2 dHDSM_450G
+D13 5 15 dHDSM_450G
+D14 5  8 dHDSM_450G
+D15 7 12 dHDSM_450G
+D16 7 11 dHDSM_450G
+D17 7  3 dHDSM_450G
+D18 7  4 dHDSM_450G
+D19 7  2 dHDSM_450G
+D20 7 15 dHDSM_450G
+
+.MODEL dHDSM_450G D
++ (  
++     IS = 6.02519230E-43 
++      N = 0.80350536 
++     RS = 9.92584724 
++     BV = 5.5
++    IBV = 100u 
++ )  
+
+.ENDS HDSM_450G

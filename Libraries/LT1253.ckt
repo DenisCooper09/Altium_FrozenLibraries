@@ -1,0 +1,51 @@
+*/////////////////////////////////////////
+* LT1253  Low Cost Dual Video Amplifier //
+*/////////////////////////////////////////
+*
+* connections:     non-inverting input
+*                  |   inverting input
+*                  |   |   positive power supply
+*                  |   |   |   negative power supply
+*                  |   |   |   |   output
+*                  |   |   |   |   |
+*                  |   |   |   |   |
+.SUBCKT LT1253     3   2   7   4   6
+*
+Q2A 4 3 10 QP 0.5
+Q3A 11 10 200 QN
+Q4A 11 11 7 QP
+RIB 11 7 35K
+Q5A 9 11 7 QP
+Q6A 12 11 7 QP
+Q7A 4 9 12 QP
+Q8A 7 12 13 QN 10
+RSCA 13 6 10
+IBA 7 10 DC 300U
+*
+Q2B 7 3 110 QN 0.5
+Q3B 111 110 200 QP
+Q4B 111 111 4 QN
+*
+Q5B 9 111 4 QN
+Q6B 112 111 4 QN
+Q7B 7 9 112 QN
+Q8B 4 112 113 QP 10
+RSCB 6 113  10
+IBB 110 4 DC 300U
+*
+RC 2 200 20
+R9 9 0 201600
+D1 9 6 DC
+D2 6 9 DC
+*
+.MODEL DC D
+*
+.MODEL QN NPN (IS=200E-18 BF=150 ISC=40E-18 NC=1 RB=250 RE=8 RC=100
++CJE=0.37P VJE=0.65 MJE=0.33 FC=0.7 CJC=0.8P VJC=0.62 MJC=0.44
++TF=300P
+*
+.MODEL QP PNP (IS=170E-18 BF=150 ISC=113E-18 NC=1 RB=250 RE=8 RC=100
++CJE=0.34P VJE=0.75 MJE=0.40 FC=0.7 CJC=0.8P VJC=0.5 MJC=0.36
++TF=300P
+*
+.ENDS LT1253

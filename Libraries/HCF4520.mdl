@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCF4520: Dual 4-bit binary counters
+.MODEL HCF4520 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4520 {mntymx})

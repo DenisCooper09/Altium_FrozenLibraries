@@ -1,0 +1,7 @@
+*16F60 MCE 8/5/97
+*Ref: International Rectifier Digest '94
+*600V 16000mA 3us Si Diode pkg:DIODE0.7 1,2
+.MODEL 16F60 D (IS=22.7N RS=2.62M N=1.7 BV=600 IBV=527U
++ CJO=659P VJ=0.75 M=0.333 TT=4.32U)
+
+

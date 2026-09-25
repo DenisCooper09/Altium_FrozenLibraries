@@ -1,0 +1,62 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  5-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: QDSP_499G  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 common-anode-1
+*                 |  cathode-e
+*                 |  |  cathode-c
+*                 |  |  |  cathode-d
+*                 |  |  |  |  common-anode-2
+*                 |  |  |  |  |  common-anode-3
+*                 |  |  |  |  |  |  cathode-g
+*                 |  |  |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  |  |  |  common-anode-L
+*                 |  |  |  |  |  |  |  |  |  |  cathode-f
+*                 |  |  |  |  |  |  |  |  |  |  |
+*                 |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT QDSP_499G 1  2  3  4  5  7  8  11 12 14 15
+
+DA1   1  12  dQDSP_499G
+DB1   1  11  dQDSP_499G
+DC1   1   3  dQDSP_499G
+DD1   1   4  dQDSP_499G
+DE1   1   2  dQDSP_499G
+DF1   1  15  dQDSP_499G
+DG1   1   8  dQDSP_499G
+
+DL1  14  12  dQDSP_499G
+DL2  14  11  dQDSP_499G
+DL3  14   3  dQDSP_499G
+
+DA2   5  12  dQDSP_499G
+DB2   5  11  dQDSP_499G
+DC2   5   3  dQDSP_499G
+DD2   5   4  dQDSP_499G
+DE2   5   2  dQDSP_499G
+DF2   5  15  dQDSP_499G
+DG2   5   8  dQDSP_499G
+
+DA3   7  12  dQDSP_499G
+DB3   7  11  dQDSP_499G
+DC3   7   3  dQDSP_499G
+DD3   7   4  dQDSP_499G
+DE3   7   2  dQDSP_499G
+DF3   7  15  dQDSP_499G
+DG3   7   8  dQDSP_499G
+
+.MODEL dQDSP_499G D
++ (  
++     IS = 5.45751596E-12 
++      N = 3.47011329 
++     RS = 12.18613587 
++     BV = 4.8 
++    IBV = 100u 
++ )  
+
+.ENDS QDSP_499G

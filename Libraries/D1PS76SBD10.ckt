@@ -1,0 +1,25 @@
+*
+.SUBCKT D1PS76SBD10 1 2
+* The Resistor R1 does not reflect
+* a physical device.  Instead it
+* improves modeling in the reverse
+* mode of operation.
+R1 1 2 2.9E+07
+D1 1 2 SBD
+.MODEL SBD D
++(
++ IS = 2.548E-07
++ N = 1.02
++ BV = 33
++ IBV = 1.251E-06
++ RS = 2.582
++ CJO = 9.92E-12
++ VJ = 0.317
++ M = 0.4411
++ FC = 0.5
++ TT = 0
++ EG = 0.69
++ XTI = 2
++)
+.ENDS
+*

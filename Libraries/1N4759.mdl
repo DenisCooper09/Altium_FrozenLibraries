@@ -1,0 +1,6 @@
+*1N4759
+*Ref: Motorola
+*62V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4759 D(IS=2.67E-9 RS=78.5 TT=5.01E-8 CJO=3.03E-11 M=0.33 
++ BV=61.71 IBV=0.004 )
+* Origin: Mcediode.lib

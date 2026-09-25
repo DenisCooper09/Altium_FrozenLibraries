@@ -1,0 +1,21 @@
+*   ZETEX   FCX458   Spice model   Last revision 19/3/92
+*
+.MODEL FCX458  NPN IS=5.326791E-14 NF=0.992 BF=190 IKF=0.075 
++VAF=1050 ISE=2.1E-14 NE=1.385 NR=1.05 BR=16.3 IKR=1.8 VAR=99
++ISC=6.42E-12 NC=1.25 RB=0.5 RE=0.224 RC=0.134 CJC=8.5E-12  
++MJC=0.3966 VJC=0.4332 CJE=122E-12 TF=1.66E-9 TR=8E-6
+*
+*
+*                          (C)  1992 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agents.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

@@ -1,0 +1,6 @@
+*1N4749
+*Ref: Motorola
+*24V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4749 D(IS=5.71E-12 RS=12.5 TT=5.01E-8 CJO=5.46E-11 M=0.33 
++ BV=23.88 IBV=0.0105 )
+* Origin: Mcediode.lib

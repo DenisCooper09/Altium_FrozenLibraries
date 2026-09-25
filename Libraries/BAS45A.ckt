@@ -1,0 +1,52 @@
+*
+* Diode Sim Model Produced by Altium Ltd
+* Date:  24-Mar-2003
+*
+* Manufacturer: Philips
+* Component Name: BAS45A
+*
+* This macromodel models the effect of carrier recombination-generation
+* and high-level injection on the diode.
+*
+*Note: This macromodel derived from data sheets and pspice models obtained from Philips Semiconductor.
+
+.SUBCKT BAS45A 10 30
+D1 10 20 DIDEAL
+D2 10 20 DRECOMB
+D3 20 30 DHIGH
+
+* Subcircuit models
+.MODEL DIDEAL D
++(
++  IS =  0.000000007
++  N =  2.2707
++  TT =  0.00000175
++  CJO =  2.9332E-12
++  VJ =  0.3905
++  M =  0.24677
++  BV =  225.36
++  IBV =  1.00E+01
++)
+
+.MODEL DHIGH D
++(
++  IS =  19.51398659
++  N =  2.2707
++  RS =  0.001
++)
+
+.MODEL DRECOMB D
++(
++  IS =  1E-09
++  N =  2.270765942
++)
+
+.ENDS BAS45A
+
+
+
+
+
+
+
+

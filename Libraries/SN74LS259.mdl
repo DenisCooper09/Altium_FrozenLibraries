@@ -1,0 +1,4 @@
+*Texas Instruments
+*SN74LS259: 8-Bit Addressable Latch
+.MODEL SN74LS259 xsimcode(file="{MODEL_PATH}LS.SCB" func=ls259 {mntymx})
+

@@ -1,0 +1,124 @@
+*  HA-5102
+*  COPYRIGHT (C) 1991 HARRIS CORPORATION
+*  ALL RIGHTS RESERVED
+*
+* HA-5102 Macro Model
+*
+* Rev: 8/8/91  DL Youngblood
+* The schematic for this rev is the same as 11/03/89.  The subcircuit
+* call is different and only 1 amp is present.
+* pinout changed to conform to "standard"
+*
+* Actual chip Icc/Iee will have 2 amplifiers + 1mA
+*
+* Connections:
+*               Non-Inverting Input
+*               |  Inverting Input
+*               |  |  Positive Power Supply
+*               |  |  |  Negative Power Supply
+*               |  |  |  |   Output
+*               |  |  |  |   |
+.SUBCKT HA5102  6  7  9  10  8
+.MODEL DP D  IS=1E-14  N=9.6204E-01
+.MODEL DN D  IS=1.0012E-14 N=9.6204E-01
+.MODEL DV D  IS=1E-14  N=.1
+.MODEL D1 D  IS=1E-14  N=1
+.MODEL D2 D  IS=1E-14  N=9.8914E-01
+*
+* Input Stage
+*
+VP 6 12 0
+DP 12 1 DP
+*
+* The value of source "VIO" represents offset voltage
+* and may be changed to simulate worst case if desired
+*
+VIO 7 13 2.2845E-04
+*
+DN 13 1 DN
+FA 7 0 VIO 9.7559E-02
+I1 1 0 5.1342E-08
+C1 1 0 2.6360E-16 IC=-3.6478E-01
+FP 4 0 VP  9.7214E+02
+FN 0 4 VIO  9.7098E+02
+GC 0 4 1 0 1.0090E-08
+GPP 0 4 9 46 9.9726E-10
+GPN 0 4 47 10 1.4492E-08
+RT 4 0 1.0
+VPP 46 0 1.5E+01
+RPP 46 0 1K
+VPN 0 47 1.5E+01
+RPN 0 47 1K
+*
+* General Poles
+*
+EP1 14 0 4 0 1.0
+RP1 14 15 4.5768E+01
+CP1 15 0 1.0E-10
+EP2 16 0 15 0 1.0
+RP2 16 17 2.4966E+01
+CP2 17 0 1.0E-10
+EP3 18 0 17 0 1.0
+RP3 18 19 1.8702E+01
+CP3 19 0 1.0E-10
+EP4 20 0 19 0 1.0
+RP4 20 21 1.4508E+01
+CP4 21 0 1.0E-10
+EP5 22 0 21 0 1.0
+RP5 22 23 1.2762E+01
+CP5 23 0 1.0E-10
+*
+* General Zeroes
+*
+GZ1 0 24 23 0 1.4852E-02
+VZ01 24 25 0.0
+HZ1 25 26 VZ01   6.7333E+01
+LZ1 26 0 1.0E-6
+GZ2 0 27 24 0 8.5174E-03
+VZ02 27 28 0.0
+HZ2 28 29 VZ02   1.1741E+02
+LZ2 29 0 1.0E-6
+GZ3 0 30 27 0 2.0450E-03
+VZ03 30 31 0.0
+HZ3 31 32 VZ03   4.8900E+02
+LZ3 32 0 1.0E-6
+GZ4 0 33 30 0 1.6037E-03
+VZ04 33 34 0.0
+HZ4 34 35 VZ04   6.2354E+02
+LZ4 35 0 1.0E-6
+*
+* Complex Pole
+*
+ECP 43 0 33 0 1.0
+RCP 43 44 2.4045E+04
+LCP 44 45 1.4988E-04
+CCPX 45 0 1.0E-12
+*
+* Gain/Output Stage
+*
+G2 0 2 45 0 1.0
+R2 2 0 8.9835E+05
+CC 2 3 2.2000E-11
+GOL 3 0 2 0 6.1330E+01
+RD 3 0 4.6980E+00
+DH 3 5 DV
+DL 48 3 DV
+VH 9 5 1.607
+VL 48 10  1.5986
+IH 9 0 1.0E-03
+IL 0 10 1.0E-03
+D1 3 51 D1
+D2 51 3 D2
+*EX1 51 0 POLY  2  3 0 3 8 0  1  -4.0840E-01
+BEX1 51 0 V=1*v(3,0)-4.0840E-01*v(3,8)
+RO 52 8 1.0611E+02
+VIS 3 52 0
+FI 0 53 VIS 1
+DIP 53 54 DV
+DIN 56 55 DV
+VIP 54 56 0
+VIN 55 53 0
+RI 56 0 1.0
+FIP 9 0 VIP 1.0
+FIN 0 10 VIN 1.0
+.ENDS HA5102

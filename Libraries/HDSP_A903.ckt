@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-A903  
+*  
+* Parameters derived from information available in data sheet.  
+*  
+*                 common-cathode
+*                 |  anode-f
+*                 |  |  anode-g
+*                 |  |  |  anode-e
+*                 |  |  |  |  anode-d
+*                 |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_A903 1  2  3  4  5  6  7  8  9  10
+
+DA1  10  1 dHDSP_A903
+DB1   9  1 dHDSP_A903
+DC1   8  1 dHDSP_A903
+DD1   5  1 dHDSP_A903
+DE1   4  1 dHDSP_A903
+DF1   2  1 dHDSP_A903
+DG1   3  1 dHDSP_A903
+DDP1  7  1 dHDSP_A903
+
+DA2  10  6 dHDSP_A903
+DB2   9  6 dHDSP_A903
+DC2   8  6 dHDSP_A903
+DD2   5  6 dHDSP_A903
+DE2   4  6 dHDSP_A903
+DF2   2  6 dHDSP_A903
+DG2   3  6 dHDSP_A903
+DDP2  7  6 dHDSP_A903
+
+.MODEL dHDSP_A903 D
++ (  
++     IS = 1.37135099E-36 
++      N = 0.94257009 
++     RS = 17.99091536 
++     BV = 30
++    IBV = 100u 
++ ) 
+
+.ENDS HDSP_A903

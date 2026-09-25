@@ -1,0 +1,21 @@
+*   ZETEX   ZTX958   Spice model   Last revision 2/6/92
+*
+.MODEL ZTX958 PNP IS=1.6073E-12 NF=1.013 BF=215 IKF=0.7 VAF=326
++ISE=1.75E-13 NE=1.46 NR=1.05 BR=3.5 IKR=0.85 VAR=78 ISC=5E-11
++NC=1.7 RB=0.05 RE=0.126 RC=0.123 CJC=113E-12 MJC=0.5069 VJC=0.5949
++CJE=1.05E-9 TF=1.26E-9 TR=1.28E-6
+*
+*
+*                          (C)  1992 ZETEX PLC
+*
+*   The copyright in this model  and  the design embodied belong to
+*   Zetex PLC ("Zetex"). It is supplied free of charge by Zetex for
+*   the purpose  of research  and design  and may be used or copied
+*   intact (including this notice) for that purpose only. All other
+*   rights  are  reserved.  The model  is believed  accurate but no
+*   condition or warranty as to its  merchantability or fitness for
+*   purpose  is  given  and  no liability  in respect of any use is
+*   accepted by Zetex PLC, its distributors or agents.
+*
+*
+*   Zetex PLC, Fields New Road, Chadderton, Oldham  OL9 8NP

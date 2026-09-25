@@ -1,0 +1,15 @@
+* jjt 31/10/2000: removed IKF=0 from the model.
+*                 removed ISR=100E-12 from the model.
+*                 removed NR=2 from the model.
+*****************************************************************
+.SUBCKT BB914 1 2 3
+D1 1 3 DBB914
+D2 2 3 DBB914
+.MODEL DBB914 D(IS=10.00E-15 N=1.020 RS=.28 XTI=3 EG=1.11
++ CJO=75.54E-12 M=1.161 VJ=3.445 FC=.5 BV=20 IBV=100E-9
++ TT=137.0E-9)
+.ENDS
+
+* created using Parts release 6.1 on 06/20/95 at 17:40
+* Parts is a MicroSim product.
+* BB914 - typical , SIEMENS HL EH PD 1 MOSCHOVIS

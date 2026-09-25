@@ -1,0 +1,3 @@
+*Texas Instruments
+*SN74LS164: 8-Bit Parallel-Out Serial Shift Register
+.MODEL SN74LS164 xsimcode(file="{MODEL_PATH}LS.SCB" func=ls164 {mntymx})

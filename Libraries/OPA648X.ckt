@@ -1,0 +1,295 @@
+*  OPA648X   ULTRA WIDE-BAND CURRENT FEEDBACK AMPLIFIER
+
+*  CREATED 8/24/94  DY
+
+*  REV. A
+
+*
+
+*  ------------------------------------------------------------------------ 
+
+* |  NOTICE: THE INFORMATION PROVIDED HEREIN IS BELIEVED TO BE RELIABLE;   |
+
+* |  HOWEVER; BURR-BROWN ASSUMES NO RESPONSIBILITY FOR INACCURACIES OR     |
+
+* |  OMISSIONS.  BURR-BROWN ASSUMES NO RESPONSIBILITY FOR THE USE OF THIS  |
+
+* |  INFORMATION, AND ALL USE OF SUCH INFORMATION SHALL BE ENTIRELY AT     |
+
+* |  THE USER'S OWN RISK.  NO PATENT RIGHTS OR LICENSES TO ANY OF THE      |
+
+* |  CIRCUITS DESCRIBED HEREIN ARE IMPLIED OR GRANTED TO ANY THIRD PARTY.  |
+
+* |  BURR-BROWN DOES NOT AUTHORIZE OR WARRANT ANY BURR-BROWN PRODUCT FOR   |
+
+* |  USE IN LIFE-SUPPORT DEVICES AND/OR SYSTEMS.                           |
+
+*  ------------------------------------------------------------------------ 
+
+*
+
+*
+
+* CONNECTIONS:  INVERTING INPUT
+
+*               |   NON-INVERTING INPUT
+
+*               |   |   NEGATIVE POWER SUPPLY
+
+*               |   |   |   OUTPUT
+
+*               |   |   |   |   POSITIVE POWER SUPPLY
+
+*               |   |   |   |   |   
+
+.SUBCKT OPA648X 9  10   8  11   7  
+
+*
+
+Q14      19  20  21  2 NPN1 2
+
+Q15      20  20  22  2 NPN1 2
+
+Q16      23  19  20  2 NPN1 2
+
+Q2       23  23  4   1 PNP1 2
+
+Q4       28  23  3   1 PNP1 2
+
+Q1       18  18  4   2 NPN1 2
+
+Q3       27  18  3   2 NPN1 2
+
+Q7       33  27  26  1 PNP1 2
+
+Q6       26  26  25  1 PNP1 2
+
+Q5       27  26  24  1 PNP1 2
+
+Q8       28  31  29  2 NPN1 2
+
+Q9       31  31  30  2 NPN1 2
+
+Q10      32  28  31  2 NPN1 2
+
+Q28      37  36  35  1 PNP1 2
+
+Q30      40  38  39  2 NPN1 2
+
+Q42      43  42  13  2 NPN1 36
+
+Q40      43  41  12  1 PNP1 36
+
+Q31      13  34  37  1 PNP1 20
+
+Q32      12  34  40  2 NPN1 20
+
+Q41      42  42  13  2 NPN1 20
+
+Q39      41  41  12  1 PNP1 20
+
+Q33      41  37  43  2 NPN1 20
+
+Q35      42  40  43  1 PNP1 20
+
+Q29      38  39  13  2 NPN1 2
+
+Q27      36  35  12  1 PNP1 2
+
+Q38      40  42  13  2 NPN1 1
+
+Q37      37  41  12  1 PNP1 1
+
+Q22      33  33  6   2 NPN1 4
+
+Q23      12  33  34  2 NPN1 2
+
+Q25      13  32  34  1 PNP1 2
+
+Q24      32  32  6   1 PNP1 4
+
+Q11      17  16  14  1 PNP1 2
+
+Q13      18  17  16  1 PNP1 2
+
+Q12      16  16  15  1 PNP1 2
+
+ISOUR    17  19  DC 0.7E-3
+
+R19      2   13  10
+
+R18      1   12  10
+
+R5       12  14  1K
+
+R6       12  15  1K
+
+R7       21  13  1K
+
+R8       22  13  1K
+
+R1       12  24  240
+
+R2       12  25  240
+
+R3       29  13  240
+
+R4       30  13  240
+
+CCOMP    6   13  0.7E-12
+
+R24      43  5   10
+
+I2       36  38  DC 0.5E-3
+
+R22      12  35  400
+
+R23      39  13  400
+
+C3       1   2   56E-12
+
+*
+
+** Package Parasitics
+
+*
+
+CINV     9   0   0.75E-12
+
+L6P      61  62  1.5E-9
+
+L4P      58  59  1.08E-9
+
+L2P      55  56  1.08E-9
+
+C1P      6   2   .15E-12
+
+C14P     68  2   .0425E-12
+
+C13P     5   2   .15E-12
+
+C2P      3   2   .15E-12
+
+L3P      60  4   .7E-9
+
+C3P      56  2   .0425E-12
+
+C4P      56  59  .05E-12
+
+C5P      4   2   .15E-12
+
+C6P      59  2   .0425E-12
+
+C7P      59  62  .05E-12
+
+C8P      2   2   .15E-12
+
+C9P      62  2   .0125E-12
+
+C10P     1   2   .15E-12
+
+C11P     65  2   .0425E-12
+
+C12P     65  68  .05E-12
+
+L1P      57  3   .7E-9
+
+L5P      63  2   .7E-9
+
+L7P      64  1   .7E-9
+
+L8P      66  65  1.08E-9
+
+L9P      67  5   .7E-9
+
+L10P     69  68  1.08E-9
+
+L11P     2   70  .7E-9
+
+R1P      56  57  .01
+
+R2P      9   55  .1
+
+R3P      59  60  .01
+
+R4P      10  58  .1
+
+R5P      62  63  .01
+
+R6P      8   61  .1
+
+R16P     70  62  .01
+
+R7P      65  64  .01
+
+R8P      7   66  .1
+
+R9P      68  67  .01
+
+R10P     11  69  .1
+
+*
+
+* MODELS USED
+
+.MODEL NPN1 NPN (IS  = 4.647E-17  BF   = 2.293E+02  NF  = 1.000E+00  VAF = 4.398E+01
++ IKF = 7.233E-03  ISE  = 1.222E-14  NE  = 2.000E+00  BR  = 3.695E+01
++ NR  = 1.000E+00  VAR  = 1.494E+00  IKR = 1.667E+05  ISC = 1.057E-14
++ NC  = 1.653E+00  RB   = 3.170E+02  IRB = 0.000E+00  RBM = 1.500E+02
++ RE  = 1.133E+01  RC   = 2.768E+01  CJE = 2.070E-14  VJE = 7.414E-01
++ MJE = 4.950E-01  TF   = 1.150E-11  XTF = 2.452E+01  VTF = 1.029E+00
++ ITF = 1.878E-02  PTF  = 0.000E+00  CJC = 3.661E-14  VJC = 6.465E-01
++ MJC = 4.509E-01  XCJC = 1.270E-01  TR  = 3.240E-10  CJS = 5.326E-14
++ VJS = 5.291E-01  MJS  = 4.389E-01  XTB = 1.218E+00  EG  = 1.184E+00
++ XTI = 2.000E+00  KF   = 0.000E+00  AF  = 1.000E+00  FC  = 8.614E-01)
+
+.MODEL PNP1 PNP (IS  = 2.628E-17  BF   = 1.478E+02  NF  = 1.000E+00  VAF = 3.106E+01
++ IKF = 3.115E-03  ISE  = 8.930E-17  NE  = 1.283E+00  BR  = 3.061E+03
++ NR  = 1.000E+00  VAR  = 1.448E+00  IKR = 5.000E-03  ISC = 1.061E-14
++ NC  = 1.634E+00  RB   = 2.794E+02  IRB = 0.000E+00  RBM = 1.544E+02
++ RE  = 7.452E+00  RC   = 1.142E+02  CJE = 2.038E-14  VJE = 7.470E-01
++ MJE = 4.930E-01  TF   = 1.434E-11  XTF = 2.216E+01  VTF = 1.072E+00
++ ITF = 2.397E-02  PTF  = 0.000E+00  CJC = 6.106E-14  VJC = 7.743E-01
++ MJC = 5.185E-01  XCJC = 8.499E-02  TR  = 6.500E-10  CJS = 2.855E-13
++ VJS = 9.063E-01  MJS  = 4.931E-01  XTB = 1.181E+00  EG  = 1.184E+00
++ XTI = 2.000E+00  KF   = 0.000E+00  AF  = 1.000E+00  FC  = 9.014E-01)
+
+.ENDS OPA648X
+
+*
+
+****************** OPA648 TEST CIRCUIT ******************
+
+*
+
+*X1       80  81  84  82  83  OPA648
+
+*VCC      83  0   DC 5V
+
+*VEE      0   84  DC 5V
+
+*RFB      85  82  250
+
+*VIN      87  0   PWL ( 0N -1 1N 1 20N 1 21N -1 )
+
+*vin      87 0 ac 1
+
+*RL0AD    82  0   100
+
+*LFB      80  85  2.2E-9
+
+*CLOAD    82  0   5E-12
+
+*CFB      80  82  0.15E-12
+
+*RSOUR    87  81  50
+
+*RFF      80  86  250
+
+*CFF      80  0   0.15E-12
+
+*LFF      86  0   2.2E-9
+
+*.END
+
+

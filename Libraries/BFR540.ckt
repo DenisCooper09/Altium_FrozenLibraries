@@ -1,0 +1,55 @@
+* BFR540 SPICE MODEL
+* PHILIPS SEMICONDUCTORS
+* Date : September 1995
+*
+* PACKAGE : SOT23 DIE MODEL : BFR540
+* 1: COLLECTOR; 2: BASE; 3: EMITTER;
+.SUBCKT BFR540 1 2 3
+Q1 6 5 7 7 BFR540
+* SOT23 parasitic model
+               Lb  4 5 .4n
+               Le  7 8 .83n
+               L1  2 4 .35n
+               L2  1 6 .17n
+               L3  3 8 .35n
+              Ccb  4 6 71f
+              Cbe  4 8 2f
+              Cce  6 8 71f
+*
+* PHILIPS SEMICONDUCTORS                                     Version:   1.0
+* Filename:   BFR540.PRM                                     Date: Feb 1992
+*
+.MODEL  BFR540   NPN
++(
++              IS = 1.04516E-015
++              BF = 1.84359E+002
++              NF = 9.81774E-001
++             VAF = 4.16981E+001
++             IKF = 1.00000E+001
++             ISE = 2.32436E-013
++              NE = 2.02825E+000
++              BR = 4.39917E+001
++              NR = 9.92532E-001
++             VAR = 2.09773E+000
++             IKR = 1.66296E-001
++             ISC = 1.29849E-016
++              NC = 1.06486E+000
++              RB = 5.00000E+000
++             IRB = 1.00000E-006
++             RBM = 5.00000E+000
++              RE = 3.53552E-001
++              RC = 1.34000E+000
++              EG = 1.11000E+000
++             XTI = 3.00000E+000
++             CJE = 1.97895E-012
++             VJE = 6.00000E-001
++             MJE = 3.32695E-001
++              TF = 7.45719E-012
++             XTF = 1.14072E+001
++             VTF = 3.15854E+000
++             ITF = 1.56917E-001
++             CJC = 7.93745E-013
++             VJC = 1.85522E-001
++             MJC = 8.41656E-002
++)
+.ENDS

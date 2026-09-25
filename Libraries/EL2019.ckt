@@ -1,0 +1,81 @@
+*EL2019 Marcromodel
+* Connections:          +input
+*                       |  -input
+*                       |   |   +V
+*                       |   |   |   -V    
+*                       |   |   |   |   Cpin__    
+*                       |   |   |   |   |   CS 
+*                       |   |   |   |   |   |   output
+*                       |   |   |   |   |   |   |  
+*                       |   |   |   |   |   |   |
+.subckt EL2019          2   3   8   4   6   5   7
+*
+*Input Stage 
+*
+i1 8 10 700uA
+r1 13 4 1K
+r2 14 4 1K
+q1  8 3 11  qn
+q2  8 2 12  qn
+q3 13 11 10 qp 
+q4 14 12 10 qp 
+i2 11 4 200uA
+i3 12 4 200uA          
+*
+* 2nd Stage & Flip Flop
+*
+*i4 8 24 700uA  
+i4 8 24 1mA
+q9  22  6 24 qp
+q10 18 17 24 qp
+v1 17 0 2.5V
+q5 15 14 22 qp 
+q6 16 13 22 qp
+r3 15 4 1K
+r4 16 4 1K
+q7 16 15 18 qp
+q8 15 16 18 qp
+i5 8 40 500uA
+q11 41 17 40 qp
+q12 42  6 40 qp
+q13 43 16 41 qp
+q14 44 15 41 qp  
+q15 44 43 42 qp
+q16 43 44 42 qp
+r5 43 4 1K
+r6 44 4 1K
+*
+* Output Stage  
+* 
+i7 8 35 2mA
+s1 35 20 5 0 sw
+d2 35 8 ds
+i6 26 34 5mA
+s2 34 4 5 0 sw
+d3 34 26 ds
+q19 8 20 21 qn 2
+q20 4 19  7 qp 2
+r8 21 7 60
+r7 20 19 4K
+q17 19 44 26 qn 5
+q18  0 43 26 qn 5
+q22 20 20 30 qn 5
+q23 19 19 30 qp 8
+d1 0 19 ds
+q21 0 17 19 qp
+*
+* Power Supply Current
+*
+ips 8 4 4mA
+*
+* Models 
+*
+.model qn npn(is=2e-15 bf=400 tf=0.05nS cje=0.3pF cjc=0.2pF ccs=0.2pF)
+.model qp pnp(is=0.6e-15 bf=60 tf=0.3nS cje=0.5pF cjc=0.5pF ccs=0.4pF)
+.model ds d(is=2e-12 tt=0.05nS eg=0.62V vj=0.58)
+
+*.model sw vswitch(von=0.4v voff=2.5v)
+*jg,6/7/2000: corrected model syntax
+
+.model sw sw(RON=1 ROFF=1000g  vt=0.4v vh=2.5v)
+.ends

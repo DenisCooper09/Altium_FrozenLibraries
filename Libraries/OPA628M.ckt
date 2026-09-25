@@ -1,0 +1,181 @@
+* OPA628M OPERATIONAL AMPLIFIER "MACROMODEL" SUBCIRCUIT
+
+* "M" IS  MULTIPLE POLE/ZERO TOPOLOGY
+
+* CREATED 7/16/93 BCB
+
+*
+
+*  ------------------------------------------------------------------------ 
+
+* |  NOTICE: THE INFORMATION PROVIDED HEREIN IS BELIEVED TO BE RELIABLE;   |
+
+* |  HOWEVER; BURR-BROWN ASSUMES NO RESPONSIBILITY FOR INACCURACIES OR     |
+
+* |  OMISSIONS.  BURR-BROWN ASSUMES NO RESPONSIBILITY FOR THE USE OF THIS  |
+
+* |  INFORMATION, AND ALL USE OF SUCH INFORMATION SHALL BE ENTIRELY AT     |
+
+* |  THE USER'S OWN RISK.  NO PATENT RIGHTS OR LICENSES TO ANY OF THE      |
+
+* |  CIRCUITS DESCRIBED HEREIN ARE IMPLIED OR GRANTED TO ANY THIRD PARTY.  |
+
+* |  BURR-BROWN DOES NOT AUTHORIZE OR WARRANT ANY BURR-BROWN PRODUCT FOR   |
+
+* |  USE IN LIFE-SUPPORT DEVICES AND/OR SYSTEMS.                           |
+
+*  ------------------------------------------------------------------------ 
+
+* |-------------------------------------------------------------|
+
+* |  This macro model is being supplied as an aid to            |
+
+* |  circuit designs.  While it reflects reasonably close       |
+
+* |  similarity to the actual device in terms of performance,   |
+
+* |  it is not suggested as a replacement for breadboarding.    |
+
+* |  Simulation should be used as a forerunner or a supplement  |
+
+* |  to traditional lab testing.                                |
+
+* |-------------------------------------------------------------|
+
+*
+
+* CONNECTIONS:   NON-INVERTING INPUT
+
+*                |  INVERTING INPUT
+
+*                |  |  POSITIVE POWER SUPPLY
+
+*                |  |  |  NEGATIVE POWER SUPPLY
+
+*                |  |  |  |  OUTPUT
+
+*                |  |  |  |  |
+
+.SUBCKT  OPA628M 3  2  7  4  6
+
+
+
+* INPUT STAGE (pole @ 220M Hz)
+
+Q1  13  2  15  N
+
+Q2  14  11  16  N
+
+R3  7  13  47.75
+
+R4  7  14  47.75
+
+C1  13  14  6E-12
+
+R5  15  12  42.55
+
+R6  16  12  42.55
+
+IEE  12  4  5.5E-3
+
+EOS  11  3  POLY(1)  (33,9)  500E-6  1
+
+R1  2  10  16E3
+
+R2  3  10  16E3
+
+CIN  2  3  2E-12
+
+IOS  2  3  0.3E-6
+
+
+
+* GAIN STAGE (pole @ 2K Hz)
+
+V21  7  21  2.736
+
+D21  23  21  DX
+
+V22  22  4  2.736
+
+D22  22  23  DX
+
+G21  7  23  POLY(1)  (13,14)   26.706E-3 20.94E-3
+
+G22  4  23  POLY(1)  (13,14)  -26.706E-3 20.94E-3
+
+R27  7  23  4.77E6
+
+R28  4  23  4.77E6
+
+C22  7  23  16.68E-12
+
+C23  4  23  16.68E-12
+
+
+
+* COMMON-MODE REJECTION STAGE (zero @ 300K Hz)
+
+R31  31  33  1E6
+
+R32  32  33  1E6
+
+G31  7  33  10  9  3.1623E-12
+
+G32  4  33  10  9  3.1623E-12
+
+L31  31  7  530.5E-3
+
+L32  32  4  530.5E-3
+
+
+
+* OUTPUT STAGE
+
+D3  23  71  DX
+
+D4  72  23  DX
+
+D5  7  73  DX
+
+D6  7  74  DX
+
+D7  4  73  DZ
+
+D8  4  74  DZ
+
+G14  73  4  6  23  1000
+
+G13  74  4  23  6  1000
+
+V3  71  6  -.9125
+
+V4  6  72  -.9125
+
+G11  6  7  7  23  1000
+
+G12  4  6  23  4  1000
+
+R23  7  6  0.001
+
+R24  4  6  0.001
+
+
+
+* CENTER OF SUPPLIES
+
+R9  7  9  16.359E3
+
+R10  4  9  16.359E3
+
+
+
+.MODEL  DX  D(IS=1E-15)
+
+.MODEL  N  NPN(BF=183)
+
+.MODEL  DZ  D(IS=1E-15 BV=50)
+
+
+
+.ENDS

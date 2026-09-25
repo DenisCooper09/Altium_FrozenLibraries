@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-515E  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 e - cathode
+*                 |  d - cathode
+*                 |  |  common-anode
+*                 |  |  |  c - cathode
+*                 |  |  |  |  DP - cathode
+*                 |  |  |  |  |  b - cathode
+*                 |  |  |  |  |  |  a - cathode
+*                 |  |  |  |  |  |  |  common-anode
+*                 |  |  |  |  |  |  |  |  f - cathode
+*                 |  |  |  |  |  |  |  |  |  g - cathode
+*                 |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_515E 1  2  3  4  5  6  7  8  9  10
+
+DA1  3  7 dHDSP_515E
+DB1  3  6 dHDSP_515E
+DC1  3  4 dHDSP_515E
+DD1  3  2 dHDSP_515E
+DE1  3  1 dHDSP_515E
+DF1  3  9 dHDSP_515E
+DG1  3 10 dHDSP_515E
+DDP1 3  5 dHDSP_515E
+
+DA2  8  7 dHDSP_515E
+DB2  8  6 dHDSP_515E
+DC2  8  4 dHDSP_515E
+DD2  8  2 dHDSP_515E
+DE2  8  1 dHDSP_515E
+DF2  8  9 dHDSP_515E
+DG2  8 10 dHDSP_515E
+DDP2 8  5 dHDSP_515E
+
+.MODEL dHDSP_515E D
++ (  
++     IS = 1.21481726E-49 
++      N = 0.55445364 
++     RS = 25.38287000 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_515E

@@ -1,0 +1,6 @@
+*1N4741
+*Ref: Motorola
+*11V 1W Si Zener pkg:DIODE0.4 1,2
+.MODEL 1N4741 D(IS=7.14E-15 RS=3.87 TT=5.01E-8 CJO=1.01E-10 M=0.33 
++ BV=10.91 IBV=0.023 )
+* Origin: Mcediode.lib

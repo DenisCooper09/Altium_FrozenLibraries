@@ -1,0 +1,7 @@
+* Agl_HSMKA100 LED Model
+* Created by Shaun Quin 31-05-2002
+*Typ LED: Vf=3.5V Vr=5V If=20mA 
+*LED Pinout: 1=A, 2=K
+.MODEL Agl_HSMKA100 D (IS=51.39n RS=150.197 N=1.5 BV=5 IBV=10U
++ CJO=67P VJ=.75 M=.333 TT=15n)
+*Temperature and Noise Effects are not Modelled

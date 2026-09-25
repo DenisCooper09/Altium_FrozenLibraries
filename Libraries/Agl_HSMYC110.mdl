@@ -1,0 +1,7 @@
+* Agl_HSMYC110 LED Model
+* Created by Shaun Quin 29-05-2002
+*Typ LED: Vf=2.1V Vr=5V If=20mA 
+*LED Pinout: 1=A, 2=K
+.MODEL Agl_HSMYC110 D (IS=513.85n RS=84.63 N=1.5 BV=5 IBV=100U
++ CJO=6P VJ=.75 M=.333 TT=4.32U)
+*Temperature and Noise Effects are not Modelled

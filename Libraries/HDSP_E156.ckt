@@ -1,0 +1,41 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-E156  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                  cathode-d
+*                  |  anode-d
+*                  |  |  cathode-c
+*                  |  |  |  cathode-e
+*                  |  |  |  |  anode-e
+*                  |  |  |  |  |  anode-c
+*                  |  |  |  |  |  |  anode-DP
+*                  |  |  |  |  |  |  |  cathode-DP
+*                  |  |  |  |  |  |  |  |  cathode-b
+*                  |  |  |  |  |  |  |  |  |  cathode-a
+*                  |  |  |  |  |  |  |  |  |  |  anode-a
+*                  |  |  |  |  |  |  |  |  |  |  |  anode-b
+*                  |  |  |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_E156  1  2  4  5  6  7  8  9  10 11 13 14
+
+DA  13 11 dHDSP_E156
+DB  14 10 dHDSP_E156
+DC   7  4 dHDSP_E156
+DD   2  1 dHDSP_E156
+DE   6  5 dHDSP_E156
+DDP  8  9 dHDSP_E156
+
+.MODEL dHDSP_E156 D
++ (  
++    IS = 3.25509599E-15 
++     N = 2.27697656 
++    RS = 1.58416732
++    BV = 14.25
++   IBV = 100u
++ )  
+
+.ENDS HDSP_E156

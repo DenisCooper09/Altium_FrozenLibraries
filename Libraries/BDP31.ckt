@@ -1,0 +1,55 @@
+*
+.SUBCKT BDP31 1 2 3
+*
+* housing parasitics
+*
+LBlead 2 22 1.63E-09
+LE 3 333 3.77E-09
+LC 1 11 4.1E-10
+LBbond 22 222 2.5E-09
+CBCG 222 11 1.76E-13
+CBEG 222 333 8.6E-14
+CCEG 11 333 1.76E-13
+*
+Q1 11 222 333 BDP31 AREA = 1
+.MODEL BDP31 NPN (
++ IS = 1.806E-13
++ NF = 0.9945
++ ISE = 1.425E-13
++ NE = 1.987
++ BF = 70.03
++ IKF = 8
++ VAF = 270
++ NR = 0.999
++ ISC = 2.431E-14
++ NC = 1.104
++ BR = 10.24
++ IKR = 0.5
++ VAR = 65
++ RB = 8.104
++ IRB = 0.0002958
++ RBM = 0.1
++ RE = 0.126
++ RC = 0.001
++ XTB = 0
++ EG = 1.11
++ XTI = 3
++ CJE = 6.553E-10
++ VJE = 0.6879
++ MJE = 0.3339
++ TF = 1.1E-09
++ XTF = 67
++ VTF = 5
++ ITF = 7.5
++ PTF = 0
++ CJC = 1.321E-10
++ VJC = 0.6299
++ MJC = 0.4519
++ XCJC = 1
++ TR = 9.5E-08
++ CJS = 0
++ VJS = 0.75
++ MJS = 0.333
++ FC = 0.78)
+.ENDS
+*

@@ -1,0 +1,41 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-3356  
+*  
+* Parameters derived from information available in data sheet.  
+*
+*                 cathode-d
+*                 |  anode-d
+*                 |  |  cathode-c
+*                 |  |  |  cathode-e
+*                 |  |  |  |  anode-e
+*                 |  |  |  |  |  anode-c
+*                 |  |  |  |  |  |  anode-DP
+*                 |  |  |  |  |  |  |  cathode-DP
+*                 |  |  |  |  |  |  |  |  cathode-b
+*                 |  |  |  |  |  |  |  |  |  cathode-a
+*                 |  |  |  |  |  |  |  |  |  |  anode-a
+*                 |  |  |  |  |  |  |  |  |  |  |  anode-b
+*                 |  |  |  |  |  |  |  |  |  |  |  |
+.SUBCKT HDSP_3356 1  2  4  5  6  7  8  9  10 11 13 14
+
+DA  13 11 dHDSP_3356
+DB  14 10 dHDSP_3356
+DC   7  4 dHDSP_3356
+DD   2  1 dHDSP_3356
+DE   6  5 dHDSP_3356
+DDP  8  9 dHDSP_3356
+  
+.MODEL dHDSP_3356 D
++ (  
++     IS = 7.07436607E-24 
++      N = 1.24380258 
++     RS = 22.12166762 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_3356

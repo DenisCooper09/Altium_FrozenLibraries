@@ -1,0 +1,50 @@
+*  
+* Diode Model Produced by Altium Ltd  
+* Date:  7-Apr-2004 
+*  
+* Manufacturer: Agilent  
+* Component Name: HDSP-316E  
+*  
+* Parameters derived from information available in data sheet.  
+* 
+*                 g - anode
+*                 |  f - anode
+*                 |  |  common-cathode
+*                 |  |  |  e - anode
+*                 |  |  |  |  d - anode
+*                 |  |  |  |  |  DP - anode
+*                 |  |  |  |  |  |  c - anode
+*                 |  |  |  |  |  |  |  common-cathode
+*                 |  |  |  |  |  |  |  |  b - anode
+*                 |  |  |  |  |  |  |  |  |  a - anode
+*                 |  |  |  |  |  |  |  |  |  | 
+.SUBCKT HDSP_316E 1  2  3  4  5  6  7  8  9  10
+
+DA1  10 3 dHDSP_316E
+DB1   9 3 dHDSP_316E
+DC1   7 3 dHDSP_316E
+DD1   5 3 dHDSP_316E
+DE1   4 3 dHDSP_316E
+DF1   2 3 dHDSP_316E
+DG1   1 3 dHDSP_316E
+DDP1  6 3 dHDSP_316E
+
+DA2  10 8 dHDSP_316E
+DB2   9 8 dHDSP_316E
+DC2   7 8 dHDSP_316E
+DD2   5 8 dHDSP_316E
+DE2   4 8 dHDSP_316E
+DF2   2 8 dHDSP_316E
+DG2   1 8 dHDSP_316E
+DDP2  6 8 dHDSP_316E
+
+.MODEL dHDSP_316E D
++ (  
++     IS = 1.21481726E-49 
++      N = 0.55445364 
++     RS = 25.38287000 
++     BV = 30
++    IBV = 100u 
++ )  
+
+.ENDS HDSP_316E

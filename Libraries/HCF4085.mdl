@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCF4085: Dual 2-input And-Or-Invert Gate
+.MODEL HCF4085 xsimcode(file="{MODEL_PATH}CMOS.SCB" func=4085 {mntymx})

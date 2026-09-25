@@ -1,0 +1,13 @@
+*1N5245A MCE 6/2/96
+*Ref: National Discrete Products Databook, 1996
+*15V 500mW Si pkg:DIODE0.4 1,2
+.SUBCKT 1N5245A  1 2
+*    TERMINALS:  A K
+D1 1 2  DF
+DZ 3 1  DR
+VZ 2 3  14.46
+.MODEL DF D (IS=2.51N RS=84M N=1.7 CJO=46.7P VJ=1 M=0.33 TT=50.1N)
+.MODEL DR D (IS=44.5U RS=4.8 N=3.7)
+.ENDS 
+
+

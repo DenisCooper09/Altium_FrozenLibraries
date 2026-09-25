@@ -1,0 +1,9 @@
+*****************************************************************
+.SUBCKT BAT15-05W 1 2 3
+D1 1 3 D315
+D2 2 3 D315
+.MODEL D315  D(Is=95n N=1.05 Rs=5 Xti=1.8 Eg=.68 Cjo=170f M=.09
++               Vj=.13 Fc=.5 Bv=4 Ibv=10u Tt=25p)
+.ENDS
+
+* add R=3.3MEG parallel for better IR and R0 simulation

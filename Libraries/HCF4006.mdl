@@ -1,0 +1,3 @@
+*ST Microelectronics
+*HCF4006: 18-Stage Static Shift Register
+.MODEL HCF4006 xsimcode(file="{MODEL_PATH}ST MICROELECTRONICS\HCF4006.TXT" func=hcf4006 {mntymx})
