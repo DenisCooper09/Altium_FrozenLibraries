@@ -1,0 +1,1 @@
+Powershell -ExecutionPolicy Bypass -File .\CopyIntoSingleDir.ps1
