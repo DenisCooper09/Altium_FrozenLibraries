@@ -1,0 +1,98 @@
+### Altium ###
+
+# Preview images
+**/__Previews/
+
+# History folders
+**/History/
+
+# Project logs
+**/Project Logs*/
+
+# Generated project outputs / releases
+**/Project Outputs*/
+**/Project Releases*/
+
+# OutJob generated files
+*.PcbDoc.htm
+*.SchDoc.htm
+*.PdfDoc
+*.gbr
+*.g[0-9]*
+*.gko
+*.gpi
+*.drl
+*.rep
+*.apr
+*.pos
+*.xln
+
+# Database library lock/cache files
+*.ldb
+*.DbLib.lck
+*.SchLib.lck
+*.PcbLib.lck
+
+# Backup files
+*.bak
+*.~*
+*.PcbDoc.Bak*
+*.SchDoc.Bak*
+
+# Auto-save
+*Status.xml
+
+### CMake ###
+
+build/
+cmake-build-*/
+out/
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+compile_commands.json
+CTestTestfile.cmake
+CPackConfig.cmake
+CPackSourceConfig.cmake
+CMakeUserPresets.json
+Testing/
+
+### Build Artifacts ###
+
+*.o.d
+*.obj
+*.a
+*.lib
+*.so
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.elf
+*.hex
+*.bin
+*.map
+
+### CLion ###
+
+.idea/
+*.iml
+
+### General ###
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temporary/editor files
+*.tmp
+*.temp
+*.swp
+*~

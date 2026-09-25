@@ -1,0 +1,29 @@
+### Altium ###
+
+# PCB and schematic
+*.[Pp]cb[Dd]oc              filter=lfs diff=lfs merge=lfs -text
+*.[Ss]ch[Dd]oc              filter=lfs diff=lfs merge=lfs -text
+
+# Libraries
+*.[Pp]cb[Ll]ib              filter=lfs diff=lfs merge=lfs -text
+*.[Ss]ch[Ll]ib              filter=lfs diff=lfs merge=lfs -text
+
+# Integrated libraries
+*.[Ii]nt[Ll]ib              filter=lfs diff=lfs merge=lfs -text
+*.[Ll]ib[Pp]kg              filter=lfs diff=lfs merge=lfs -text
+
+# 3D models
+*.[Ss]tep                   filter=lfs diff=lfs merge=lfs -text
+*.[Ss][Tt][Pp]              filter=lfs diff=lfs merge=lfs -text
+*.[Ii][Gg][Ee][Ss]          filter=lfs diff=lfs merge=lfs -text
+*.3[Dd][Pp][Rr][Tt]         filter=lfs diff=lfs merge=lfs -text
+*.[Ii][Dd][Ff]              filter=lfs diff=lfs merge=lfs -text
+
+### Docs ###
+*.[Pp][Dd][Ff]              filter=lfs diff=lfs merge=lfs -text
+
+### Linguist ###
+*.[Pp]cb[Dd]oc linguist-generated
+*.[Ss]ch[Dd]oc linguist-generated
+*.[Pp]cb[Ll]ib linguist-generated
+*.[Ss]ch[Ll]ib linguist-generated
